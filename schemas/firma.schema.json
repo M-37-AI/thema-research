@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thema-research.local/schemas/firma.schema.json",
+  "title": "Firmen-Deep-Dive",
+  "type": "object",
+  "required": [
+    "name", "ticker", "segment_id", "geschaeftsmodell", "themen_exposure", "kennzahlen_datei",
+    "wettbewerbsposition", "rolle_im_thema", "ueberzeugung", "bull_case", "bear_case", "was_uns_widerlegen_wuerde"
+  ],
+  "properties": {
+    "name": { "type": "string", "minLength": 1 },
+    "ticker": { "$ref": "kette.schema.json#/$defs/ticker" },
+    "segment_id": { "type": "string", "pattern": "^[a-z0-9-]+$", "fehlertext": "nur Kleinbuchstaben, Ziffern und Bindestriche" },
+    "geschaeftsmodell": { "type": "string", "minLength": 1 },
+    "themen_exposure": {
+      "allOf": [
+        { "$ref": "zahl.schema.json" },
+        { "properties": { "einheit": { "const": "% Umsatz" } } }
+      ]
+    },
+    "kennzahlen_datei": { "type": "string", "pattern": "^data/kennzahlen/.+\\.json$", "fehlertext": "muss auf data/kennzahlen/<TICKER>.json zeigen" },
+    "wettbewerbsposition": { "type": "string", "minLength": 1 },
+    "rolle_im_thema": { "enum": ["Kernprofiteur", "Zulieferer", "Mitlaeufer"] },
+    "ueberzeugung": { "$ref": "kette.schema.json#/$defs/stufe_mit_begruendung" },
+    "bull_case": { "type": "array", "minItems": 2, "items": { "type": "string", "minLength": 1 } },
+    "bear_case": { "type": "array", "minItems": 2, "items": { "type": "string", "minLength": 1 } },
+    "was_uns_widerlegen_wuerde": { "type": "string", "minLength": 1 }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,142 @@
+{
+  "thema": "Robotik (FIKTIVES BEISPIEL)",
+  "segmente": [
+    {
+      "id": "sensorik",
+      "name": "Sensorik",
+      "beschreibung": "Segment Sensorik (fiktiv).",
+      "margenprofil": {
+        "stufe": "hoch",
+        "begruendung": "Fiktive Begründung: Preissetzungsmacht durch Spezialisierung."
+      },
+      "kandidaten": [
+        {
+          "name": "Beispiel Sensorik AG 1",
+          "ticker": "BSP11.DE",
+          "begruendung": "fiktiver Kandidat"
+        },
+        {
+          "name": "Beispiel Sensorik AG 2",
+          "ticker": "BSP12.DE",
+          "begruendung": "fiktiver Kandidat"
+        },
+        {
+          "name": "Beispiel Sensorik AG 3",
+          "ticker": "BSP13.DE",
+          "begruendung": "fiktiver Kandidat"
+        }
+      ],
+      "marktgroesse": {
+        "wert": 9,
+        "einheit": "Mrd USD",
+        "typ": "schaetzung",
+        "begruendung": "Anteil von rund 10 % an der mittleren Marktschätzung, analog zu Kostenstrukturen typischer Roboterarme.",
+        "abgerufen": "2026-09-18"
+      }
+    },
+    {
+      "id": "antriebe",
+      "name": "Antriebe",
+      "beschreibung": "Segment Antriebe (fiktiv).",
+      "margenprofil": {
+        "stufe": "mittel",
+        "begruendung": "Fiktive Begründung: Preissetzungsmacht durch Spezialisierung."
+      },
+      "kandidaten": [
+        {
+          "name": "Beispiel Antriebe AG 1",
+          "ticker": "BSP21.DE",
+          "begruendung": "fiktiver Kandidat"
+        },
+        {
+          "name": "Beispiel Antriebe AG 2",
+          "ticker": "BSP22.DE",
+          "begruendung": "fiktiver Kandidat"
+        },
+        {
+          "name": "Beispiel Antriebe AG 3",
+          "ticker": "BSP23.DE",
+          "begruendung": "fiktiver Kandidat"
+        }
+      ]
+    },
+    {
+      "id": "steuerungssoftware",
+      "name": "Steuerungssoftware",
+      "beschreibung": "Segment Steuerungssoftware (fiktiv).",
+      "margenprofil": {
+        "stufe": "hoch",
+        "begruendung": "Fiktive Begründung: Preissetzungsmacht durch Spezialisierung."
+      },
+      "kandidaten": [
+        {
+          "name": "Beispiel Steuerungssoftware AG 1",
+          "ticker": "BSP31.DE",
+          "begruendung": "fiktiver Kandidat"
+        },
+        {
+          "name": "Beispiel Steuerungssoftware AG 2",
+          "ticker": "BSP32.DE",
+          "begruendung": "fiktiver Kandidat"
+        },
+        {
+          "name": "Beispiel Steuerungssoftware AG 3",
+          "ticker": "BSP33.DE",
+          "begruendung": "fiktiver Kandidat"
+        }
+      ]
+    },
+    {
+      "id": "systemintegration",
+      "name": "Systemintegration",
+      "beschreibung": "Segment Systemintegration (fiktiv).",
+      "margenprofil": {
+        "stufe": "niedrig",
+        "begruendung": "Fiktive Begründung: Preissetzungsmacht durch Spezialisierung."
+      },
+      "kandidaten": [
+        {
+          "name": "Beispiel Systemintegration AG 1",
+          "ticker": "BSP41.DE",
+          "begruendung": "fiktiver Kandidat"
+        },
+        {
+          "name": "Beispiel Systemintegration AG 2",
+          "ticker": "BSP42.DE",
+          "begruendung": "fiktiver Kandidat"
+        },
+        {
+          "name": "Beispiel Systemintegration AG 3",
+          "ticker": "BSP43.DE",
+          "begruendung": "fiktiver Kandidat"
+        }
+      ]
+    },
+    {
+      "id": "komplettroboter",
+      "name": "Komplettroboter",
+      "beschreibung": "Segment Komplettroboter (fiktiv).",
+      "margenprofil": {
+        "stufe": "mittel",
+        "begruendung": "Fiktive Begründung: Preissetzungsmacht durch Spezialisierung."
+      },
+      "kandidaten": [
+        {
+          "name": "Beispiel Komplettroboter AG 1",
+          "ticker": "BSP51.DE",
+          "begruendung": "fiktiver Kandidat"
+        },
+        {
+          "name": "Beispiel Komplettroboter AG 2",
+          "ticker": "BSP52.DE",
+          "begruendung": "fiktiver Kandidat"
+        },
+        {
+          "name": "Beispiel Komplettroboter AG 3",
+          "ticker": "BSP53.DE",
+          "begruendung": "fiktiver Kandidat"
+        }
+      ]
+    }
+  ]
+}

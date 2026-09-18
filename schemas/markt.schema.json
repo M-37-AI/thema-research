@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thema-research.local/schemas/markt.schema.json",
+  "title": "Markt (zusammengefuehrt)",
+  "description": "Ergebnis von merge_markt.py aus markt-groesse.json, treiber.json und kette.json.",
+  "type": "object",
+  "required": ["thema", "datum", "schaetzungen", "treiber", "huerden", "segmente"],
+  "properties": {
+    "thema": { "type": "string", "minLength": 1 },
+    "datum": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$", "fehlertext": "muss ein ISO-Datum sein (JJJJ-MM-TT)" },
+    "schaetzungen": { "type": "array", "minItems": 3, "items": { "$ref": "markt-groesse.schema.json#/$defs/schaetzung" } },
+    "treiber": { "type": "array", "minItems": 3, "items": { "$ref": "treiber.schema.json#/$defs/punkt" } },
+    "huerden": { "type": "array", "minItems": 3, "items": { "$ref": "treiber.schema.json#/$defs/punkt" } },
+    "segmente": { "type": "array", "minItems": 5, "maxItems": 8, "items": { "$ref": "kette.schema.json#/$defs/segment" } }
+  },
+  "additionalProperties": false
+}

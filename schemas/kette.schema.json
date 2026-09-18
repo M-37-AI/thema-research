@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thema-research.local/schemas/kette.schema.json",
+  "title": "Wertschoepfungskette",
+  "type": "object",
+  "required": ["thema", "segmente"],
+  "properties": {
+    "thema": { "type": "string", "minLength": 1 },
+    "segmente": { "type": "array", "minItems": 5, "maxItems": 8, "items": { "$ref": "#/$defs/segment" } }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "stufe_mit_begruendung": {
+      "type": "object",
+      "required": ["stufe", "begruendung"],
+      "properties": {
+        "stufe": { "enum": ["hoch", "mittel", "niedrig"] },
+        "begruendung": { "type": "string", "minLength": 10 }
+      },
+      "additionalProperties": false
+    },
+    "segment": {
+      "type": "object",
+      "required": ["id", "name", "beschreibung", "margenprofil", "kandidaten"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9-]+$", "fehlertext": "nur Kleinbuchstaben, Ziffern und Bindestriche" },
+        "name": { "type": "string", "minLength": 1 },
+        "beschreibung": { "type": "string", "minLength": 1 },
+        "marktgroesse": { "$ref": "zahl.schema.json" },
+        "margenprofil": { "$ref": "#/$defs/stufe_mit_begruendung" },
+        "kandidaten": { "type": "array", "minItems": 3, "maxItems": 6, "items": { "$ref": "#/$defs/kandidat" } }
+      },
+      "additionalProperties": false
+    },
+    "kandidat": {
+      "type": "object",
+      "required": ["name", "ticker", "begruendung"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "ticker": { "$ref": "#/$defs/ticker" },
+        "begruendung": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "ticker": {
+      "type": "string",
+      "pattern": "^[A-Z0-9][A-Z0-9.\\-]*$",
+      "fehlertext": "kein gültiger yfinance-Ticker (Großbuchstaben, Ziffern, Punkt, Bindestrich; z. B. ABBN.SW, 6954.T)"
+    }
+  }
+}

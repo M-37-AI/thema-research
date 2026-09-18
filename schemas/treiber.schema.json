@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thema-research.local/schemas/treiber.schema.json",
+  "title": "Treiber und Huerden",
+  "type": "object",
+  "required": ["thema", "treiber", "huerden"],
+  "properties": {
+    "thema": { "type": "string", "minLength": 1 },
+    "treiber": { "type": "array", "minItems": 3, "items": { "$ref": "#/$defs/punkt" } },
+    "huerden": { "type": "array", "minItems": 3, "items": { "$ref": "#/$defs/punkt" } }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "punkt": {
+      "type": "object",
+      "required": ["titel", "beschreibung", "belege"],
+      "properties": {
+        "titel": { "type": "string", "minLength": 1 },
+        "beschreibung": { "type": "string", "minLength": 1 },
+        "belege": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/beleg" } }
+      },
+      "additionalProperties": false
+    },
+    "beleg": {
+      "description": "Entweder ein Zahl-Objekt (erkennbar an 'wert') oder eine belegte Aussage.",
+      "if": { "type": "object", "required": ["wert"] },
+      "then": { "$ref": "zahl.schema.json" },
+      "else": {
+        "type": "object",
+        "required": ["aussage", "quelle"],
+        "properties": {
+          "aussage": { "type": "string", "minLength": 1 },
+          "quelle": { "type": "string", "pattern": "^https?://", "fehlertext": "muss eine URL sein (http/https)" }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

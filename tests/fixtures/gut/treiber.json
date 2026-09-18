@@ -1,0 +1,109 @@
+{
+  "thema": "Robotik (FIKTIVES BEISPIEL)",
+  "treiber": [
+    {
+      "titel": "Fachkräftemangel",
+      "beschreibung": "Fachkräftemangel – fiktive Beschreibung für Testzwecke.",
+      "belege": [
+        {
+          "aussage": "Beleg zu Fachkräftemangel",
+          "quelle": "https://example.com/beleg"
+        },
+        {
+          "wert": 3.1,
+          "einheit": "%",
+          "typ": "berichtet",
+          "quelle": "https://example.com/statistik",
+          "abgerufen": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "titel": "Sinkende Sensorkosten",
+      "beschreibung": "Sinkende Sensorkosten – fiktive Beschreibung für Testzwecke.",
+      "belege": [
+        {
+          "aussage": "Beleg zu Sinkende Sensorkosten",
+          "quelle": "https://example.com/beleg"
+        },
+        {
+          "wert": 3.1,
+          "einheit": "%",
+          "typ": "berichtet",
+          "quelle": "https://example.com/statistik",
+          "abgerufen": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "titel": "KI-Steuerung",
+      "beschreibung": "KI-Steuerung – fiktive Beschreibung für Testzwecke.",
+      "belege": [
+        {
+          "aussage": "Beleg zu KI-Steuerung",
+          "quelle": "https://example.com/beleg"
+        },
+        {
+          "wert": 3.1,
+          "einheit": "%",
+          "typ": "berichtet",
+          "quelle": "https://example.com/statistik",
+          "abgerufen": "2026-09-18"
+        }
+      ]
+    }
+  ],
+  "huerden": [
+    {
+      "titel": "Hohe Anfangsinvestition",
+      "beschreibung": "Hohe Anfangsinvestition – fiktive Beschreibung für Testzwecke.",
+      "belege": [
+        {
+          "aussage": "Beleg zu Hohe Anfangsinvestition",
+          "quelle": "https://example.com/beleg"
+        },
+        {
+          "wert": 3.1,
+          "einheit": "%",
+          "typ": "berichtet",
+          "quelle": "https://example.com/statistik",
+          "abgerufen": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "titel": "Integrationsaufwand",
+      "beschreibung": "Integrationsaufwand – fiktive Beschreibung für Testzwecke.",
+      "belege": [
+        {
+          "aussage": "Beleg zu Integrationsaufwand",
+          "quelle": "https://example.com/beleg"
+        },
+        {
+          "wert": 3.1,
+          "einheit": "%",
+          "typ": "berichtet",
+          "quelle": "https://example.com/statistik",
+          "abgerufen": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "titel": "Regulierung",
+      "beschreibung": "Regulierung – fiktive Beschreibung für Testzwecke.",
+      "belege": [
+        {
+          "aussage": "Beleg zu Regulierung",
+          "quelle": "https://example.com/beleg"
+        },
+        {
+          "wert": 3.1,
+          "einheit": "%",
+          "typ": "berichtet",
+          "quelle": "https://example.com/statistik",
+          "abgerufen": "2026-09-18"
+        }
+      ]
+    }
+  ]
+}

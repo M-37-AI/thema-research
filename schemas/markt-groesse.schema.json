@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thema-research.local/schemas/markt-groesse.schema.json",
+  "title": "Marktgroesse",
+  "type": "object",
+  "required": ["thema", "schaetzungen"],
+  "properties": {
+    "thema": { "type": "string", "minLength": 1 },
+    "schaetzungen": { "type": "array", "minItems": 3, "items": { "$ref": "#/$defs/schaetzung" } }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "schaetzung": {
+      "type": "object",
+      "required": ["herausgeber", "jahr_prognose", "marktgroesse"],
+      "properties": {
+        "herausgeber": { "type": "string", "minLength": 1 },
+        "jahr_prognose": { "type": "integer" },
+        "marktgroesse": { "$ref": "zahl.schema.json" },
+        "cagr": { "$ref": "zahl.schema.json" },
+        "abgrenzung": { "type": "string", "minLength": 1, "description": "Was zaehlt zum Markt?" }
+      },
+      "additionalProperties": false
+    }
+  }
+}

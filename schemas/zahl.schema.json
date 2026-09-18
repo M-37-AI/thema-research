@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thema-research.local/schemas/zahl.schema.json",
+  "title": "Zahl-Objekt",
+  "description": "Jede Zahl im Projekt hat eine Herkunft: berichtet (mit Quelle) oder Schaetzung (mit Begruendung).",
+  "type": "object",
+  "required": ["wert", "einheit", "typ", "abgerufen"],
+  "properties": {
+    "wert": { "type": ["number", "null"] },
+    "einheit": { "type": "string", "minLength": 1 },
+    "typ": { "enum": ["berichtet", "schaetzung"] },
+    "quelle": { "type": "string", "pattern": "^https?://", "fehlertext": "muss eine URL sein (http/https)" },
+    "abgerufen": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$", "fehlertext": "muss ein ISO-Datum sein (JJJJ-MM-TT)" },
+    "begruendung": { "type": "string", "minLength": 10 },
+    "jahr": { "type": "integer" },
+    "herausgeber": { "type": "string", "minLength": 1 },
+    "hinweis": { "type": "string", "description": "z. B. warum ein Wert null ist" }
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": { "properties": { "typ": { "const": "berichtet" } }, "required": ["typ"] },
+      "then": { "required": ["quelle"] }
+    },
+    {
+      "if": { "properties": { "typ": { "const": "schaetzung" } }, "required": ["typ"] },
+      "then": { "required": ["begruendung"] }
+    }
+  ]
+}

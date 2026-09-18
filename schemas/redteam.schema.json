@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thema-research.local/schemas/redteam.schema.json",
+  "title": "Red Team",
+  "type": "object",
+  "required": ["einwaende", "bottom_up_kommentar", "gesamturteil"],
+  "properties": {
+    "einwaende": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/einwand" } },
+    "bottom_up_kommentar": { "type": "string", "minLength": 1 },
+    "gesamturteil": { "type": "string", "minLength": 1 }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "einwand": {
+      "type": "object",
+      "required": ["id", "ziel", "einwand", "schwere"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^E[0-9]+$", "fehlertext": "Format E1, E2, ..." },
+        "ziel": {
+          "type": "object",
+          "required": ["datei", "pfad"],
+          "properties": {
+            "datei": { "type": "string", "minLength": 1, "description": "relativ zum Lauf-Ordner, z. B. firmen/NVDA.json" },
+            "pfad": { "type": "string", "description": "JSON-Pointer, z. B. /themen_exposure" }
+          },
+          "additionalProperties": false
+        },
+        "einwand": { "type": "string", "minLength": 1 },
+        "schwere": { "enum": ["hoch", "mittel", "niedrig"] },
+        "beleg": { "$ref": "treiber.schema.json#/$defs/beleg" }
+      },
+      "additionalProperties": false
+    }
+  }
+}

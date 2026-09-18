@@ -1,0 +1,24 @@
+{
+  "titel": "Robotik: Die Zulieferer rücken in den Vordergrund (FIKTIVES BEISPIEL)",
+  "kernaussage": "Wir sehen die Wertschöpfung zunehmend bei Komponentenherstellern. Die Spanne der Marktschätzungen bleibt breit.",
+  "these": "Der Markt wächst auf {ref:../gut/markt-groesse.json#/schaetzungen/7/marktgroesse}.",
+  "abschnitte": {
+    "markt": "Beispiel Research erwartet {ref:../gut/markt-groesse.json#/schaetzungen/0/marktgroesse} im Jahr 2030.",
+    "treiber_und_huerden": "Fachkräftemangel ist der stärkste Treiber.",
+    "wertschoepfung": "Sensorik heißt {ref:../gut/firma.json#/name}.",
+    "unternehmen": "Die Beispiel Robotik AG macht {ref:firmen/XYZ.json#/themen_exposure} Umsatz im Thema, insgesamt rund 12 Mrd USD.",
+    "risiken": "Die Marktabgrenzungen sind nicht vergleichbar."
+  },
+  "antworten_auf_einwaende": [
+    {
+      "einwand_ref": "E1",
+      "antwort": "Wir zeigen die Schätzung, gewichten sie aber nicht.",
+      "konsequenz": "Spanne statt Mittelwert."
+    }
+  ],
+  "beobachtungspunkte": [
+    "Auftragseingänge der Roboterhersteller",
+    "Sensorpreise",
+    "Regulierung humanoider Roboter"
+  ]
+}

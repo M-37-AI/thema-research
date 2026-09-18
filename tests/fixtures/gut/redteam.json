@@ -1,0 +1,28 @@
+{
+  "einwaende": [
+    {
+      "id": "E1",
+      "ziel": {
+        "datei": "markt-groesse.json",
+        "pfad": "/schaetzungen/2/marktgroesse"
+      },
+      "einwand": "Die höchste Schätzung stammt von einem Anbieter ohne offengelegte Methodik.",
+      "schwere": "hoch"
+    },
+    {
+      "id": "E2",
+      "ziel": {
+        "datei": "firma.json",
+        "pfad": "/themen_exposure"
+      },
+      "einwand": "Exposure ist geschätzt, nicht berichtet.",
+      "schwere": "mittel",
+      "beleg": {
+        "aussage": "Segmentbericht weist Robotik nicht separat aus.",
+        "quelle": "https://example.com/gb"
+      }
+    }
+  ],
+  "bottom_up_kommentar": "Die Shortlist deckt nur einen kleinen Teil des Marktes ab (fiktiv).",
+  "gesamturteil": "These tragfähig, Marktgröße mit großer Unsicherheit (fiktiv)."
+}

@@ -1,0 +1,52 @@
+{
+  "thema": "Robotik (FIKTIVES BEISPIEL)",
+  "schaetzungen": [
+    {
+      "herausgeber": "Beispiel Research",
+      "jahr_prognose": 2030,
+      "marktgroesse": {
+        "wert": 120,
+        "einheit": "Mrd USD",
+        "typ": "berichtet",
+        "quelle": "https://example.com/beispiel-research/robotik",
+        "abgerufen": "2026-09-18",
+        "jahr": 2030,
+        "herausgeber": "Beispiel Research"
+      },
+      "cagr": {
+        "wert": 14.2,
+        "einheit": "%",
+        "typ": "berichtet",
+        "quelle": "https://example.com/beispiel-research/robotik",
+        "abgerufen": "2026-09-18"
+      },
+      "abgrenzung": "Industrie- und Serviceroboter inkl. Software, ohne Drohnen"
+    },
+    {
+      "herausgeber": "Fiktiver Branchenverband e. V.",
+      "jahr_prognose": 2030,
+      "marktgroesse": {
+        "wert": 85,
+        "einheit": "Mrd USD",
+        "typ": "berichtet",
+        "quelle": "https://example.com/verband/statistik",
+        "abgerufen": "2026-09-18",
+        "jahr": 2030
+      },
+      "abgrenzung": "nur Industrieroboter (Hardware)"
+    },
+    {
+      "herausgeber": "Muster Analytics",
+      "jahr_prognose": 2032,
+      "marktgroesse": {
+        "wert": 210,
+        "einheit": "Mrd USD",
+        "typ": "schaetzung",
+        "begruendung": "Hochrechnung aus dem Basisjahr 2025 mit der vom Herausgeber genannten Wachstumsrate von 18 % p. a.; Methodik nicht offengelegt.",
+        "abgerufen": "2026-09-18",
+        "jahr": 2032
+      },
+      "abgrenzung": "breite Abgrenzung inkl. humanoider Roboter und Komponenten"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+yfinance
+jsonschema
+jinja2
+plotly
+pandas

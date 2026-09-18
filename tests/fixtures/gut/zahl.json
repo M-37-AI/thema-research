@@ -1,0 +1,9 @@
+{
+  "wert": 42.5,
+  "einheit": "Mrd USD",
+  "typ": "berichtet",
+  "quelle": "https://example.com/fiktiver-bericht",
+  "abgerufen": "2026-09-18",
+  "jahr": 2025,
+  "herausgeber": "Beispiel Research"
+}

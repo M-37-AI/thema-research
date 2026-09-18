@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thema-research.local/schemas/report.schema.json",
+  "title": "Report",
+  "description": "Zahlen stehen in Texten nur als Verweis {ref:<datei>#<json-pointer>}; validate.py prueft die Aufloesbarkeit.",
+  "type": "object",
+  "required": ["titel", "kernaussage", "these", "abschnitte", "antworten_auf_einwaende", "beobachtungspunkte"],
+  "properties": {
+    "titel": { "type": "string", "minLength": 1 },
+    "kernaussage": { "type": "string", "minLength": 1, "maxLength": 400 },
+    "these": { "type": "string", "minLength": 1 },
+    "abschnitte": {
+      "type": "object",
+      "required": ["markt", "treiber_und_huerden", "wertschoepfung", "unternehmen", "risiken"],
+      "properties": {
+        "markt": { "type": "string", "minLength": 1 },
+        "treiber_und_huerden": { "type": "string", "minLength": 1 },
+        "wertschoepfung": { "type": "string", "minLength": 1 },
+        "unternehmen": { "type": "string", "minLength": 1 },
+        "risiken": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "antworten_auf_einwaende": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["einwand_ref", "antwort", "konsequenz"],
+        "properties": {
+          "einwand_ref": { "type": "string", "pattern": "^E[0-9]+$", "fehlertext": "Format E1, E2, ... (id aus redteam.json)" },
+          "antwort": { "type": "string", "minLength": 1 },
+          "konsequenz": { "type": "string", "minLength": 1 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "beobachtungspunkte": { "type": "array", "minItems": 3, "maxItems": 5, "items": { "type": "string", "minLength": 1 } }
+  },
+  "additionalProperties": false
+}
