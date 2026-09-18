@@ -41,6 +41,16 @@
   .kern .text { font: 1.28rem/1.5 var(--serif); color: var(--marine); }
   .kern .text p { margin: .2em 0 0; }
 
+  /* ---------- Glossar ---------- */
+  .glossar { margin: 22px 0 0; border-top: 1px solid var(--linie); border-bottom: 1px solid var(--linie); padding: 12px 0 4px; }
+  .glossar .label { font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; color: var(--leise); font-weight: 700; margin-bottom: 8px; }
+  .glossar dl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 28px; margin: 0; font-size: .82rem; }
+  @media (max-width: 700px) { .glossar dl { grid-template-columns: 1fr; } }
+  .glossar div { padding-bottom: 8px; }
+  .glossar dt { font-weight: 700; color: var(--marine); display: inline; }
+  .glossar dd { display: inline; margin: 0; color: var(--text); }
+  .glossar dd::before { content: " – "; color: var(--leise); }
+
   /* ---------- Abschnitte ---------- */
   section { margin-top: 44px; }
   h2 { display: flex; align-items: baseline; gap: 14px; margin: 0 0 16px; padding-bottom: 8px;
@@ -168,6 +178,11 @@
 <main>
 
   <div class="kern"><div class="label">Kernaussage</div><div class="text">{{ kopf.kernaussage }}</div></div>
+  {% if glossar %}
+  <div class="glossar"><div class="label">Begriffe kurz erklärt</div>
+    <dl>{% for g in glossar %}<div><dt>{{ g.begriff }}</dt><dd>{{ g.erklaerung }}</dd></div>{% endfor %}</dl>
+  </div>
+  {% endif %}
 
   <section id="these">
     <h2><span class="nr">01</span>These</h2>
@@ -330,7 +345,8 @@
     <h2><span class="nr">09</span>Methodik</h2>
     <p>Dieser Report entstand in einem Team aus KI-Agenten mit fester Arbeitsteilung: Drei Agenten recherchierten Marktgröße, Treiber und Hürden sowie die Wertschöpfungskette; deterministischer Code führte die Ergebnisse zusammen, rief Finanzkennzahlen ab und screente die Kandidaten
     {%- if universum %} ({{ universum.kandidaten }} Kandidaten, {{ universum.aufgenommen }} aufgenommen, {{ universum.ausgeschlossen }} ausgeschlossen){% endif %}.
-    Für jede ausgewählte Firma erstellte ein Agent einen Deep Dive; ein Red Team griff alle Ergebnisse an. Jede Zahl trägt ihre Herkunft – berichtet mit Quelle oder als Schätzung mit Begründung.</p>
+    Für jede ausgewählte Firma erstellte ein Agent einen Deep Dive; ein Red Team griff alle Ergebnisse an. Jede Zahl trägt ihre Herkunft – berichtet mit Quelle oder als Schätzung mit Begründung.
+    {%- if lektorat_anzahl %} Zum Schluss hat ein Lektorats-Agent {{ lektorat_anzahl }} Textstellen sprachlich überarbeitet; ein Prüfprogramm hat sichergestellt, dass dabei keine Zahl verändert wurde.{% endif %}</p>
     {% if score_formel %}<p class="klein">Screening-Score: <code>{{ score_formel }}</code></p>{% endif %}
     <h3>Türsteher: automatische Qualitätsprüfung</h3>
     {% if gate %}

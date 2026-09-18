@@ -3,7 +3,7 @@
 
 Das Schema wird aus dem Dateinamen abgeleitet:
   markt-groesse.json, treiber.json, kette.json, markt.json, redteam.json,
-  report.json, zahl.json  -> gleichnamiges Schema
+  report.json, lektorat.json, zahl.json  -> gleichnamiges Schema
   firmen/<TICKER>.json    -> Schema "firma"
 Der Teil vor "--" zählt, z. B. "kette--falscher-enum.json" -> "kette".
 
@@ -12,6 +12,8 @@ Zusätzlich:
   - Im Report werden alle Verweise {ref:<datei>#<json-pointer>} aufgelöst
     (relativ zum Ordner der Report-Datei); ausgeschriebene Beträge ergeben
     eine Warnung.
+  - Im Lektorat muss jede Ersetzung auf einen Fließtext zeigen und genau
+    dieselben {ref:…}-Verweise behalten wie das Original.
 
 Exit-Code: 0 = alle Dateien gültig (Warnungen erlaubt), 1 = mindestens ein Fehler.
 """
@@ -28,7 +30,13 @@ from referencing import Registry, Resource
 
 PROJEKT = Path(__file__).resolve().parent.parent
 SCHEMA_ORDNER = PROJEKT / "schemas"
-SCHEMA_NAMEN = ["zahl", "markt-groesse", "treiber", "kette", "markt", "firma", "redteam", "report"]
+SCHEMA_NAMEN = ["zahl", "markt-groesse", "treiber", "kette", "markt", "firma", "redteam", "report", "lektorat"]
+
+# Felder, die der Lektor nicht umformulieren darf: Kennungen, Kategorien, Namen, Quellen
+GESCHUETZTE_FELDER = {
+    "id", "ticker", "segment_id", "name", "schwere", "rolle_im_thema", "stufe", "einwand_ref",
+    "datei", "pfad", "quelle", "einheit", "typ", "abgerufen", "herausgeber", "kennzahlen_datei", "thema", "datum",
+}
 
 REF_MUSTER = re.compile(r"\{ref:([^#}\s]+)#([^}\s]*)\}")
 # Beträge, die im Report-Text eigentlich als Verweis stehen sollten
@@ -233,6 +241,66 @@ def _report_pruefen(daten, lauf_ordner: Path) -> tuple[list[str], list[str]]:
     return fehler, warnungen
 
 
+# ---------------------------------------------------------------- Lektorat
+
+def _lektorat_pruefen(daten, lauf_ordner: Path) -> tuple[list[str], list[str]]:
+    """Jede Ersetzung muss auf einen Fließtext zeigen und dieselben {ref:…}-Verweise behalten."""
+    fehler, warnungen, cache, gesehen = [], [], {}, set()
+    for i, e in enumerate(daten.get("ersetzungen", [])):
+        stelle = f"ersetzungen[{i}] ({e['datei']}#{e['pfad']})"
+        if (e["datei"], e["pfad"]) in gesehen:
+            fehler.append(f"{stelle}: Stelle doppelt ersetzt")
+            continue
+        gesehen.add((e["datei"], e["pfad"]))
+        ziel = (lauf_ordner / e["datei"]).resolve()
+        if ziel not in cache:
+            try:
+                cache[ziel] = json.loads(ziel.read_text(encoding="utf-8")) if ziel.is_file() else None
+            except json.JSONDecodeError:
+                cache[ziel] = None
+        if cache[ziel] is None:
+            fehler.append(f"{stelle}: Datei fehlt oder ist kein gültiges JSON")
+            continue
+        try:
+            original = json_pointer_aufloesen(cache[ziel], e["pfad"])
+        except KeyError as grund:
+            fehler.append(f"{stelle}: Pfad nicht gefunden ({grund.args[0]})")
+            continue
+        if not isinstance(original, str):
+            fehler.append(f"{stelle}: zeigt nicht auf einen Text")
+            continue
+        teile = [t.replace("~1", "/").replace("~0", "~") for t in e["pfad"].strip("/").split("/")]
+        feld = next((t for t in reversed(teile) if not t.isdigit()), "")
+        if feld in GESCHUETZTE_FELDER:
+            fehler.append(f"{stelle}: Feld '{feld}' darf nicht umformuliert werden")
+            continue
+        # Texte innerhalb eines Zahl-Objekts (z. B. begruendung) gehören zur Herkunft der Zahl
+        eltern = cache[ziel]
+        for t in teile[:-1]:
+            eltern = eltern[int(t)] if isinstance(eltern, list) else eltern[t]
+        if isinstance(eltern, dict) and "wert" in eltern:
+            fehler.append(f"{stelle}: Text gehört zu einem Zahl-Objekt und darf nicht umformuliert werden")
+            continue
+        vorher = sorted(set(REF_MUSTER.findall(original)))
+        nachher = sorted(set(REF_MUSTER.findall(e["text"])))
+        if vorher != nachher:
+            fehlen = ["#".join(r) for r in vorher if r not in nachher]
+            neu = ["#".join(r) for r in nachher if r not in vorher]
+            teil = []
+            if fehlen:
+                teil.append("fehlt: " + ", ".join(fehlen))
+            if neu:
+                teil.append("neu: " + ", ".join(neu))
+            fehler.append(f"{stelle}: Zahlenverweise verändert ({'; '.join(teil)})")
+        if e["datei"] == "report.json" and e["pfad"] == "/kernaussage" and len(e["text"]) > 400:
+            fehler.append(f"{stelle}: Kernaussage zu lang ({len(e['text'])} Zeichen, höchstens 400)")
+        alte_betraege = set(m.group(0).strip() for m in BETRAG_MUSTER.finditer(REF_MUSTER.sub("", original)))
+        for betrag in BETRAG_MUSTER.finditer(REF_MUSTER.sub("", e["text"])):
+            if betrag.group(0).strip() not in alte_betraege:
+                warnungen.append(f"{stelle}: neue ausgeschriebene Zahl „{betrag.group(0).strip()}“ – Zahlen nur als {{ref:…}}")
+    return fehler, warnungen
+
+
 # ---------------------------------------------------------------- Einstieg
 
 def validiere_datei(pfad: Path, schema_name: str | None = None) -> tuple[list[str], list[str]]:
@@ -256,6 +324,9 @@ def validiere_datei(pfad: Path, schema_name: str | None = None) -> tuple[list[st
     if schema_name == "report":
         ref_fehler, warnungen = _report_pruefen(daten, pfad.parent)
         fehler += ref_fehler
+    elif schema_name == "lektorat" and not fehler:
+        lek_fehler, warnungen = _lektorat_pruefen(daten, pfad.parent)
+        fehler += lek_fehler
     # Doppelte Meldungen (Schema-$ref + rekursive Zahl-Prüfung) entfernen
     return list(dict.fromkeys(fehler)), list(dict.fromkeys(warnungen))
 

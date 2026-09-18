@@ -11,3 +11,5 @@ runs/*
 
 # erzeugte Reports
 **/report.html
+**/lektorat-vorlage.json
+**/report-ohne-lektorat.html

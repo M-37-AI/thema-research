@@ -1,0 +1,42 @@
+{
+  "ersetzungen": [
+    {
+      "datei": "report.json",
+      "pfad": "/kernaussage",
+      "text": "Am meisten verdienen in der Robotik nicht die Roboterbauer, sondern die Hersteller spezieller Bauteile. Wie groß der Markt wirklich ist, weiß niemand genau – die Schätzungen liegen weit auseinander."
+    },
+    {
+      "datei": "report.json",
+      "pfad": "/abschnitte/markt",
+      "text": "Für 2030 reichen die Schätzungen von {ref:markt.json#/schaetzungen/1/marktgroesse} bis {ref:markt.json#/schaetzungen/0/marktgroesse}. Die niedrigere Zahl zählt nur Industrieroboter, die höhere auch Serviceroboter. Wer noch breiter zählt, kommt bis 2032 auf {ref:markt.json#/schaetzungen/2/marktgroesse}.\n\nEinen Mittelwert bilden wir bewusst nicht. Die Zahlen unterscheiden sich vor allem, weil jede Studie etwas anderes misst – nicht, weil die Prognosen so verschieden wären."
+    },
+    {
+      "datei": "firmen/PIND.FIKTIV.json",
+      "pfad": "/geschaeftsmodell",
+      "text": "Ein Anlagenbauer, der nebenbei auch Roboter in Fabriken einbaut."
+    },
+    {
+      "datei": "redteam.json",
+      "pfad": "/gesamturteil",
+      "text": "Die These zu den Bauteil-Herstellern hält. Die Marktgröße bleibt unsicher, und zwei der sechs Firmen stützen die These nur schwach."
+    }
+  ],
+  "glossar": [
+    {
+      "begriff": "Themen-Umsatz",
+      "erklaerung": "Der Teil des Umsatzes einer Firma, der direkt mit Robotik zu tun hat."
+    },
+    {
+      "begriff": "EV/Umsatz",
+      "erklaerung": "Unternehmenswert geteilt durch den Jahresumsatz – eine grobe Kennzahl dafür, wie teuer eine Firma an der Börse bewertet ist."
+    },
+    {
+      "begriff": "Mitläufer",
+      "erklaerung": "Eine Firma, die mit dem Thema wirbt, aber nur wenig Umsatz damit macht."
+    },
+    {
+      "begriff": "Red Team",
+      "erklaerung": "Ein Prüfer, dessen Aufgabe es ist, die eigenen Ergebnisse so hart wie möglich anzugreifen."
+    }
+  ]
+}

@@ -45,6 +45,7 @@ Jede Zahl in jeder Datei ist ein Zahl-Objekt (`schemas/zahl.schema.json`):
 | `kette` | kette | `kette.json` |
 | `firma-1` … `firma-4` | firma | `firmen/<TICKER>.json` |
 | `red-team` | red-team | `redteam.json` |
+| `lektor` | lektor | `lektorat.json` (überarbeitete Texte + Glossar; Originale bleiben unverändert) |
 | Lead | – | `lauf.json`, `shortlist.json`, `report.json` |
 
 ## Grenzen

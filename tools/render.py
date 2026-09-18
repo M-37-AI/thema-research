@@ -5,12 +5,15 @@
 - Ersetzt jeden Verweis {ref:<datei>#<pointer>} durch den formatierten Wert
   (Schätzungen mit „~“) und eine nummerierte Fußnote; gleiche Quellen teilen sich eine Fußnote.
 - Plotly wird inline eingebettet, der Report funktioniert offline.
+- Liegt lektorat.json im Lauf, werden die sprachlich überarbeiteten Texte eingesetzt
+  (die Originaldateien bleiben unverändert); --ohne-lektorat rendert die Rohfassung.
 
 Exit-Code: 0 = report.html geschrieben, 1 = Fehler.
 """
 from __future__ import annotations
 
 import argparse
+import copy
 import html
 import json
 import math
@@ -24,7 +27,7 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 from markupsafe import Markup
 
 from gemeinsam import PROJEKT, ToolFehler, ausfuehren, kennzahlen_pfad, lauf_ordner, lies_json, lies_lauf
-from validate import REF_MUSTER, validiere_datei, verweis_aufloesen
+from validate import REF_MUSTER, json_pointer_aufloesen, validiere_datei, verweis_aufloesen
 
 AKZENT = "#0b2545"   # Marine – Titelband, Überschriften, Kernwerte
 MITTEL = "#3e6ea8"   # zweite Datenfarbe
@@ -213,15 +216,38 @@ def chart_streuung(firmen: list[dict]) -> str:
 
 # ---------------------------------------------------------------- Daten sammeln
 
+class Lektorat:
+    """Setzt die Fassungen aus lektorat.json in die geladenen Daten ein (nur im Speicher)."""
+
+    def __init__(self, lauf: Path, aktiv: bool = True):
+        daten = lies_json(lauf / "lektorat.json") if aktiv and (lauf / "lektorat.json").is_file() else {}
+        self.glossar = daten.get("glossar", [])
+        self.ersetzungen: dict[str, list[tuple[str, str]]] = {}
+        for e in daten.get("ersetzungen", []):
+            self.ersetzungen.setdefault(e["datei"], []).append((e["pfad"], e["text"]))
+        self.anzahl = sum(len(v) for v in self.ersetzungen.values())
+
+    def anwenden(self, datei: str, daten):
+        if daten is None or datei not in self.ersetzungen:
+            return daten
+        daten = copy.deepcopy(daten)
+        for pfad, text in self.ersetzungen[datei]:
+            *eltern_pfad, letzter = pfad[1:].split("/")
+            eltern = json_pointer_aufloesen(daten, "/" + "/".join(eltern_pfad)) if eltern_pfad else daten
+            letzter = letzter.replace("~1", "/").replace("~0", "~")
+            eltern[int(letzter) if isinstance(eltern, list) else letzter] = text
+        return daten
+
+
 def _optional(pfad: Path) -> dict | None:
     return lies_json(pfad) if pfad.is_file() else None
 
 
-def firmen_laden(lauf: Path, markt: dict, fn: Fussnoten) -> list[dict]:
+def firmen_laden(lauf: Path, markt: dict, fn: Fussnoten, lektorat: Lektorat) -> list[dict]:
     segmente = {s["id"]: s["name"] for s in markt["segmente"]}
     firmen = []
     for datei in sorted((lauf / "firmen").glob("*.json")):
-        f = lies_json(datei)
+        f = lektorat.anwenden(f"firmen/{datei.name}", lies_json(datei))
         kz_datei = kennzahlen_pfad(lauf, f["kennzahlen_datei"])
         kz = lies_json(kz_datei) if kz_datei.is_file() else {"kennzahlen": {}}
         k = kz.get("kennzahlen", {})
@@ -263,14 +289,15 @@ def tuersteher_statistik(lauf: Path) -> dict | None:
             "dateien": sorted({e["datei"].split("/", 2)[-1] for e in abgelehnt})}
 
 
-def daten_sammeln(lauf: Path) -> dict:
+def daten_sammeln(lauf: Path, mit_lektorat: bool = True) -> dict:
     fn = Fussnoten()
+    lektorat = Lektorat(lauf, mit_lektorat)
     lauf_info = lies_lauf(lauf)
-    markt = lies_json(lauf / "markt.json")
-    report = lies_json(lauf / "report.json")
+    markt = lektorat.anwenden("markt.json", lies_json(lauf / "markt.json"))
+    report = lektorat.anwenden("report.json", lies_json(lauf / "report.json"))
     universum = _optional(lauf / "universum.json")
     shortlist_datei = _optional(lauf / "shortlist.json")
-    redteam = _optional(lauf / "redteam.json")
+    redteam = lektorat.anwenden("redteam.json", _optional(lauf / "redteam.json"))
     bottom_up = _optional(lauf / "bottom_up.json")
     t = lambda text: text_zu_html(text, lauf, fn)  # noqa: E731
 
@@ -296,7 +323,7 @@ def daten_sammeln(lauf: Path) -> dict:
                  "anzahl": len(s["kandidaten"]),
                  "auswahl": [k["name"] for k in s["kandidaten"] if k["ticker"] in shortlist]}
                 for s in markt["segmente"]]
-    firmen = firmen_laden(lauf, markt, fn)
+    firmen = firmen_laden(lauf, markt, fn, lektorat)
 
     einwaende, antworten = [], {a["einwand_ref"]: a for a in report["antworten_auf_einwaende"]}
     for e in (redteam or {}).get("einwaende", []):
@@ -330,20 +357,25 @@ def daten_sammeln(lauf: Path) -> dict:
         "score_formel": universum["regeln"]["score_formel"] if universum else None,
         "gate": tuersteher_statistik(lauf), "fussnoten": fn.liste,
         "gold": GOLD, "mittel": MITTEL,
+        "glossar": lektorat.glossar, "lektorat_anzahl": lektorat.anzahl,
         "plotly_js": Markup(get_plotlyjs()), "akzent": AKZENT,
     }
 
 
-def rendern(lauf: Path) -> Path:
-    fehler, warnungen = validiere_datei(lauf / "report.json")
-    if fehler:
-        raise ToolFehler("report.json ist ungültig – erst korrigieren:\n  " + "\n  ".join(fehler))
-    for w in warnungen:
-        print(f"! {w}")
+def rendern(lauf: Path, mit_lektorat: bool = True) -> Path:
+    zu_pruefen = ["report.json"]
+    if mit_lektorat and (lauf / "lektorat.json").is_file():
+        zu_pruefen.append("lektorat.json")
+    for name in zu_pruefen:
+        fehler, warnungen = validiere_datei(lauf / name)
+        if fehler:
+            raise ToolFehler(f"{name} ist ungültig – erst korrigieren:\n  " + "\n  ".join(fehler))
+        for w in warnungen:
+            print(f"! {name}: {w}")
     umgebung = Environment(loader=FileSystemLoader(PROJEKT / "templates"), autoescape=select_autoescape(["html", "j2"]),
                            trim_blocks=True, lstrip_blocks=True)
-    seite = umgebung.get_template("report.html.j2").render(**daten_sammeln(lauf))
-    ziel = lauf / "report.html"
+    seite = umgebung.get_template("report.html.j2").render(**daten_sammeln(lauf, mit_lektorat))
+    ziel = lauf / ("report.html" if mit_lektorat else "report-ohne-lektorat.html")
     ziel.write_text(seite, encoding="utf-8")
     return ziel
 
@@ -353,9 +385,11 @@ def main(argv=None) -> int:
                                      epilog="Beispiel: python3 tools/render.py tests/fixtures/beispiel-lauf --open")
     parser.add_argument("lauf", help="Lauf-Ordner mit report.json, markt.json, firmen/ …")
     parser.add_argument("--open", action="store_true", help="Report danach im Browser öffnen")
+    parser.add_argument("--ohne-lektorat", action="store_true",
+                        help="Rohfassung ohne lektorat.json rendern (-> report-ohne-lektorat.html, zum Vergleichen)")
     args = parser.parse_args(argv)
 
-    ziel = rendern(lauf_ordner(args.lauf))
+    ziel = rendern(lauf_ordner(args.lauf), not args.ohne_lektorat)
     groesse = ziel.stat().st_size / 1e6
     print(f"✓ {ziel} geschrieben ({groesse:.1f} MB, offline lesbar)")
     if args.open:

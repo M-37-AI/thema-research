@@ -53,9 +53,13 @@ Warte, bis alle drei Aufgaben erledigt sind.
 - Schreibe `runs/<lauf>/report.json` nach dem Skill **report-stil**. Zahlen ausschließlich als `{ref:<datei>#<json-pointer>}`.
 - **Jeder Einwand mit `schwere: hoch`** aus `redteam.json` bekommt einen Eintrag in `antworten_auf_einwaende` (`einwand_ref`, `antwort`, `konsequenz`).
 - `python3 tools/validate.py runs/<lauf>/report.json`, bis ✓ (Warnungen zu ausgeschriebenen Zahlen beheben). Dann die Aufgabe als erledigt markieren.
-- `python3 tools/render.py runs/<lauf> --open`
 
-## 7. Abschluss
+## 7. Lektorat
+- Lege `[runs/<lauf>/lektorat.json] Lektorat` an und spawne `lektor` (Typ `lektor`) mit Lauf-Ordner und Aufgabe. Er überarbeitet die Sprache aller Texte, die im Report erscheinen, für interessierte Laien – Inhalt und Zahlen bleiben gleich.
+- Du änderst in dieser Zeit nichts mehr an den Dateien des Laufs. Warte, bis die Aufgabe erledigt ist.
+- Dann: `python3 tools/render.py runs/<lauf> --open` (setzt das Lektorat ein) und zum Vergleich `python3 tools/render.py runs/<lauf> --ohne-lektorat`.
+
+## 8. Abschluss
 Kurze Meldung an den Nutzer:
 - **Dauer** (von `gestartet` in `lauf.json` bis jetzt),
 - **Anzahl der Aufgaben** (erledigt / gesamt),

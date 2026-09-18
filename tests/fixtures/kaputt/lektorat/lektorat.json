@@ -1,0 +1,30 @@
+{
+  "ersetzungen": [
+    {
+      "datei": "report.json",
+      "pfad": "/these",
+      "text": "Die Schätzungen liegen weit auseinander, ab {ref:markt-groesse.json#/schaetzungen/1/marktgroesse} aufwärts – rund 200 Mrd USD sind möglich."
+    },
+    {
+      "datei": "firma.json",
+      "pfad": "/ticker",
+      "text": "BSP"
+    },
+    {
+      "datei": "firma.json",
+      "pfad": "/themen_exposure/begruendung",
+      "text": "Geschätzt."
+    },
+    {
+      "datei": "firma.json",
+      "pfad": "/bull_case/7",
+      "text": "Gibt es nicht."
+    },
+    {
+      "datei": "report.json",
+      "pfad": "/these",
+      "text": "Doppelt."
+    }
+  ],
+  "glossar": []
+}

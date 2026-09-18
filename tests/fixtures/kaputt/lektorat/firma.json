@@ -1,0 +1,29 @@
+{
+  "name": "Beispiel Robotik AG",
+  "ticker": "BSP11.DE",
+  "segment_id": "sensorik",
+  "geschaeftsmodell": "Fiktiver Hersteller von Kraft-Momenten-Sensoren für Roboterarme.",
+  "themen_exposure": {
+    "wert": 65,
+    "einheit": "% Umsatz",
+    "typ": "schaetzung",
+    "begruendung": "Die fiktive Firma nennt Robotik als Hauptabsatzmarkt; der Rest entfällt auf Medizintechnik (ca. ein Drittel).",
+    "abgerufen": "2026-09-18"
+  },
+  "kennzahlen_datei": "data/kennzahlen/BSP11.DE.json",
+  "wettbewerbsposition": "Nischenführer mit hoher Kundenbindung (fiktiv).",
+  "rolle_im_thema": "Zulieferer",
+  "ueberzeugung": {
+    "stufe": "mittel",
+    "begruendung": "Hohes Exposure, aber starke Abhängigkeit von zwei Großkunden (fiktiv)."
+  },
+  "bull_case": [
+    "Mehr Sensoren pro Roboter",
+    "Margenhebel durch Software"
+  ],
+  "bear_case": [
+    "Kundenkonzentration",
+    "Preisdruck durch Anbieter aus Asien"
+  ],
+  "was_uns_widerlegen_wuerde": "Wenn die großen Roboterhersteller Sensorik selbst fertigen."
+}

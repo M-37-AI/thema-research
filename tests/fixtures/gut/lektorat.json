@@ -1,0 +1,20 @@
+{
+  "ersetzungen": [
+    {
+      "datei": "report.json",
+      "pfad": "/these",
+      "text": "Die Schätzungen für den Markt liegen weit auseinander: von {ref:markt-groesse.json#/schaetzungen/1/marktgroesse} bis {ref:markt-groesse.json#/schaetzungen/2/marktgroesse}."
+    },
+    {
+      "datei": "firma.json",
+      "pfad": "/bull_case/0",
+      "text": "Jeder neue Roboter braucht mehr Sensoren als sein Vorgänger."
+    }
+  ],
+  "glossar": [
+    {
+      "begriff": "Themen-Umsatz",
+      "erklaerung": "Der Teil des Umsatzes einer Firma, der direkt am Thema Robotik hängt."
+    }
+  ]
+}

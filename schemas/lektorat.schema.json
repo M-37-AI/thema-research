@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thema-research.local/schemas/lektorat.schema.json",
+  "title": "Lektorat",
+  "description": "Sprachlich ueberarbeitete Fassungen von Texten des Laufs. Die Originaldateien bleiben unveraendert; render.py setzt die Fassungen ein. validate.py prueft zusaetzlich, dass jede Stelle existiert und die Zahlenverweise {ref:...} unveraendert bleiben.",
+  "type": "object",
+  "required": ["ersetzungen", "glossar"],
+  "properties": {
+    "ersetzungen": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["datei", "pfad", "text"],
+        "properties": {
+          "datei": {
+            "type": "string",
+            "pattern": "^(?!.*\\.\\.)[A-Za-z0-9_./-]+\\.json$",
+            "fehlertext": "muss eine JSON-Datei relativ zum Lauf-Ordner sein, z. B. report.json oder firmen/NVDA.json"
+          },
+          "pfad": { "type": "string", "pattern": "^/", "fehlertext": "muss ein JSON-Pointer sein, z. B. /abschnitte/markt" },
+          "text": { "type": "string", "minLength": 1 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "glossar": {
+      "type": "array",
+      "maxItems": 15,
+      "items": {
+        "type": "object",
+        "required": ["begriff", "erklaerung"],
+        "properties": {
+          "begriff": { "type": "string", "minLength": 1, "maxLength": 60 },
+          "erklaerung": { "type": "string", "minLength": 10, "maxLength": 300 }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
