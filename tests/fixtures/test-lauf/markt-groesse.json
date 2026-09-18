@@ -1,0 +1,41 @@
+{
+  "thema": "Robotik (TESTDATEN)",
+  "schaetzungen": [
+    {
+      "herausgeber": "Test-Herausgeber A",
+      "jahr_prognose": 2030,
+      "marktgroesse": {
+        "wert": 80,
+        "einheit": "Mrd USD",
+        "typ": "berichtet",
+        "quelle": "https://example.com/testdaten",
+        "abgerufen": "2026-09-18"
+      },
+      "abgrenzung": "eng (TESTDATEN)"
+    },
+    {
+      "herausgeber": "Test-Herausgeber B",
+      "jahr_prognose": 2030,
+      "marktgroesse": {
+        "wert": 150000,
+        "einheit": "Mio USD",
+        "typ": "berichtet",
+        "quelle": "https://example.com/testdaten",
+        "abgerufen": "2026-09-18"
+      },
+      "abgrenzung": "mittel (TESTDATEN)"
+    },
+    {
+      "herausgeber": "Test-Herausgeber C",
+      "jahr_prognose": 2032,
+      "marktgroesse": {
+        "wert": 200,
+        "einheit": "Mrd EUR",
+        "typ": "berichtet",
+        "quelle": "https://example.com/testdaten",
+        "abgerufen": "2026-09-18"
+      },
+      "abgrenzung": "breit, in EUR – bottom_up muss das überspringen"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "thema": "Robotik (TESTDATEN)",
+  "treiber": [
+    {
+      "titel": "T1",
+      "beschreibung": "TESTDATEN",
+      "belege": [
+        {
+          "aussage": "Testbeleg",
+          "quelle": "https://example.com/testdaten"
+        }
+      ]
+    },
+    {
+      "titel": "T2",
+      "beschreibung": "TESTDATEN",
+      "belege": [
+        {
+          "aussage": "Testbeleg",
+          "quelle": "https://example.com/testdaten"
+        }
+      ]
+    },
+    {
+      "titel": "T3",
+      "beschreibung": "TESTDATEN",
+      "belege": [
+        {
+          "aussage": "Testbeleg",
+          "quelle": "https://example.com/testdaten"
+        }
+      ]
+    }
+  ],
+  "huerden": [
+    {
+      "titel": "H1",
+      "beschreibung": "TESTDATEN",
+      "belege": [
+        {
+          "aussage": "Testbeleg",
+          "quelle": "https://example.com/testdaten"
+        }
+      ]
+    },
+    {
+      "titel": "H2",
+      "beschreibung": "TESTDATEN",
+      "belege": [
+        {
+          "aussage": "Testbeleg",
+          "quelle": "https://example.com/testdaten"
+        }
+      ]
+    },
+    {
+      "titel": "H3",
+      "beschreibung": "TESTDATEN",
+      "belege": [
+        {
+          "aussage": "Testbeleg",
+          "quelle": "https://example.com/testdaten"
+        }
+      ]
+    }
+  ]
+}

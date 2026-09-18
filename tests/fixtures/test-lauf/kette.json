@@ -1,0 +1,140 @@
+{
+  "thema": "Robotik (TESTDATEN)",
+  "segmente": [
+    {
+      "id": "sensorik",
+      "name": "Sensorik & Vision",
+      "beschreibung": "TESTDATEN",
+      "margenprofil": {
+        "stufe": "hoch",
+        "begruendung": "Testbegründung für das Schema."
+      },
+      "kandidaten": [
+        {
+          "name": "Keyence",
+          "ticker": "6861.T",
+          "begruendung": "Testkandidat"
+        },
+        {
+          "name": "Hexagon",
+          "ticker": "HEXA-B.ST",
+          "begruendung": "Testkandidat"
+        },
+        {
+          "name": "Cognex",
+          "ticker": "CGNX",
+          "begruendung": "Testkandidat"
+        }
+      ]
+    },
+    {
+      "id": "antriebe",
+      "name": "Antriebe & Getriebe",
+      "beschreibung": "TESTDATEN",
+      "margenprofil": {
+        "stufe": "mittel",
+        "begruendung": "Testbegründung für das Schema."
+      },
+      "kandidaten": [
+        {
+          "name": "Harmonic Drive Systems",
+          "ticker": "6324.T",
+          "begruendung": "Testkandidat"
+        },
+        {
+          "name": "Nabtesco",
+          "ticker": "6268.T",
+          "begruendung": "Testkandidat"
+        },
+        {
+          "name": "Siemens",
+          "ticker": "SIE.DE",
+          "begruendung": "Testkandidat"
+        }
+      ]
+    },
+    {
+      "id": "ki-software",
+      "name": "KI & Steuerung",
+      "beschreibung": "TESTDATEN",
+      "margenprofil": {
+        "stufe": "hoch",
+        "begruendung": "Testbegründung für das Schema."
+      },
+      "kandidaten": [
+        {
+          "name": "NVIDIA",
+          "ticker": "NVDA",
+          "begruendung": "Testkandidat"
+        },
+        {
+          "name": "Siemens (Duplikat)",
+          "ticker": "SIE.DE",
+          "begruendung": "Testkandidat"
+        },
+        {
+          "name": "Gibt es nicht",
+          "ticker": "XYZROBO.DE",
+          "begruendung": "Testkandidat"
+        }
+      ]
+    },
+    {
+      "id": "integration",
+      "name": "Automatisierung & Integration",
+      "beschreibung": "TESTDATEN",
+      "margenprofil": {
+        "stufe": "niedrig",
+        "begruendung": "Testbegründung für das Schema."
+      },
+      "kandidaten": [
+        {
+          "name": "Rockwell Automation",
+          "ticker": "ROK",
+          "begruendung": "Testkandidat"
+        },
+        {
+          "name": "ABB",
+          "ticker": "ABBN.SW",
+          "begruendung": "Testkandidat"
+        },
+        {
+          "name": "KION",
+          "ticker": "KGX.DE",
+          "begruendung": "Testkandidat"
+        }
+      ]
+    },
+    {
+      "id": "roboter",
+      "name": "Roboterhersteller",
+      "beschreibung": "TESTDATEN",
+      "margenprofil": {
+        "stufe": "mittel",
+        "begruendung": "Testbegründung für das Schema."
+      },
+      "kandidaten": [
+        {
+          "name": "Fanuc",
+          "ticker": "6954.T",
+          "begruendung": "Testkandidat"
+        },
+        {
+          "name": "Yaskawa",
+          "ticker": "6506.T",
+          "begruendung": "Testkandidat"
+        },
+        {
+          "name": "Intuitive Surgical",
+          "ticker": "ISRG",
+          "begruendung": "Testkandidat"
+        },
+        {
+          "name": "Symbotic",
+          "ticker": "SYM",
+          "begruendung": "Testkandidat"
+        }
+      ]
+    }
+  ]
+}

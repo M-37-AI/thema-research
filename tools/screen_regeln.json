@@ -1,0 +1,27 @@
+{
+  "beschreibung": "Regeln fuer screen.py. Aenderungen hier wirken sich direkt auf universum.json aus.",
+  "ausschluss": {
+    "min_marktkapitalisierung_usd_mrd": 1.0,
+    "pflichtfelder": ["marktkapitalisierung_usd", "umsatz_ttm_usd"],
+    "pflichtfelder_erklaerung": "Ohne Marktkapitalisierung und Umsatz in USD sind weder Groessenfilter noch Bottom-up-Check moeglich."
+  },
+  "score": {
+    "formel": "score = 100 * (0.4 * rang(umsatzwachstum_yoy) + 0.3 * rang(operative_marge) + 0.3 * (1 - rang(ev_umsatz)))",
+    "erklaerung": "rang() ist der Perzentilrang (0 bis 1) unter allen aufgenommenen Kandidaten. Hoeheres Wachstum und hoehere Marge sind besser, niedrigere Bewertung (EV/Umsatz) ist besser. Fehlt ein Wert, zaehlt er neutral mit 0.5 und wird im Hinweis vermerkt.",
+    "gewichte": {
+      "umsatzwachstum_yoy": 0.4,
+      "operative_marge": 0.3,
+      "ev_umsatz": 0.3
+    },
+    "hoeher_ist_besser": {
+      "umsatzwachstum_yoy": true,
+      "operative_marge": true,
+      "ev_umsatz": false
+    },
+    "fehlender_wert": 0.5
+  },
+  "shortlist": {
+    "anzahl": 10,
+    "verfahren": "Rundlauf ueber die Segmente: erst der beste Kandidat jedes Segments, dann der zweitbeste usw., jeweils nach Score. So ist jedes Segment vertreten, bevor ein Segment einen zweiten Platz bekommt."
+  }
+}

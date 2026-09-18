@@ -1,0 +1,29 @@
+{
+  "name": "NVIDIA",
+  "ticker": "NVDA",
+  "segment_id": "ki-software",
+  "geschaeftsmodell": "TESTDATEN",
+  "themen_exposure": {
+    "wert": 3,
+    "einheit": "% Umsatz",
+    "typ": "schaetzung",
+    "begruendung": "TESTDATEN: erfundene Schätzung für den Tooltest.",
+    "abgerufen": "2026-09-18"
+  },
+  "kennzahlen_datei": "data/kennzahlen/NVDA.json",
+  "wettbewerbsposition": "TESTDATEN",
+  "rolle_im_thema": "Kernprofiteur",
+  "ueberzeugung": {
+    "stufe": "mittel",
+    "begruendung": "TESTDATEN für den Tooltest."
+  },
+  "bull_case": [
+    "a",
+    "b"
+  ],
+  "bear_case": [
+    "a",
+    "b"
+  ],
+  "was_uns_widerlegen_wuerde": "TESTDATEN"
+}

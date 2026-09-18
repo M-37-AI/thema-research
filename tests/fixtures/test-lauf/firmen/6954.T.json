@@ -1,0 +1,29 @@
+{
+  "name": "Fanuc",
+  "ticker": "6954.T",
+  "segment_id": "roboter",
+  "geschaeftsmodell": "TESTDATEN",
+  "themen_exposure": {
+    "wert": 90,
+    "einheit": "% Umsatz",
+    "typ": "berichtet",
+    "quelle": "https://example.com/testdaten",
+    "abgerufen": "2026-09-18"
+  },
+  "kennzahlen_datei": "data/kennzahlen/6954.T.json",
+  "wettbewerbsposition": "TESTDATEN",
+  "rolle_im_thema": "Kernprofiteur",
+  "ueberzeugung": {
+    "stufe": "mittel",
+    "begruendung": "TESTDATEN für den Tooltest."
+  },
+  "bull_case": [
+    "a",
+    "b"
+  ],
+  "bear_case": [
+    "a",
+    "b"
+  ],
+  "was_uns_widerlegen_wuerde": "TESTDATEN"
+}
