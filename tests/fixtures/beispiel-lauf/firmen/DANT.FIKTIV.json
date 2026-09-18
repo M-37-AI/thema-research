@@ -1,0 +1,31 @@
+{
+  "name": "Demo Antriebstechnik KK",
+  "ticker": "DANT.FIKTIV",
+  "segment_id": "antriebe",
+  "geschaeftsmodell": "Fertigt Servoantriebe für Roboter und Werkzeugmaschinen.",
+  "themen_exposure": {
+    "wert": 45,
+    "einheit": "% Umsatz",
+    "typ": "berichtet",
+    "quelle": "https://example.com/fiktiv/dant/segmentbericht",
+    "abgerufen": "2026-09-18",
+    "jahr": 2025,
+    "herausgeber": "Demo Antriebstechnik KK"
+  },
+  "kennzahlen_datei": "data/kennzahlen/DANT.FIKTIV.json",
+  "wettbewerbsposition": "Breites Portfolio, aber wenig Differenzierung.",
+  "rolle_im_thema": "Zulieferer",
+  "ueberzeugung": {
+    "stufe": "niedrig",
+    "begruendung": "Solide, aber Commodity-Wettbewerb."
+  },
+  "bull_case": [
+    "Volumenwachstum mit dem Markt",
+    "Kostenvorteile durch Skalierung"
+  ],
+  "bear_case": [
+    "Preisverfall bei Standardantrieben",
+    "Geringe Preissetzungsmacht"
+  ],
+  "was_uns_widerlegen_wuerde": "Wenn die Bruttomarge über 45 % steigt – dann läge echte Differenzierung vor."
+}

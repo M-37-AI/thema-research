@@ -1,0 +1,91 @@
+{
+  "einwaende": [
+    {
+      "id": "E1",
+      "ziel": {
+        "datei": "markt.json",
+        "pfad": "/schaetzungen"
+      },
+      "einwand": "Die Schätzungen liegen fast um den Faktor drei auseinander; die höchste ist keine berichtete Zahl, sondern eine Hochrechnung aus einer Wachstumsrate.",
+      "schwere": "hoch"
+    },
+    {
+      "id": "E2",
+      "ziel": {
+        "datei": "markt.json",
+        "pfad": "/schaetzungen/0/marktgroesse"
+      },
+      "einwand": "Der Herausgeber verkauft die zugrundeliegende Studie; die Methodik ist nicht einsehbar.",
+      "schwere": "mittel"
+    },
+    {
+      "id": "E3",
+      "ziel": {
+        "datei": "markt.json",
+        "pfad": "/treiber/1"
+      },
+      "einwand": "Sinkende Stückkosten sind auch ein Risiko: Sie drücken die Umsätze der Hersteller.",
+      "schwere": "mittel",
+      "beleg": {
+        "aussage": "Durchschnittspreis je Roboter seit fünf Jahren rückläufig",
+        "quelle": "https://example.com/fiktiv/preisindex"
+      }
+    },
+    {
+      "id": "E4",
+      "ziel": {
+        "datei": "firmen/BRAG.FIKTIV.json",
+        "pfad": "/bear_case"
+      },
+      "einwand": "Die Autoindustrie steht für mehr als die Hälfte des Auftragseingangs; ein Investitionsstopp träfe das Unternehmen direkt.",
+      "schwere": "mittel"
+    },
+    {
+      "id": "E5",
+      "ziel": {
+        "datei": "firmen/MSEN.FIKTIV.json",
+        "pfad": "/themen_exposure"
+      },
+      "einwand": "Das Exposure ist geschätzt; die Aufteilung innerhalb des Segments ist nicht belegt.",
+      "schwere": "niedrig"
+    },
+    {
+      "id": "E6",
+      "ziel": {
+        "datei": "firmen/FSW.FIKTIV.json",
+        "pfad": "/themen_exposure"
+      },
+      "einwand": "Die Einstufung als Kernprofiteur hängt allein an einer Schätzung aus einer Kundenliste; berichtet ist nichts.",
+      "schwere": "hoch"
+    },
+    {
+      "id": "E7",
+      "ziel": {
+        "datei": "firmen/DANT.FIKTIV.json",
+        "pfad": "/rolle_im_thema"
+      },
+      "einwand": "Mit 45 % Exposure und Commodity-Wettbewerb ist der Beitrag zur These gering.",
+      "schwere": "niedrig"
+    },
+    {
+      "id": "E8",
+      "ziel": {
+        "datei": "firmen/PIND.FIKTIV.json",
+        "pfad": "/rolle_im_thema"
+      },
+      "einwand": "Etikettenschwindel: Die Firma vermarktet sich als Robotik-Wert, der Themen-Umsatz ist marginal.",
+      "schwere": "hoch"
+    },
+    {
+      "id": "E9",
+      "ziel": {
+        "datei": "firmen/EXG.FIKTIV.json",
+        "pfad": "/bull_case/1"
+      },
+      "einwand": "Der Bedarf durch humanoide Roboter ist spekulativ; es gibt noch keine Serienfertigung.",
+      "schwere": "mittel"
+    }
+  ],
+  "bottom_up_kommentar": "Die Auswahl deckt nur einen kleinen Teil des Marktes ab. Das ist bei sechs Firmen erwartbar, zeigt aber, dass die Marktgröße nicht aus den Unternehmenszahlen bestätigt werden kann.",
+  "gesamturteil": "Die These zur Marge in den Komponenten ist tragfähig. Die Marktgröße ist unsicher, und zwei der sechs Firmen tragen die These nur schwach."
+}

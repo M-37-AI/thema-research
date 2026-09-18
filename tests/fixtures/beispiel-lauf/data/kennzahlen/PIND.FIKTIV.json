@@ -1,0 +1,98 @@
+{
+  "ticker": "PIND.FIKTIV",
+  "name": "Platzhalter Industrie AG",
+  "waehrung": "USD",
+  "berichtswaehrung": "USD",
+  "branche": "Fiktiv",
+  "land": "Fiktivland",
+  "abgerufen": "2026-09-18",
+  "kennzahlen": {
+    "marktkapitalisierung": {
+      "wert": 18.0,
+      "einheit": "Mrd USD",
+      "typ": "berichtet",
+      "quelle": "https://example.com/fiktiv/kennzahlen/PIND.FIKTIV",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Fiktive Kennzahlen"
+    },
+    "umsatz_ttm": {
+      "wert": 14.0,
+      "einheit": "Mrd USD",
+      "typ": "berichtet",
+      "quelle": "https://example.com/fiktiv/kennzahlen/PIND.FIKTIV",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Fiktive Kennzahlen"
+    },
+    "umsatzwachstum_yoy": {
+      "wert": 3.0,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://example.com/fiktiv/kennzahlen/PIND.FIKTIV",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Fiktive Kennzahlen"
+    },
+    "bruttomarge": {
+      "wert": 24.0,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://example.com/fiktiv/kennzahlen/PIND.FIKTIV",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Fiktive Kennzahlen"
+    },
+    "operative_marge": {
+      "wert": 9.0,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://example.com/fiktiv/kennzahlen/PIND.FIKTIV",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Fiktive Kennzahlen"
+    },
+    "ev_umsatz": {
+      "wert": 1.2,
+      "einheit": "x",
+      "typ": "berichtet",
+      "quelle": "https://example.com/fiktiv/kennzahlen/PIND.FIKTIV",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Fiktive Kennzahlen"
+    },
+    "kgv": {
+      "wert": 14.1,
+      "einheit": "x",
+      "typ": "berichtet",
+      "quelle": "https://example.com/fiktiv/kennzahlen/PIND.FIKTIV",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Fiktive Kennzahlen"
+    }
+  },
+  "umsatz_ttm_usd": {
+    "wert": 14.0,
+    "einheit": "Mrd USD",
+    "typ": "berichtet",
+    "quelle": "https://example.com/fiktiv/kennzahlen/PIND.FIKTIV",
+    "abgerufen": "2026-09-18",
+    "herausgeber": "Fiktive Kennzahlen",
+    "hinweis": "bereits in USD"
+  },
+  "marktkapitalisierung_usd": {
+    "wert": 18.0,
+    "einheit": "Mrd USD",
+    "typ": "berichtet",
+    "quelle": "https://example.com/fiktiv/kennzahlen/PIND.FIKTIV",
+    "abgerufen": "2026-09-18",
+    "herausgeber": "Fiktive Kennzahlen",
+    "hinweis": "bereits in USD"
+  },
+  "wechselkurse": {
+    "USD": {
+      "wert": 1.0,
+      "einheit": "USD je USD",
+      "typ": "berichtet",
+      "quelle": "https://example.com/fiktiv/kennzahlen/USDUSD=X",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Fiktive Kennzahlen",
+      "jahr": 2026,
+      "hinweis": "Schlusskurs vom 2026-09-18"
+    }
+  },
+  "hinweise": []
+}

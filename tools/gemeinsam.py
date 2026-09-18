@@ -47,3 +47,9 @@ def ausfuehren(main) -> None:
     except ToolFehler as e:
         print(f"✗ {e}", file=sys.stderr)
         sys.exit(1)
+
+
+def kennzahlen_pfad(lauf: Path, relativ: str) -> Path:
+    """Kennzahlen-Datei eines Laufs: erst im Lauf-Ordner (z. B. fiktiver Beispiel-Lauf), dann im Projekt."""
+    im_lauf = lauf / relativ
+    return im_lauf if im_lauf.is_file() else PROJEKT / relativ

@@ -1,0 +1,31 @@
+{
+  "name": "Beispiel Robotik AG",
+  "ticker": "BRAG.FIKTIV",
+  "segment_id": "roboter",
+  "geschaeftsmodell": "Baut Knickarmroboter für die Automobil- und Elektronikindustrie; Service macht ein Fünftel des Umsatzes aus.",
+  "themen_exposure": {
+    "wert": 85,
+    "einheit": "% Umsatz",
+    "typ": "berichtet",
+    "quelle": "https://example.com/fiktiv/brag/geschaeftsbericht-2025",
+    "abgerufen": "2026-09-18",
+    "jahr": 2025,
+    "herausgeber": "Beispiel Robotik AG"
+  },
+  "kennzahlen_datei": "data/kennzahlen/BRAG.FIKTIV.json",
+  "wettbewerbsposition": "Nummer drei in Europa, starke installierte Basis.",
+  "rolle_im_thema": "Kernprofiteur",
+  "ueberzeugung": {
+    "stufe": "mittel",
+    "begruendung": "Hohes Exposure, aber zyklische Kundenbranchen."
+  },
+  "bull_case": [
+    "Wachsende Servicebasis stabilisiert Margen",
+    "Neue Kleinroboter-Reihe öffnet den Mittelstand"
+  ],
+  "bear_case": [
+    "Abhängigkeit von der Autoindustrie",
+    "Preisdruck durch asiatische Anbieter"
+  ],
+  "was_uns_widerlegen_wuerde": "Wenn der Serviceanteil zwei Jahre in Folge sinkt."
+}

@@ -1,0 +1,98 @@
+{
+  "ticker": "MSEN.FIKTIV",
+  "name": "Muster Sensorik SE",
+  "waehrung": "EUR",
+  "berichtswaehrung": "EUR",
+  "branche": "Fiktiv",
+  "land": "Fiktivland",
+  "abgerufen": "2026-09-18",
+  "kennzahlen": {
+    "marktkapitalisierung": {
+      "wert": 4.6,
+      "einheit": "Mrd EUR",
+      "typ": "berichtet",
+      "quelle": "https://example.com/fiktiv/kennzahlen/MSEN.FIKTIV",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Fiktive Kennzahlen"
+    },
+    "umsatz_ttm": {
+      "wert": 0.82,
+      "einheit": "Mrd EUR",
+      "typ": "berichtet",
+      "quelle": "https://example.com/fiktiv/kennzahlen/MSEN.FIKTIV",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Fiktive Kennzahlen"
+    },
+    "umsatzwachstum_yoy": {
+      "wert": 18.0,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://example.com/fiktiv/kennzahlen/MSEN.FIKTIV",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Fiktive Kennzahlen"
+    },
+    "bruttomarge": {
+      "wert": 52.0,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://example.com/fiktiv/kennzahlen/MSEN.FIKTIV",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Fiktive Kennzahlen"
+    },
+    "operative_marge": {
+      "wert": 22.0,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://example.com/fiktiv/kennzahlen/MSEN.FIKTIV",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Fiktive Kennzahlen"
+    },
+    "ev_umsatz": {
+      "wert": 5.4,
+      "einheit": "x",
+      "typ": "berichtet",
+      "quelle": "https://example.com/fiktiv/kennzahlen/MSEN.FIKTIV",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Fiktive Kennzahlen"
+    },
+    "kgv": {
+      "wert": 31.0,
+      "einheit": "x",
+      "typ": "berichtet",
+      "quelle": "https://example.com/fiktiv/kennzahlen/MSEN.FIKTIV",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Fiktive Kennzahlen"
+    }
+  },
+  "umsatz_ttm_usd": {
+    "wert": 0.902,
+    "einheit": "Mrd USD",
+    "typ": "berichtet",
+    "quelle": "https://example.com/fiktiv/kennzahlen/MSEN.FIKTIV",
+    "abgerufen": "2026-09-18",
+    "herausgeber": "Fiktive Kennzahlen",
+    "hinweis": "umgerechnet mit 1.1 USD je Einheit (Kurs vom 2026-09-18)"
+  },
+  "marktkapitalisierung_usd": {
+    "wert": 5.06,
+    "einheit": "Mrd USD",
+    "typ": "berichtet",
+    "quelle": "https://example.com/fiktiv/kennzahlen/MSEN.FIKTIV",
+    "abgerufen": "2026-09-18",
+    "herausgeber": "Fiktive Kennzahlen",
+    "hinweis": "umgerechnet mit 1.1 USD je Einheit (Kurs vom 2026-09-18)"
+  },
+  "wechselkurse": {
+    "EUR": {
+      "wert": 1.1,
+      "einheit": "USD je EUR",
+      "typ": "berichtet",
+      "quelle": "https://example.com/fiktiv/kennzahlen/EURUSD=X",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Fiktive Kennzahlen",
+      "jahr": 2026,
+      "hinweis": "Schlusskurs vom 2026-09-18"
+    }
+  },
+  "hinweise": []
+}

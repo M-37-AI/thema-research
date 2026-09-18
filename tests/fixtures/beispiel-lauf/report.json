@@ -1,0 +1,35 @@
+{
+  "titel": "Robotik: Die Marge wandert zu den Komponenten (fiktives Beispiel)",
+  "kernaussage": "Wir sehen die attraktivste Position in der Robotik bei spezialisierten Komponentenherstellern, nicht bei den Roboterbauern. Die Marktgröße bleibt unsicher, die Schätzungen liegen weit auseinander.",
+  "these": "Wer Engpässe in der Kette besetzt – Präzisionsgetriebe und Sensorik –, verdient überproportional. Exempel Getriebe erzielt eine operative Marge von {ref:data/kennzahlen/EXG.FIKTIV.json#/kennzahlen/operative_marge}, Beispiel Robotik als Roboterhersteller {ref:data/kennzahlen/BRAG.FIKTIV.json#/kennzahlen/operative_marge}.\n\nWas uns widerlegen würde: Wenn neue Getriebe- und Sensoranbieter in Serie liefern und die Bruttomargen der Komponentenhersteller zwei Jahre in Folge sinken.",
+  "abschnitte": {
+    "markt": "Die Schätzungen für 2030 reichen von {ref:markt.json#/schaetzungen/1/marktgroesse} (nur Industrieroboter) bis {ref:markt.json#/schaetzungen/0/marktgroesse} (inkl. Serviceroboter). Eine breitere Abgrenzung kommt bis 2032 auf {ref:markt.json#/schaetzungen/2/marktgroesse}.\n\nWir mitteln diese Werte nicht: Der Unterschied liegt vor allem in der Abgrenzung, nicht in der Prognose.",
+    "treiber_und_huerden": "Der wichtigste Treiber ist der Fachkräftemangel: Die Zahl der Erwerbstätigen in der Fertigung sinkt um {ref:markt.json#/treiber/0/belege/0}. Gleichzeitig sind die Stückkosten um {ref:markt.json#/treiber/1/belege/0} gefallen. Die größte Hürde bleibt die Integration.",
+    "wertschoepfung": "Sensorik und Software haben das höchste Margenprofil. Allein die Sensorik schätzen wir auf {ref:markt.json#/segmente/0/marktgroesse}. Die Systemintegration ist Projektgeschäft mit niedrigen Margen.",
+    "unternehmen": "Die Auswahl deckt alle fünf Segmente ab. Exempel Getriebe hat mit {ref:firmen/EXG.FIKTIV.json#/themen_exposure} das höchste berichtete Exposure. Platzhalter Industrie ist mit {ref:firmen/PIND.FIKTIV.json#/themen_exposure} bewusst als Gegenbeispiel aufgenommen.\n\nWas uns widerlegen würde: Wenn die Komponentenhersteller ihre Margen bei steigenden Volumina nicht halten können.",
+    "risiken": "Das Red Team hält die Marktgröße für kaum belastbar und stellt zwei Einstufungen infrage. Wir teilen die Kritik an der Spanne und haben eine Einstufung angepasst."
+  },
+  "antworten_auf_einwaende": [
+    {
+      "einwand_ref": "E1",
+      "antwort": "Wir zeigen die volle Spanne und nennen die Hochrechnung als Schätzung.",
+      "konsequenz": "Die These stützt sich auf Margen, nicht auf die Marktgröße."
+    },
+    {
+      "einwand_ref": "E6",
+      "antwort": "Der Einwand trifft zu; ohne Segmentbericht bleibt das Exposure unsicher.",
+      "konsequenz": "Überzeugung von hoch auf mittel gesenkt."
+    },
+    {
+      "einwand_ref": "E8",
+      "antwort": "Wir haben die Firma bewusst als Mitläufer eingeordnet.",
+      "konsequenz": "Keine Rolle in der Kernthese; bleibt als Kontrast im Report."
+    }
+  ],
+  "beobachtungspunkte": [
+    "Bruttomargen der Getriebe- und Sensorhersteller in den nächsten zwei Berichtsperioden",
+    "Serienstart humanoider Roboter bei mindestens einem Hersteller",
+    "Auftragseingang der Autoindustrie für Automatisierung",
+    "Veröffentlichung der Norm für mobile Roboter"
+  ]
+}

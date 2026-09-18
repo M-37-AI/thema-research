@@ -1,0 +1,29 @@
+{
+  "name": "Platzhalter Industrie AG",
+  "ticker": "PIND.FIKTIV",
+  "segment_id": "integration",
+  "geschaeftsmodell": "Anlagenbauer mit kleiner Robotik-Integrationssparte.",
+  "themen_exposure": {
+    "wert": 8,
+    "einheit": "% Umsatz",
+    "typ": "schaetzung",
+    "begruendung": "Die Robotiksparte ist Teil des Segments ‚Anlagen‘ (ein Viertel des Umsatzes); wir setzen ein Drittel davon an.",
+    "abgerufen": "2026-09-18"
+  },
+  "kennzahlen_datei": "data/kennzahlen/PIND.FIKTIV.json",
+  "wettbewerbsposition": "Groß, aber in der Robotik nur ein Anbieter unter vielen.",
+  "rolle_im_thema": "Mitlaeufer",
+  "ueberzeugung": {
+    "stufe": "niedrig",
+    "begruendung": "Das Robotik-Etikett trägt wenig zum Geschäft bei."
+  },
+  "bull_case": [
+    "Breite Kundenbasis für Cross-Selling",
+    "Solide Bilanz"
+  ],
+  "bear_case": [
+    "Thema bewegt die Gesamtzahlen kaum",
+    "Projektgeschäft mit Margenrisiken"
+  ],
+  "was_uns_widerlegen_wuerde": "Wenn die Robotiksparte gesondert ausgewiesen wird und über 20 % des Umsatzes erreicht."
+}

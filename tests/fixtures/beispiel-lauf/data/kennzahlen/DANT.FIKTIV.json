@@ -1,0 +1,98 @@
+{
+  "ticker": "DANT.FIKTIV",
+  "name": "Demo Antriebstechnik KK",
+  "waehrung": "USD",
+  "berichtswaehrung": "USD",
+  "branche": "Fiktiv",
+  "land": "Fiktivland",
+  "abgerufen": "2026-09-18",
+  "kennzahlen": {
+    "marktkapitalisierung": {
+      "wert": 4.4,
+      "einheit": "Mrd USD",
+      "typ": "berichtet",
+      "quelle": "https://example.com/fiktiv/kennzahlen/DANT.FIKTIV",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Fiktive Kennzahlen"
+    },
+    "umsatz_ttm": {
+      "wert": 1.6,
+      "einheit": "Mrd USD",
+      "typ": "berichtet",
+      "quelle": "https://example.com/fiktiv/kennzahlen/DANT.FIKTIV",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Fiktive Kennzahlen"
+    },
+    "umsatzwachstum_yoy": {
+      "wert": 7.0,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://example.com/fiktiv/kennzahlen/DANT.FIKTIV",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Fiktive Kennzahlen"
+    },
+    "bruttomarge": {
+      "wert": 38.0,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://example.com/fiktiv/kennzahlen/DANT.FIKTIV",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Fiktive Kennzahlen"
+    },
+    "operative_marge": {
+      "wert": 14.0,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://example.com/fiktiv/kennzahlen/DANT.FIKTIV",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Fiktive Kennzahlen"
+    },
+    "ev_umsatz": {
+      "wert": 2.8,
+      "einheit": "x",
+      "typ": "berichtet",
+      "quelle": "https://example.com/fiktiv/kennzahlen/DANT.FIKTIV",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Fiktive Kennzahlen"
+    },
+    "kgv": {
+      "wert": 22.4,
+      "einheit": "x",
+      "typ": "berichtet",
+      "quelle": "https://example.com/fiktiv/kennzahlen/DANT.FIKTIV",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Fiktive Kennzahlen"
+    }
+  },
+  "umsatz_ttm_usd": {
+    "wert": 1.6,
+    "einheit": "Mrd USD",
+    "typ": "berichtet",
+    "quelle": "https://example.com/fiktiv/kennzahlen/DANT.FIKTIV",
+    "abgerufen": "2026-09-18",
+    "herausgeber": "Fiktive Kennzahlen",
+    "hinweis": "bereits in USD"
+  },
+  "marktkapitalisierung_usd": {
+    "wert": 4.4,
+    "einheit": "Mrd USD",
+    "typ": "berichtet",
+    "quelle": "https://example.com/fiktiv/kennzahlen/DANT.FIKTIV",
+    "abgerufen": "2026-09-18",
+    "herausgeber": "Fiktive Kennzahlen",
+    "hinweis": "bereits in USD"
+  },
+  "wechselkurse": {
+    "USD": {
+      "wert": 1.0,
+      "einheit": "USD je USD",
+      "typ": "berichtet",
+      "quelle": "https://example.com/fiktiv/kennzahlen/USDUSD=X",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Fiktive Kennzahlen",
+      "jahr": 2026,
+      "hinweis": "Schlusskurs vom 2026-09-18"
+    }
+  },
+  "hinweise": []
+}

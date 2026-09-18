@@ -1,0 +1,149 @@
+{
+  "thema": "Robotik (fiktives Beispiel)",
+  "datum": "2026-09-18",
+  "regeln": {
+    "datei": "tools/screen_regeln.json",
+    "score_formel": "score = 100 * (0.4 * rang(umsatzwachstum_yoy) + 0.3 * rang(operative_marge) + 0.3 * (1 - rang(ev_umsatz)))"
+  },
+  "statistik": {
+    "kandidaten": 15,
+    "aufgenommen": 12,
+    "ausgeschlossen": 3
+  },
+  "kandidaten": [
+    {
+      "ticker": "MSEN.FIKTIV",
+      "name": "Muster Sensorik SE",
+      "segment_id": "sensorik",
+      "segment_name": "Sensorik und Bildverarbeitung",
+      "status": "aufgenommen"
+    },
+    {
+      "ticker": "PVIS.FIKTIV",
+      "name": "Probe Vision AG",
+      "segment_id": "sensorik",
+      "segment_name": "Sensorik und Bildverarbeitung",
+      "status": "aufgenommen"
+    },
+    {
+      "ticker": "TOPT.FIKTIV",
+      "name": "Testfall Optik plc",
+      "segment_id": "sensorik",
+      "segment_name": "Sensorik und Bildverarbeitung",
+      "status": "aufgenommen"
+    },
+    {
+      "ticker": "DANT.FIKTIV",
+      "name": "Demo Antriebstechnik KK",
+      "segment_id": "antriebe",
+      "segment_name": "Antriebe und Getriebe",
+      "status": "aufgenommen"
+    },
+    {
+      "ticker": "EXG.FIKTIV",
+      "name": "Exempel Getriebe Oy",
+      "segment_id": "antriebe",
+      "segment_name": "Antriebe und Getriebe",
+      "status": "aufgenommen"
+    },
+    {
+      "ticker": "MMOT.FIKTIV",
+      "name": "Muster Motoren AG",
+      "segment_id": "antriebe",
+      "segment_name": "Antriebe und Getriebe",
+      "status": "aufgenommen"
+    },
+    {
+      "ticker": "FSW.FIKTIV",
+      "name": "Fiktiv Software Inc.",
+      "segment_id": "software",
+      "segment_name": "Steuerung und Software",
+      "status": "aufgenommen"
+    },
+    {
+      "ticker": "BCR.FIKTIV",
+      "name": "Beispiel Cloud Robotics",
+      "segment_id": "software",
+      "segment_name": "Steuerung und Software",
+      "status": "aufgenommen"
+    },
+    {
+      "ticker": "NSYS.FIKTIV",
+      "name": "Nirgendwo Systems",
+      "segment_id": "software",
+      "segment_name": "Steuerung und Software",
+      "status": "ausgeschlossen",
+      "grund": "keine Daten: NSYS.FIKTIV: unbekannter Ticker oder keine Daten bei Yahoo Finance"
+    },
+    {
+      "ticker": "BRAG.FIKTIV",
+      "name": "Beispiel Robotik AG",
+      "segment_id": "roboter",
+      "segment_name": "Roboterhersteller",
+      "status": "aufgenommen"
+    },
+    {
+      "ticker": "DHUM.FIKTIV",
+      "name": "Demo Humanoid Corp.",
+      "segment_id": "roboter",
+      "segment_name": "Roboterhersteller",
+      "status": "aufgenommen"
+    },
+    {
+      "ticker": "WROB.FIKTIV",
+      "name": "Winzig Robotics",
+      "segment_id": "roboter",
+      "segment_name": "Roboterhersteller",
+      "status": "ausgeschlossen",
+      "grund": "Marktkapitalisierung 0.40 Mrd USD unter Mindestwert 1.0 Mrd USD"
+    },
+    {
+      "ticker": "PIND.FIKTIV",
+      "name": "Platzhalter Industrie AG",
+      "segment_id": "integration",
+      "segment_name": "Systemintegration",
+      "status": "aufgenommen"
+    },
+    {
+      "ticker": "MINT.FIKTIV",
+      "name": "Muster Integration GmbH & Co. KGaA",
+      "segment_id": "integration",
+      "segment_name": "Systemintegration",
+      "status": "ausgeschlossen",
+      "grund": "Datenlücke: umsatz_ttm_usd fehlt"
+    },
+    {
+      "ticker": "BAUT.FIKTIV",
+      "name": "Beispiel Automation SA",
+      "segment_id": "integration",
+      "segment_name": "Systemintegration",
+      "status": "aufgenommen"
+    }
+  ],
+  "shortlist_vorschlag": [
+    {
+      "ticker": "BRAG.FIKTIV"
+    },
+    {
+      "ticker": "MSEN.FIKTIV"
+    },
+    {
+      "ticker": "DANT.FIKTIV"
+    },
+    {
+      "ticker": "EXG.FIKTIV"
+    },
+    {
+      "ticker": "FSW.FIKTIV"
+    },
+    {
+      "ticker": "PIND.FIKTIV"
+    },
+    {
+      "ticker": "PVIS.FIKTIV"
+    },
+    {
+      "ticker": "DHUM.FIKTIV"
+    }
+  ]
+}

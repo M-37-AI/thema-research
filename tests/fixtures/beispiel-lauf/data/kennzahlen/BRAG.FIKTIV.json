@@ -1,0 +1,98 @@
+{
+  "ticker": "BRAG.FIKTIV",
+  "name": "Beispiel Robotik AG",
+  "waehrung": "EUR",
+  "berichtswaehrung": "EUR",
+  "branche": "Fiktiv",
+  "land": "Fiktivland",
+  "abgerufen": "2026-09-18",
+  "kennzahlen": {
+    "marktkapitalisierung": {
+      "wert": 5.9,
+      "einheit": "Mrd EUR",
+      "typ": "berichtet",
+      "quelle": "https://example.com/fiktiv/kennzahlen/BRAG.FIKTIV",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Fiktive Kennzahlen"
+    },
+    "umsatz_ttm": {
+      "wert": 2.2,
+      "einheit": "Mrd EUR",
+      "typ": "berichtet",
+      "quelle": "https://example.com/fiktiv/kennzahlen/BRAG.FIKTIV",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Fiktive Kennzahlen"
+    },
+    "umsatzwachstum_yoy": {
+      "wert": 12.0,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://example.com/fiktiv/kennzahlen/BRAG.FIKTIV",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Fiktive Kennzahlen"
+    },
+    "bruttomarge": {
+      "wert": 34.0,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://example.com/fiktiv/kennzahlen/BRAG.FIKTIV",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Fiktive Kennzahlen"
+    },
+    "operative_marge": {
+      "wert": 11.0,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://example.com/fiktiv/kennzahlen/BRAG.FIKTIV",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Fiktive Kennzahlen"
+    },
+    "ev_umsatz": {
+      "wert": 2.1,
+      "einheit": "x",
+      "typ": "berichtet",
+      "quelle": "https://example.com/fiktiv/kennzahlen/BRAG.FIKTIV",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Fiktive Kennzahlen"
+    },
+    "kgv": {
+      "wert": 19.5,
+      "einheit": "x",
+      "typ": "berichtet",
+      "quelle": "https://example.com/fiktiv/kennzahlen/BRAG.FIKTIV",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Fiktive Kennzahlen"
+    }
+  },
+  "umsatz_ttm_usd": {
+    "wert": 2.42,
+    "einheit": "Mrd USD",
+    "typ": "berichtet",
+    "quelle": "https://example.com/fiktiv/kennzahlen/BRAG.FIKTIV",
+    "abgerufen": "2026-09-18",
+    "herausgeber": "Fiktive Kennzahlen",
+    "hinweis": "umgerechnet mit 1.1 USD je Einheit (Kurs vom 2026-09-18)"
+  },
+  "marktkapitalisierung_usd": {
+    "wert": 6.49,
+    "einheit": "Mrd USD",
+    "typ": "berichtet",
+    "quelle": "https://example.com/fiktiv/kennzahlen/BRAG.FIKTIV",
+    "abgerufen": "2026-09-18",
+    "herausgeber": "Fiktive Kennzahlen",
+    "hinweis": "umgerechnet mit 1.1 USD je Einheit (Kurs vom 2026-09-18)"
+  },
+  "wechselkurse": {
+    "EUR": {
+      "wert": 1.1,
+      "einheit": "USD je EUR",
+      "typ": "berichtet",
+      "quelle": "https://example.com/fiktiv/kennzahlen/EURUSD=X",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Fiktive Kennzahlen",
+      "jahr": 2026,
+      "hinweis": "Schlusskurs vom 2026-09-18"
+    }
+  },
+  "hinweise": []
+}

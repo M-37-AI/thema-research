@@ -1,0 +1,31 @@
+{
+  "name": "Exempel Getriebe Oy",
+  "ticker": "EXG.FIKTIV",
+  "segment_id": "antriebe",
+  "geschaeftsmodell": "Stellt Wellgetriebe für Robotergelenke her.",
+  "themen_exposure": {
+    "wert": 92,
+    "einheit": "% Umsatz",
+    "typ": "berichtet",
+    "quelle": "https://example.com/fiktiv/exg/geschaeftsbericht",
+    "abgerufen": "2026-09-18",
+    "jahr": 2025,
+    "herausgeber": "Exempel Getriebe Oy"
+  },
+  "kennzahlen_datei": "data/kennzahlen/EXG.FIKTIV.json",
+  "wettbewerbsposition": "Einer von zwei relevanten Anbietern weltweit.",
+  "rolle_im_thema": "Zulieferer",
+  "ueberzeugung": {
+    "stufe": "hoch",
+    "begruendung": "Engpassposition mit hohem Exposure."
+  },
+  "bull_case": [
+    "Jeder Roboterarm braucht mehrere Getriebe",
+    "Humanoide Roboter vervielfachen den Bedarf"
+  ],
+  "bear_case": [
+    "Kapazitätsausbau könnte Überangebot schaffen",
+    "Hohe Bewertung preist Wachstum ein"
+  ],
+  "was_uns_widerlegen_wuerde": "Wenn ein dritter Anbieter in Serie liefert."
+}

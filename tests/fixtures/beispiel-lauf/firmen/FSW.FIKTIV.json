@@ -1,0 +1,29 @@
+{
+  "name": "Fiktiv Software Inc.",
+  "ticker": "FSW.FIKTIV",
+  "segment_id": "software",
+  "geschaeftsmodell": "Software für KI-gestützte Bahnplanung, als Abonnement.",
+  "themen_exposure": {
+    "wert": 70,
+    "einheit": "% Umsatz",
+    "typ": "schaetzung",
+    "begruendung": "Das Unternehmen berichtet nicht nach Segmenten; wir schätzen den Robotikanteil aus der Kundenliste der Investorenpräsentation.",
+    "abgerufen": "2026-09-18"
+  },
+  "kennzahlen_datei": "data/kennzahlen/FSW.FIKTIV.json",
+  "wettbewerbsposition": "Junger Anbieter mit schnell wachsender Kundenbasis.",
+  "rolle_im_thema": "Kernprofiteur",
+  "ueberzeugung": {
+    "stufe": "mittel",
+    "begruendung": "Hohes Wachstum, aber Exposure nur geschätzt und noch kaum profitabel."
+  },
+  "bull_case": [
+    "Wiederkehrende Umsätze",
+    "Plattformeffekte durch Trainingsdaten"
+  ],
+  "bear_case": [
+    "Große Roboterhersteller bauen eigene Software",
+    "Verluste bei steigenden Zinsen schwer finanzierbar"
+  ],
+  "was_uns_widerlegen_wuerde": "Wenn die Kundenbindung unter 90 % fällt."
+}

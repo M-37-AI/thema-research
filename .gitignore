@@ -8,3 +8,6 @@ runs/*
 !data/cache/.gitkeep
 !data/kennzahlen/.gitkeep
 !runs/.gitkeep
+
+# erzeugte Reports
+**/report.html

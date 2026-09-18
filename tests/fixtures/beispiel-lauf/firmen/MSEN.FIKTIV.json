@@ -1,0 +1,29 @@
+{
+  "name": "Muster Sensorik SE",
+  "ticker": "MSEN.FIKTIV",
+  "segment_id": "sensorik",
+  "geschaeftsmodell": "Entwickelt Kraft-Momenten-Sensoren und Sicherheitssensorik.",
+  "themen_exposure": {
+    "wert": 60,
+    "einheit": "% Umsatz",
+    "typ": "schaetzung",
+    "begruendung": "Das Segment ‚Automation‘ macht laut Bericht zwei Drittel aus; davon entfallen nach unserer Einschätzung rund 90 % auf Roboteranwendungen.",
+    "abgerufen": "2026-09-18"
+  },
+  "kennzahlen_datei": "data/kennzahlen/MSEN.FIKTIV.json",
+  "wettbewerbsposition": "Technologieführer in einer Nische mit Zertifizierungshürden.",
+  "rolle_im_thema": "Zulieferer",
+  "ueberzeugung": {
+    "stufe": "hoch",
+    "begruendung": "Hohe Marge, klarer Engpass in der Kette."
+  },
+  "bull_case": [
+    "Mehr Sensoren pro Roboter",
+    "Zertifizierung schützt vor Nachahmern"
+  ],
+  "bear_case": [
+    "Großkunden könnten selbst entwickeln",
+    "Kleine Unternehmensgröße"
+  ],
+  "was_uns_widerlegen_wuerde": "Wenn ein großer Roboterhersteller eigene Kraftsensoren in Serie bringt."
+}

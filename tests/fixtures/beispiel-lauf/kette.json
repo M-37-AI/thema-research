@@ -1,0 +1,142 @@
+{
+  "thema": "Robotik (fiktives Beispiel)",
+  "segmente": [
+    {
+      "id": "sensorik",
+      "name": "Sensorik und Bildverarbeitung",
+      "beschreibung": "Kraft-, Bild- und Sicherheitssensoren.",
+      "margenprofil": {
+        "stufe": "hoch",
+        "begruendung": "Spezialisierte IP und hohe Wechselkosten bei zertifizierten Komponenten."
+      },
+      "kandidaten": [
+        {
+          "name": "Muster Sensorik SE",
+          "ticker": "MSEN.FIKTIV",
+          "begruendung": "Kraft-Momenten-Sensoren"
+        },
+        {
+          "name": "Probe Vision AG",
+          "ticker": "PVIS.FIKTIV",
+          "begruendung": "Industriekameras"
+        },
+        {
+          "name": "Testfall Optik plc",
+          "ticker": "TOPT.FIKTIV",
+          "begruendung": "Linsen und Laserscanner"
+        }
+      ],
+      "marktgroesse": {
+        "wert": 14,
+        "einheit": "Mrd USD",
+        "typ": "schaetzung",
+        "begruendung": "Rund zwölf Prozent der mittleren Marktschätzung, abgeleitet aus dem Kostenanteil der Sensorik an einer typischen Roboterzelle.",
+        "abgerufen": "2026-09-18"
+      }
+    },
+    {
+      "id": "antriebe",
+      "name": "Antriebe und Getriebe",
+      "beschreibung": "Servomotoren und Präzisionsgetriebe.",
+      "margenprofil": {
+        "stufe": "mittel",
+        "begruendung": "Wenige Anbieter von Präzisionsgetrieben, aber Preisdruck bei Motoren."
+      },
+      "kandidaten": [
+        {
+          "name": "Demo Antriebstechnik KK",
+          "ticker": "DANT.FIKTIV",
+          "begruendung": "Servoantriebe"
+        },
+        {
+          "name": "Exempel Getriebe Oy",
+          "ticker": "EXG.FIKTIV",
+          "begruendung": "Wellgetriebe"
+        },
+        {
+          "name": "Muster Motoren AG",
+          "ticker": "MMOT.FIKTIV",
+          "begruendung": "Standardmotoren"
+        }
+      ]
+    },
+    {
+      "id": "software",
+      "name": "Steuerung und Software",
+      "beschreibung": "Steuerungen, Simulation, KI-Software.",
+      "margenprofil": {
+        "stufe": "hoch",
+        "begruendung": "Software skaliert mit geringen Grenzkosten; Plattformeffekte."
+      },
+      "kandidaten": [
+        {
+          "name": "Fiktiv Software Inc.",
+          "ticker": "FSW.FIKTIV",
+          "begruendung": "KI-Bahnplanung"
+        },
+        {
+          "name": "Beispiel Cloud Robotics",
+          "ticker": "BCR.FIKTIV",
+          "begruendung": "Flottenmanagement"
+        },
+        {
+          "name": "Nirgendwo Systems",
+          "ticker": "NSYS.FIKTIV",
+          "begruendung": "Simulation"
+        }
+      ]
+    },
+    {
+      "id": "roboter",
+      "name": "Roboterhersteller",
+      "beschreibung": "Industrie- und Serviceroboter.",
+      "margenprofil": {
+        "stufe": "mittel",
+        "begruendung": "Starker Wettbewerb, Differenzierung über Service und installierte Basis."
+      },
+      "kandidaten": [
+        {
+          "name": "Beispiel Robotik AG",
+          "ticker": "BRAG.FIKTIV",
+          "begruendung": "Knickarmroboter"
+        },
+        {
+          "name": "Demo Humanoid Corp.",
+          "ticker": "DHUM.FIKTIV",
+          "begruendung": "Humanoide Roboter"
+        },
+        {
+          "name": "Winzig Robotics",
+          "ticker": "WROB.FIKTIV",
+          "begruendung": "Kleinroboter"
+        }
+      ]
+    },
+    {
+      "id": "integration",
+      "name": "Systemintegration",
+      "beschreibung": "Planung und Integration von Anlagen.",
+      "margenprofil": {
+        "stufe": "niedrig",
+        "begruendung": "Projektgeschäft mit geringer Skalierbarkeit und hohem Personaleinsatz."
+      },
+      "kandidaten": [
+        {
+          "name": "Platzhalter Industrie AG",
+          "ticker": "PIND.FIKTIV",
+          "begruendung": "Anlagenbau mit Robotiksparte"
+        },
+        {
+          "name": "Muster Integration GmbH & Co. KGaA",
+          "ticker": "MINT.FIKTIV",
+          "begruendung": "Zellenintegration"
+        },
+        {
+          "name": "Beispiel Automation SA",
+          "ticker": "BAUT.FIKTIV",
+          "begruendung": "Linienautomation"
+        }
+      ]
+    }
+  ]
+}

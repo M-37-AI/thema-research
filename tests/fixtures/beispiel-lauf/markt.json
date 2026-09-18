@@ -1,0 +1,297 @@
+{
+  "thema": "Robotik (fiktives Beispiel)",
+  "datum": "2026-09-18",
+  "schaetzungen": [
+    {
+      "herausgeber": "Beispiel Marktforschung GmbH",
+      "jahr_prognose": 2030,
+      "marktgroesse": {
+        "wert": 118,
+        "einheit": "Mrd USD",
+        "typ": "berichtet",
+        "quelle": "https://example.com/fiktiv/marktforschung/robotik-2030",
+        "abgerufen": "2026-09-18",
+        "jahr": 2030,
+        "herausgeber": "Beispiel Marktforschung GmbH",
+        "hinweis": "Pressemitteilung, Methodik nicht einsehbar"
+      },
+      "cagr": {
+        "wert": 13.5,
+        "einheit": "%",
+        "typ": "berichtet",
+        "quelle": "https://example.com/fiktiv/marktforschung/robotik-2030",
+        "abgerufen": "2026-09-18"
+      },
+      "abgrenzung": "Industrie- und Serviceroboter inkl. Software, ohne Wartung"
+    },
+    {
+      "herausgeber": "Fiktiver Robotikverband e. V.",
+      "jahr_prognose": 2030,
+      "marktgroesse": {
+        "wert": 74,
+        "einheit": "Mrd USD",
+        "typ": "berichtet",
+        "quelle": "https://example.com/fiktiv/verband/jahresstatistik",
+        "abgerufen": "2026-09-18",
+        "jahr": 2030,
+        "herausgeber": "Fiktiver Robotikverband e. V."
+      },
+      "cagr": {
+        "wert": 9.0,
+        "einheit": "%",
+        "typ": "berichtet",
+        "quelle": "https://example.com/fiktiv/verband/jahresstatistik",
+        "abgerufen": "2026-09-18"
+      },
+      "abgrenzung": "nur Industrieroboter, Hardware ab Werk"
+    },
+    {
+      "herausgeber": "Muster Analytics",
+      "jahr_prognose": 2032,
+      "marktgroesse": {
+        "wert": 205,
+        "einheit": "Mrd USD",
+        "typ": "schaetzung",
+        "begruendung": "Hochrechnung des Basiswerts 2025 mit der vom Herausgeber genannten Wachstumsrate von 19 % p. a.; der Herausgeber nennt nur die Rate, nicht den Zielwert.",
+        "abgerufen": "2026-09-18",
+        "jahr": 2032,
+        "herausgeber": "Muster Analytics"
+      },
+      "abgrenzung": "breit: inkl. humanoider Roboter, Komponenten und Software"
+    },
+    {
+      "herausgeber": "Demo Consulting Partners",
+      "jahr_prognose": 2030,
+      "marktgroesse": {
+        "wert": 96,
+        "einheit": "Mrd EUR",
+        "typ": "berichtet",
+        "quelle": "https://example.com/fiktiv/demo-consulting/studie",
+        "abgerufen": "2026-09-18",
+        "jahr": 2030,
+        "herausgeber": "Demo Consulting Partners"
+      },
+      "abgrenzung": "Roboter und Automatisierungssoftware in der Fertigung"
+    }
+  ],
+  "treiber": [
+    {
+      "titel": "Fachkräftemangel",
+      "beschreibung": "Die Zahl der Erwerbstätigen in der Fertigung sinkt in den Kernmärkten. Automatisierung wird vom Effizienz- zum Kapazitätsthema.",
+      "belege": [
+        {
+          "wert": -8.0,
+          "einheit": "%",
+          "typ": "berichtet",
+          "quelle": "https://example.com/fiktiv/statistikamt/erwerbstaetige",
+          "abgerufen": "2026-09-18",
+          "jahr": 2035,
+          "herausgeber": "Fiktives Statistikamt"
+        }
+      ]
+    },
+    {
+      "titel": "Sinkende Stückkosten",
+      "beschreibung": "Sensoren und Antriebe werden durch Skaleneffekte günstiger; die Amortisationszeit eines Roboters verkürzt sich.",
+      "belege": [
+        {
+          "wert": -35.0,
+          "einheit": "%",
+          "typ": "berichtet",
+          "quelle": "https://example.com/fiktiv/verband/kostenindex",
+          "abgerufen": "2026-09-18",
+          "jahr": 2025,
+          "herausgeber": "Fiktiver Robotikverband e. V."
+        },
+        {
+          "aussage": "Amortisation typischer Zellen unter zwei Jahren",
+          "quelle": "https://example.com/fiktiv/fallstudie"
+        }
+      ]
+    },
+    {
+      "titel": "KI-gestützte Steuerung",
+      "beschreibung": "Lernende Steuerungen senken den Programmieraufwand und öffnen Anwendungen mit kleinen Losgrößen.",
+      "belege": [
+        {
+          "aussage": "Programmierzeit je Anwendung laut Pilotprojekt halbiert",
+          "quelle": "https://example.com/fiktiv/pilot"
+        }
+      ]
+    }
+  ],
+  "huerden": [
+    {
+      "titel": "Hohe Anfangsinvestition",
+      "beschreibung": "Mittelständische Anwender scheuen Investitionen bei unsicherer Auslastung.",
+      "belege": [
+        {
+          "aussage": "Investitionsbudgets im Maschinenbau stagnieren",
+          "quelle": "https://example.com/fiktiv/umfrage"
+        }
+      ]
+    },
+    {
+      "titel": "Integrationsaufwand",
+      "beschreibung": "Integration in bestehende Linien kostet oft mehr als der Roboter selbst.",
+      "belege": [
+        {
+          "wert": 60,
+          "einheit": "%",
+          "typ": "schaetzung",
+          "begruendung": "Anteil der Integrationskosten an den Gesamtkosten einer Zelle, abgeleitet aus drei fiktiven Fallstudien.",
+          "abgerufen": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "titel": "Regulierung und Haftung",
+      "beschreibung": "Unklare Haftungsregeln für kollaborierende und mobile Roboter verzögern Projekte.",
+      "belege": [
+        {
+          "aussage": "Normentwurf für mobile Roboter erst 2028 erwartet",
+          "quelle": "https://example.com/fiktiv/norm"
+        }
+      ]
+    }
+  ],
+  "segmente": [
+    {
+      "id": "sensorik",
+      "name": "Sensorik und Bildverarbeitung",
+      "beschreibung": "Kraft-, Bild- und Sicherheitssensoren.",
+      "margenprofil": {
+        "stufe": "hoch",
+        "begruendung": "Spezialisierte IP und hohe Wechselkosten bei zertifizierten Komponenten."
+      },
+      "kandidaten": [
+        {
+          "name": "Muster Sensorik SE",
+          "ticker": "MSEN.FIKTIV",
+          "begruendung": "Kraft-Momenten-Sensoren"
+        },
+        {
+          "name": "Probe Vision AG",
+          "ticker": "PVIS.FIKTIV",
+          "begruendung": "Industriekameras"
+        },
+        {
+          "name": "Testfall Optik plc",
+          "ticker": "TOPT.FIKTIV",
+          "begruendung": "Linsen und Laserscanner"
+        }
+      ],
+      "marktgroesse": {
+        "wert": 14,
+        "einheit": "Mrd USD",
+        "typ": "schaetzung",
+        "begruendung": "Rund zwölf Prozent der mittleren Marktschätzung, abgeleitet aus dem Kostenanteil der Sensorik an einer typischen Roboterzelle.",
+        "abgerufen": "2026-09-18"
+      }
+    },
+    {
+      "id": "antriebe",
+      "name": "Antriebe und Getriebe",
+      "beschreibung": "Servomotoren und Präzisionsgetriebe.",
+      "margenprofil": {
+        "stufe": "mittel",
+        "begruendung": "Wenige Anbieter von Präzisionsgetrieben, aber Preisdruck bei Motoren."
+      },
+      "kandidaten": [
+        {
+          "name": "Demo Antriebstechnik KK",
+          "ticker": "DANT.FIKTIV",
+          "begruendung": "Servoantriebe"
+        },
+        {
+          "name": "Exempel Getriebe Oy",
+          "ticker": "EXG.FIKTIV",
+          "begruendung": "Wellgetriebe"
+        },
+        {
+          "name": "Muster Motoren AG",
+          "ticker": "MMOT.FIKTIV",
+          "begruendung": "Standardmotoren"
+        }
+      ]
+    },
+    {
+      "id": "software",
+      "name": "Steuerung und Software",
+      "beschreibung": "Steuerungen, Simulation, KI-Software.",
+      "margenprofil": {
+        "stufe": "hoch",
+        "begruendung": "Software skaliert mit geringen Grenzkosten; Plattformeffekte."
+      },
+      "kandidaten": [
+        {
+          "name": "Fiktiv Software Inc.",
+          "ticker": "FSW.FIKTIV",
+          "begruendung": "KI-Bahnplanung"
+        },
+        {
+          "name": "Beispiel Cloud Robotics",
+          "ticker": "BCR.FIKTIV",
+          "begruendung": "Flottenmanagement"
+        },
+        {
+          "name": "Nirgendwo Systems",
+          "ticker": "NSYS.FIKTIV",
+          "begruendung": "Simulation"
+        }
+      ]
+    },
+    {
+      "id": "roboter",
+      "name": "Roboterhersteller",
+      "beschreibung": "Industrie- und Serviceroboter.",
+      "margenprofil": {
+        "stufe": "mittel",
+        "begruendung": "Starker Wettbewerb, Differenzierung über Service und installierte Basis."
+      },
+      "kandidaten": [
+        {
+          "name": "Beispiel Robotik AG",
+          "ticker": "BRAG.FIKTIV",
+          "begruendung": "Knickarmroboter"
+        },
+        {
+          "name": "Demo Humanoid Corp.",
+          "ticker": "DHUM.FIKTIV",
+          "begruendung": "Humanoide Roboter"
+        },
+        {
+          "name": "Winzig Robotics",
+          "ticker": "WROB.FIKTIV",
+          "begruendung": "Kleinroboter"
+        }
+      ]
+    },
+    {
+      "id": "integration",
+      "name": "Systemintegration",
+      "beschreibung": "Planung und Integration von Anlagen.",
+      "margenprofil": {
+        "stufe": "niedrig",
+        "begruendung": "Projektgeschäft mit geringer Skalierbarkeit und hohem Personaleinsatz."
+      },
+      "kandidaten": [
+        {
+          "name": "Platzhalter Industrie AG",
+          "ticker": "PIND.FIKTIV",
+          "begruendung": "Anlagenbau mit Robotiksparte"
+        },
+        {
+          "name": "Muster Integration GmbH & Co. KGaA",
+          "ticker": "MINT.FIKTIV",
+          "begruendung": "Zellenintegration"
+        },
+        {
+          "name": "Beispiel Automation SA",
+          "ticker": "BAUT.FIKTIV",
+          "begruendung": "Linienautomation"
+        }
+      ]
+    }
+  ]
+}

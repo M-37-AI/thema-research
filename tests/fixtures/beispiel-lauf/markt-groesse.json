@@ -1,0 +1,76 @@
+{
+  "thema": "Robotik (fiktives Beispiel)",
+  "schaetzungen": [
+    {
+      "herausgeber": "Beispiel Marktforschung GmbH",
+      "jahr_prognose": 2030,
+      "marktgroesse": {
+        "wert": 118,
+        "einheit": "Mrd USD",
+        "typ": "berichtet",
+        "quelle": "https://example.com/fiktiv/marktforschung/robotik-2030",
+        "abgerufen": "2026-09-18",
+        "jahr": 2030,
+        "herausgeber": "Beispiel Marktforschung GmbH",
+        "hinweis": "Pressemitteilung, Methodik nicht einsehbar"
+      },
+      "cagr": {
+        "wert": 13.5,
+        "einheit": "%",
+        "typ": "berichtet",
+        "quelle": "https://example.com/fiktiv/marktforschung/robotik-2030",
+        "abgerufen": "2026-09-18"
+      },
+      "abgrenzung": "Industrie- und Serviceroboter inkl. Software, ohne Wartung"
+    },
+    {
+      "herausgeber": "Fiktiver Robotikverband e. V.",
+      "jahr_prognose": 2030,
+      "marktgroesse": {
+        "wert": 74,
+        "einheit": "Mrd USD",
+        "typ": "berichtet",
+        "quelle": "https://example.com/fiktiv/verband/jahresstatistik",
+        "abgerufen": "2026-09-18",
+        "jahr": 2030,
+        "herausgeber": "Fiktiver Robotikverband e. V."
+      },
+      "cagr": {
+        "wert": 9.0,
+        "einheit": "%",
+        "typ": "berichtet",
+        "quelle": "https://example.com/fiktiv/verband/jahresstatistik",
+        "abgerufen": "2026-09-18"
+      },
+      "abgrenzung": "nur Industrieroboter, Hardware ab Werk"
+    },
+    {
+      "herausgeber": "Muster Analytics",
+      "jahr_prognose": 2032,
+      "marktgroesse": {
+        "wert": 205,
+        "einheit": "Mrd USD",
+        "typ": "schaetzung",
+        "begruendung": "Hochrechnung des Basiswerts 2025 mit der vom Herausgeber genannten Wachstumsrate von 19 % p. a.; der Herausgeber nennt nur die Rate, nicht den Zielwert.",
+        "abgerufen": "2026-09-18",
+        "jahr": 2032,
+        "herausgeber": "Muster Analytics"
+      },
+      "abgrenzung": "breit: inkl. humanoider Roboter, Komponenten und Software"
+    },
+    {
+      "herausgeber": "Demo Consulting Partners",
+      "jahr_prognose": 2030,
+      "marktgroesse": {
+        "wert": 96,
+        "einheit": "Mrd EUR",
+        "typ": "berichtet",
+        "quelle": "https://example.com/fiktiv/demo-consulting/studie",
+        "abgerufen": "2026-09-18",
+        "jahr": 2030,
+        "herausgeber": "Demo Consulting Partners"
+      },
+      "abgrenzung": "Roboter und Automatisierungssoftware in der Fertigung"
+    }
+  ]
+}

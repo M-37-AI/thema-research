@@ -16,7 +16,7 @@ import argparse
 import datetime as dt
 import re
 
-from gemeinsam import PROJEKT, ToolFehler, ausfuehren, lauf_ordner, lies_json, schreib_json
+from gemeinsam import ToolFehler, ausfuehren, kennzahlen_pfad, lauf_ordner, lies_json, schreib_json
 
 FAKTOR = {"Tsd": 1e-6, "Mio": 1e-3, "Mrd": 1.0, "Bio": 1e3}
 
@@ -44,7 +44,7 @@ def berechnen(ordner) -> dict:
     firmen, hinweise = [], []
     for datei in firmen_dateien:
         firma = lies_json(datei)
-        kz_pfad = PROJEKT / firma["kennzahlen_datei"]
+        kz_pfad = kennzahlen_pfad(ordner, firma["kennzahlen_datei"])
         if not kz_pfad.is_file():
             hinweise.append(f"{firma['ticker']}: Kennzahlen-Datei fehlt ({firma['kennzahlen_datei']}) – nicht berücksichtigt")
             continue

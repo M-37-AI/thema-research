@@ -1,0 +1,84 @@
+{
+  "thema": "Robotik (fiktives Beispiel)",
+  "treiber": [
+    {
+      "titel": "Fachkräftemangel",
+      "beschreibung": "Die Zahl der Erwerbstätigen in der Fertigung sinkt in den Kernmärkten. Automatisierung wird vom Effizienz- zum Kapazitätsthema.",
+      "belege": [
+        {
+          "wert": -8.0,
+          "einheit": "%",
+          "typ": "berichtet",
+          "quelle": "https://example.com/fiktiv/statistikamt/erwerbstaetige",
+          "abgerufen": "2026-09-18",
+          "jahr": 2035,
+          "herausgeber": "Fiktives Statistikamt"
+        }
+      ]
+    },
+    {
+      "titel": "Sinkende Stückkosten",
+      "beschreibung": "Sensoren und Antriebe werden durch Skaleneffekte günstiger; die Amortisationszeit eines Roboters verkürzt sich.",
+      "belege": [
+        {
+          "wert": -35.0,
+          "einheit": "%",
+          "typ": "berichtet",
+          "quelle": "https://example.com/fiktiv/verband/kostenindex",
+          "abgerufen": "2026-09-18",
+          "jahr": 2025,
+          "herausgeber": "Fiktiver Robotikverband e. V."
+        },
+        {
+          "aussage": "Amortisation typischer Zellen unter zwei Jahren",
+          "quelle": "https://example.com/fiktiv/fallstudie"
+        }
+      ]
+    },
+    {
+      "titel": "KI-gestützte Steuerung",
+      "beschreibung": "Lernende Steuerungen senken den Programmieraufwand und öffnen Anwendungen mit kleinen Losgrößen.",
+      "belege": [
+        {
+          "aussage": "Programmierzeit je Anwendung laut Pilotprojekt halbiert",
+          "quelle": "https://example.com/fiktiv/pilot"
+        }
+      ]
+    }
+  ],
+  "huerden": [
+    {
+      "titel": "Hohe Anfangsinvestition",
+      "beschreibung": "Mittelständische Anwender scheuen Investitionen bei unsicherer Auslastung.",
+      "belege": [
+        {
+          "aussage": "Investitionsbudgets im Maschinenbau stagnieren",
+          "quelle": "https://example.com/fiktiv/umfrage"
+        }
+      ]
+    },
+    {
+      "titel": "Integrationsaufwand",
+      "beschreibung": "Integration in bestehende Linien kostet oft mehr als der Roboter selbst.",
+      "belege": [
+        {
+          "wert": 60,
+          "einheit": "%",
+          "typ": "schaetzung",
+          "begruendung": "Anteil der Integrationskosten an den Gesamtkosten einer Zelle, abgeleitet aus drei fiktiven Fallstudien.",
+          "abgerufen": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "titel": "Regulierung und Haftung",
+      "beschreibung": "Unklare Haftungsregeln für kollaborierende und mobile Roboter verzögern Projekte.",
+      "belege": [
+        {
+          "aussage": "Normentwurf für mobile Roboter erst 2028 erwartet",
+          "quelle": "https://example.com/fiktiv/norm"
+        }
+      ]
+    }
+  ]
+}

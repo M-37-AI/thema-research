@@ -1,0 +1,124 @@
+{
+  "art": "Näherung – nur Shortlist, TTM-Umsätze gegen Prognosen für 2030, 2032",
+  "summe_themenumsatz": {
+    "wert": 5.064,
+    "einheit": "Mrd USD",
+    "typ": "schaetzung",
+    "begruendung": "Summe aus 6 Firmen der Shortlist (Umsatz TTM × Themen-Exposure); 3 der Exposures sind Schätzungen.",
+    "abgerufen": "2026-09-18",
+    "herausgeber": "eigene Berechnung (bottom_up.py)"
+  },
+  "top_down_unten": {
+    "wert": 74.0,
+    "einheit": "Mrd USD",
+    "typ": "schaetzung",
+    "begruendung": "Niedrigste Top-down-Schätzung (Fiktiver Robotikverband e. V., Prognosejahr 2030).",
+    "abgerufen": "2026-09-18",
+    "herausgeber": "eigene Berechnung (bottom_up.py)"
+  },
+  "top_down_oben": {
+    "wert": 205.0,
+    "einheit": "Mrd USD",
+    "typ": "schaetzung",
+    "begruendung": "Höchste Top-down-Schätzung (Muster Analytics, Prognosejahr 2032).",
+    "abgerufen": "2026-09-18",
+    "herausgeber": "eigene Berechnung (bottom_up.py)"
+  },
+  "abdeckung_bei_unterer_schaetzung": {
+    "wert": 6.843,
+    "einheit": "%",
+    "typ": "schaetzung",
+    "begruendung": "Anteil des Bottom-up-Themenumsatzes an der niedrigsten Marktschätzung. Summe aus 6 Firmen der Shortlist (Umsatz TTM × Themen-Exposure); 3 der Exposures sind Schätzungen.",
+    "abgerufen": "2026-09-18",
+    "herausgeber": "eigene Berechnung (bottom_up.py)"
+  },
+  "abdeckung_bei_oberer_schaetzung": {
+    "wert": 2.47,
+    "einheit": "%",
+    "typ": "schaetzung",
+    "begruendung": "Anteil des Bottom-up-Themenumsatzes an der höchsten Marktschätzung. Summe aus 6 Firmen der Shortlist (Umsatz TTM × Themen-Exposure); 3 der Exposures sind Schätzungen.",
+    "abgerufen": "2026-09-18",
+    "herausgeber": "eigene Berechnung (bottom_up.py)"
+  },
+  "firmen": [
+    {
+      "ticker": "BRAG.FIKTIV",
+      "name": "Beispiel Robotik AG",
+      "segment_id": "roboter",
+      "umsatz_ttm_usd_mrd": 2.42,
+      "exposure_pct": 85,
+      "exposure_typ": "berichtet",
+      "themen_umsatz_usd_mrd": 2.057
+    },
+    {
+      "ticker": "DANT.FIKTIV",
+      "name": "Demo Antriebstechnik KK",
+      "segment_id": "antriebe",
+      "umsatz_ttm_usd_mrd": 1.6,
+      "exposure_pct": 45,
+      "exposure_typ": "berichtet",
+      "themen_umsatz_usd_mrd": 0.72
+    },
+    {
+      "ticker": "EXG.FIKTIV",
+      "name": "Exempel Getriebe Oy",
+      "segment_id": "antriebe",
+      "umsatz_ttm_usd_mrd": 0.3,
+      "exposure_pct": 92,
+      "exposure_typ": "berichtet",
+      "themen_umsatz_usd_mrd": 0.276
+    },
+    {
+      "ticker": "FSW.FIKTIV",
+      "name": "Fiktiv Software Inc.",
+      "segment_id": "software",
+      "umsatz_ttm_usd_mrd": 0.5,
+      "exposure_pct": 70,
+      "exposure_typ": "schaetzung",
+      "themen_umsatz_usd_mrd": 0.35
+    },
+    {
+      "ticker": "MSEN.FIKTIV",
+      "name": "Muster Sensorik SE",
+      "segment_id": "sensorik",
+      "umsatz_ttm_usd_mrd": 0.902,
+      "exposure_pct": 60,
+      "exposure_typ": "schaetzung",
+      "themen_umsatz_usd_mrd": 0.541
+    },
+    {
+      "ticker": "PIND.FIKTIV",
+      "name": "Platzhalter Industrie AG",
+      "segment_id": "integration",
+      "umsatz_ttm_usd_mrd": 14.0,
+      "exposure_pct": 8,
+      "exposure_typ": "schaetzung",
+      "themen_umsatz_usd_mrd": 1.12
+    }
+  ],
+  "exposure_geschaetzt": [
+    "FSW.FIKTIV",
+    "MSEN.FIKTIV",
+    "PIND.FIKTIV"
+  ],
+  "top_down": [
+    {
+      "herausgeber": "Beispiel Marktforschung GmbH",
+      "jahr_prognose": 2030,
+      "mrd_usd": 118.0
+    },
+    {
+      "herausgeber": "Fiktiver Robotikverband e. V.",
+      "jahr_prognose": 2030,
+      "mrd_usd": 74.0
+    },
+    {
+      "herausgeber": "Muster Analytics",
+      "jahr_prognose": 2032,
+      "mrd_usd": 205.0
+    }
+  ],
+  "hinweise": [
+    "Schätzung Demo Consulting Partners: Einheit „Mrd EUR“ nicht in USD umrechenbar – nicht berücksichtigt"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "auswahl": [
+    {
+      "ticker": "BRAG.FIKTIV",
+      "name": "Beispiel Robotik AG",
+      "segment_id": "roboter",
+      "begruendung": "fiktive Begründung"
+    },
+    {
+      "ticker": "MSEN.FIKTIV",
+      "name": "Muster Sensorik SE",
+      "segment_id": "sensorik",
+      "begruendung": "fiktive Begründung"
+    },
+    {
+      "ticker": "DANT.FIKTIV",
+      "name": "Demo Antriebstechnik KK",
+      "segment_id": "antriebe",
+      "begruendung": "fiktive Begründung"
+    },
+    {
+      "ticker": "EXG.FIKTIV",
+      "name": "Exempel Getriebe Oy",
+      "segment_id": "antriebe",
+      "begruendung": "fiktive Begründung"
+    },
+    {
+      "ticker": "FSW.FIKTIV",
+      "name": "Fiktiv Software Inc.",
+      "segment_id": "software",
+      "begruendung": "fiktive Begründung"
+    },
+    {
+      "ticker": "PIND.FIKTIV",
+      "name": "Platzhalter Industrie AG",
+      "segment_id": "integration",
+      "begruendung": "fiktive Begründung"
+    }
+  ],
+  "abweichungen_vom_vorschlag": "Probe Vision und Demo Humanoid nicht aufgenommen, dafür Platzhalter Industrie als Beispiel für einen Mitläufer."
+}

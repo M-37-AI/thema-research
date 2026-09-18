@@ -1,0 +1,98 @@
+{
+  "ticker": "EXG.FIKTIV",
+  "name": "Exempel Getriebe Oy",
+  "waehrung": "USD",
+  "berichtswaehrung": "USD",
+  "branche": "Fiktiv",
+  "land": "Fiktivland",
+  "abgerufen": "2026-09-18",
+  "kennzahlen": {
+    "marktkapitalisierung": {
+      "wert": 2.3,
+      "einheit": "Mrd USD",
+      "typ": "berichtet",
+      "quelle": "https://example.com/fiktiv/kennzahlen/EXG.FIKTIV",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Fiktive Kennzahlen"
+    },
+    "umsatz_ttm": {
+      "wert": 0.3,
+      "einheit": "Mrd USD",
+      "typ": "berichtet",
+      "quelle": "https://example.com/fiktiv/kennzahlen/EXG.FIKTIV",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Fiktive Kennzahlen"
+    },
+    "umsatzwachstum_yoy": {
+      "wert": 22.0,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://example.com/fiktiv/kennzahlen/EXG.FIKTIV",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Fiktive Kennzahlen"
+    },
+    "bruttomarge": {
+      "wert": 47.0,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://example.com/fiktiv/kennzahlen/EXG.FIKTIV",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Fiktive Kennzahlen"
+    },
+    "operative_marge": {
+      "wert": 26.0,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://example.com/fiktiv/kennzahlen/EXG.FIKTIV",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Fiktive Kennzahlen"
+    },
+    "ev_umsatz": {
+      "wert": 7.9,
+      "einheit": "x",
+      "typ": "berichtet",
+      "quelle": "https://example.com/fiktiv/kennzahlen/EXG.FIKTIV",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Fiktive Kennzahlen"
+    },
+    "kgv": {
+      "wert": 35.2,
+      "einheit": "x",
+      "typ": "berichtet",
+      "quelle": "https://example.com/fiktiv/kennzahlen/EXG.FIKTIV",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Fiktive Kennzahlen"
+    }
+  },
+  "umsatz_ttm_usd": {
+    "wert": 0.3,
+    "einheit": "Mrd USD",
+    "typ": "berichtet",
+    "quelle": "https://example.com/fiktiv/kennzahlen/EXG.FIKTIV",
+    "abgerufen": "2026-09-18",
+    "herausgeber": "Fiktive Kennzahlen",
+    "hinweis": "bereits in USD"
+  },
+  "marktkapitalisierung_usd": {
+    "wert": 2.3,
+    "einheit": "Mrd USD",
+    "typ": "berichtet",
+    "quelle": "https://example.com/fiktiv/kennzahlen/EXG.FIKTIV",
+    "abgerufen": "2026-09-18",
+    "herausgeber": "Fiktive Kennzahlen",
+    "hinweis": "bereits in USD"
+  },
+  "wechselkurse": {
+    "USD": {
+      "wert": 1.0,
+      "einheit": "USD je USD",
+      "typ": "berichtet",
+      "quelle": "https://example.com/fiktiv/kennzahlen/USDUSD=X",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Fiktive Kennzahlen",
+      "jahr": 2026,
+      "hinweis": "Schlusskurs vom 2026-09-18"
+    }
+  },
+  "hinweise": []
+}
