@@ -5,7 +5,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ kopf.titel }}</title>
-<script>{{ plotly_js }}</script>
 <style>
   :root {
     --marine: {{ akzent }}; --mittel: {{ mittel }}; --gold: {{ gold }};
@@ -70,6 +69,50 @@
   .exhibit .nr { font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); font-weight: 700; white-space: nowrap; }
   .exhibit .titel { font-weight: 600; color: var(--marine); font-size: .92rem; }
   .exhibit .quelle { border-top: 1px solid var(--linie); padding-top: 6px; font-size: .74rem; color: var(--leise); }
+
+  /* ---------- Exhibit 1: Balken ab null ---------- */
+  .balken { margin: 10px 0 4px; font-size: .82rem; }
+  .balken .zeile { display: grid; grid-template-columns: minmax(150px, 34%) 1fr; gap: 14px; align-items: center; padding: 6px 0; }
+  .balken .wer { line-height: 1.3; }
+  .balken .wer b { display: block; color: var(--text); font-weight: 600; }
+  .balken .wer span { color: var(--leise); font-size: .74rem; }
+  .balken .spur { position: relative; height: 18px; margin-right: 96px; }
+  .balken .gitter { position: absolute; top: -6px; bottom: -6px; width: 1px; background: #e1e0d9; }
+  .balken .gitter.null { background: #c3c2b7; }
+  .balken .balken-fuellung { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 0 4px 4px 0; }
+  .balken .wert { position: absolute; top: 50%; transform: translateY(-50%); white-space: nowrap; font-size: .8rem; }
+  .balken .achse-zeile { display: grid; grid-template-columns: minmax(150px, 34%) 1fr; gap: 14px; }
+  .balken .achse { position: relative; height: 18px; margin-right: 96px; font-size: .7rem; color: #898781; font-variant-numeric: tabular-nums; }
+  .balken .achse span { position: absolute; transform: translateX(-50%); top: 2px; }
+
+  /* ---------- Exhibit 2: Kandidaten als Kärtchen ---------- */
+  .chips { display: flex; flex-wrap: wrap; gap: 5px; }
+  .chip { display: inline-flex; align-items: baseline; gap: 5px; padding: 2px 8px; border-radius: 3px; font-size: .76rem;
+          border: 1px solid var(--linie); background: #fff; color: var(--text); white-space: nowrap; cursor: default; }
+  .chip small { font-size: .66rem; color: var(--leise); letter-spacing: .03em; }
+  .chip.gewaehlt { background: #2a78d6; border-color: #2a78d6; color: #fff; font-weight: 600; }
+  .chip.gewaehlt small { color: #dbe8f8; }
+  .chip.ausgeschlossen { color: #898781; background: var(--flaeche); text-decoration: line-through; }
+  .chip-legende { display: flex; flex-wrap: wrap; gap: 14px; font-size: .74rem; color: var(--leise); margin-top: 8px; }
+  .chip-legende .chip { text-decoration: none; }
+
+  /* ---------- Exhibit 4: Streudiagramm ---------- */
+  svg.streuung { width: 100%; height: auto; display: block; font-family: var(--sans); }
+  svg.streuung .achse { font-size: 11px; fill: #898781; font-variant-numeric: tabular-nums; }
+  svg.streuung .achsentitel { font-size: 11px; fill: #52514e; }
+  svg.streuung .marke { font-size: 11px; font-weight: 600; fill: #52514e; }
+  svg.streuung .punkt { cursor: default; outline: none; }
+  svg.streuung .punkt:hover circle:nth-of-type(3), svg.streuung .punkt:focus circle:nth-of-type(3) { stroke-width: 4; }
+  .legende { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: .76rem; color: var(--text); margin: 4px 0 6px; }
+  .legende span { display: inline-flex; align-items: center; gap: 6px; }
+  .legende i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  .legende i.offen { background: #fff; border: 2px solid #898781; width: 8px; height: 8px; }
+
+  /* ---------- Tooltip ---------- */
+  .tooltip { position: fixed; z-index: 10; pointer-events: none; background: #fff; border: 1px solid rgba(11,11,11,.12);
+             box-shadow: 0 4px 14px rgba(0,0,0,.08); border-radius: 4px; padding: 7px 10px; font-size: .76rem; line-height: 1.45;
+             color: #52514e; max-width: 280px; }
+  .tooltip b { color: var(--text); display: block; }
 
   /* ---------- Tabellen ---------- */
   .tabelle { overflow-x: auto; }
@@ -159,6 +202,8 @@
     h2 { break-after: avoid; }
     .exhibit, .karte, .einwand, tr, .kennziffern { break-inside: avoid; }
     a { color: inherit; text-decoration: none; }
+    .tooltip { display: none; }
+    .chip.gewaehlt, .balken .balken-fuellung, svg.streuung { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   }
 </style>
 </head>
@@ -192,12 +237,25 @@
   <section id="markt">
     <h2><span class="nr">02</span>Markt</h2>
     {{ abschnitte.markt }}
-    {% if chart_spanne %}
+    {% if spanne.zeilen %}
     <div class="exhibit">
-      <div class="kopf"><span class="nr">Exhibit 1</span><span class="titel">Spanne der Marktschätzungen je Herausgeber (Mrd USD)</span></div>
-      {{ chart_spanne }}
-      <div class="quelle">Quelle: Angaben der Herausgeber, eigene Darstellung. Heller Balken = Schätzung (nicht berichtet).
-      {% if chart_ausgelassen %} Nicht dargestellt (andere Einheit/Währung): {{ chart_ausgelassen|join(", ") }}.{% endif %}</div>
+      <div class="kopf"><span class="nr">Exhibit 1</span><span class="titel">Marktschätzungen nach Herausgeber (Mrd USD)</span></div>
+      <div class="balken" role="img" aria-label="Balkendiagramm der Marktschätzungen">
+        {% for z in spanne.zeilen %}
+        <div class="zeile">
+          <div class="wer"><b>{{ z.herausgeber }} ({{ z.jahr }})</b><span>{{ z.abgrenzung }}</span></div>
+          <div class="spur">
+            {% for a in spanne.achse %}<i class="gitter{% if loop.first %} null{% endif %}" style="left: {{ a.pos }}%"></i>{% endfor %}
+            <div class="balken-fuellung" data-tipp="{{ z.herausgeber }}|Prognose für {{ z.jahr }}: {% if z.schaetzung %}~{% endif %}{{ '%.1f'|format(z.mrd) }} Mrd USD{% if z.schaetzung %} (Schätzung){% endif %}|{{ z.abgrenzung }}"
+                 style="width: {{ z.breite }}%; background: {{ spanne.farbe_schaetzung if z.schaetzung else spanne.farbe }}"></div>
+            <span class="wert" style="left: calc({{ z.breite }}% + 8px)">{{ z.wert }}</span>
+          </div>
+        </div>
+        {% endfor %}
+        <div class="achse-zeile"><div></div><div class="achse">{% for a in spanne.achse %}<span style="left: {{ a.pos }}%">{{ a.wert }}</span>{% endfor %}</div></div>
+      </div>
+      <div class="quelle">Quelle: Angaben der Herausgeber, eigene Darstellung. Balken ab null; hellere Balken mit „~“ sind Schätzungen, keine berichteten Werte. Die Abgrenzung erklärt die Unterschiede.
+      {% if spanne.ausgelassen %} Nicht dargestellt (andere Währung/Einheit): {{ spanne.ausgelassen|join(", ") }}.{% endif %}</div>
     </div>
     {% endif %}
     <div class="tabelle"><table>
@@ -230,20 +288,22 @@
     <h2><span class="nr">04</span>Wertschöpfungskette</h2>
     {{ abschnitte.wertschoepfung }}
     <div class="exhibit">
-      <div class="kopf"><span class="nr">Exhibit 2</span><span class="titel">Segmente und börsennotierte Kandidaten</span></div>
-      {{ chart_kette }}
-      <div class="quelle">Quelle: Research-Team, Screening. Dunkel = in der Auswahl, hell = gescreent, grau = ausgeschlossen.</div>
+      <div class="kopf"><span class="nr">Exhibit 2</span><span class="titel">Segmente der Wertschöpfungskette und ihre börsennotierten Kandidaten</span></div>
+      <div class="tabelle"><table>
+        {% set mit_groesse = segmente|selectattr("groesse")|list|length > 0 %}
+        <thead><tr><th>Segment</th><th>Margenprofil</th>{% if mit_groesse %}<th class="r">Größe</th>{% endif %}<th>Unternehmen</th></tr></thead>
+        <tbody>
+        {% for s in segmente %}
+        <tr><td style="min-width: 160px"><b>{{ s.name }}</b><span class="sub">{{ s.beschreibung }}</span></td>
+            <td style="min-width: 150px"><span class="tag marge-{{ s.marge.stufe }}">{{ s.marge.stufe }}</span><span class="sub">{{ s.marge.begruendung }}</span></td>
+            {% if mit_groesse %}<td class="r">{{ s.groesse or "–" }}</td>{% endif %}
+            <td><div class="chips">{% for k in s.kandidaten %}<span class="chip {{ k.art }}" tabindex="0" data-tipp="{{ k.name }} ({{ k.ticker }})|{{ k.hinweis }}">{% if k.art == "gewaehlt" %}✓ {% endif %}{{ k.name }} <small>{{ k.ticker }}</small></span>{% endfor %}</div></td></tr>
+        {% endfor %}
+        </tbody>
+      </table></div>
+      <div class="chip-legende"><span><span class="chip gewaehlt">✓ Name</span> in der Auswahl</span><span><span class="chip">Name</span> gescreent</span><span><span class="chip ausgeschlossen" style="text-decoration: line-through">Name</span> ausgeschlossen (Grund beim Überfahren)</span></div>
+      <div class="quelle">Quelle: Research-Team, Screening mit Kennzahlen von Yahoo Finance.</div>
     </div>
-    <div class="tabelle"><table>
-      <thead><tr><th>Segment</th><th>Margenprofil</th><th class="r">Größe</th><th class="r">Kand.</th><th>Auswahl</th></tr></thead>
-      <tbody>
-      {% for s in segmente %}
-      <tr><td><b>{{ s.name }}</b><span class="sub">{{ s.beschreibung }}</span></td>
-          <td><span class="tag marge-{{ s.marge.stufe }}">{{ s.marge.stufe }}</span><span class="sub">{{ s.marge.begruendung }}</span></td>
-          <td class="r">{{ s.groesse or "–" }}</td><td class="r">{{ s.anzahl }}</td><td>{{ s.auswahl|join(", ") or "–" }}</td></tr>
-      {% endfor %}
-      </tbody>
-    </table></div>
   </section>
 
   <section id="unternehmen">
@@ -264,11 +324,17 @@
       </table></div>
       <div class="quelle">Quelle: Unternehmensangaben, Kennzahlen letzte zwölf Monate. Exposure = Anteil des Umsatzes, der am Thema hängt; kursiv mit „~“ = Schätzung. Überzeugung ●●● hoch · ●●○ mittel · ●○○ niedrig.</div>
     </div>
-    {% if chart_streuung %}
+    {% if streuung %}
     <div class="exhibit">
-      <div class="kopf"><span class="nr">Exhibit 4</span><span class="titel">Themen-Exposure gegen Bewertung</span></div>
-      {{ chart_streuung }}
-      <div class="quelle">Quelle: Research-Team, Kennzahlen. Punktgröße = Marktkapitalisierung in USD; offener Kreis = Exposure geschätzt.</div>
+      <div class="kopf"><span class="nr">Exhibit 4</span><span class="titel">Wie viel Umsatz am Thema hängt – und wie teuer die Aktie ist</span></div>
+      <div class="legende">
+        <span><i style="background: {{ serie.Kernprofiteur }}"></i>Kernprofiteur</span>
+        <span><i style="background: {{ serie.Zulieferer }}"></i>Zulieferer</span>
+        <span><i style="background: {{ serie.Mitlaeufer }}"></i>Mitläufer</span>
+        <span><i class="offen"></i>offener Kreis = Exposure geschätzt</span>
+      </div>
+      {{ streuung }}
+      <div class="quelle">Quelle: Research-Team, Kennzahlen von Yahoo Finance (letzte zwölf Monate). Die Werte stehen auch in Exhibit 3.</div>
     </div>
     {% endif %}
     <div class="karten">
@@ -392,5 +458,30 @@
 </div>
 
 <div class="fuss"><span>Thematic Research · {{ thema }}</span><span>Keine Anlageberatung</span></div>
+<div class="tooltip" hidden></div>
+<script>
+/* Tooltips ergänzen nur – jeder Wert steht auch als Beschriftung oder in einer Tabelle. */
+(function () {
+  var tipp = document.querySelector(".tooltip");
+  function zeigen(el, x, y) {
+    var zeilen = (el.getAttribute("data-tipp") || "").split("|");
+    tipp.textContent = "";
+    zeilen.forEach(function (z, i) { var e = document.createElement(i ? "div" : "b"); e.textContent = z; tipp.appendChild(e); });
+    tipp.hidden = false;
+    var r = tipp.getBoundingClientRect();
+    tipp.style.left = Math.min(x + 14, window.innerWidth - r.width - 8) + "px";
+    tipp.style.top = Math.max(8, y - r.height - 12) + "px";
+  }
+  document.addEventListener("pointermove", function (ev) {
+    var el = ev.target.closest && ev.target.closest("[data-tipp]");
+    if (el) { zeigen(el, ev.clientX, ev.clientY); } else { tipp.hidden = true; }
+  });
+  document.addEventListener("focusin", function (ev) {
+    var el = ev.target.closest && ev.target.closest("[data-tipp]");
+    if (el) { var r = el.getBoundingClientRect(); zeigen(el, r.left + r.width / 2, r.top); }
+  });
+  document.addEventListener("focusout", function () { tipp.hidden = true; });
+})();
+</script>
 </body>
 </html>

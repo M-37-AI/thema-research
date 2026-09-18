@@ -4,7 +4,8 @@
 - Prüft report.json vorher mit validate.py (Fehler -> Abbruch).
 - Ersetzt jeden Verweis {ref:<datei>#<pointer>} durch den formatierten Wert
   (Schätzungen mit „~“) und eine nummerierte Fußnote; gleiche Quellen teilen sich eine Fußnote.
-- Plotly wird inline eingebettet, der Report funktioniert offline.
+- Die Exhibits sind reines SVG/HTML (keine JavaScript-Bibliothek): offline lesbar,
+  druckbar, klein. Ein kurzes Skript ergänzt nur Tooltips.
 - Liegt lektorat.json im Lauf, werden die sprachlich überarbeiteten Texte eingesetzt
   (die Originaldateien bleiben unverändert); --ohne-lektorat rendert die Rohfassung.
 
@@ -29,18 +30,17 @@ from markupsafe import Markup
 from gemeinsam import PROJEKT, ToolFehler, ausfuehren, kennzahlen_pfad, lauf_ordner, lies_json, lies_lauf
 from validate import REF_MUSTER, json_pointer_aufloesen, validiere_datei, verweis_aufloesen
 
-AKZENT = "#0b2545"   # Marine – Titelband, Überschriften, Kernwerte
-MITTEL = "#3e6ea8"   # zweite Datenfarbe
+AKZENT = "#0b2545"   # Marine – Überschriften, Kernwerte (Text, keine Datenfarbe)
+MITTEL = "#3e6ea8"   # Links und Fußnoten
 GOLD = "#b8912f"     # Akzentlinie
-GRAU = "#8a94a6"
-HELL = "#c5d3e6"
-SCHRIFT = "Helvetica Neue, Helvetica, Arial, sans-serif"
 
 
 # ---------------------------------------------------------------- Zahlen und Fußnoten
 
 def zahl_text(wert: float) -> str:
     """Deutsche Zahlformatierung mit sinnvoller Genauigkeit."""
+    if wert == 0:
+        return "0"
     betrag = abs(wert)
     stellen = 0 if betrag >= 100 else 1 if betrag >= 1 else 2
     text = f"{wert:,.{stellen}f}".replace(",", " ").replace(".", ",")
@@ -113,13 +113,17 @@ def text_zu_html(text: str, lauf: Path, fn: Fussnoten) -> Markup:
     return Markup("".join(f"<p>{a.replace(chr(10), '<br>')}</p>" for a in absaetze))
 
 
-# ---------------------------------------------------------------- Charts
+# ---------------------------------------------------------------- Exhibits (SVG/HTML, ohne JavaScript-Bibliothek)
+#
+# Gestaltung nach dem Dataviz-Verfahren: Form nach Aufgabe, Farben aus einer
+# validierten Palette (validate_palette.js: Slots 1–3 bestehen alle Paar-Prüfungen
+# auf Weiß; Aqua < 3:1 Kontrast -> immer direkt beschriftet + Tabelle), dünne Marken,
+# Haarlinien-Raster, Balken ab null, Tooltips nur als Ergänzung.
 
-def _layout(**extra) -> dict:
-    basis = dict(template="simple_white", font=dict(family=SCHRIFT, size=13, color="#1a1a1a"),
-                 margin=dict(l=10, r=20, t=10, b=40), paper_bgcolor="white", plot_bgcolor="white")
-    basis.update(extra)
-    return basis
+SERIE = {"Kernprofiteur": "#2a78d6", "Zulieferer": "#eb6834", "Mitlaeufer": "#1baf7a"}  # feste Zuordnung je Rolle
+BALKEN = "#2a78d6"          # eine Reihe -> Slot 1
+BALKEN_SCHAETZUNG = "#86b6ef"  # heller Schritt derselben Rampe (+ „~“ als Zweitkodierung)
+RASTER, ACHSE, LEISE = "#e1e0d9", "#c3c2b7", "#898781"
 
 
 def _in_mrd_usd(zahl: dict) -> float | None:
@@ -129,89 +133,121 @@ def _in_mrd_usd(zahl: dict) -> float | None:
     return zahl["wert"] * {"Tsd": 1e-6, "Mio": 1e-3, "Mrd": 1.0, "Bio": 1e3}[treffer.group(1)]
 
 
-def chart_spanne(markt: dict) -> tuple[str, list[str]]:
-    """Chart 1: Schätzungen je Herausgeber als Bereichsbalken über die Gesamtspanne."""
-    import plotly.graph_objects as go
-    punkte, ausgelassen = [], []
+def _runde_skala(maximum: float) -> list[float]:
+    """Saubere Achsenwerte 0 … ≥ maximum (1-2-2,5-5-Raster, 4–6 Schritte, kleinste Obergrenze gewinnt)."""
+    if maximum <= 0:
+        return [0, 1]
+    beste = None
+    for schritte in (4, 5, 6):
+        roh = maximum / schritte
+        groesse = 10 ** math.floor(math.log10(roh))
+        schritt = next(f * groesse for f in (1, 2, 2.5, 5, 10) if f * groesse >= roh)
+        achse = [round(i * schritt, 6) for i in range(int(math.ceil(maximum / schritt - 1e-9)) + 1)]
+        if beste is None or achse[-1] < beste[-1]:
+            beste = achse
+    return beste
+
+
+FIRMENZUSAETZE = {"inc", "inc.", "corp", "corp.", "corporation", "co.", "ltd", "ltd.", "ag", "se", "sa", "plc", "nv",
+                  "systems", "technology", "technologies", "group", "holdings", "shenzhen", "&", "company"}
+
+
+def kurzname(name: str) -> str:
+    """„Shenzhen Inovance Technology“ -> „Inovance“, „Rockwell Automation, Inc.“ -> „Rockwell Automation“."""
+    woerter = [w for w in name.replace(",", " ").split() if w.lower() not in FIRMENZUSAETZE]
+    return " ".join(woerter[:2]) or name
+
+
+def erster_satz(text: str) -> str:
+    treffer = re.match(r"(.+?[.!?])(\s|$)", text.strip())
+    return treffer.group(1) if treffer else text
+
+
+def exhibit_spanne(markt: dict, fn: Fussnoten) -> dict:
+    """Exhibit 1: Marktschätzungen als waagerechte Balken ab null, eine Reihe."""
+    zeilen, ausgelassen = [], []
     for s in markt["schaetzungen"]:
         mrd = _in_mrd_usd(s["marktgroesse"])
         if mrd is None:
             ausgelassen.append(f"{s['herausgeber']} ({s['marktgroesse'].get('einheit')})")
             continue
-        punkte.append((f"{s['herausgeber']} ({s['jahr_prognose']})", mrd, s["marktgroesse"].get("typ")))
-    if not punkte:
-        return "", ausgelassen
-    punkte.sort(key=lambda p: p[1])
-    unten, oben = punkte[0][1], punkte[-1][1]
-    namen = [p[0] for p in punkte]
-    fig = go.Figure()
-    # Gesamtspanne als heller Hintergrundbalken, jede Schätzung als Balken von der Untergrenze bis zu ihrem Wert
-    fig.add_trace(go.Bar(y=namen, x=[oben - unten] * len(punkte), base=[unten] * len(punkte), orientation="h",
-                         marker=dict(color="#eef2f8"), hoverinfo="skip", showlegend=False))
-    fig.add_trace(go.Bar(y=namen, x=[max(p[1] - unten, (oben - unten) * 0.004) for p in punkte],
-                         base=[unten] * len(punkte), orientation="h",
-                         marker=dict(color=[HELL if p[2] == "schaetzung" else AKZENT for p in punkte]),
-                         text=[("~" if p[2] == "schaetzung" else "") + zahl_text(p[1]) for p in punkte],
-                         textposition="outside", cliponaxis=False, showlegend=False,
-                         hovertemplate="%{y}: %{text} Mrd USD<extra></extra>"))
-    fig.update_layout(**_layout(barmode="overlay", height=90 + 46 * len(punkte), bargap=0.45,
-                                xaxis=dict(title="Marktgröße, Mrd USD (Prognosejahr in Klammern)",
-                                           range=[unten * 0.9, oben * 1.12], showgrid=True, gridcolor="#eee"),
-                                yaxis=dict(automargin=True)))
-    return fig.to_html(full_html=False, include_plotlyjs=False, config={"displayModeBar": False}), ausgelassen
+        zeilen.append({"herausgeber": s["herausgeber"], "jahr": s["jahr_prognose"],
+                       "abgrenzung": erster_satz(s.get("abgrenzung", "")),
+                       "mrd": mrd, "schaetzung": s["marktgroesse"].get("typ") == "schaetzung",
+                       "wert": fn.zahl(s["marktgroesse"])})
+    if not zeilen:
+        return {"zeilen": [], "achse": [], "ausgelassen": ausgelassen}
+    zeilen.sort(key=lambda z: -z["mrd"])
+    achse = _runde_skala(max(z["mrd"] for z in zeilen))
+    for z in zeilen:
+        z["breite"] = round(100 * z["mrd"] / achse[-1], 2)
+    return {"zeilen": zeilen, "achse": [{"wert": zahl_text(a), "pos": round(100 * a / achse[-1], 2)} for a in achse],
+            "ausgelassen": ausgelassen, "farbe": BALKEN, "farbe_schaetzung": BALKEN_SCHAETZUNG}
 
 
-def chart_kette(markt: dict, universum: dict | None, shortlist: set[str]) -> str:
-    """Chart 2: Treemap Segmente -> Firmen, Farbe nach Status."""
-    import plotly.graph_objects as go
-    status = {k["ticker"]: k["status"] for k in (universum or {}).get("kandidaten", []) if "status" in k}
-    ids, labels, parents, farben = [], [], [], []
+def exhibit_kette(markt: dict, universum: dict | None, shortlist: set[str], fn: Fussnoten) -> list[dict]:
+    """Exhibit 2: Segmente mit ihren Kandidaten – eine Tabelle statt einer Treemap (Fläche trüge keine Information)."""
+    status = {k["ticker"]: k for k in (universum or {}).get("kandidaten", []) if "status" in k}
+    zeilen = []
     for seg in markt["segmente"]:
-        ids.append(seg["id"]); labels.append(seg["name"]); parents.append(""); farben.append("#f4f6fa")
+        kandidaten = []
         for k in seg["kandidaten"]:
-            t = k["ticker"]
-            if t in shortlist:
-                farbe = AKZENT
-            elif status.get(t) == "ausgeschlossen":
-                farbe = "#e4e4e4"
+            info = status.get(k["ticker"], {})
+            if k["ticker"] in shortlist:
+                art, hinweis = "gewaehlt", "In der Auswahl"
+            elif info.get("status") == "ausgeschlossen":
+                art, hinweis = "ausgeschlossen", f"Ausgeschlossen: {info.get('grund', '')}"
             else:
-                farbe = HELL
-            ids.append(f"{seg['id']}/{t}"); labels.append(f"{k['name']}<br><span style='font-size:11px'>{t}</span>")
-            parents.append(seg["id"]); farben.append(farbe)
-    fig = go.Figure(go.Treemap(ids=ids, labels=labels, parents=parents, marker=dict(colors=farben, line=dict(color="white", width=2)),
-                               textfont=dict(family=SCHRIFT), hovertemplate="%{label}<extra></extra>",
-                               insidetextfont=dict(color=["#1a1a1a" if f != AKZENT else "white" for f in farben]),
-                               tiling=dict(pad=3), pathbar=dict(visible=False)))
-    fig.update_layout(**_layout(height=460, margin=dict(l=0, r=0, t=0, b=0)))
-    return fig.to_html(full_html=False, include_plotlyjs=False, config={"displayModeBar": False})
+                art, hinweis = "gescreent", "Gescreent, nicht ausgewählt"
+            kandidaten.append({"name": k["name"], "ticker": k["ticker"], "art": art, "hinweis": hinweis})
+        kandidaten.sort(key=lambda k: {"gewaehlt": 0, "gescreent": 1, "ausgeschlossen": 2}[k["art"]])
+        zeilen.append({"name": seg["name"], "beschreibung": seg["beschreibung"], "marge": seg["margenprofil"],
+                       "groesse": fn.zahl(seg["marktgroesse"]) if seg.get("marktgroesse") else None,
+                       "kandidaten": kandidaten})
+    return zeilen
 
 
-def chart_streuung(firmen: list[dict]) -> str:
-    """Chart 3: Exposure gegen EV/Umsatz, Punktgröße = Marktkapitalisierung."""
-    import plotly.graph_objects as go
+def exhibit_streuung(firmen: list[dict]) -> str:
+    """Exhibit 4: Themen-Exposure (x) gegen EV/Umsatz (y) als SVG-Streudiagramm, drei Rollen-Farben."""
     punkte = [f for f in firmen if f["exposure"].get("wert") is not None and f["ev_umsatz"] is not None]
     if not punkte:
         return ""
-    groessen = [math.sqrt(max(f["mkap_usd"] or 1, 1)) for f in punkte]
-    faktor = 46 / max(groessen)
-    fig = go.Figure()
-    for rolle, farbe in [("Kernprofiteur", AKZENT), ("Zulieferer", MITTEL), ("Mitlaeufer", GRAU)]:
-        auswahl = [(f, g) for f, g in zip(punkte, groessen) if f["rolle"] == rolle]
-        if not auswahl:
-            continue
-        fig.add_trace(go.Scatter(
-            x=[f["exposure"]["wert"] for f, _ in auswahl], y=[f["ev_umsatz"] for f, _ in auswahl],
-            mode="markers+text", name=rolle.replace("ae", "ä"), text=[f["ticker"] for f, _ in auswahl],
-            textposition="top center", textfont=dict(size=11),
-            marker=dict(size=[max(g * faktor, 9) for _, g in auswahl], color=farbe, opacity=0.85,
-                        symbol=["circle-open" if f["exposure"].get("typ") == "schaetzung" else "circle" for f, _ in auswahl],
-                        line=dict(width=2, color=farbe)),
-            customdata=[[f["name"], zahl_text(f["mkap_usd"] or 0)] for f, _ in auswahl],
-            hovertemplate="%{customdata[0]}<br>Exposure %{x} % · EV/Umsatz %{y}x<br>MKap %{customdata[1]} Mrd USD<extra></extra>"))
-    fig.update_layout(**_layout(height=440, legend=dict(orientation="h", y=-0.2),
-                                xaxis=dict(title="Themen-Exposure, % des Umsatzes (offener Kreis = Schätzung)", range=[0, 105], showgrid=True, gridcolor="#eee"),
-                                yaxis=dict(title="EV / Umsatz", showgrid=True, gridcolor="#eee", rangemode="tozero")))
-    return fig.to_html(full_html=False, include_plotlyjs=False, config={"displayModeBar": False})
+    breite, hoehe = 760, 380
+    links, rechts, oben, unten = 56, 28, 18, 52
+    pb, ph = breite - links - rechts, hoehe - oben - unten
+    y_achse = _runde_skala(max(f["ev_umsatz"] for f in punkte))
+    y_max = y_achse[-1]
+    x = lambda v: links + pb * max(0, min(v, 100)) / 100  # noqa: E731
+    y = lambda v: oben + ph * (1 - max(0, v) / y_max)  # noqa: E731
+    e = html.escape
+    teile = [f'<svg class="streuung" viewBox="0 0 {breite} {hoehe}" role="img" '
+             f'aria-label="Streudiagramm: Themen-Exposure gegen EV/Umsatz für {len(punkte)} Unternehmen">']
+    for v in y_achse:  # Raster + y-Beschriftung
+        teile.append(f'<line x1="{links}" x2="{links + pb}" y1="{y(v):.1f}" y2="{y(v):.1f}" stroke="{ACHSE if v == 0 else RASTER}" stroke-width="1"/>')
+        teile.append(f'<text x="{links - 8}" y="{y(v) + 4:.1f}" text-anchor="end" class="achse">{zahl_text(v)}x</text>')
+    for v in range(0, 101, 25):
+        teile.append(f'<line x1="{x(v):.1f}" x2="{x(v):.1f}" y1="{oben}" y2="{oben + ph}" stroke="{RASTER}" stroke-width="1"/>')
+        teile.append(f'<text x="{x(v):.1f}" y="{oben + ph + 18}" text-anchor="middle" class="achse">{v} %</text>')
+    teile.append(f'<text x="{links + pb / 2}" y="{hoehe - 6}" text-anchor="middle" class="achsentitel">Themen-Exposure (Anteil des Umsatzes)</text>')
+    teile.append(f'<text transform="translate(14 {oben + ph / 2}) rotate(-90)" text-anchor="middle" class="achsentitel">EV / Umsatz</text>')
+    # Punkte: erst weißer Ring, dann Marke; Schätzung = offener Kreis. Unsichtbarer Trefferkreis ≥ 24 px.
+    for f in sorted(punkte, key=lambda f: -(f["mkap_usd"] or 0)):
+        cx, cy, farbe = x(f["exposure"]["wert"]), y(f["ev_umsatz"]), SERIE.get(f["rolle"], LEISE)
+        geschaetzt = f["exposure"].get("typ") == "schaetzung"
+        tipp = (f"{f['name']} ({f['ticker']})|Rolle: {f['rolle_text']}|"
+                f"Exposure: {'~' if geschaetzt else ''}{zahl_text(f['exposure']['wert'])} %"
+                f"{' (Schätzung)' if geschaetzt else ''}|EV/Umsatz: {zahl_text(f['ev_umsatz'])}x"
+                + (f"|Marktkapitalisierung: {zahl_text(f['mkap_usd'])} Mrd USD" if f["mkap_usd"] else ""))
+        fuellung = "#ffffff" if geschaetzt else farbe
+        teile.append(f'<g class="punkt" tabindex="0" data-tipp="{e(tipp)}">'
+                     f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="12" fill="transparent"/>'
+                     f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="8" fill="#ffffff"/>'
+                     f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="5.5" fill="{fuellung}" stroke="{farbe}" stroke-width="2.5"/>'
+                     + (f'<text x="{cx - 10:.1f}" y="{cy - 9:.1f}" text-anchor="end" class="marke">'
+                        if cx > links + pb * 0.8 else f'<text x="{cx + 10:.1f}" y="{cy - 9:.1f}" class="marke">')
+                     + f'{e(kurzname(f["name"]))}</text></g>')
+    teile.append("</svg>")
+    return "".join(teile)
 
 
 # ---------------------------------------------------------------- Daten sammeln
@@ -318,11 +354,8 @@ def daten_sammeln(lauf: Path, mit_lektorat: bool = True) -> dict:
         return ergebnis
 
     shortlist = {s["ticker"] for s in (shortlist_datei or {}).get("auswahl", [])}
-    segmente = [{"name": s["name"], "beschreibung": s["beschreibung"], "marge": s["margenprofil"],
-                 "groesse": fn.zahl(s["marktgroesse"]) if s.get("marktgroesse") else None,
-                 "anzahl": len(s["kandidaten"]),
-                 "auswahl": [k["name"] for k in s["kandidaten"] if k["ticker"] in shortlist]}
-                for s in markt["segmente"]]
+    spanne = exhibit_spanne(markt, fn)
+    segmente = exhibit_kette(markt, universum, shortlist, fn)
     firmen = firmen_laden(lauf, markt, fn, lektorat)
 
     einwaende, antworten = [], {a["einwand_ref"]: a for a in report["antworten_auf_einwaende"]}
@@ -342,15 +375,13 @@ def daten_sammeln(lauf: Path, mit_lektorat: bool = True) -> dict:
               "abdeckung_max": fn.zahl(bottom_up["abdeckung_bei_unterer_schaetzung"]),
               "firmen": bottom_up["firmen"], "hinweise": bottom_up["hinweise"]}
 
-    chart1, ausgelassen = chart_spanne(markt)
-    from plotly.offline import get_plotlyjs
     return {
         "lauf": lauf_info, "thema": lauf_info.get("thema") or markt["thema"], "datum": lauf_info.get("datum") or markt["datum"],
         "fiktiv": bool(lauf_info.get("fiktiv")), "kopf": kopf, "abschnitte": abschnitte,
-        "schaetzungen": schaetzungen, "chart_spanne": Markup(chart1), "chart_ausgelassen": ausgelassen,
+        "schaetzungen": schaetzungen, "spanne": spanne,
         "treiber": punkte(markt["treiber"]), "huerden": punkte(markt["huerden"]),
-        "segmente": segmente, "chart_kette": Markup(chart_kette(markt, universum, shortlist)),
-        "firmen": firmen, "chart_streuung": Markup(chart_streuung(firmen)),
+        "segmente": segmente,
+        "firmen": firmen, "streuung": Markup(exhibit_streuung(firmen)), "serie": SERIE,
         "einwaende": einwaende, "redteam": redteam, "bottom_up": bu,
         "beobachtungspunkte": [t(b) for b in report["beobachtungspunkte"]],
         "universum": universum["statistik"] if universum else None,
@@ -358,7 +389,7 @@ def daten_sammeln(lauf: Path, mit_lektorat: bool = True) -> dict:
         "gate": tuersteher_statistik(lauf), "fussnoten": fn.liste,
         "gold": GOLD, "mittel": MITTEL,
         "glossar": lektorat.glossar, "lektorat_anzahl": lektorat.anzahl,
-        "plotly_js": Markup(get_plotlyjs()), "akzent": AKZENT,
+        "akzent": AKZENT,
     }
 
 

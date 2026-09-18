@@ -212,3 +212,11 @@ Zahlen stehen in den Textfeldern von `report.json` nie ausgeschrieben, sondern a
 ## Nachtrag: Umgebung
 
 Python 3.12 in `.venv` (angelegt mit `uv venv --python 3.12 .venv`), weil das System-Python 3.9 ist. Alle Befehle `python3 tools/...` setzen ein aktiviertes venv voraus.
+
+## Nachtrag: Exhibits ohne Plotly (2026-09-18)
+
+Die Charts wurden nach dem Dataviz-Verfahren überarbeitet und sind jetzt reines SVG/HTML, das `render.py` selbst erzeugt – Plotly ist entfallen (Report ~0,1 statt ~5 MB, druckbar, ohne JavaScript lesbar; ein kurzes Skript ergänzt nur Tooltips).
+
+- **Exhibit 1:** waagerechte Balken **ab null** (vorher ab der kleinsten Schätzung – irreführend), eine Farbe, Schätzungen heller + „~“, Abgrenzung am Balken.
+- **Exhibit 2:** Treemap (gleich große Kacheln, Fläche ohne Bedeutung) ersetzt durch eine Tabelle mit Firmen-Kärtchen: ausgewählt / gescreent / ausgeschlossen.
+- **Exhibit 4:** Streudiagramm mit validierter Palette (Slots 1–3 der Referenzpalette; die alte Marine/Blau/Grau-Kombination fiel bei Helligkeit und Sättigung durch), gleich große Punkte statt Blasen, Kurznamen statt Ticker.
