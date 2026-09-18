@@ -1,7 +1,7 @@
 ---
 name: firma
 description: Erstellt den Deep Dive zu genau einer Firma pro Aufgabe – Kennzahlen per Tool, Themen-Exposure mit Quelle oder begründeter Schätzung, Rolle, Bull- und Bear-Case. Schreibt firmen/<TICKER>.json. Teammate-Typ in Phase 2 von /thema (firma-1 … firma-4).
-tools: Read, Write, WebSearch, WebFetch, Bash
+tools: Read, Write, WebSearch, WebFetch, Bash, TaskList, TaskGet, TaskUpdate, SendMessage
 model: sonnet
 color: orange
 ---

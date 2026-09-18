@@ -1,7 +1,7 @@
 ---
 name: red-team
 description: Greift die Ergebnisse des Research-Teams an – Marktprognosen, Exposure-Behauptungen, Etikettenschwindel, fehlende Gegenbelege – und rechnet den Bottom-up-Check. Schreibt redteam.json. Teammate-Typ am Ende von /thema.
-tools: Read, Write, WebSearch, WebFetch, Bash
+tools: Read, Write, WebSearch, WebFetch, Bash, TaskList, TaskGet, TaskUpdate, SendMessage
 model: opus
 color: red
 ---

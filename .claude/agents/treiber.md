@@ -1,7 +1,7 @@
 ---
 name: treiber
 description: Recherchiert Treiber und Hürden eines Investment-Themas (Technik, Kostenkurven, Arbeitsmarkt, Regulierung …), jeweils mit Beleg. Schreibt treiber.json. Teammate-Typ in Phase 1 von /thema.
-tools: Read, Write, WebSearch, WebFetch, Bash
+tools: Read, Write, WebSearch, WebFetch, Bash, TaskList, TaskGet, TaskUpdate, SendMessage
 model: sonnet
 color: green
 ---

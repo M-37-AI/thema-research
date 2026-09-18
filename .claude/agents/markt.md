@@ -1,7 +1,7 @@
 ---
 name: markt
 description: Recherchiert die Marktgröße eines Investment-Themas – mindestens drei unabhängige Schätzungen mit expliziter Marktabgrenzung. Schreibt markt-groesse.json. Teammate-Typ in Phase 1 von /thema.
-tools: Read, Write, WebSearch, WebFetch, Bash
+tools: Read, Write, WebSearch, WebFetch, Bash, TaskList, TaskGet, TaskUpdate, SendMessage
 model: sonnet
 color: blue
 ---

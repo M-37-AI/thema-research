@@ -1,7 +1,7 @@
 ---
 name: kette
 description: Zerlegt ein Investment-Thema in 5–8 Segmente der Wertschöpfungskette und benennt je Segment 3–6 börsennotierte Kandidaten mit korrektem yfinance-Ticker. Schreibt kette.json. Teammate-Typ in Phase 1 von /thema.
-tools: Read, Write, WebSearch, WebFetch, Bash
+tools: Read, Write, WebSearch, WebFetch, Bash, TaskList, TaskGet, TaskUpdate, SendMessage
 model: sonnet
 color: purple
 ---

@@ -50,7 +50,7 @@ Dann in Claude Code:
 
 Ohne tmux/iTerm2 funktioniert auch `claude` allein; die Teammates erscheinen dann im Agenten-Panel unter der Eingabezeile (Pfeiltasten + Enter).
 
-> **Hinweise:** Agent Teams sind eine **experimentelle** Funktion von Claude Code (aktiviert über `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1` in `.claude/settings.json`). Ein Lauf startet bis zu neun Agenten mit je eigenem Kontext und verbraucht **deutlich mehr Tokens** als eine einzelne Session. Das Red Team läuft auf Opus.
+> **Hinweise:** Agent Teams sind eine **experimentelle** Funktion von Claude Code (aktiviert über `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1` in `.claude/settings.json`). Die gemeinsame Aufgabenliste braucht außerdem `CLAUDE_CODE_ENABLE_TODO_TOOLS=1` – auf neueren Modellen wie Opus 5 sind die Task-Tools sonst nicht verfügbar und die Türsteher-Hooks feuern nie (steht ebenfalls in den Settings; siehe `docs/testlauf-2026-09-18.md`). Ein Lauf startet bis zu neun Agenten mit je eigenem Kontext und verbraucht **deutlich mehr Tokens** als eine einzelne Session. Das Red Team läuft auf Opus.
 
 Das Ergebnis liegt in `runs/<thema>-<datum>/report.html`.
 
