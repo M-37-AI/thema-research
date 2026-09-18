@@ -263,28 +263,6 @@ def tuersteher_statistik(lauf: Path) -> dict | None:
             "dateien": sorted({e["datei"].split("/", 2)[-1] for e in abgelehnt})}
 
 
-def ueberblick(markt: dict, firmen: list[dict], redteam: dict | None, gate: dict | None,
-               universum: dict | None, fn: Fussnoten) -> dict:
-    """Kennzahlen für den Kasten „Auf einen Blick“."""
-    usd = [(s, _in_mrd_usd(s["marktgroesse"])) for s in markt["schaetzungen"]]
-    usd = [(s, w) for s, w in usd if w is not None]
-    spanne = None
-    if usd:
-        unten, oben = min(usd, key=lambda x: x[1])[0], max(usd, key=lambda x: x[1])[0]
-        jahre = sorted({s["jahr_prognose"] for s, _ in usd})
-        spanne = {"unten": fn.zahl(unten["marktgroesse"]), "oben": fn.zahl(oben["marktgroesse"]),
-                  "jahre": f"{jahre[0]}" if len(jahre) == 1 else f"{jahre[0]}–{jahre[-1]}"}
-    rollen = Counter(f["rolle_text"] for f in firmen)
-    einwaende = (redteam or {}).get("einwaende", [])
-    return {
-        "spanne": spanne, "segmente": len(markt["segmente"]), "firmen": len(firmen),
-        "rollen": [(r, rollen[r]) for r in ("Kernprofiteur", "Zulieferer", "Mitläufer") if rollen[r]],
-        "kandidaten": universum["statistik"]["kandidaten"] if universum else None,
-        "einwaende": len(einwaende), "einwaende_hoch": sum(e["schwere"] == "hoch" for e in einwaende),
-        "pruefungen": gate["pruefungen"] if gate else None, "abgelehnt": gate["abgelehnt"] if gate else None,
-    }
-
-
 def daten_sammeln(lauf: Path) -> dict:
     fn = Fussnoten()
     lauf_info = lies_lauf(lauf)
@@ -337,7 +315,6 @@ def daten_sammeln(lauf: Path) -> dict:
               "abdeckung_max": fn.zahl(bottom_up["abdeckung_bei_unterer_schaetzung"]),
               "firmen": bottom_up["firmen"], "hinweise": bottom_up["hinweise"]}
 
-    blick = ueberblick(markt, firmen, redteam, tuersteher_statistik(lauf), universum, fn)
     chart1, ausgelassen = chart_spanne(markt)
     from plotly.offline import get_plotlyjs
     return {
@@ -351,7 +328,7 @@ def daten_sammeln(lauf: Path) -> dict:
         "beobachtungspunkte": [t(b) for b in report["beobachtungspunkte"]],
         "universum": universum["statistik"] if universum else None,
         "score_formel": universum["regeln"]["score_formel"] if universum else None,
-        "gate": tuersteher_statistik(lauf), "fussnoten": fn.liste, "blick": blick,
+        "gate": tuersteher_statistik(lauf), "fussnoten": fn.liste,
         "gold": GOLD, "mittel": MITTEL,
         "plotly_js": Markup(get_plotlyjs()), "akzent": AKZENT,
     }
