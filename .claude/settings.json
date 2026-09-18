@@ -9,6 +9,8 @@
       "WebFetch",
       "Bash(python3 tools/*)",
       "Bash(mkdir -p runs/*)",
+      "Bash(date -Iseconds)",
+      "Bash(date +%F)",
       "Edit(/runs/**)",
       "Edit(/data/**)"
     ]
