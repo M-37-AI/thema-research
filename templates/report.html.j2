@@ -1,3 +1,4 @@
+{%- set punkte = {"hoch": "●●●", "mittel": "●●○", "niedrig": "●○○"} -%}
 <!doctype html>
 <html lang="de">
 <head>
@@ -6,230 +7,430 @@
 <title>{{ kopf.titel }}</title>
 <script>{{ plotly_js }}</script>
 <style>
-  :root { --akzent: {{ akzent }}; --text: #1a1a1a; --leise: #5b6475; --linie: #dfe3ea; --flaeche: #f6f8fb; }
+  :root {
+    --marine: {{ akzent }}; --mittel: {{ mittel }}; --gold: {{ gold }};
+    --text: #1b1f27; --leise: #5d6677; --linie: #d9dee6; --zart: #eef1f5; --flaeche: #f5f7fa;
+    --rot: #a3261a; --ocker: #9a6a00;
+    --serif: Georgia, "Times New Roman", serif;
+    --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
   * { box-sizing: border-box; }
-  body { margin: 0; background: #fff; color: var(--text);
-         font: 16px/1.6 "Helvetica Neue", Helvetica, Arial, sans-serif; }
-  .seite { max-width: 880px; margin: 0 auto; padding: 56px 28px 80px; }
-  h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; font-weight: normal; line-height: 1.25; }
-  h1 { font-size: 2.3rem; margin: .2em 0 .5em; }
-  h2 { font-size: 1.5rem; margin: 2.8em 0 .8em; padding-top: .6em; border-top: 1px solid var(--linie); }
-  h2 .nr { color: var(--akzent); margin-right: .4em; font-size: 1.1rem; }
-  h3 { font-size: 1.15rem; margin: 1.6em 0 .4em; }
-  p { margin: 0 0 1em; }
-  a { color: var(--akzent); }
-  .kopfzeile { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
-               font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; color: var(--leise);
-               border-bottom: 3px solid var(--akzent); padding-bottom: 10px; }
-  .fiktiv { background: #fff4e5; border: 1px solid #f0c27a; color: #7a4b00; padding: 10px 14px; margin: 18px 0; font-size: .9rem; }
-  .kernaussage { font-family: Georgia, serif; font-size: 1.25rem; line-height: 1.5; color: var(--akzent);
-                 border-left: 3px solid var(--akzent); padding: 4px 0 4px 18px; margin: 1.2em 0 2em; }
-  .kernaussage p { margin: 0; }
-  .zahl { white-space: nowrap; font-variant-numeric: tabular-nums; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: #fff; color: var(--text); font: 15px/1.6 var(--sans); }
+  a { color: var(--mittel); }
+  p { margin: 0 0 .9em; }
+
+  /* ---------- Titelband ---------- */
+  .band { background: var(--marine); color: #fff; }
+  .band-innen { max-width: 1160px; margin: 0 auto; padding: 22px 32px 30px; }
+  .band-zeile { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px 24px;
+                font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: #c4cfe0; }
+  .band-zeile b { color: #fff; font-weight: 600; }
+  .band h1 { font: normal 2.45rem/1.15 var(--serif); margin: 26px 0 18px; max-width: 820px; }
+  .band .goldlinie { width: 72px; height: 3px; background: var(--gold); margin-bottom: 14px; }
+  .band .meta { font-size: .82rem; color: #c4cfe0; }
+  .fiktiv { background: #fff4e0; color: #6b4600; border-bottom: 1px solid #ecd09b; font-size: .82rem; }
+  .fiktiv div { max-width: 1160px; margin: 0 auto; padding: 8px 32px; }
+
+  /* ---------- Rahmen: Inhalt + Seitenleiste ---------- */
+  .rahmen { max-width: 1160px; margin: 0 auto; padding: 34px 32px 64px;
+            display: grid; grid-template-columns: minmax(0, 1fr) 272px; gap: 48px; }
+  main { min-width: 0; }
+  aside { font-size: .84rem; }
+  .leiste { position: sticky; top: 20px; }
+  @media (max-width: 900px) {
+    .rahmen { grid-template-columns: 1fr; gap: 24px; }
+    aside { order: -1; } .leiste { position: static; } nav.inhalt { display: none; }
+  }
+
+  /* ---------- Seitenleiste ---------- */
+  .kasten { border-top: 3px solid var(--marine); background: var(--flaeche); padding: 14px 16px 6px; margin-bottom: 18px; }
+  .kasten h4 { margin: 0 0 10px; font-size: .7rem; letter-spacing: .16em; text-transform: uppercase; color: var(--marine); }
+  .kennwert { padding: 8px 0; border-bottom: 1px solid var(--linie); }
+  .kennwert:last-child { border-bottom: 0; }
+  .kennwert .l { font-size: .68rem; letter-spacing: .08em; text-transform: uppercase; color: var(--leise); }
+  .kennwert .w { font: 1.05rem/1.35 var(--serif); color: var(--marine); }
+  .kennwert .w .zahl { font-weight: normal; }
+  .kennwert .z { font-size: .78rem; color: var(--leise); }
+  nav.inhalt ol { list-style: none; margin: 0; padding: 0 0 8px; counter-reset: k; }
+  nav.inhalt li { counter-increment: k; padding: 3px 0; }
+  nav.inhalt li::before { content: counter(k, decimal-leading-zero); color: var(--gold); font-weight: 600; margin-right: 10px; font-size: .75rem; }
+  nav.inhalt a { color: var(--text); text-decoration: none; }
+  nav.inhalt a:hover { color: var(--mittel); }
+
+  /* ---------- Kernaussage ---------- */
+  .kern { border-left: 4px solid var(--gold); padding: 2px 0 2px 20px; margin: 0 0 8px; }
+  .kern .label { font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
+  .kern .text { font: 1.28rem/1.5 var(--serif); color: var(--marine); }
+  .kern .text p { margin: .2em 0 0; }
+
+  /* ---------- Abschnitte ---------- */
+  section { margin-top: 44px; }
+  h2 { display: flex; align-items: baseline; gap: 14px; margin: 0 0 16px; padding-bottom: 8px;
+       border-bottom: 1px solid var(--marine); font: normal 1.5rem/1.2 var(--serif); color: var(--marine); }
+  h2 .nr { font: 600 .85rem/1 var(--sans); color: var(--gold); letter-spacing: .06em; }
+  h3 { font: 600 .74rem/1.3 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--marine); margin: 26px 0 10px; }
+
+  /* ---------- Zahlen und Fußnoten ---------- */
+  .zahl { white-space: nowrap; font-variant-numeric: tabular-nums; font-weight: 600; }
   .schaetzung { font-style: italic; }
-  sup.fn { font-size: .68em; line-height: 0; margin-left: 1px; }
-  sup.fn a { text-decoration: none; }
-  .tabelle { overflow-x: auto; margin: 1em 0 1.6em; }
-  table { border-collapse: collapse; width: 100%; font-size: .88rem; }
-  th { text-align: left; font-weight: 600; color: var(--leise); border-bottom: 2px solid var(--text); padding: 6px 8px; white-space: nowrap; }
-  td { border-bottom: 1px solid var(--linie); padding: 7px 8px; vertical-align: top; }
+  sup.fn { font-size: .66em; line-height: 0; margin-left: 1px; font-weight: normal; font-style: normal; }
+  sup.fn a { text-decoration: none; color: var(--mittel); }
+
+  /* ---------- Exhibits ---------- */
+  .exhibit { border-top: 2px solid var(--marine); margin: 22px 0 26px; }
+  .exhibit .kopf { display: flex; gap: 10px; align-items: baseline; padding: 8px 0 4px; }
+  .exhibit .nr { font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); font-weight: 700; white-space: nowrap; }
+  .exhibit .titel { font-weight: 600; color: var(--marine); font-size: .92rem; }
+  .exhibit .quelle { border-top: 1px solid var(--linie); padding-top: 6px; font-size: .74rem; color: var(--leise); }
+
+  /* ---------- Tabellen ---------- */
+  .tabelle { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-size: .82rem; font-variant-numeric: tabular-nums; }
+  th { background: var(--marine); color: #fff; text-align: left; font-weight: 600; font-size: .68rem;
+       letter-spacing: .08em; text-transform: uppercase; padding: 7px 9px; white-space: nowrap; }
+  td { padding: 7px 9px; border-bottom: 1px solid var(--linie); vertical-align: top; }
+  tbody tr:nth-child(even) td { background: var(--flaeche); }
   td.r, th.r { text-align: right; }
-  caption { caption-side: bottom; text-align: left; font-size: .78rem; color: var(--leise); padding-top: 6px; }
-  .chart { margin: 1em 0 .4em; }
-  .quelle-chart { font-size: .78rem; color: var(--leise); margin-bottom: 1.6em; }
-  .zweispaltig { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
-  @media (max-width: 700px) { .zweispaltig { grid-template-columns: 1fr; } }
-  .punkt { margin-bottom: 1em; }
-  .punkt b { display: block; }
-  .punkt .belege { font-size: .85rem; color: var(--leise); }
-  .etikett { display: inline-block; font-size: .72rem; letter-spacing: .05em; text-transform: uppercase;
-             padding: 1px 7px; border: 1px solid currentColor; border-radius: 2px; }
-  .hoch { color: #a3261a; } .mittel { color: #9a6500; } .niedrig { color: var(--leise); }
-  .einwand { border-left: 3px solid var(--linie); padding: 2px 0 2px 16px; margin: 0 0 1.4em; }
-  .einwand.hoch-rand { border-left-color: #a3261a; }
-  .einwand .ziel { font-size: .78rem; color: var(--leise); font-family: Menlo, monospace; }
-  .antwort { background: var(--flaeche); padding: 10px 14px; margin-top: 8px; font-size: .92rem; }
-  .firma { border-top: 1px solid var(--linie); padding-top: 12px; margin-top: 18px; }
-  .firma ul { margin: .2em 0 .8em; padding-left: 1.2em; }
-  .klein { font-size: .85rem; color: var(--leise); }
-  .kennziffern { display: flex; flex-wrap: wrap; gap: 28px; margin: 1em 0; }
-  .kennziffer .wert { font-family: Georgia, serif; font-size: 1.6rem; color: var(--akzent); }
-  .kennziffer .label { font-size: .78rem; color: var(--leise); text-transform: uppercase; letter-spacing: .05em; }
-  ol.beobachtung li { margin-bottom: .5em; }
-  ol.quellen { font-size: .82rem; padding-left: 2em; }
-  ol.quellen li { margin-bottom: .35em; word-break: break-word; }
-  .hinweis { font-size: .8rem; color: var(--leise); border-top: 1px solid var(--linie); margin-top: 3em; padding-top: 1em; }
+  td .sub { display: block; font-size: .74rem; color: var(--leise); }
+  .ueberzeugung { color: var(--marine); letter-spacing: 2px; white-space: nowrap; }
+
+  /* ---------- Etiketten ---------- */
+  .tag { display: inline-block; font-size: .64rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+         padding: 2px 7px; border-radius: 2px; color: #fff; background: var(--leise); white-space: nowrap; }
+  .tag.hoch { background: var(--rot); } .tag.mittel { background: var(--ocker); } .tag.niedrig { background: #8a94a6; }
+  .tag.marge-hoch { background: var(--marine); } .tag.marge-mittel { background: var(--mittel); } .tag.marge-niedrig { background: #9aa7ba; }
+  .tag.rolle { background: transparent; color: var(--marine); border: 1px solid var(--marine); }
+
+  /* ---------- Treiber/Hürden ---------- */
+  .zwei { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  @media (max-width: 700px) { .zwei { grid-template-columns: 1fr; } }
+  .punkt { padding: 10px 0; border-bottom: 1px solid var(--linie); font-size: .9rem; }
+  .punkt b { display: block; color: var(--marine); }
+  .punkt .belege { font-size: .76rem; color: var(--leise); margin-top: 4px; }
+  .spalte-kopf { font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; padding-bottom: 6px; border-bottom: 2px solid; }
+  .spalte-kopf.plus { color: var(--marine); } .spalte-kopf.minus { color: var(--rot); }
+
+  /* ---------- Firmenkarten ---------- */
+  .karten { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 18px; }
+  @media (max-width: 760px) { .karten { grid-template-columns: 1fr; } }
+  .karte { border: 1px solid var(--linie); border-top: 3px solid var(--marine); padding: 12px 14px; font-size: .84rem; break-inside: avoid; }
+  .karte .kopf { display: flex; justify-content: space-between; gap: 8px; align-items: flex-start; }
+  .karte .name { font: 1.05rem/1.25 var(--serif); color: var(--marine); }
+  .karte .ticker { font-size: .72rem; color: var(--leise); letter-spacing: .05em; }
+  .karte .werte { display: flex; gap: 16px; margin: 10px 0; padding: 8px 0; border-top: 1px solid var(--zart); border-bottom: 1px solid var(--zart); }
+  .karte .werte div { font-size: .68rem; text-transform: uppercase; letter-spacing: .06em; color: var(--leise); }
+  .karte .werte b { display: block; font-size: .92rem; letter-spacing: 0; text-transform: none; color: var(--text); }
+  .karte ul { margin: 2px 0 8px; padding-left: 1.1em; }
+  .karte .pro { color: var(--marine); font-weight: 700; font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; }
+  .karte .contra { color: var(--rot); font-weight: 700; font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; }
+  .karte .widerlegen { background: var(--flaeche); padding: 7px 9px; font-size: .8rem; }
+
+  /* ---------- Red Team ---------- */
+  .urteil { background: var(--flaeche); border-left: 4px solid var(--marine); padding: 12px 16px; margin: 0 0 18px; }
+  .urteil .label { font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; color: var(--leise); font-weight: 700; }
+  .einwand { display: grid; grid-template-columns: 92px 1fr; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--linie); break-inside: avoid; }
+  .einwand .links { font-size: .76rem; color: var(--leise); }
+  .einwand .links .id { font: 600 1rem var(--serif); color: var(--marine); display: block; margin-bottom: 4px; }
+  .einwand .ziel { font: .72rem Menlo, Consolas, monospace; color: var(--leise); }
+  .einwand p { margin: .3em 0 0; font-size: .9rem; }
+  .antwort { margin-top: 8px; padding: 8px 12px; background: #eef3fa; border-left: 3px solid var(--mittel); font-size: .84rem; }
+  .antwort.fehlt { background: #fbeceb; border-left-color: var(--rot); }
+
+  /* ---------- Kennziffern ---------- */
+  .kennziffern { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 2px solid var(--marine); border-bottom: 1px solid var(--linie); margin: 12px 0 18px; }
+  @media (max-width: 600px) { .kennziffern { grid-template-columns: 1fr; } }
+  .kennziffer { padding: 12px 14px; border-right: 1px solid var(--linie); }
+  .kennziffer:last-child { border-right: 0; }
+  .kennziffer .wert { font: 1.35rem/1.3 var(--serif); color: var(--marine); }
+  .kennziffer .wert .zahl { font-weight: normal; }
+  .kennziffer .label { font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--leise); margin-top: 2px; }
+
+  /* ---------- Listen, Quellen, Hinweise ---------- */
+  ol.beobachtung { list-style: none; padding: 0; margin: 0; counter-reset: b; }
+  ol.beobachtung li { counter-increment: b; display: grid; grid-template-columns: 34px 1fr; padding: 9px 0; border-bottom: 1px solid var(--linie); }
+  ol.beobachtung li::before { content: counter(b); font: 600 .95rem/1.6 var(--sans); color: var(--gold); }
+  ol.beobachtung li p { margin: 0; }
+  .klein { font-size: .8rem; color: var(--leise); }
+  code { font: .78rem Menlo, Consolas, monospace; background: var(--flaeche); padding: 1px 4px; }
+  ol.quellen { font-size: .74rem; color: var(--leise); padding-left: 2.2em; columns: 2; column-gap: 32px; }
+  @media (max-width: 700px) { ol.quellen { columns: 1; } }
+  ol.quellen li { margin-bottom: .4em; word-break: break-word; break-inside: avoid; }
+  ol.quellen li::marker { color: var(--marine); font-weight: 600; }
+  .hinweise { margin-top: 48px; background: var(--flaeche); border-top: 3px solid var(--marine); padding: 16px 20px; font-size: .76rem; color: var(--leise); }
+  .hinweise h4 { margin: 0 0 8px; font-size: .7rem; letter-spacing: .16em; text-transform: uppercase; color: var(--marine); }
+  .fuss { max-width: 1160px; margin: 0 auto; padding: 14px 32px 40px; font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; color: var(--leise);
+          display: flex; justify-content: space-between; border-top: 1px solid var(--linie); }
+
+  /* ---------- Druck / PDF ---------- */
+  @page { size: A4; margin: 14mm 13mm 16mm; }
+  @media print {
+    body { font-size: 9.5pt; }
+    .band, .tag, th, .fiktiv, .kasten, tbody tr:nth-child(even) td { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .band-innen, .rahmen, .fuss, .fiktiv div { padding-left: 0; padding-right: 0; }
+    .rahmen { grid-template-columns: minmax(0, 1fr) 190px; gap: 22px; }
+    .leiste { position: static; } nav.inhalt { display: none; }
+    section { margin-top: 26px; }
+    h2 { break-after: avoid; }
+    .exhibit, .karte, .einwand, tr, .kennziffern { break-inside: avoid; }
+    a { color: inherit; text-decoration: none; }
+  }
 </style>
 </head>
 <body>
-<main class="seite">
 
-<!-- 1. Titel und Kernaussage -->
-<div class="kopfzeile"><span>Thematic Research · {{ thema }}</span><span>{{ datum }}</span></div>
+<header class="band">
+  <div class="band-innen">
+    <div class="band-zeile"><span><b>Thematic Research</b> &nbsp;·&nbsp; {{ thema }}</span><span>{{ datum }}</span></div>
+    <h1>{{ kopf.titel }}</h1>
+    <div class="goldlinie"></div>
+    <div class="meta">Research-Team: KI-Agenten (Markt, Treiber, Wertschöpfungskette, Deep Dives, Red Team) &nbsp;·&nbsp; Keine Anlageberatung</div>
+  </div>
+</header>
 {% if fiktiv %}
-<div class="fiktiv"><b>Fiktives Beispiel.</b> Alle Firmen, Zahlen und Quellen dieses Reports sind erfunden und dienen nur zum Testen des Renderers.</div>
+<div class="fiktiv"><div><b>Fiktives Beispiel.</b> Alle Firmen, Zahlen und Quellen dieses Reports sind erfunden und dienen nur zum Testen des Renderers.</div></div>
 {% endif %}
-<h1>{{ kopf.titel }}</h1>
-<div class="kernaussage">{{ kopf.kernaussage }}</div>
 
-<!-- 2. These -->
-<h2><span class="nr">1</span>These</h2>
-{{ kopf.these }}
+<div class="rahmen">
+<main>
 
-<!-- 3. Markt -->
-<h2><span class="nr">2</span>Markt</h2>
-{{ abschnitte.markt }}
-{% if chart_spanne %}
-<div class="chart">{{ chart_spanne }}</div>
-<div class="quelle-chart">Abb. 1: Spanne der Marktschätzungen je Herausgeber, in Mrd USD. Heller Balken = Schätzung (nicht berichtet).
-{% if chart_ausgelassen %} Nicht dargestellt (andere Einheit/Währung): {{ chart_ausgelassen|join(", ") }}.{% endif %}</div>
-{% endif %}
-<div class="tabelle"><table>
-  <tr><th>Herausgeber</th><th class="r">Prognosejahr</th><th class="r">Marktgröße</th><th class="r">CAGR</th><th>Abgrenzung</th></tr>
-  {% for s in schaetzungen %}
-  <tr><td>{{ s.herausgeber }}</td><td class="r">{{ s.jahr }}</td><td class="r">{{ s.wert }}</td>
-      <td class="r">{{ s.cagr or "–" }}</td><td>{{ s.abgrenzung }}</td></tr>
-  {% endfor %}
-</table></div>
+  <div class="kern"><div class="label">Kernaussage</div><div class="text">{{ kopf.kernaussage }}</div></div>
 
-<!-- 4. Treiber und Hürden -->
-<h2><span class="nr">3</span>Treiber und Hürden</h2>
-{{ abschnitte.treiber_und_huerden }}
-<div class="zweispaltig">
-  <div><h3>Treiber</h3>
-    {% for p in treiber %}<div class="punkt"><b>{{ p.titel }}</b>{{ p.beschreibung }}
-      <div class="belege">Belege: {% for b in p.belege %}{{ b }}{% if not loop.last %} · {% endif %}{% endfor %}</div></div>{% endfor %}
+  <section id="these">
+    <h2><span class="nr">01</span>These</h2>
+    {{ kopf.these }}
+  </section>
+
+  <section id="markt">
+    <h2><span class="nr">02</span>Markt</h2>
+    {{ abschnitte.markt }}
+    {% if chart_spanne %}
+    <div class="exhibit">
+      <div class="kopf"><span class="nr">Exhibit 1</span><span class="titel">Spanne der Marktschätzungen je Herausgeber (Mrd USD)</span></div>
+      {{ chart_spanne }}
+      <div class="quelle">Quelle: Angaben der Herausgeber, eigene Darstellung. Heller Balken = Schätzung (nicht berichtet).
+      {% if chart_ausgelassen %} Nicht dargestellt (andere Einheit/Währung): {{ chart_ausgelassen|join(", ") }}.{% endif %}</div>
+    </div>
+    {% endif %}
+    <div class="tabelle"><table>
+      <thead><tr><th>Herausgeber</th><th class="r">Prognosejahr</th><th class="r">Marktgröße</th><th class="r">CAGR</th><th>Abgrenzung</th></tr></thead>
+      <tbody>
+      {% for s in schaetzungen %}
+      <tr><td><b>{{ s.herausgeber }}</b></td><td class="r">{{ s.jahr }}</td><td class="r">{{ s.wert }}</td>
+          <td class="r">{{ s.cagr or "–" }}</td><td>{{ s.abgrenzung }}</td></tr>
+      {% endfor %}
+      </tbody>
+    </table></div>
+  </section>
+
+  <section id="treiber">
+    <h2><span class="nr">03</span>Treiber und Hürden</h2>
+    {{ abschnitte.treiber_und_huerden }}
+    <div class="zwei">
+      <div><div class="spalte-kopf plus">Treiber</div>
+        {% for p in treiber %}<div class="punkt"><b>{{ p.titel }}</b>{{ p.beschreibung }}
+          <div class="belege">Belege: {% for b in p.belege %}{{ b }}{% if not loop.last %} · {% endif %}{% endfor %}</div></div>{% endfor %}
+      </div>
+      <div><div class="spalte-kopf minus">Hürden</div>
+        {% for p in huerden %}<div class="punkt"><b>{{ p.titel }}</b>{{ p.beschreibung }}
+          <div class="belege">Belege: {% for b in p.belege %}{{ b }}{% if not loop.last %} · {% endif %}{% endfor %}</div></div>{% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section id="kette">
+    <h2><span class="nr">04</span>Wertschöpfungskette</h2>
+    {{ abschnitte.wertschoepfung }}
+    <div class="exhibit">
+      <div class="kopf"><span class="nr">Exhibit 2</span><span class="titel">Segmente und börsennotierte Kandidaten</span></div>
+      {{ chart_kette }}
+      <div class="quelle">Quelle: Research-Team, Screening. Dunkel = in der Auswahl, hell = gescreent, grau = ausgeschlossen.</div>
+    </div>
+    <div class="tabelle"><table>
+      <thead><tr><th>Segment</th><th>Margenprofil</th><th class="r">Größe</th><th class="r">Kand.</th><th>Auswahl</th></tr></thead>
+      <tbody>
+      {% for s in segmente %}
+      <tr><td><b>{{ s.name }}</b><span class="sub">{{ s.beschreibung }}</span></td>
+          <td><span class="tag marge-{{ s.marge.stufe }}">{{ s.marge.stufe }}</span><span class="sub">{{ s.marge.begruendung }}</span></td>
+          <td class="r">{{ s.groesse or "–" }}</td><td class="r">{{ s.anzahl }}</td><td>{{ s.auswahl|join(", ") or "–" }}</td></tr>
+      {% endfor %}
+      </tbody>
+    </table></div>
+  </section>
+
+  <section id="unternehmen">
+    <h2><span class="nr">05</span>Unternehmen</h2>
+    {{ abschnitte.unternehmen }}
+    <div class="exhibit">
+      <div class="kopf"><span class="nr">Exhibit 3</span><span class="titel">Auswahl im Überblick</span></div>
+      <div class="tabelle"><table>
+        <thead><tr><th>Unternehmen</th><th>Rolle</th><th class="r">Exposure</th><th class="r">Wachstum</th>
+            <th class="r">Op. Marge</th><th class="r">EV/Umsatz</th><th>Überz.</th></tr></thead>
+        <tbody>
+        {% for f in firmen %}
+        <tr><td><b>{{ f.name }}</b><span class="sub">{{ f.ticker }} · {{ f.segment }}</span></td><td>{{ f.rolle_text }}</td>
+            <td class="r">{{ f.exposure_html }}</td><td class="r">{{ f.wachstum or "–" }}</td><td class="r">{{ f.marge or "–" }}</td>
+            <td class="r">{{ f.ev_umsatz_html or "–" }}</td><td><span class="ueberzeugung" title="{{ f.ueberzeugung.stufe }}">{{ punkte[f.ueberzeugung.stufe] }}</span></td></tr>
+        {% endfor %}
+        </tbody>
+      </table></div>
+      <div class="quelle">Quelle: Unternehmensangaben, Kennzahlen letzte zwölf Monate. Exposure = Anteil des Umsatzes, der am Thema hängt; kursiv mit „~“ = Schätzung. Überzeugung ●●● hoch · ●●○ mittel · ●○○ niedrig.</div>
+    </div>
+    {% if chart_streuung %}
+    <div class="exhibit">
+      <div class="kopf"><span class="nr">Exhibit 4</span><span class="titel">Themen-Exposure gegen Bewertung</span></div>
+      {{ chart_streuung }}
+      <div class="quelle">Quelle: Research-Team, Kennzahlen. Punktgröße = Marktkapitalisierung in USD; offener Kreis = Exposure geschätzt.</div>
+    </div>
+    {% endif %}
+    <div class="karten">
+    {% for f in firmen %}
+      <div class="karte">
+        <div class="kopf">
+          <div><div class="name">{{ f.name }}</div><div class="ticker">{{ f.ticker }} · {{ f.segment }}</div></div>
+          <span class="tag rolle">{{ f.rolle_text }}</span>
+        </div>
+        <div class="werte">
+          <div>Exposure<b>{{ f.exposure_html }}</b></div>
+          <div>Op. Marge<b>{{ f.marge or "–" }}</b></div>
+          <div>Überzeugung<b class="ueberzeugung">{{ punkte[f.ueberzeugung.stufe] }}</b></div>
+        </div>
+        <p>{{ f.geschaeftsmodell }}</p>
+        <div class="pro">Bull Case</div><ul>{% for b in f.bull_case %}<li>{{ b }}</li>{% endfor %}</ul>
+        <div class="contra">Bear Case</div><ul>{% for b in f.bear_case %}<li>{{ b }}</li>{% endfor %}</ul>
+        <div class="widerlegen"><b>Was uns widerlegen würde:</b> {{ f.widerlegen }}</div>
+      </div>
+    {% endfor %}
+    </div>
+  </section>
+
+  <section id="redteam">
+    <h2><span class="nr">06</span>Red Team und unsere Antworten</h2>
+    {{ abschnitte.risiken }}
+    {% if redteam %}
+    <div class="urteil"><div class="label">Gesamturteil des Red Teams</div>{{ redteam.gesamturteil }}</div>
+    {% for e in einwaende %}
+    <div class="einwand">
+      <div class="links"><span class="id">{{ e.id }}</span><span class="tag {{ e.schwere }}">{{ e.schwere }}</span></div>
+      <div>
+        <div class="ziel">{{ e.ziel.datei }}{{ e.ziel.pfad }}</div>
+        <p>{{ e.einwand }}{% if e.beleg_html %} <span class="klein">Beleg: {{ e.beleg_html }}</span>{% endif %}</p>
+        {% if e.antwort %}<div class="antwort"><b>Unsere Antwort:</b> {{ e.antwort.antwort }}<br><b>Konsequenz:</b> {{ e.antwort.konsequenz }}</div>
+        {% elif e.unbeantwortet %}<div class="antwort fehlt"><b>Nicht beantwortet.</b></div>{% endif %}
+      </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+  </section>
+
+  <section id="bottomup">
+    <h2><span class="nr">07</span>Bottom-up-Check</h2>
+    {% if bottom_up %}
+    <div class="kennziffern">
+      <div class="kennziffer"><div class="wert">{{ bottom_up.summe }}</div><div class="label">Themen-Umsatz der Auswahl</div></div>
+      <div class="kennziffer"><div class="wert">{{ bottom_up.unten }} – {{ bottom_up.oben }}</div><div class="label">Top-down-Spanne</div></div>
+      <div class="kennziffer"><div class="wert">{{ bottom_up.abdeckung_min }} – {{ bottom_up.abdeckung_max }}</div><div class="label">Abdeckung</div></div>
+    </div>
+    {% if redteam %}<p>{{ redteam.bottom_up_kommentar }}</p>{% endif %}
+    <div class="tabelle"><table>
+      <thead><tr><th>Ticker</th><th class="r">Umsatz TTM (Mrd USD)</th><th class="r">Exposure</th><th class="r">Themen-Umsatz (Mrd USD)</th></tr></thead>
+      <tbody>
+      {% for f in bottom_up.firmen %}
+      <tr><td>{{ f.ticker }}</td><td class="r">{{ "%.2f"|format(f.umsatz_ttm_usd_mrd) }}</td>
+          <td class="r">{% if f.exposure_typ == "schaetzung" %}<i>~{{ "%.0f"|format(f.exposure_pct) }} %</i>{% else %}{{ "%.0f"|format(f.exposure_pct) }} %{% endif %}</td>
+          <td class="r">{{ "%.2f"|format(f.themen_umsatz_usd_mrd) }}</td></tr>
+      {% endfor %}
+      </tbody>
+    </table></div>
+    <p class="klein">{{ bottom_up.art }}. {% for h in bottom_up.hinweise %}{{ h }}. {% endfor %}</p>
+    {% else %}
+    <p class="klein">Kein Bottom-up-Check vorhanden.</p>
+    {% endif %}
+  </section>
+
+  <section id="beobachtung">
+    <h2><span class="nr">08</span>Beobachtungspunkte</h2>
+    <ol class="beobachtung">{% for b in beobachtungspunkte %}<li>{{ b }}</li>{% endfor %}</ol>
+  </section>
+
+  <section id="methodik">
+    <h2><span class="nr">09</span>Methodik</h2>
+    <p>Dieser Report entstand in einem Team aus KI-Agenten mit fester Arbeitsteilung: Drei Agenten recherchierten Marktgröße, Treiber und Hürden sowie die Wertschöpfungskette; deterministischer Code führte die Ergebnisse zusammen, rief Finanzkennzahlen ab und screente die Kandidaten
+    {%- if universum %} ({{ universum.kandidaten }} Kandidaten, {{ universum.aufgenommen }} aufgenommen, {{ universum.ausgeschlossen }} ausgeschlossen){% endif %}.
+    Für jede ausgewählte Firma erstellte ein Agent einen Deep Dive; ein Red Team griff alle Ergebnisse an. Jede Zahl trägt ihre Herkunft – berichtet mit Quelle oder als Schätzung mit Begründung.</p>
+    {% if score_formel %}<p class="klein">Screening-Score: <code>{{ score_formel }}</code></p>{% endif %}
+    <h3>Türsteher: automatische Qualitätsprüfung</h3>
+    {% if gate %}
+    <p>Jedes Arbeitsergebnis wurde beim Abschluss automatisch gegen sein Schema geprüft. Ungültige Dateien wurden zurückgewiesen und mussten korrigiert werden.</p>
+    <div class="kennziffern">
+      <div class="kennziffer"><div class="wert">{{ gate.pruefungen }}</div><div class="label">Prüfungen</div></div>
+      <div class="kennziffer"><div class="wert">{{ gate.akzeptiert }}</div><div class="label">akzeptiert</div></div>
+      <div class="kennziffer"><div class="wert">{{ gate.abgelehnt }}</div><div class="label">abgelehnt</div></div>
+    </div>
+    {% if gate.abgelehnt %}
+    <div class="tabelle"><table>
+      <thead><tr><th>Häufigste Fehlerarten</th><th class="r">Anzahl</th></tr></thead>
+      <tbody>{% for art, n in gate.fehlerarten %}<tr><td>{{ art }}</td><td class="r">{{ n }}</td></tr>{% endfor %}</tbody>
+    </table></div>
+    <p class="klein">Ablehnungen je Agent: {% for name, n in gate.je_teammate %}{{ name }} ({{ n }}){% if not loop.last %}, {% endif %}{% endfor %}. Betroffene Dateien: {{ gate.dateien|join(", ") }}.</p>
+    {% endif %}
+    {% else %}
+    <p class="klein">Kein Türsteher-Protokoll vorhanden.</p>
+    {% endif %}
+  </section>
+
+  <section id="quellen">
+    <h2><span class="nr">10</span>Quellen</h2>
+    <ol class="quellen">
+    {% for q in fussnoten %}
+      <li id="fn{{ q.nr }}">
+        {% if q.art == "Schätzung" %}<i>Schätzung:</i> {{ q.text }}
+        {% else %}{% if q.text %}{{ q.text }}, {% endif %}<a href="{{ q.quelle }}">{{ q.quelle }}</a>{% endif %}
+        {% if q.abgerufen %}&nbsp;(abgerufen {{ q.abgerufen }}){% endif %}
+        {% if q.hinweis %}&nbsp;– {{ q.hinweis }}{% endif %}
+      </li>
+    {% endfor %}
+    </ol>
+  </section>
+
+  <div class="hinweise">
+    <h4>Wichtige Hinweise</h4>
+    <b>Keine Anlageberatung.</b> Dieser Report dient ausschließlich Informations- und Lernzwecken. Er ist keine Anlageberatung, keine Finanzanalyse im Sinne des Wertpapierhandelsgesetzes und keine Aufforderung zum Kauf oder Verkauf von Wertpapieren. Er wurde weitgehend automatisiert von KI-Agenten erstellt und kann Fehler enthalten. Zahlen mit „~“ sind Schätzungen; die Herleitung steht im Quellenverzeichnis.
   </div>
-  <div><h3>Hürden</h3>
-    {% for p in huerden %}<div class="punkt"><b>{{ p.titel }}</b>{{ p.beschreibung }}
-      <div class="belege">Belege: {% for b in p.belege %}{{ b }}{% if not loop.last %} · {% endif %}{% endfor %}</div></div>{% endfor %}
-  </div>
-</div>
 
-<!-- 5. Wertschöpfungskette -->
-<h2><span class="nr">4</span>Wertschöpfungskette</h2>
-{{ abschnitte.wertschoepfung }}
-<div class="chart">{{ chart_kette }}</div>
-<div class="quelle-chart">Abb. 2: Segmente der Wertschöpfungskette und ihre börsennotierten Kandidaten. Dunkel = in der Auswahl, hell = gescreent, grau = ausgeschlossen.</div>
-<div class="tabelle"><table>
-  <tr><th>Segment</th><th>Margenprofil</th><th class="r">Größe</th><th class="r">Kandidaten</th><th>Auswahl</th></tr>
-  {% for s in segmente %}
-  <tr><td><b>{{ s.name }}</b><br><span class="klein">{{ s.beschreibung }}</span></td>
-      <td><span class="etikett {{ s.marge.stufe }}">{{ s.marge.stufe }}</span><br><span class="klein">{{ s.marge.begruendung }}</span></td>
-      <td class="r">{{ s.groesse or "–" }}</td><td class="r">{{ s.anzahl }}</td><td>{{ s.auswahl|join(", ") or "–" }}</td></tr>
-  {% endfor %}
-</table></div>
-
-<!-- 6. Unternehmen -->
-<h2><span class="nr">5</span>Unternehmen</h2>
-{{ abschnitte.unternehmen }}
-<div class="tabelle"><table>
-  <tr><th>Name</th><th>Segment</th><th>Rolle</th><th class="r">Exposure</th><th class="r">Wachstum</th>
-      <th class="r">Op. Marge</th><th class="r">EV/Umsatz</th><th>Überzeugung</th></tr>
-  {% for f in firmen %}
-  <tr><td><b>{{ f.name }}</b><br><span class="klein">{{ f.ticker }}</span></td><td>{{ f.segment }}</td><td>{{ f.rolle_text }}</td>
-      <td class="r">{{ f.exposure_html }}</td><td class="r">{{ f.wachstum or "–" }}</td><td class="r">{{ f.marge or "–" }}</td>
-      <td class="r">{{ f.ev_umsatz_html or "–" }}</td><td><span class="etikett {{ f.ueberzeugung.stufe }}">{{ f.ueberzeugung.stufe }}</span></td></tr>
-  {% endfor %}
-  <caption>Exposure = Anteil des Umsatzes, der am Thema hängt; kursiv mit „~“ = Schätzung. Wachstum = Umsatz ggü. Vorjahr, Kennzahlen letzte zwölf Monate.</caption>
-</table></div>
-{% if chart_streuung %}
-<div class="chart">{{ chart_streuung }}</div>
-<div class="quelle-chart">Abb. 3: Themen-Exposure gegen Bewertung (EV/Umsatz). Punktgröße = Marktkapitalisierung in USD.</div>
-{% endif %}
-{% for f in firmen %}
-<div class="firma">
-  <h3>{{ f.name }} <span class="klein">{{ f.ticker }} · {{ f.rolle_text }} · Überzeugung {{ f.ueberzeugung.stufe }}</span></h3>
-  <p>{{ f.geschaeftsmodell }} <span class="klein">{{ f.ueberzeugung.begruendung }}</span></p>
-  <div class="zweispaltig">
-    <div><b>Bull Case</b><ul>{% for b in f.bull_case %}<li>{{ b }}</li>{% endfor %}</ul></div>
-    <div><b>Bear Case</b><ul>{% for b in f.bear_case %}<li>{{ b }}</li>{% endfor %}</ul></div>
-  </div>
-  <p class="klein"><b>Was uns widerlegen würde:</b> {{ f.widerlegen }}</p>
-</div>
-{% endfor %}
-
-<!-- 7. Red Team -->
-<h2><span class="nr">6</span>Red Team und unsere Antworten</h2>
-{{ abschnitte.risiken }}
-{% if redteam %}
-<p><b>Gesamturteil des Red Teams:</b> {{ redteam.gesamturteil }}</p>
-{% for e in einwaende %}
-<div class="einwand {% if e.schwere == 'hoch' %}hoch-rand{% endif %}">
-  <span class="etikett {{ e.schwere }}">{{ e.id }} · {{ e.schwere }}</span>
-  <span class="ziel">{{ e.ziel.datei }}{{ e.ziel.pfad }}</span>
-  <p style="margin:.4em 0 0">{{ e.einwand }}{% if e.beleg_html %} <span class="klein">Beleg: {{ e.beleg_html }}</span>{% endif %}</p>
-  {% if e.antwort %}<div class="antwort"><b>Unsere Antwort:</b> {{ e.antwort.antwort }}<br><b>Konsequenz:</b> {{ e.antwort.konsequenz }}</div>
-  {% elif e.unbeantwortet %}<div class="antwort hoch">Nicht beantwortet.</div>{% endif %}
-</div>
-{% endfor %}
-{% endif %}
-
-<!-- 8. Bottom-up-Check -->
-<h2><span class="nr">7</span>Bottom-up-Check</h2>
-{% if bottom_up %}
-<div class="kennziffern">
-  <div class="kennziffer"><div class="wert">{{ bottom_up.summe }}</div><div class="label">Themen-Umsatz der Auswahl</div></div>
-  <div class="kennziffer"><div class="wert">{{ bottom_up.unten }} – {{ bottom_up.oben }}</div><div class="label">Top-down-Spanne</div></div>
-  <div class="kennziffer"><div class="wert">{{ bottom_up.abdeckung_min }} – {{ bottom_up.abdeckung_max }}</div><div class="label">Abdeckung</div></div>
-</div>
-{% if redteam %}<p>{{ redteam.bottom_up_kommentar }}</p>{% endif %}
-<div class="tabelle"><table>
-  <tr><th>Ticker</th><th class="r">Umsatz TTM (Mrd USD)</th><th class="r">Exposure</th><th class="r">Themen-Umsatz (Mrd USD)</th></tr>
-  {% for f in bottom_up.firmen %}
-  <tr><td>{{ f.ticker }}</td><td class="r">{{ "%.2f"|format(f.umsatz_ttm_usd_mrd) }}</td>
-      <td class="r">{% if f.exposure_typ == "schaetzung" %}~{% endif %}{{ "%.0f"|format(f.exposure_pct) }} %</td>
-      <td class="r">{{ "%.2f"|format(f.themen_umsatz_usd_mrd) }}</td></tr>
-  {% endfor %}
-  <caption>{{ bottom_up.art }}. {% for h in bottom_up.hinweise %}{{ h }}. {% endfor %}</caption>
-</table></div>
-{% else %}
-<p class="klein">Kein Bottom-up-Check vorhanden.</p>
-{% endif %}
-
-<!-- 9. Beobachtungspunkte -->
-<h2><span class="nr">8</span>Beobachtungspunkte</h2>
-<ol class="beobachtung">{% for b in beobachtungspunkte %}<li>{{ b }}</li>{% endfor %}</ol>
-
-<!-- 10. Methodik -->
-<h2><span class="nr">9</span>Methodik</h2>
-<p>Dieser Report entstand in einem Team aus KI-Agenten mit fester Arbeitsteilung: drei Agenten recherchierten Marktgröße, Treiber und Hürden sowie die Wertschöpfungskette; deterministischer Code führte die Ergebnisse zusammen, rief Finanzkennzahlen ab und screente die Kandidaten
-{% if universum %}({{ universum.kandidaten }} Kandidaten, {{ universum.aufgenommen }} aufgenommen, {{ universum.ausgeschlossen }} ausgeschlossen){% endif %}.
-Für jede ausgewählte Firma erstellte ein Agent einen Deep Dive; ein Red Team griff alle Ergebnisse an. Jede Zahl trägt ihre Herkunft – berichtet mit Quelle oder als Schätzung mit Begründung.</p>
-{% if score_formel %}<p class="klein">Screening-Score: <code>{{ score_formel }}</code></p>{% endif %}
-<h3>Türsteher</h3>
-{% if gate %}
-<p>Jedes Arbeitsergebnis wurde beim Abschluss automatisch gegen sein Schema geprüft. Ungültige Dateien wurden zurückgewiesen und mussten korrigiert werden.</p>
-<div class="kennziffern">
-  <div class="kennziffer"><div class="wert">{{ gate.pruefungen }}</div><div class="label">Prüfungen</div></div>
-  <div class="kennziffer"><div class="wert">{{ gate.akzeptiert }}</div><div class="label">akzeptiert</div></div>
-  <div class="kennziffer"><div class="wert">{{ gate.abgelehnt }}</div><div class="label">abgelehnt</div></div>
-</div>
-{% if gate.abgelehnt %}
-<p class="klein">Ablehnungen je Agent: {% for name, n in gate.je_teammate %}{{ name }} ({{ n }}){% if not loop.last %}, {% endif %}{% endfor %}.
-Betroffene Dateien: {{ gate.dateien|join(", ") }}.</p>
-<div class="tabelle"><table><tr><th>Häufigste Fehlerarten</th><th class="r">Anzahl</th></tr>
-{% for art, n in gate.fehlerarten %}<tr><td>{{ art }}</td><td class="r">{{ n }}</td></tr>{% endfor %}</table></div>
-{% endif %}
-{% else %}
-<p class="klein">Kein Türsteher-Protokoll vorhanden.</p>
-{% endif %}
-
-<!-- 11. Quellen -->
-<h2><span class="nr">10</span>Quellen</h2>
-<ol class="quellen">
-{% for q in fussnoten %}
-  <li id="fn{{ q.nr }}">
-    {% if q.art == "Schätzung" %}<i>Schätzung:</i> {{ q.text }}
-    {% else %}{% if q.text %}{{ q.text }}, {% endif %}<a href="{{ q.quelle }}">{{ q.quelle }}</a>{% endif %}
-    {% if q.abgerufen %}&nbsp;<span class="klein">(abgerufen {{ q.abgerufen }})</span>{% endif %}
-    {% if q.hinweis %}&nbsp;<span class="klein">– {{ q.hinweis }}</span>{% endif %}
-  </li>
-{% endfor %}
-</ol>
-
-<!-- 12. Hinweis -->
-<div class="hinweis"><b>Keine Anlageberatung.</b> Dieser Report dient ausschließlich Informations- und Lernzwecken. Er ist keine Anlageberatung, keine Finanzanalyse im Sinne des Wertpapierhandelsgesetzes und keine Aufforderung zum Kauf oder Verkauf von Wertpapieren. Er wurde weitgehend automatisiert von KI-Agenten erstellt und kann Fehler enthalten.</div>
 </main>
+
+<aside>
+  <div class="leiste">
+    <div class="kasten">
+      <h4>Auf einen Blick</h4>
+      {% if blick.spanne %}
+      <div class="kennwert"><div class="l">Marktgröße {{ blick.spanne.jahre }}</div><div class="w">{{ blick.spanne.unten }} – {{ blick.spanne.oben }}</div></div>
+      {% endif %}
+      <div class="kennwert"><div class="l">Wertschöpfungskette</div><div class="w">{{ blick.segmente }} Segmente</div>
+        {% if blick.kandidaten %}<div class="z">{{ blick.kandidaten }} Kandidaten gescreent</div>{% endif %}</div>
+      <div class="kennwert"><div class="l">Auswahl</div><div class="w">{{ blick.firmen }} Unternehmen</div>
+        <div class="z">{% for r, n in blick.rollen %}{{ n }} {{ r }}{% if not loop.last %} · {% endif %}{% endfor %}</div></div>
+      <div class="kennwert"><div class="l">Red Team</div><div class="w">{{ blick.einwaende }} Einwände</div>
+        <div class="z">davon {{ blick.einwaende_hoch }} mit hoher Schwere</div></div>
+      {% if blick.pruefungen is not none %}
+      <div class="kennwert"><div class="l">Türsteher</div><div class="w">{{ blick.pruefungen }} Prüfungen</div>
+        <div class="z">{{ blick.abgelehnt }} Ablehnungen korrigiert</div></div>
+      {% endif %}
+    </div>
+    <nav class="kasten inhalt">
+      <h4>Inhalt</h4>
+      <ol>
+        <li><a href="#these">These</a></li><li><a href="#markt">Markt</a></li><li><a href="#treiber">Treiber und Hürden</a></li>
+        <li><a href="#kette">Wertschöpfungskette</a></li><li><a href="#unternehmen">Unternehmen</a></li><li><a href="#redteam">Red Team</a></li>
+        <li><a href="#bottomup">Bottom-up-Check</a></li><li><a href="#beobachtung">Beobachtungspunkte</a></li><li><a href="#methodik">Methodik</a></li>
+        <li><a href="#quellen">Quellen</a></li>
+      </ol>
+    </nav>
+  </div>
+</aside>
+</div>
+
+<div class="fuss"><span>Thematic Research · {{ thema }}</span><span>Keine Anlageberatung</span></div>
 </body>
 </html>

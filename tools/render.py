@@ -26,9 +26,11 @@ from markupsafe import Markup
 from gemeinsam import PROJEKT, ToolFehler, ausfuehren, kennzahlen_pfad, lauf_ordner, lies_json, lies_lauf
 from validate import REF_MUSTER, validiere_datei, verweis_aufloesen
 
-AKZENT = "#1d4e89"
+AKZENT = "#0b2545"   # Marine – Titelband, Überschriften, Kernwerte
+MITTEL = "#3e6ea8"   # zweite Datenfarbe
+GOLD = "#b8912f"     # Akzentlinie
 GRAU = "#8a94a6"
-HELL = "#c9d6ea"
+HELL = "#c5d3e6"
 SCHRIFT = "Helvetica Neue, Helvetica, Arial, sans-serif"
 
 
@@ -190,7 +192,7 @@ def chart_streuung(firmen: list[dict]) -> str:
     groessen = [math.sqrt(max(f["mkap_usd"] or 1, 1)) for f in punkte]
     faktor = 46 / max(groessen)
     fig = go.Figure()
-    for rolle, farbe in [("Kernprofiteur", AKZENT), ("Zulieferer", "#4f86c6"), ("Mitlaeufer", GRAU)]:
+    for rolle, farbe in [("Kernprofiteur", AKZENT), ("Zulieferer", MITTEL), ("Mitlaeufer", GRAU)]:
         auswahl = [(f, g) for f, g in zip(punkte, groessen) if f["rolle"] == rolle]
         if not auswahl:
             continue
@@ -248,7 +250,9 @@ def tuersteher_statistik(lauf: Path) -> dict | None:
     fehlerarten = Counter()
     for e in abgelehnt:
         for f in e.get("fehler", []) or [e.get("grund", "")]:
-            art = f.split(": ", 1)[-1]
+            pfad, _, art = f.rpartition(": ")
+            feld = re.sub(r"\[\d+\]", "", pfad).rsplit(".", 1)[-1]  # letzter Feldname ohne Listenindex
+            art = f"{feld}: {art}" if feld and feld != "(Wurzel)" else art
             art = re.sub(r"'[^']*'", "…", art)  # konkrete Werte ausblenden
             art = re.sub(r"\(\d+\)", "(n)", art)
             fehlerarten[art] += 1
@@ -257,6 +261,28 @@ def tuersteher_statistik(lauf: Path) -> dict | None:
             "abgelehnt": len(abgelehnt), "je_teammate": je_teammate.most_common(),
             "fehlerarten": fehlerarten.most_common(5),
             "dateien": sorted({e["datei"].split("/", 2)[-1] for e in abgelehnt})}
+
+
+def ueberblick(markt: dict, firmen: list[dict], redteam: dict | None, gate: dict | None,
+               universum: dict | None, fn: Fussnoten) -> dict:
+    """Kennzahlen für den Kasten „Auf einen Blick“."""
+    usd = [(s, _in_mrd_usd(s["marktgroesse"])) for s in markt["schaetzungen"]]
+    usd = [(s, w) for s, w in usd if w is not None]
+    spanne = None
+    if usd:
+        unten, oben = min(usd, key=lambda x: x[1])[0], max(usd, key=lambda x: x[1])[0]
+        jahre = sorted({s["jahr_prognose"] for s, _ in usd})
+        spanne = {"unten": fn.zahl(unten["marktgroesse"]), "oben": fn.zahl(oben["marktgroesse"]),
+                  "jahre": f"{jahre[0]}" if len(jahre) == 1 else f"{jahre[0]}–{jahre[-1]}"}
+    rollen = Counter(f["rolle_text"] for f in firmen)
+    einwaende = (redteam or {}).get("einwaende", [])
+    return {
+        "spanne": spanne, "segmente": len(markt["segmente"]), "firmen": len(firmen),
+        "rollen": [(r, rollen[r]) for r in ("Kernprofiteur", "Zulieferer", "Mitläufer") if rollen[r]],
+        "kandidaten": universum["statistik"]["kandidaten"] if universum else None,
+        "einwaende": len(einwaende), "einwaende_hoch": sum(e["schwere"] == "hoch" for e in einwaende),
+        "pruefungen": gate["pruefungen"] if gate else None, "abgelehnt": gate["abgelehnt"] if gate else None,
+    }
 
 
 def daten_sammeln(lauf: Path) -> dict:
@@ -311,6 +337,7 @@ def daten_sammeln(lauf: Path) -> dict:
               "abdeckung_max": fn.zahl(bottom_up["abdeckung_bei_unterer_schaetzung"]),
               "firmen": bottom_up["firmen"], "hinweise": bottom_up["hinweise"]}
 
+    blick = ueberblick(markt, firmen, redteam, tuersteher_statistik(lauf), universum, fn)
     chart1, ausgelassen = chart_spanne(markt)
     from plotly.offline import get_plotlyjs
     return {
@@ -324,7 +351,8 @@ def daten_sammeln(lauf: Path) -> dict:
         "beobachtungspunkte": [t(b) for b in report["beobachtungspunkte"]],
         "universum": universum["statistik"] if universum else None,
         "score_formel": universum["regeln"]["score_formel"] if universum else None,
-        "gate": tuersteher_statistik(lauf), "fussnoten": fn.liste,
+        "gate": tuersteher_statistik(lauf), "fussnoten": fn.liste, "blick": blick,
+        "gold": GOLD, "mittel": MITTEL,
         "plotly_js": Markup(get_plotlyjs()), "akzent": AKZENT,
     }
 
