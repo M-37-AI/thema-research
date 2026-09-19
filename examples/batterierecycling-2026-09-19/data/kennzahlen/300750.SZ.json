@@ -1,0 +1,98 @@
+{
+  "ticker": "300750.SZ",
+  "name": "Contemporary Amperex Technology Co., Limited",
+  "waehrung": "CNY",
+  "berichtswaehrung": "CNY",
+  "branche": "Electrical Equipment & Parts",
+  "land": "China",
+  "abgerufen": "2026-09-19",
+  "kennzahlen": {
+    "marktkapitalisierung": {
+      "wert": 1397.193,
+      "einheit": "Mrd CNY",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/300750.SZ",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "umsatz_ttm": {
+      "wert": 521.732,
+      "einheit": "Mrd CNY",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/300750.SZ",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "umsatzwachstum_yoy": {
+      "wert": 56.9,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/300750.SZ",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "bruttomarge": {
+      "wert": 24.5,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/300750.SZ",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "operative_marge": {
+      "wert": 15.5,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/300750.SZ",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "ev_umsatz": {
+      "wert": 2.17,
+      "einheit": "x",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/300750.SZ",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "kgv": {
+      "wert": 16.13,
+      "einheit": "x",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/300750.SZ",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    }
+  },
+  "umsatz_ttm_usd": {
+    "wert": 77.901,
+    "einheit": "Mrd USD",
+    "typ": "berichtet",
+    "quelle": "https://finance.yahoo.com/quote/300750.SZ",
+    "abgerufen": "2026-09-19",
+    "herausgeber": "Yahoo Finance (via yfinance)",
+    "hinweis": "umgerechnet mit 0.149312 USD je Einheit (Kurs vom 2026-09-19)"
+  },
+  "marktkapitalisierung_usd": {
+    "wert": 208.617,
+    "einheit": "Mrd USD",
+    "typ": "berichtet",
+    "quelle": "https://finance.yahoo.com/quote/300750.SZ",
+    "abgerufen": "2026-09-19",
+    "herausgeber": "Yahoo Finance (via yfinance)",
+    "hinweis": "umgerechnet mit 0.149312 USD je Einheit (Kurs vom 2026-09-19)"
+  },
+  "wechselkurse": {
+    "CNY": {
+      "wert": 0.149312,
+      "einheit": "USD je CNY",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/CNYUSD=X",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)",
+      "jahr": 2026,
+      "hinweis": "Schlusskurs vom 2026-09-19"
+    }
+  },
+  "hinweise": []
+}

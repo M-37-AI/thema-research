@@ -1,0 +1,34 @@
+{
+  "name": "GEM Co., Ltd.",
+  "ticker": "002340.SZ",
+  "segment_id": "hydrometallurgie-raffination",
+  "geschaeftsmodell": "Chinesischer Kreislaufwirtschaftskonzern mit drei Säulen: (1) Gewinnung und Recycling von Schlüsselmetallen (Nickel als MHP/Nickelplatten aus eigener Indonesien-Produktion, Kobalt, Wolfram), (2) Recycling von Traktionsbatterien und Altfahrzeugen, (3) Herstellung von Batteriematerialien (ternärer Precursor, Trikobalttetroxid, Kathodenmaterial). Erlöse entstehen überwiegend aus dem Verkauf von Metallen und Vorprodukten an Zellhersteller und Kathodenproduzenten; das reine Batterierecycling ist die kleinste der drei Säulen. Recycling-Rohstoffe fließen teilweise in die Materialproduktion (geschlossener Kreislauf), der Anteil ist nicht ausgewiesen.",
+  "themen_exposure": {
+    "wert": 4.89,
+    "einheit": "% Umsatz",
+    "typ": "berichtet",
+    "quelle": "https://en.gem.com.cn/uploadfiles/2026/04/20260422030032372.pdf",
+    "abgerufen": "2026-09-19",
+    "jahr": 2025,
+    "herausgeber": "GEM Co., Ltd., Geschäftsbericht 2025, Abschnitt IV.2 (Umsatzzusammensetzung)",
+    "hinweis": "Segment 'Power lithium battery recycling' = 1,82 Mrd CNY von 37,12 Mrd CNY (davon 1,25 Mrd Batterieverwertung, 0,56 Mrd Altfahrzeuge). Enge Abgrenzung: Kobalt-/Wolframrecycling (zusammen 13,3 % des Umsatzes) und Batteriematerialien aus teils recycelten Rohstoffen zählen nicht mit; der Nickelanteil (19,7 %) stammt aus Primärproduktion in Indonesien. Weite Abgrenzung inkl. Metallrecycling läge deutlich höher, ist aber nicht sauber ausgewiesen."
+  },
+  "kennzahlen_datei": "data/kennzahlen/002340.SZ.json",
+  "wettbewerbsposition": "Nach eigenen Angaben Chinas größter Traktionsbatterie-Recycler (2025: 52.576 t Altbatterien zerlegt, rund 10 % der chinesischen Menge; sechs Recyclinganlagen; Ziel 2026 über 80.000 t) mit vertikaler Integration bis zum Precursor. Wettbewerber im Inland: CATL-Tochter Brunp, Huayou, Tianqi und viele kleinere Anlagen; China hält laut IEA rund 90 % der Materialrückgewinnungskapazität, was Preisdruck und Überkapazität erzeugt. Kunden aus dem Zellumfeld (u. a. Toyota-Lieferkette bei Kathodenmaterial) stützen die Position; Differenzierung liegt in Ausbeute und Integration, nicht in exklusiven Verträgen.",
+  "rolle_im_thema": "Mitlaeufer",
+  "ueberzeugung": {
+    "stufe": "niedrig",
+    "begruendung": "Zwar größter chinesischer Recycler, aber das ausgewiesene Batterierecycling macht nur 4,9 % des Umsatzes aus und läuft mit rund 8 % Bruttomarge; das Ergebnis hängt stärker an Nickel-, Kobalt- und Precursor-Preisen als an Recyclingvolumen. Operative Marge laut Kennzahlen nahe null."
+  },
+  "bull_case": [
+    "Recyclingvolumen wächst: 2025 laut Unternehmen plus 46 % bei Traktionsbatterien, Ziel 2026 über 80.000 t und 2028 über 120.000 t; mit zunehmendem Rücklauf ausgedienter EV-Batterien in China steigt das Rohstoffangebot.",
+    "Deutlich bessere Ergebnisse 2025: Umsatz +11,8 % auf 37,1 Mrd CNY, Nettogewinn laut Unternehmen +54,9 %; Kobaltrecycling (Marge 21,8 %) und Trikobalttetroxid (Umsatz +171 %) profitieren von höheren Kobaltpreisen (laut IEA +130 % Jan 2025–Apr 2026).",
+    "Überseeanteil stieg auf 34,5 % des Umsatzes (+63 %); eigene Nickelproduktion in Indonesien (60.000 t elektrolytisches Nickel, über 110.000 t MHP-Lieferungen) und Kathodenmaterial für Japan-Kunden diversifizieren jenseits des Heimatmarkts."
+  ],
+  "bear_case": [
+    "Thema ist Randgeschäft: Batterierecycling 4,9 % des Umsatzes, Wachstum nur +2,2 % und Bruttomarge 8,2 %; der Altfahrzeug-Teil schrumpfte um 11 % bei 2,8 % Marge. Der Umsatz hängt zu 54 % an Batteriematerialien (Precursor -28 %) und zu 35 % an Metallen.",
+    "Strukturelle Überkapazität in China (IEA: rund 90 % der Materialrückgewinnungskapazität) und Verschiebung zu LFP (über 55 % Anteil) mit niedrigem Metallwert je Tonne drücken die Recyclingökonomie; Konzernbruttomarge nur 14,9 %, operative Marge 0,6 %.",
+    "Hohe Metallpreis- und Kundenkonzentration: Der Ergebnisanstieg beruht auf zyklischen Kobalt-/Nickelpreisen; Nickel-Bruttomarge sank um 7 Prozentpunkte auf 18,1 %, Ternär-Precursor auf 14,1 %. Politische Risiken (Indonesien, chinesische Exportkontrollen, Importregeln für Black Mass) sind schwer kalkulierbar."
+  ],
+  "was_uns_widerlegen_wuerde": "Das Segment Power lithium battery recycling wächst im Halbjahres- oder Jahresbericht 2026 erneut unter 10 % und seine Bruttomarge bleibt unter 10 %, während die Konzernmarge nur mit Kobalt-/Nickelpreisen schwankt – dann trägt das Recycling nicht zur Ertragskraft bei. Umgekehrt würde ein Recyclinganteil von über 10 % des Umsatzes bei steigender Marge die niedrige Überzeugung widerlegen."
+}

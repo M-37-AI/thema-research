@@ -1,0 +1,149 @@
+{
+  "art": "Näherung – nur Shortlist, TTM-Umsätze gegen Prognosen für 2030, 2035",
+  "summe_themenumsatz": {
+    "wert": 3.438,
+    "einheit": "Mrd USD",
+    "typ": "schaetzung",
+    "begruendung": "Summe aus 8 Firmen der Shortlist (Umsatz TTM × Themen-Exposure); 7 der Exposures sind Schätzungen.",
+    "abgerufen": "2026-09-19",
+    "herausgeber": "eigene Berechnung (bottom_up.py)"
+  },
+  "top_down_unten": {
+    "wert": 19.8,
+    "einheit": "Mrd USD",
+    "typ": "schaetzung",
+    "begruendung": "Niedrigste Top-down-Schätzung (BCC Research, Prognosejahr 2030).",
+    "abgerufen": "2026-09-19",
+    "herausgeber": "eigene Berechnung (bottom_up.py)"
+  },
+  "top_down_oben": {
+    "wert": 114.66,
+    "einheit": "Mrd USD",
+    "typ": "schaetzung",
+    "begruendung": "Höchste Top-down-Schätzung (Precedence Research, Prognosejahr 2035).",
+    "abgerufen": "2026-09-19",
+    "herausgeber": "eigene Berechnung (bottom_up.py)"
+  },
+  "abdeckung_bei_unterer_schaetzung": {
+    "wert": 17.364,
+    "einheit": "%",
+    "typ": "schaetzung",
+    "begruendung": "Anteil des Bottom-up-Themenumsatzes an der niedrigsten Marktschätzung. Summe aus 8 Firmen der Shortlist (Umsatz TTM × Themen-Exposure); 7 der Exposures sind Schätzungen.",
+    "abgerufen": "2026-09-19",
+    "herausgeber": "eigene Berechnung (bottom_up.py)"
+  },
+  "abdeckung_bei_oberer_schaetzung": {
+    "wert": 2.998,
+    "einheit": "%",
+    "typ": "schaetzung",
+    "begruendung": "Anteil des Bottom-up-Themenumsatzes an der höchsten Marktschätzung. Summe aus 8 Firmen der Shortlist (Umsatz TTM × Themen-Exposure); 7 der Exposures sind Schätzungen.",
+    "abgerufen": "2026-09-19",
+    "herausgeber": "eigene Berechnung (bottom_up.py)"
+  },
+  "firmen": [
+    {
+      "ticker": "002340.SZ",
+      "name": "GEM Co., Ltd.",
+      "segment_id": "hydrometallurgie-raffination",
+      "umsatz_ttm_usd_mrd": 5.607,
+      "exposure_pct": 4.89,
+      "exposure_typ": "berichtet",
+      "themen_umsatz_usd_mrd": 0.274
+    },
+    {
+      "ticker": "300750.SZ",
+      "name": "Contemporary Amperex Technology (CATL)",
+      "segment_id": "zellhersteller-oem-abnahme",
+      "umsatz_ttm_usd_mrd": 77.901,
+      "exposure_pct": 3,
+      "exposure_typ": "schaetzung",
+      "themen_umsatz_usd_mrd": 2.337
+    },
+    {
+      "ticker": "ANDR.VI",
+      "name": "Andritz AG",
+      "segment_id": "anlagenbau-ausruestung",
+      "umsatz_ttm_usd_mrd": 9.275,
+      "exposure_pct": 0.5,
+      "exposure_typ": "schaetzung",
+      "themen_umsatz_usd_mrd": 0.046
+    },
+    {
+      "ticker": "BAS.DE",
+      "name": "BASF SE",
+      "segment_id": "kathodenmaterial-rueckfuehrung",
+      "umsatz_ttm_usd_mrd": 70.756,
+      "exposure_pct": 0.1,
+      "exposure_typ": "schaetzung",
+      "themen_umsatz_usd_mrd": 0.071
+    },
+    {
+      "ticker": "FORTUM.HE",
+      "name": "Fortum",
+      "segment_id": "vorbehandlung-black-mass",
+      "umsatz_ttm_usd_mrd": 6.306,
+      "exposure_pct": 0.5,
+      "exposure_typ": "schaetzung",
+      "themen_umsatz_usd_mrd": 0.032
+    },
+    {
+      "ticker": "GLEN.L",
+      "name": "Glencore plc",
+      "segment_id": "hydrometallurgie-raffination",
+      "umsatz_ttm_usd_mrd": 304.569,
+      "exposure_pct": 0.02,
+      "exposure_typ": "schaetzung",
+      "themen_umsatz_usd_mrd": 0.061
+    },
+    {
+      "ticker": "UMI.BR",
+      "name": "Umicore",
+      "segment_id": "hydrometallurgie-raffination",
+      "umsatz_ttm_usd_mrd": 28.28,
+      "exposure_pct": 2,
+      "exposure_typ": "schaetzung",
+      "themen_umsatz_usd_mrd": 0.566
+    },
+    {
+      "ticker": "VIE.PA",
+      "name": "Veolia Environnement",
+      "segment_id": "sammlung-logistik",
+      "umsatz_ttm_usd_mrd": 51.173,
+      "exposure_pct": 0.1,
+      "exposure_typ": "schaetzung",
+      "themen_umsatz_usd_mrd": 0.051
+    }
+  ],
+  "exposure_geschaetzt": [
+    "300750.SZ",
+    "ANDR.VI",
+    "BAS.DE",
+    "FORTUM.HE",
+    "GLEN.L",
+    "UMI.BR",
+    "VIE.PA"
+  ],
+  "top_down": [
+    {
+      "herausgeber": "MarketsandMarkets",
+      "jahr_prognose": 2030,
+      "mrd_usd": 54.3
+    },
+    {
+      "herausgeber": "Arizton",
+      "jahr_prognose": 2030,
+      "mrd_usd": 41.66
+    },
+    {
+      "herausgeber": "BCC Research",
+      "jahr_prognose": 2030,
+      "mrd_usd": 19.8
+    },
+    {
+      "herausgeber": "Precedence Research",
+      "jahr_prognose": 2035,
+      "mrd_usd": 114.66
+    }
+  ],
+  "hinweise": []
+}

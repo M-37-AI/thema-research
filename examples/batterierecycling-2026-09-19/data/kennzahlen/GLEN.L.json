@@ -1,0 +1,110 @@
+{
+  "ticker": "GLEN.L",
+  "name": "Glencore plc",
+  "waehrung": "GBP",
+  "berichtswaehrung": "USD",
+  "branche": "Other Industrial Metals & Mining",
+  "land": "Switzerland",
+  "abgerufen": "2026-09-19",
+  "kennzahlen": {
+    "marktkapitalisierung": {
+      "wert": 65.321,
+      "einheit": "Mrd GBP",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/GLEN.L",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "umsatz_ttm": {
+      "wert": 304.569,
+      "einheit": "Mrd USD",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/GLEN.L",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "umsatzwachstum_yoy": {
+      "wert": 48.6,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/GLEN.L",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "bruttomarge": {
+      "wert": 3.4,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/GLEN.L",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "operative_marge": {
+      "wert": 2.8,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/GLEN.L",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "ev_umsatz": {
+      "wert": 0.34,
+      "einheit": "x",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/GLEN.L",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "kgv": {
+      "wert": 16.38,
+      "einheit": "x",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/GLEN.L",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    }
+  },
+  "umsatz_ttm_usd": {
+    "wert": 304.569,
+    "einheit": "Mrd USD",
+    "typ": "berichtet",
+    "quelle": "https://finance.yahoo.com/quote/GLEN.L",
+    "abgerufen": "2026-09-19",
+    "herausgeber": "Yahoo Finance (via yfinance)",
+    "hinweis": "bereits in USD"
+  },
+  "marktkapitalisierung_usd": {
+    "wert": 87.488,
+    "einheit": "Mrd USD",
+    "typ": "berichtet",
+    "quelle": "https://finance.yahoo.com/quote/GLEN.L",
+    "abgerufen": "2026-09-19",
+    "herausgeber": "Yahoo Finance (via yfinance)",
+    "hinweis": "umgerechnet mit 1.33935 USD je Einheit (Kurs vom 2026-09-18)"
+  },
+  "wechselkurse": {
+    "GBP": {
+      "wert": 1.339351,
+      "einheit": "USD je GBP",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/GBPUSD=X",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)",
+      "jahr": 2026,
+      "hinweis": "Schlusskurs vom 2026-09-18"
+    },
+    "USD": {
+      "wert": 1.0,
+      "einheit": "USD je USD",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/USDUSD=X",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)",
+      "jahr": 2026,
+      "hinweis": "Schlusskurs vom 2026-09-19"
+    }
+  },
+  "hinweise": [
+    "Handelswährung GBP, Berichtswährung USD – Umsatz und Marktkapitalisierung nicht direkt vergleichbar, USD-Werte verwenden"
+  ]
+}

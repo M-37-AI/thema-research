@@ -1,0 +1,32 @@
+{
+  "name": "Andritz AG",
+  "ticker": "ANDR.VI",
+  "segment_id": "anlagenbau-ausruestung",
+  "geschaeftsmodell": "Österreichischer Technologie- und Anlagenbaukonzern mit vier Geschäftsbereichen: Hydropower, Pulp & Paper, Metals und Environment & Energy (Umsatz 2025 rund 7,9 Mrd EUR, Auftragsbestand rund 10,5 Mrd EUR). Projekt- und Servicegeschäft mit Ausrüstung für Wasserkraft, Zellstoff/Papier, Metallumformung und Umwelttechnik. Batterierecycling ist ein Nischenangebot: Schredder (Vorzerkleinerer und Granulator unter Stickstoff), Trockner (neuer Helix-Trockner 2026), Entwässerung/Separation und Prozesspakete für Hydrometallurgie.",
+  "themen_exposure": {
+    "wert": 0.5,
+    "einheit": "% Umsatz",
+    "typ": "schaetzung",
+    "begruendung": "Andritz weist Batterierecycling nicht getrennt aus (Konzernumsatz 2025 rund 7,9 Mrd EUR laut Pressemitteilung zum Geschäftsjahr, https://www.andritz.com/newsroom-en/news/2026-03-05-results-2025-group). Das Angebot (Schredder, Trockner, Entwässerung, Separationstechnik) ist auf den Produktseiten belegt, Auftragsvolumina fehlen. Annahme: Projekte und Service im Batterie-/Black-Mass-Umfeld liegen im niedrigen zweistelligen bis knapp 50 Mio EUR pro Jahr, also rund 0,5 % des Umsatzes; Bandbreite 0,2–1 %. Hohe Unsicherheit, da keine Angabe des Unternehmens."
+    ,"abgerufen": "2026-09-19"
+  },
+  "kennzahlen_datei": "data/kennzahlen/ANDR.VI.json",
+  "wettbewerbsposition": "Andritz ist ein etablierter Lieferant von Zerkleinerungs-, Trocknungs- und Entwässerungstechnik mit Referenzen im Metallrecycling und in der Bergbau-Separation; für Batterien bietet das Unternehmen Komplettlinien vom Schredder bis zur Black-Mass-Aufbereitung. Wettbewerber sind Metso (Zerkleinerung/Hydromet), GEA, Tomra (Sortierung), spezialisierte Schredderhersteller sowie SMS group im Primobius-JV. Vorteile: Engineering-Breite, Service-Netz, Bilanz. Nachteile: Batterie-Referenzanlagen sind im Vergleich zum Konzern klein; Auftragslage hängt an den Investitionen der Recycler, die derzeit wegen Feedstock-Knappheit gedämpft sind.",
+  "rolle_im_thema": "Zulieferer",
+  "ueberzeugung": {
+    "stufe": "niedrig",
+    "begruendung": "Andritz liefert zwar wesentliche Anlagenteile, doch das Thema macht geschätzt nur etwa 0,5 % des Umsatzes aus; Konzernergebnis bestimmen Wasserkraft, Zellstoff und Metallumformung. Für das Recycling-Thema ist die Aktie nur ein schwacher Hebel."
+  },
+  "bull_case": [
+    "Die EU-Batterieverordnung (Rückgewinnung 80 % Lithium ab 2031, Rezyklatquoten) erzwingt Investitionen in Recyclingkapazität; Andritz verkauft Ausrüstung unabhängig davon, welcher Recycler am Ende gewinnt (Schaufel-und-Spitzhacke-Modell).",
+    "Das Konzerngeschäft ist stabil: rekordhoher Auftragsbestand von rund 10,5 Mrd EUR, Book-to-Bill 1,13 und eine vergleichbare EBITA-Marge von 8,9 % geben Spielraum, das Batterie-Angebot mit neuen Produkten (Helix-Trockner) weiter auszubauen.",
+    "Ein Servicegeschäft an installierten Anlagen (Ersatzteile, Wartung) stabilisiert die Erlöse und ist weniger vom Investitionszyklus abhängig als Neuprojekte."
+  ],
+  "bear_case": [
+    "Batterie-Recycling trägt geschätzt nur rund 0,5 % zum Umsatz bei; selbst Verdopplung würde die Konzernzahlen kaum verschieben, das Thema wirkt daher als Marketing-Etikett.",
+    "Recycler in Europa laufen laut Fastmarkets wegen Altbatterie-Knappheit unter Auslastung und Kapazität wächst schneller als das Angebot (Fraunhofer ISI: 520 kt/a Kapazität in Europa bis 2030); das bremst Neuinvestitionen in Ausrüstung.",
+    "Über 85 % der Recyclingkapazität stehen in China (IEA), wo lokale Anlagenbauer die Ausrüstung liefern; Andritz hat auf dem größten Markt kaum Zugang.",
+    "Andritz-Umsatz 2025 sank um 5 % auf rund 7,9 Mrd EUR; Metals und Environment & Energy verzeichneten sinkende Auftragseingänge, also genau die Bereiche mit Recycling-Bezug."
+  ],
+  "was_uns_widerlegen_wuerde": "Widerlegt wäre unsere Einordnung als marginaler Zulieferer, wenn Andritz Batterierecycling-Aufträge über mindestens 100 Mio EUR pro Jahr meldet oder ein eigenes Reporting dazu einführt (Anteil über 2 % des Umsatzes). Umgekehrt wäre die These schwächer, wenn wichtige europäische Recycler geplante Anlagen absagen oder verschieben und Andritz im Metals-/Environment-Bereich weiter sinkende Auftragseingänge ausweist."
+}

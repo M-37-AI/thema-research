@@ -1,0 +1,98 @@
+{
+  "ticker": "UMI.BR",
+  "name": "Umicore SA",
+  "waehrung": "EUR",
+  "berichtswaehrung": "EUR",
+  "branche": "Waste Management",
+  "land": "Belgium",
+  "abgerufen": "2026-09-19",
+  "kennzahlen": {
+    "marktkapitalisierung": {
+      "wert": 5.218,
+      "einheit": "Mrd EUR",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/UMI.BR",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "umsatz_ttm": {
+      "wert": 24.615,
+      "einheit": "Mrd EUR",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/UMI.BR",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "umsatzwachstum_yoy": {
+      "wert": 60.1,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/UMI.BR",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "bruttomarge": {
+      "wert": 7.7,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/UMI.BR",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "operative_marge": {
+      "wert": 3.0,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/UMI.BR",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "ev_umsatz": {
+      "wert": 0.27,
+      "einheit": "x",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/UMI.BR",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "kgv": {
+      "wert": 10.79,
+      "einheit": "x",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/UMI.BR",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    }
+  },
+  "umsatz_ttm_usd": {
+    "wert": 28.28,
+    "einheit": "Mrd USD",
+    "typ": "berichtet",
+    "quelle": "https://finance.yahoo.com/quote/UMI.BR",
+    "abgerufen": "2026-09-19",
+    "herausgeber": "Yahoo Finance (via yfinance)",
+    "hinweis": "umgerechnet mit 1.1489 USD je Einheit (Kurs vom 2026-09-18)"
+  },
+  "marktkapitalisierung_usd": {
+    "wert": 5.995,
+    "einheit": "Mrd USD",
+    "typ": "berichtet",
+    "quelle": "https://finance.yahoo.com/quote/UMI.BR",
+    "abgerufen": "2026-09-19",
+    "herausgeber": "Yahoo Finance (via yfinance)",
+    "hinweis": "umgerechnet mit 1.1489 USD je Einheit (Kurs vom 2026-09-18)"
+  },
+  "wechselkurse": {
+    "EUR": {
+      "wert": 1.148897,
+      "einheit": "USD je EUR",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/EURUSD=X",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)",
+      "jahr": 2026,
+      "hinweis": "Schlusskurs vom 2026-09-18"
+    }
+  },
+  "hinweise": []
+}

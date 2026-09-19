@@ -1,0 +1,32 @@
+{
+  "name": "Contemporary Amperex Technology (CATL)",
+  "ticker": "300750.SZ",
+  "segment_id": "zellhersteller-oem-abnahme",
+  "geschaeftsmodell": "Weltgrößter Hersteller von Lithium-Ionen-Zellen für Elektrofahrzeuge und stationäre Speicher (Umsatz 2025 rund 424 Mrd RMB, über 94 % aus Batteriesystemen für Fahrzeuge und Speicher). Über die Mehrheitsbeteiligung Brunp Recycling ist CATL zugleich vertikal in Rohstoffe, Batteriematerialien und Recycling integriert: Brunp verarbeitete 2025 rund 210.000 t Altbatterien (+63 %) und gewann 24.000 t Lithiumsalze zurück; angestrebt sind über 1 Mio t Kapazität bis 2030. Rückgewonnene Metalle (Ni, Co, Mn, Li) laufen in den eigenen Materialkreislauf.",
+  "themen_exposure": {
+    "wert": 3,
+    "einheit": "% Umsatz",
+    "typ": "schaetzung",
+    "begruendung": "CATL weist nur das Segment 'Battery Materials and Recycling' aus: 21,86 Mrd RMB von 423,7 Mrd RMB Gesamtumsatz 2025 = 5,16 % (Sekundärquelle: https://carnewschina.com/2026/03/10/catl-reports-record-breaking-financial-results-in-2025-with-10-billion-usd-net-profit/, nicht im Geschäftsbericht selbst verifiziert). Das Segment enthält auch Batteriematerialien ohne Recycling, 5,16 % sind daher eine Obergrenze. Annahme: rund 60 % davon entfallen auf Brunp-Recycling und recyclingnahe Materialien, also etwa 3 % des Konzernumsatzes; Bandbreite 2–5 %. Der Anteil ist nicht berichtet, Unsicherheit hoch.",
+    "abgerufen": "2026-09-19"
+  },
+  "kennzahlen_datei": "data/kennzahlen/300750.SZ.json",
+  "wettbewerbsposition": "Durch Brunp gehört CATL zu den größten Batterierecyclern weltweit; Recovery-Raten von 99,6 % (Ni, Co, Mn) und 96,5 % (Li) sind Spitzenwerte. Vorteile: gesicherter Zugang zu Altbatterien und Produktionsausschuss aus dem eigenen Zellgeschäft, Kostenvorteile und Skalierung im Heimatmarkt, der laut IEA rund 90 % der Materialrückgewinnungskapazität stellt. Wettbewerber im Recycling sind GEM, Huayou, Umicore, Fortum; im Zellgeschäft BYD, LGES, Panasonic und Samsung SDI. Recycling ist für CATL ein Absicherungs- und Kostenhebel, nicht das Hauptgeschäft.",
+  "rolle_im_thema": "Mitlaeufer",
+  "ueberzeugung": {
+    "stufe": "mittel",
+    "begruendung": "Geschätzt rund 3 % des Umsatzes (Obergrenze 5,16 % für das Gesamtsegment inkl. Batteriematerialien) hängen am Thema; Bewertung und Ergebnis werden vom Zellgeschäft bestimmt. Die Recycling-Position ist stark und strategisch sinnvoll, für die Recycling-These aber nur ein Beiprodukt einer Zellhersteller-Investition."
+  },
+  "bull_case": [
+    "Vertikale Integration: Wachsende eigene Altbatterie- und Ausschussmengen fließen an Brunp; Recyclingvolumen stieg 2025 um 63 % auf 210.000 t, Ziel über 1 Mio t Kapazität bis 2030 wäre ein Vielfaches des heutigen Niveaus.",
+    "Rezyklatmetalle senken Rohstoffkosten und Abhängigkeit von Kobalt- und Lithiumpreisen (Kobalt laut IEA Jan 2025 bis Apr 2026 rund +130 %); Recyclingquoten in EU und China erfordern ohnehin Kreislaufsysteme.",
+    "Das Kerngeschäft ist hochprofitabel und wachstumsstark (Nettogewinn 2025 rund 10 Mrd USD laut Geschäftsbericht-Berichterstattung), die Marktführerschaft bei Zellen finanziert den Ausbau der Recycling-Kapazität ohne Kapitalknappheit."
+  ],
+  "bear_case": [
+    "Das Segment Battery Materials and Recycling ist mit 5,16 % des Umsatzes (Obergrenze für das Recycling, geschätzt rund 3 %) klein und ging 2025 im Umsatz um rund 24 % zurück; selbst ein starkes Recyclinggeschäft bewegt die Konzernzahlen kaum.",
+    "Ökonomie schwächt sich mit LFP-Anteil über 55 % (IEA) ab: LFP-Black-Mass enthält wenig Nickel/Kobalt, der Materialwert je Tonne sinkt, CATL ist selbst Haupttreiber dieser Verschiebung.",
+    "Altbatterie-Angebot ist bis Mitte der 2030er begrenzt; die Ausbauziele von Brunp konkurrieren mit einem überbesetzten chinesischen Markt (über 85 % der globalen Kapazität) und Preisdruck bei Neuzellen (Pack-Preise 2025 durchschnittlich 108 USD/kWh laut BNEF).",
+    "Geopolitische und regulatorische Risiken: Exportkontrollen, Zölle und Sicherheitsbedenken gegenüber chinesischen Zellherstellern in EU und USA können Auslandsexpansion und Rezyklat-Handel einschränken."
+  ],
+  "was_uns_widerlegen_wuerde": "Widerlegt wäre die Einordnung als Mitläufer, wenn CATL Recycling separat ausweist und der Anteil am Konzernumsatz über 10 % steigt oder Brunp die angestrebte Kapazität von über 1 Mio t/a erkennbar hochfährt. Umgekehrt: Sinkt das Segment Battery Materials and Recycling auch 2026 weiter und wird Kapazität zurückgestellt, spricht das für eine reine Randrolle."
+}

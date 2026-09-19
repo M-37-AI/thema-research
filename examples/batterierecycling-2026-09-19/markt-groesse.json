@@ -1,0 +1,73 @@
+{
+  "thema": "Batterierecycling",
+  "schaetzungen": [
+    {
+      "herausgeber": "MarketsandMarkets",
+      "jahr_prognose": 2030,
+      "marktgroesse": {
+        "wert": 54.3, "einheit": "Mrd USD", "typ": "berichtet",
+        "quelle": "https://www.globenewswire.com/news-release/2025/02/27/3033852/0/en/Battery-Recycling-Market-worth-54-3-billion-by-2030-at-a-CAGR-of-10-5-says-MarketsandMarkets.html",
+        "abgerufen": "2026-09-19", "jahr": 2030, "herausgeber": "MarketsandMarkets",
+        "hinweis": "Pressemitteilung, Methodik nicht einsehbar. Basisjahr 2023: 26,9 Mrd USD."
+      },
+      "cagr": {
+        "wert": 10.5, "einheit": "% p.a. (2023-2030)", "typ": "berichtet",
+        "quelle": "https://www.globenewswire.com/news-release/2025/02/27/3033852/0/en/Battery-Recycling-Market-worth-54-3-billion-by-2030-at-a-CAGR-of-10-5-says-MarketsandMarkets.html",
+        "abgerufen": "2026-09-19", "jahr": 2030, "herausgeber": "MarketsandMarkets",
+        "hinweis": "Pressemitteilung, Methodik nicht einsehbar"
+      },
+      "abgrenzung": "Breit: alle Batteriechemien inkl. Blei-Saeure, Lithium-Ionen, Lithium-Primaer und Alkaline; Quellen Automotive/EV, Industrie, Unterhaltungselektronik, Marine, Smart Devices. Blei-Saeure-Recycling (reifer Markt) ist enthalten."
+    },
+    {
+      "herausgeber": "Arizton",
+      "jahr_prognose": 2030,
+      "marktgroesse": {
+        "wert": 41.66, "einheit": "Mrd USD", "typ": "berichtet",
+        "quelle": "https://www.arizton.com/market-reports/battery-recycling-market",
+        "abgerufen": "2026-09-19", "jahr": 2030, "herausgeber": "Arizton",
+        "hinweis": "Marktforscher-Produktseite, Methodik nicht einsehbar. Basisjahr 2024: 22,75 Mrd USD."
+      },
+      "cagr": {
+        "wert": 10.61, "einheit": "% p.a. (2024-2030)", "typ": "berichtet",
+        "quelle": "https://www.arizton.com/market-reports/battery-recycling-market",
+        "abgerufen": "2026-09-19", "jahr": 2030, "herausgeber": "Arizton",
+        "hinweis": "Marktforscher-Produktseite, Methodik nicht einsehbar"
+      },
+      "abgrenzung": "Sammlung, Aufbereitung und Wiederverwertung gebrauchter Batterien zur Rueckgewinnung von Lithium, Kobalt, Nickel, Blei u. a.; Blei-Saeure und Lithium-Ionen; Quellen Automotive, Industrie, Unterhaltungselektronik; Verfahren Hydro-, Pyrometallurgie, mechanisch, direkt."
+    },
+    {
+      "herausgeber": "BCC Research",
+      "jahr_prognose": 2030,
+      "marktgroesse": {
+        "wert": 19.8, "einheit": "Mrd USD", "typ": "berichtet",
+        "quelle": "https://www.globenewswire.com/news-release/2025/10/03/3161162/0/en/Battery-Recycling-Market-to-Reach-19-8-Billion-Globally-by-2030.html",
+        "abgerufen": "2026-09-19", "jahr": 2030, "herausgeber": "BCC Research",
+        "hinweis": "Pressemitteilung, Methodik nicht einsehbar. Basisjahr 2024: 11,9 Mrd USD."
+      },
+      "cagr": {
+        "wert": 9.2, "einheit": "% p.a. (2025-2030)", "typ": "berichtet",
+        "quelle": "https://www.globenewswire.com/news-release/2025/10/03/3161162/0/en/Battery-Recycling-Market-to-Reach-19-8-Billion-Globally-by-2030.html",
+        "abgerufen": "2026-09-19", "jahr": 2030, "herausgeber": "BCC Research",
+        "hinweis": "Pressemitteilung, Methodik nicht einsehbar"
+      },
+      "abgrenzung": "Chemien Blei-Saeure, Lithium-Ionen, Nickel und Sonstige (Blei-Saeure dominiert); Quellen Automotive, Industrie, Unterhaltungselektronik; Verfahren Hydro-, Pyrometallurgie, direktes Recycling; Anwendungen Batterie-Remanufacturing, Metallraffination u. a. Basisjahr 2024 deutlich niedriger als bei MarketsandMarkets und Arizton."
+    },
+    {
+      "herausgeber": "Precedence Research",
+      "jahr_prognose": 2035,
+      "marktgroesse": {
+        "wert": 114.66, "einheit": "Mrd USD", "typ": "berichtet",
+        "quelle": "https://www.precedenceresearch.com/lithium-ion-battery-recycling-market",
+        "abgerufen": "2026-09-19", "jahr": 2035, "herausgeber": "Precedence Research",
+        "hinweis": "Marktforscher-Produktseite, Methodik nicht einsehbar. Basisjahr 2025: 12,99 Mrd USD. Prognosejahr 2035, nicht direkt mit 2030-Werten vergleichbar."
+      },
+      "cagr": {
+        "wert": 24.33, "einheit": "% p.a. (2026-2035)", "typ": "berichtet",
+        "quelle": "https://www.precedenceresearch.com/lithium-ion-battery-recycling-market",
+        "abgerufen": "2026-09-19", "jahr": 2035, "herausgeber": "Precedence Research",
+        "hinweis": "Marktforscher-Produktseite, Methodik nicht einsehbar"
+      },
+      "abgrenzung": "Nur Lithium-Ionen (LFP, LCO, NMC, NCA, LMO), ohne Blei-Saeure; Quellen Automotive (BEV/HEV/PHEV), Unterhaltungselektronik, Industrie und Speicher; Sammlung plus Metallrueckgewinnung; Pyro-, Hydrometallurgie, direktes Recycling. Engere Abgrenzung, aber sehr hohe CAGR ergibt die hoechste Zahl der Spanne."
+    }
+  ]
+}

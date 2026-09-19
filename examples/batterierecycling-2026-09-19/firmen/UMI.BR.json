@@ -1,0 +1,33 @@
+{
+  "name": "Umicore",
+  "ticker": "UMI.BR",
+  "segment_id": "hydrometallurgie-raffination",
+  "geschaeftsmodell": "Belgischer Materialtechnologie- und Recyclingkonzern mit drei Berichtssegmenten: Catalysis (Abgaskatalysatoren), Battery Materials Solutions (Kathodenmaterialien und Battery Recycling Solutions) sowie Recycling (Edelmetallraffination, Schmuck und Industriemetalle). Der Gewinn stammt überwiegend aus dem Edelmetall-Recycling. Batterierecycling ist eine Unterabteilung von Battery Materials Solutions und trägt laut Halbjahresbericht 2026 weiterhin negativ zum Ergebnis bei.",
+  "themen_exposure": {
+    "wert": 2,
+    "einheit": "% Umsatz",
+    "typ": "schaetzung",
+    "begruendung": "Battery Recycling Solutions wird nicht einzeln ausgewiesen. Battery Materials Solutions erzielte im H1 2026 rund 230 Mio EUR Umsatz (ohne Metallanteil) bei rund 1,9 Mrd EUR Konzernumsatz (ca. 12 %). Der Großteil davon ist Kathodenmaterial, nicht Recycling. Wir schätzen den Recyclinganteil auf höchstens ein Sechstel dieses Segments, also rund 2 % des Konzernumsatzes ohne Metall. Bezogen auf den Umsatz inklusive Metallhandel (laut Kennzahlen-Datei rund 28 Mrd USD) wäre der Anteil noch deutlich kleiner. Die Größenordnung ist unsicher.",
+    "abgerufen": "2026-09-19",
+    "hinweis": "Basis: Halbjahresbericht 2026 (https://www.globenewswire.com/news-release/2026/07/31/3336596/0/en/Umicore-Half-Year-Results-2026.html). Die Aufteilung Kathode/Recycling ist nicht berichtet. Das Edelmetall-Recycling im Segment Recycling gehört nicht zum Batterierecycling und ist nicht eingerechnet."
+  },
+  "kennzahlen_datei": "data/kennzahlen/UMI.BR.json",
+  "wettbewerbsposition": "Umicore verfügt über eigene Pyro- und Hydrometallurgie-Kompetenz in Hoboken und langjährige Erfahrung in der Metallraffination. Das Batterierecycling-Angebot im Konzern hat aber an Priorität verloren: Die Kapazität wird mit Fokus auf Kostendisziplin und strenger Investitionskontrolle geführt. Gegen chinesische Anbieter, die laut IEA rund 90 % der Materialrückgewinnung stellen, ist Umicore kostenseitig im Nachteil. Vorteile sind die Verbindung zur Edelmetallraffination und das Qualitäts- und Kundenprofil in Europa. Weil Recycling hier nicht das Kerngeschäft ist, hängt die Aktie vor allem an Edelmetallpreisen, Katalysatoren und dem Kathodengeschäft.",
+  "rolle_im_thema": "Mitlaeufer",
+  "ueberzeugung": {
+    "stufe": "niedrig",
+    "begruendung": "Batterierecycling ist bei Umicore ein kleines, verlustbringendes Teilgeschäft. Die Ergebnisentwicklung wird vom Edelmetall-Recycling und Kathodenmaterialien (Take-or-pay-Kompensation) getrieben. Das Thema Batterierecycling kann sich also kaum in der Bewertung niederschlagen; für ein reines Recycling-Engagement ist Umicore ungeeignet."
+  },
+  "bull_case": [
+    "Der Konzern hebt die Prognose für das bereinigte EBITDA 2026 auf leicht über 1 Mrd EUR an. Das Recycling-Segment (Edelmetalle) steigert im H1 2026 das bereinigte EBITDA um 36 %. Das stützt die Bilanz, sodass die Batteriesparte nicht unter Finanzierungsdruck steht.",
+    "Die EU-Batterieverordnung (Rückgewinnungsquoten Lithium 50 % ab 2027, 80 % ab 2031, Rezyklatanteile ab 2031) und die Einstufung von Black Mass als gefährlicher Abfall ab 9. November 2026 stützen regional gebundene Verwertung in Europa. Ein integrierter Anbieter mit Raffination in Belgien könnte davon profitieren, wenn die Volumina Mitte der 2030er tatsächlich wachsen.",
+    "Hohe Kobalt- und Lithiumpreise (Kobalt laut IEA +130 % von Januar 2025 bis April 2026) verbessern die Erlöse aus Batteriemetallen und könnten die negative Recyclingbilanz verringern."
+  ],
+  "bear_case": [
+    "Batterierecycling bleibt im H1 2026 auf dem Vorjahresniveau negativ. Beim aktuell geringen Anteil am Umsatz ändert ein Wachstum des Marktes den Konzern kaum; das Thema ist im Kurs de facto kaum enthalten oder wird von anderen Faktoren überlagert.",
+    "Bis Mitte der 2030er stammt der Großteil des Materials aus Produktionsausschuss statt aus Altbatterien. Europäische Recycler laufen mit hohen Fixkosten und niedriger Auslastung; der Wechsel auf LFP (über 55 % Anteil) senkt den Materialwert je Tonne.",
+    "Das Kathodengeschäft liefert das Segmentergebnis vor allem über Take-or-pay-Kompensationen statt Volumenwachstum (Volumen 2026 laut Prognose weitgehend stabil). Das ist eine schwache Grundlage für die Batteriesparte insgesamt.",
+    "Chinesische Recycler dominieren Kapazität und Kosten; westliche Anbieter sind von Regulierung abhängig."
+  ],
+  "was_uns_widerlegen_wuerde": "Unsere niedrige Überzeugung wäre widerlegt, wenn Umicore in einem Geschäftsbericht Battery Recycling Solutions als eigenes Segment mit positivem bereinigten EBITDA und mindestens 10 % des Konzernumsatzes (ohne Metall) ausweist, oder wenn der Konzern eine neue Großanlage für Batterierecycling mit Investitionsentscheidung ankündigt."
+}

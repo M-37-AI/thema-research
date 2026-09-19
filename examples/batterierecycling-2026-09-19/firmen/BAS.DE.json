@@ -1,0 +1,32 @@
+{
+  "name": "BASF SE",
+  "ticker": "BAS.DE",
+  "segment_id": "kathodenmaterial-rueckfuehrung",
+  "geschaeftsmodell": "Weltgrößter Chemiekonzern (Konzernumsatz 2025 rund 60 Mrd EUR) mit Segmenten Chemicals, Materials, Industrial Solutions, Nutrition & Care, Agricultural Solutions und Surface Technologies. Batterierecycling läuft über die Einheit Battery Materials (Segment Surface Technologies): Kathodenaktivmaterial (CAM) in Schwarzheide und Harjavalta, dazu in Schwarzheide eine Black-Mass-Anlage (kommerzieller Betrieb seit Juni 2025, bis zu 15.000 t Altbatterien und Produktionsausschuss pro Jahr) und eine Prototyp-Raffinerie zur Metallrückgewinnung. Ziel ist der Kreislauf von Rezyklatmetallen zurück ins CAM.",
+  "themen_exposure": {
+    "wert": 0.1,
+    "einheit": "% Umsatz",
+    "typ": "schaetzung",
+    "begruendung": "BASF weist Recycling nicht getrennt aus. Berichtet ist nur die Einheit Battery Materials mit 642 Mio EUR Umsatz 2025 (BASF Report 2025, Segment Surface Technologies), rund 1 % des Konzernumsatzes von ca. 60 Mrd EUR. Diese Zahl ist überwiegend Kathodenmaterial aus Primärmetallen und daher nur eine Obergrenze. Die Black-Mass-Anlage (15.000 t/a, erst seit Juni 2025 kommerziell) und die Prototyp-Raffinerie dürften nur einen kleinen Bruchteil davon ausmachen (Annahme: rund 10 % des Battery-Materials-Umsatzes, also gut 60 Mio EUR); das ergibt etwa 0,1 % des Konzernumsatzes. Wesentliche Unsicherheit: keine Angabe des Unternehmens zum Recyclinganteil. Quellen: https://report.basf.com/2025/en/combined-managements-report/basf-groups-business-year/segments/surface-technologies.html ; https://www.basf.com/global/en/media/news-releases/2025/06/p-25-112",
+    "abgerufen": "2026-09-19"
+  },
+  "kennzahlen_datei": "data/kennzahlen/BAS.DE.json",
+  "wettbewerbsposition": "Im Kathodenmaterial ist BASF ein etablierter, aber im Wettbewerb mit den großen chinesischen und koreanischen Herstellern (u. a. CATL-Umfeld, L&F, EcoPro BM, POSCO Future M) nicht führender Anbieter; das Geschäft steht wegen niedriger Neuzellpreise und LFP-Verdrängung unter Druck (Rahmenvertrag mit CATL für CAM 2025 stützt die Auslastung in Schwarzheide). Im Recycling gehört die Black-Mass-Anlage mit 15.000 t/a zu den größeren in Europa, ist aber klein gegenüber Umicore und den chinesischen Recyclern; der Vorteil liegt in der Integration ins eigene CAM-Geschäft und in der Chemiekompetenz. Das Raffinationsgeschäft befindet sich noch im Prototypstadium.",
+  "rolle_im_thema": "Mitlaeufer",
+  "ueberzeugung": {
+    "stufe": "niedrig",
+    "begruendung": "Der Anteil des Batterierecyclings am Konzernumsatz liegt geschätzt bei etwa 0,1 %; Ergebnis und Bewertung hängen an Chemie-Zyklik, Agrar und Energiekosten in Europa. Das Recycling-Thema lässt sich über BASF nicht sinnvoll abbilden."
+  },
+  "bull_case": [
+    "Die EU-Batterieverordnung schreibt ab 2031 Mindest-Rezyklatanteile (u. a. 16 % Kobalt) vor; BASF ist mit CAM-Produktion, Black-Mass-Anlage und Raffinerie-Prototyp am selben Standort einer der wenigen europäischen Anbieter mit geschlossenem Kreislauf-Ansatz.",
+    "Battery Materials wuchs 2025 auf 642 Mio EUR (+7,2 %), und der CATL-Rahmenvertrag sowie die Verlängerung des Liefervertrags für Schwarzheide geben Auslastungsperspektive; Kobalt- und Lithiumpreisanstiege verbessern die Erlöse aus Rezyklatmetallen.",
+    "Die Kooperation mit TSR Group (2026) sichert Altbatterie-Rohstoff in Europa und adressiert den Flaschenhals Feedstock."
+  ],
+  "bear_case": [
+    "Das Recyclinggeschäft ist für einen Konzern mit rund 60 Mrd EUR Umsatz nahezu ergebnisirrelevant; die Aktie folgt den Chemie- und Agrarzyklen sowie den europäischen Energiekosten.",
+    "Altbatterie-Angebot bleibt bis Mitte der 2030er knapp (Produktionsausschuss dominiert), europäische Recycler laufen laut Fastmarkets unter Auslastung; die Anlage mit 15.000 t/a hat kaum Skalenvorteile gegenüber chinesischen Wettbewerbern, die rund 90 % der Materialrückgewinnungskapazität halten (IEA).",
+    "Der Wechsel zu LFP (über 55 % der EV-Batterien laut IEA) trifft sowohl Hochnickel-CAM als auch die Recycling-Ökonomie, da LFP-Black-Mass kaum wertvolle Metalle enthält; BASFs CAM-Portfolio ist nickelreich.",
+    "Die Raffinerie ist erst Prototyp; Hochlauf, Investitionsentscheidungen und Kosten sind offen, und das Kapital des Konzerns ist zwischen vielen Prioritäten aufgeteilt."
+  ],
+  "was_uns_widerlegen_wuerde": "Unsere Einschätzung eines vernachlässigbaren Exposures wäre widerlegt, wenn BASF im Geschäftsbericht ein eigenes Recycling-Ergebnis mit mehr als 1 % des Konzernumsatzes ausweist oder eine Investitionsentscheidung für eine industrielle Raffinerie (deutlich über Prototypmaßstab, z. B. > 100.000 t/a) in Schwarzheide verkündet. Gegenteilig: Eine Stilllegung der Black-Mass-Anlage oder eine Abschreibung im Battery-Materials-Bereich."
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Glencore plc",
+  "ticker": "GLEN.L",
+  "segment_id": "hydrometallurgie-raffination",
+  "geschaeftsmodell": "Diversifizierter Rohstoffkonzern (Bergbau, Metallhütten/Raffination, Rohstoffhandel) mit Schwerpunkt Kupfer, Kobalt, Nickel, Zink, Kohle und Energiehandel. Im Batterierecycling seit August 2025 Eigentümer der Li-Cycle-Vermögenswerte (Kaufpreis rund 43,6 Mio USD): Spoke-Anlagen zur Black-Mass-Erzeugung in Nordamerika und Deutschland sowie das unfertige Rochester-Hub-Projekt (Hydrometallurgie, Investitionsvolumen ursprünglich ca. 485 Mio USD). Glencore hat angekündigt, den Bau wieder aufzunehmen. Ergänzend nutzt der Konzern Recycling-Rohstoffe in eigenen Hütten (u. a. Sekundärmaterial-Handel).",
+  "themen_exposure": {
+    "wert": 0.02,
+    "einheit": "% Umsatz",
+    "typ": "schaetzung",
+    "begruendung": "Glencore weist Batterierecycling nicht als Segment aus. Herleitung: Li-Cycle erzielte zuletzt nur einen niedrigen zweistelligen Mio-USD-Umsatz (Größenordnung 20–30 Mio USD, Bestandsdaten vor der Insolvenz, nicht selbst verifiziert) und wurde für 43,6 Mio USD übernommen; der Rochester-Hub ist noch nicht in Betrieb. Bei einem Konzernumsatz von rund 305 Mrd USD (Kennzahlen-Datei) ergibt sich ein Anteil im Bereich von 0,01 % bis 0,03 %; Mittelwert 0,02 %. Nicht enthalten: Handel mit Sekundärmetallen, der nicht batteriespezifisch ist.",
+    "abgerufen": "2026-09-19"
+  },
+  "kennzahlen_datei": "data/kennzahlen/GLEN.L.json",
+  "wettbewerbsposition": "Im Batterierecycling ein Neueinsteiger ohne nennenswerte Marktstellung: Die übernommenen Li-Cycle-Anlagen waren zuvor insolvent, der Rochester-Hub ist unfertig. Vorteile gegenüber reinen Recyclern: Bilanzstärke, eigene Ni-/Co-Raffinationskompetenz und Hütten (mögliche Abnahme von Black Mass im Konzernverbund), Rohstoffhandelsnetz. Nachteile: Kein Kunden- oder Rücknahmenetz im Vergleich zu Umicore, Brunp/CATL oder GEM; chinesische Wettbewerber halten laut IEA rund 90 % der Materialrückgewinnungskapazität. Für die Investmentthese am Thema ist Glencore praktisch irrelevant, es dient als Beispiel für den Einstieg eines Bergbaukonzerns.",
+  "rolle_im_thema": "Mitlaeufer",
+  "ueberzeugung": {
+    "stufe": "niedrig",
+    "begruendung": "Das Thema macht rund 0,02 % des Umsatzes aus (Schätzung); Kurs und Ergebnis werden von Kupfer, Kohle, Kobalt und Handel bestimmt. Als Thematic-Investment ist Glencore ungeeignet, die Recycling-Optionalität ist kaum bewertbar."
+  },
+  "bull_case": [
+    "Der Wiederanlauf des Rochester-Hubs würde Glencore eine der wenigen nordamerikanischen Hydromet-Anlagen für Black Mass verschaffen, zu einem Kaufpreis (43,6 Mio USD) weit unter den ursprünglichen Baukosten von rund 485 Mio USD.",
+    "Kobalt- und Lithiumpreise sind laut IEA von Januar 2025 bis April 2026 deutlich gestiegen (Kobalt ca. +130 %); Glencore ist als Kobaltproduzent ohnehin direkt begünstigt und könnte Recycling-Material in eigene Raffination einspeisen.",
+    "Die Bilanz erlaubt es, das Projekt über den Zyklus zu halten, während kleinere Recycler in Insolvenz gehen (Li-Cycle selbst als Beispiel); US-Politik zur Versorgungssicherheit bei kritischen Mineralien stützt inländische Verarbeitung."
+  ],
+  "bear_case": [
+    "Das Batterie-Recycling ist für einen Konzern mit über 300 Mrd USD Umsatz praktisch nicht ergebnisrelevant; selbst ein Erfolg würde die Konzernzahlen kaum bewegen.",
+    "Der Rochester-Hub war vor der Insolvenz wegen Kostenüberschreitungen pausiert; ein Wiederanlauf birgt Bau- und Prozessrisiken, und europäische wie nordamerikanische Recycler laufen wegen knappen Altbatterie-Angebots laut Fastmarkets unter Auslastung.",
+    "Der wachsende LFP-Anteil (über 55 % der EV-Batterien laut IEA) und niedrige Neuzellpreise drücken den Materialwert je Tonne Black Mass; chinesische Anbieter mit Kostenvorteil beherrschen die Rückgewinnung.",
+    "Das Hauptgeschäft ist stark zyklisch (Kohle, Kupfer, Handelsergebnis) und unterliegt ESG- und Politikrisiken, die mit dem Recycling-Thema nichts zu tun haben."
+  ],
+  "was_uns_widerlegen_wuerde": "Unsere Einordnung als Mitläufer mit vernachlässigbarem Exposure wäre widerlegt, wenn Glencore den Rochester-Hub mit veröffentlichtem Investitionsbeschluss und einem ausgewiesenen Recycling-Segment (Umsatz und EBITDA getrennt berichtet) in Betrieb nimmt und der Bereich in einem Geschäftsjahr mehr als 1 % des Konzernumsatzes erreicht. Umgekehrt: Wird der Hub erneut gestoppt oder abgeschrieben, entfällt die Recycling-These vollständig."
+}

@@ -1,0 +1,234 @@
+{
+ "thema": "Batterierecycling",
+ "treiber": [
+  {
+   "titel": "EU-Recyclingquoten ab 2027/2031",
+   "beschreibung": "Die EU-Batterieverordnung schreibt Mindestrückgewinnungsquoten (Lithium 50 % 2027, 80 % 2031; Kobalt/Nickel/Kupfer 90 % bzw. 95 %) und ab August 2031 Mindest-Rezyklatanteile in Traktionsbatterien vor. Das schafft verbindliche Nachfrage nach recycelten Materialien in der zweiten Hälfte der 2020er und Anfang der 2030er.",
+   "belege": [
+    {
+     "wert": 80,
+     "einheit": "% Lithium-Rückgewinnung ab 2031",
+     "typ": "berichtet",
+     "quelle": "https://howtostoreelectricity.com/eu-battery-regulation-recycling-targets/",
+     "abgerufen": "2026-09-19",
+     "jahr": 2031,
+     "herausgeber": "EU-Verordnung 2023/1542, Sekundärauswertung"
+    },
+    {
+     "wert": 16,
+     "einheit": "% Mindest-Rezyklatanteil Kobalt ab 2031",
+     "typ": "berichtet",
+     "quelle": "https://howtostoreelectricity.com/eu-battery-regulation-recycling-targets/",
+     "abgerufen": "2026-09-19",
+     "jahr": 2031,
+     "herausgeber": "EU-Verordnung 2023/1542, Sekundärauswertung"
+    },
+    {
+     "aussage": "Verordnung (EU) 2023/1542 legt Rückgewinnungs- und Rezyklatanteilsziele rechtsverbindlich fest.",
+     "quelle": "https://eur-lex.europa.eu/legal-content/DE/TXT/HTML/?uri=CELEX%3A32023R1542"
+    }
+   ]
+  },
+  {
+   "titel": "Wachsende Batteriemengen als Rohstoffbasis",
+   "beschreibung": "Der Batteriebestand wächst rasant: Die Einsatzmenge in E-Fahrzeugen stieg 2025 um 30 % auf 1,2 TWh, bis 2030 sind knapp 3 TWh erwartet. Mit zeitlichem Versatz (ca. 15 Jahre) entsteht daraus ab Mitte der 2030er ein großer Strom an Altbatterien; in Europa steigt das Angebot laut T&E von ca. 170 GWh (2035) auf 470 GWh (2040).",
+   "belege": [
+    {
+     "wert": 1.2,
+     "einheit": "TWh EV-Batterieeinsatz",
+     "typ": "berichtet",
+     "quelle": "https://www.iea.org/reports/global-ev-outlook-2026/electric-vehicle-batteries",
+     "abgerufen": "2026-09-19",
+     "jahr": 2025,
+     "herausgeber": "IEA"
+    },
+    {
+     "wert": 3,
+     "einheit": "TWh EV-Batterieeinsatz (Prognose)",
+     "typ": "berichtet",
+     "quelle": "https://www.iea.org/reports/global-ev-outlook-2026/electric-vehicle-batteries",
+     "abgerufen": "2026-09-19",
+     "jahr": 2030,
+     "herausgeber": "IEA"
+    },
+    {
+     "wert": 470,
+     "einheit": "GWh recycelbare Batterien in Europa (Prognose)",
+     "typ": "berichtet",
+     "quelle": "https://www.transportenvironment.org/articles/from-waste-to-value-the-potential-for-battery-recycling-in-europe",
+     "abgerufen": "2026-09-19",
+     "jahr": 2040,
+     "herausgeber": "Transport & Environment"
+    }
+   ]
+  },
+  {
+   "titel": "Versorgungssicherheit und Exportkontrollen",
+   "beschreibung": "China hält ca. 72 % der Raffination im Durchschnitt kritischer Mineralien und weitet Exportkontrollen aus; DR Kongo (Kobalt-Quoten) und Simbabwe (Lithium) beschränken Ausfuhren. Sekundärrohstoffe aus dem Inland werden dadurch strategisch attraktiver, Wirkung mittelfristig und politikgetrieben.",
+   "belege": [
+    {
+     "wert": 72,
+     "einheit": "% Anteil des größten Raffinerielands (Durchschnitt)",
+     "typ": "berichtet",
+     "quelle": "https://www.iea.org/reports/global-critical-minerals-outlook-2026/executive-summary",
+     "abgerufen": "2026-09-19",
+     "jahr": 2025,
+     "herausgeber": "IEA"
+    },
+    {
+     "aussage": "Die DRC hat Kobalt-Exportquoten eingeführt, Simbabwe beschränkt Lithiumexporte, Chinas exportkontrollierte Zolltarifcodes haben sich seit 2023 verdreifacht.",
+     "quelle": "https://www.iea.org/reports/global-critical-minerals-outlook-2026/executive-summary"
+    }
+   ]
+  },
+  {
+   "titel": "Hohe Metallpreise stützen Recyclingerlöse",
+   "beschreibung": "Lithium verteuerte sich zwischen Januar 2025 und April 2026 um mehr als das Doppelte, Kobalt um rund 130 %. Höhere Metallpreise verbessern die Erlöse aus Black Mass unmittelbar; die Wirkung ist aber zyklisch.",
+   "belege": [
+    {
+     "wert": 130,
+     "einheit": "% Kobaltpreisanstieg Jan 2025–Apr 2026",
+     "typ": "berichtet",
+     "quelle": "https://www.iea.org/reports/global-critical-minerals-outlook-2026/executive-summary",
+     "abgerufen": "2026-09-19",
+     "jahr": 2026,
+     "herausgeber": "IEA"
+    },
+    {
+     "aussage": "Lithiumpreise haben sich von Januar 2025 bis April 2026 mehr als verdoppelt.",
+     "quelle": "https://www.iea.org/reports/global-critical-minerals-outlook-2026/executive-summary"
+    }
+   ]
+  },
+  {
+   "titel": "Chinas Öffnung für Black-Mass-Importe",
+   "beschreibung": "China erlaubte im August 2025 den Import von hochwertiger Black Mass und senkte Anfang 2026 Zölle. Das schafft einen zusätzlichen Absatzkanal für Recycler außerhalb Chinas und stützt Vorbehandlungsmodelle im Westen; Wirkung kurzfristig, aber politisch reversibel.",
+   "belege": [
+    {
+     "aussage": "China genehmigte im August 2025 Importe von hochwertiger Black Mass und senkte zu Jahresbeginn 2026 die Einfuhrzölle.",
+     "quelle": "https://www.iea.org/reports/global-ev-outlook-2026/electric-vehicle-batteries"
+    },
+    {
+     "wert": 85,
+     "einheit": "% Anteil Chinas an globaler Recyclingkapazität (über)",
+     "typ": "berichtet",
+     "quelle": "https://www.iea.org/reports/global-ev-outlook-2026/electric-vehicle-batteries",
+     "abgerufen": "2026-09-19",
+     "jahr": 2025,
+     "herausgeber": "IEA"
+    }
+   ]
+  }
+ ],
+ "huerden": [
+  {
+   "titel": "Rohstoffknappheit bei Altbatterien",
+   "beschreibung": "Bis Mitte der 2030er stammt der Großteil des Materials aus Produktionsausschuss statt aus Altbatterien, da die meisten E-Autos noch zu jung sind. Europäische Recycler laufen deutlich unter Auslastung, bei hohen Fixkosten – die Kapazität wächst schneller als das Angebot.",
+   "belege": [
+    {
+     "aussage": "Strukturelle Lücke von ca. 15 Jahren zwischen Batterieeinsatz und verfügbarem Recyclingvolumen bis Mitte der 2030er.",
+     "quelle": "https://www.iea.org/reports/global-ev-outlook-2026/electric-vehicle-batteries"
+    },
+    {
+     "aussage": "Europäische Recycler arbeiten wegen zu geringer Volumina weit unter Kapazität; niedrige Auslastung belastet die Margen.",
+     "quelle": "https://www.fastmarkets.com/insights/lithium-ion-battery-recycling-feedstock-shortage/"
+    },
+    {
+     "wert": 520,
+     "einheit": "kt/Jahr Recyclingkapazität in Europa (Prognose)",
+     "typ": "berichtet",
+     "quelle": "https://www.isi.fraunhofer.de/en/blog/themen/batterie-update/batterie-recycling_europa_kapazitaeten_bedarf_update_2025.html",
+     "abgerufen": "2026-09-19",
+     "jahr": 2030,
+     "herausgeber": "Fraunhofer ISI"
+    }
+   ]
+  },
+  {
+   "titel": "Wechsel zu LFP und Natrium-Ionen",
+   "beschreibung": "LFP-Zellen enthalten kaum Kobalt und Nickel und haben daher niedrigeren Materialwert je Tonne; ihr Anteil stieg auf über 55 %. Das drückt die Recycling-Ökonomie und verlangt andere Geschäftsmodelle oder Regulierung; Natrium-Ionen verstärken den Effekt.",
+   "belege": [
+    {
+     "wert": 55,
+     "einheit": "% LFP-Anteil EV-Batterien (über)",
+     "typ": "berichtet",
+     "quelle": "https://www.iea.org/reports/global-ev-outlook-2026/electric-vehicle-batteries",
+     "abgerufen": "2026-09-19",
+     "jahr": 2025,
+     "herausgeber": "IEA"
+    },
+    {
+     "aussage": "Die Chemieverschiebung erschwert Recyclinggeschäfte, die auf dem Wert rückgewonnener kritischer Mineralien beruhen.",
+     "quelle": "https://www.iea.org/reports/global-ev-outlook-2026/electric-vehicle-batteries"
+    }
+   ]
+  },
+  {
+   "titel": "Fallende Preise für Neuzellen",
+   "beschreibung": "Batteriepacks kosteten 2025 im Schnitt 108 USD/kWh (−8 %), LFP-Packs nur 81 USD/kWh; Überkapazitäten und Wettbewerb halten die Preise niedrig. Das schmälert die Kostenvorteile von Rezyklaten gegenüber Primärmaterial im Endprodukt und erhöht den Preisdruck auf die Recycler.",
+   "belege": [
+    {
+     "wert": 108,
+     "einheit": "USD/kWh durchschnittlicher Pack-Preis",
+     "typ": "berichtet",
+     "quelle": "https://about.bnef.com/insights/clean-transport/lithium-ion-battery-pack-prices-fall-to-108-per-kilowatt-hour-despite-rising-metal-prices-bloombergnef/",
+     "abgerufen": "2026-09-19",
+     "jahr": 2025,
+     "herausgeber": "BloombergNEF"
+    },
+    {
+     "wert": 81,
+     "einheit": "USD/kWh LFP-Pack-Preis",
+     "typ": "berichtet",
+     "quelle": "https://about.bnef.com/insights/clean-transport/lithium-ion-battery-pack-prices-fall-to-108-per-kilowatt-hour-despite-rising-metal-prices-bloombergnef/",
+     "abgerufen": "2026-09-19",
+     "jahr": 2025,
+     "herausgeber": "BloombergNEF"
+    },
+    {
+     "wert": 8,
+     "einheit": "% Preisrückgang ggü. 2024",
+     "typ": "berichtet",
+     "quelle": "https://about.bnef.com/insights/clean-transport/lithium-ion-battery-pack-prices-fall-to-108-per-kilowatt-hour-despite-rising-metal-prices-bloombergnef/",
+     "abgerufen": "2026-09-19",
+     "jahr": 2025,
+     "herausgeber": "BloombergNEF"
+    }
+   ]
+  },
+  {
+   "titel": "Marktkonzentration in China",
+   "beschreibung": "China hat über drei Viertel der globalen Vorbehandlungs- und rund 90 % der Materialrückgewinnungskapazität; chinesische Recycler haben Kostenvorteile. Westliche Anbieter stehen in Skalen- und Kostenwettbewerb, gestützt nur durch Regulierung.",
+   "belege": [
+    {
+     "wert": 90,
+     "einheit": "% Anteil Chinas an Materialrückgewinnungskapazität",
+     "typ": "berichtet",
+     "quelle": "https://www.iea.org/reports/global-critical-minerals-outlook-2026/executive-summary",
+     "abgerufen": "2026-09-19",
+     "jahr": 2025,
+     "herausgeber": "IEA"
+    },
+    {
+     "wert": 75,
+     "einheit": "% Anteil Chinas an Vorbehandlungskapazität (über)",
+     "typ": "berichtet",
+     "quelle": "https://www.iea.org/reports/global-critical-minerals-outlook-2026/executive-summary",
+     "abgerufen": "2026-09-19",
+     "jahr": 2025,
+     "herausgeber": "IEA"
+    }
+   ]
+  },
+  {
+   "titel": "Regulatorik: Black Mass als Gefahrgut",
+   "beschreibung": "Die EU stuft Black Mass als gefährlichen Abfall ein (Export in Nicht-OECD-Staaten faktisch verboten, verbindlich ab 9. November 2026). Das hält Wertschöpfung in Europa, erhöht aber Logistik- und Genehmigungskosten und schränkt Absatzwege ein.",
+   "belege": [
+    {
+     "aussage": "Die Einstufung von Black Mass als gefährlicher Abfall gilt ab 9. November 2026 verbindlich und untersagt Exporte in Nicht-OECD-Länder.",
+     "quelle": "https://www.euwid-recycling.com/news/policy/eu-classifies-black-mass-as-hazardous-waste-effectively-barring-exports-to-non-oecd-states-110325/"
+    }
+   ]
+  }
+ ]
+}

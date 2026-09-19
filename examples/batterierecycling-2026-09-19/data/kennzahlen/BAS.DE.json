@@ -1,0 +1,98 @@
+{
+  "ticker": "BAS.DE",
+  "name": "BASF SE",
+  "waehrung": "EUR",
+  "berichtswaehrung": "EUR",
+  "branche": "Chemicals",
+  "land": "Germany",
+  "abgerufen": "2026-09-19",
+  "kennzahlen": {
+    "marktkapitalisierung": {
+      "wert": 44.441,
+      "einheit": "Mrd EUR",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/BAS.DE",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "umsatz_ttm": {
+      "wert": 61.586,
+      "einheit": "Mrd EUR",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/BAS.DE",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "umsatzwachstum_yoy": {
+      "wert": 16.4,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/BAS.DE",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "bruttomarge": {
+      "wert": 23.6,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/BAS.DE",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "operative_marge": {
+      "wert": 5.2,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/BAS.DE",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "ev_umsatz": {
+      "wert": 1.05,
+      "einheit": "x",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/BAS.DE",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "kgv": {
+      "wert": 21.69,
+      "einheit": "x",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/BAS.DE",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    }
+  },
+  "umsatz_ttm_usd": {
+    "wert": 70.756,
+    "einheit": "Mrd USD",
+    "typ": "berichtet",
+    "quelle": "https://finance.yahoo.com/quote/BAS.DE",
+    "abgerufen": "2026-09-19",
+    "herausgeber": "Yahoo Finance (via yfinance)",
+    "hinweis": "umgerechnet mit 1.1489 USD je Einheit (Kurs vom 2026-09-18)"
+  },
+  "marktkapitalisierung_usd": {
+    "wert": 51.058,
+    "einheit": "Mrd USD",
+    "typ": "berichtet",
+    "quelle": "https://finance.yahoo.com/quote/BAS.DE",
+    "abgerufen": "2026-09-19",
+    "herausgeber": "Yahoo Finance (via yfinance)",
+    "hinweis": "umgerechnet mit 1.1489 USD je Einheit (Kurs vom 2026-09-18)"
+  },
+  "wechselkurse": {
+    "EUR": {
+      "wert": 1.148897,
+      "einheit": "USD je EUR",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/EURUSD=X",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)",
+      "jahr": 2026,
+      "hinweis": "Schlusskurs vom 2026-09-18"
+    }
+  },
+  "hinweise": []
+}

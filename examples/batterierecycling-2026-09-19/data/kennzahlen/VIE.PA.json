@@ -1,0 +1,98 @@
+{
+  "ticker": "VIE.PA",
+  "name": "Veolia Environnement SA",
+  "waehrung": "EUR",
+  "berichtswaehrung": "EUR",
+  "branche": "Waste Management",
+  "land": "France",
+  "abgerufen": "2026-09-19",
+  "kennzahlen": {
+    "marktkapitalisierung": {
+      "wert": 23.553,
+      "einheit": "Mrd EUR",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/VIE.PA",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "umsatz_ttm": {
+      "wert": 44.541,
+      "einheit": "Mrd EUR",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/VIE.PA",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "umsatzwachstum_yoy": {
+      "wert": 0.7,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/VIE.PA",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "bruttomarge": {
+      "wert": 17.9,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/VIE.PA",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "operative_marge": {
+      "wert": 7.9,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/VIE.PA",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "ev_umsatz": {
+      "wert": 1.12,
+      "einheit": "x",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/VIE.PA",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "kgv": {
+      "wert": 18.45,
+      "einheit": "x",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/VIE.PA",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    }
+  },
+  "umsatz_ttm_usd": {
+    "wert": 51.173,
+    "einheit": "Mrd USD",
+    "typ": "berichtet",
+    "quelle": "https://finance.yahoo.com/quote/VIE.PA",
+    "abgerufen": "2026-09-19",
+    "herausgeber": "Yahoo Finance (via yfinance)",
+    "hinweis": "umgerechnet mit 1.1489 USD je Einheit (Kurs vom 2026-09-18)"
+  },
+  "marktkapitalisierung_usd": {
+    "wert": 27.06,
+    "einheit": "Mrd USD",
+    "typ": "berichtet",
+    "quelle": "https://finance.yahoo.com/quote/VIE.PA",
+    "abgerufen": "2026-09-19",
+    "herausgeber": "Yahoo Finance (via yfinance)",
+    "hinweis": "umgerechnet mit 1.1489 USD je Einheit (Kurs vom 2026-09-18)"
+  },
+  "wechselkurse": {
+    "EUR": {
+      "wert": 1.148897,
+      "einheit": "USD je EUR",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/EURUSD=X",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)",
+      "jahr": 2026,
+      "hinweis": "Schlusskurs vom 2026-09-18"
+    }
+  },
+  "hinweise": []
+}

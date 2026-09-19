@@ -1,0 +1,639 @@
+{
+  "ersetzungen": [
+    {
+      "datei": "report.json",
+      "pfad": "/kernaussage",
+      "text": "Batterierecycling kommt, getrieben von EU-Quoten und wachsenden Batteriemengen, doch erst ab Mitte der 2030er wird es für Unternehmen wirklich ins Gewicht fallen. Über Aktien lässt sich das Thema heute kaum abbilden: Keine Firma unserer Auswahl macht mehr als einen kleinen einstelligen Prozentanteil ihres Umsatzes damit, und diesen Befund halten wir für belastbar."
+    },
+    {
+      "datei": "report.json",
+      "pfad": "/these",
+      "text": "Batterierecycling ist aus unserer Sicht ein langfristiger Trend, kommt für Aktienanleger aber zu früh. Die Regeln stehen fest: Ab 2031 verlangt die EU-Batterieverordnung, dass {ref:markt.json#/treiber/0/belege/0} des Lithiums aus Altbatterien zurückgewonnen werden. Zudem muss dann ein Anteil von {ref:markt.json#/treiber/0/belege/1} des Kobalts in Batterien aus Recycling stammen. Auch die Menge wächst: In E-Autos wurden 2025 Batterien im Umfang von {ref:markt.json#/treiber/1/belege/0} verbaut. Bis 2030 sollen es {ref:markt.json#/treiber/1/belege/1} sein. Doch bis eine Batterie zum Recycling zurückkommt, vergehen zehn Jahre und mehr. Bis dahin verarbeiten die Recycler vor allem Ausschuss aus der Batterieproduktion, und die europäischen Anlagen sind nicht ausgelastet.\n\nIm Westen ziehen sich die Unternehmen deshalb zurück. Großanlagen werden verschoben, Raffinerien pausiert, Firmen gehen pleite, Standorte schließen. Das Geschäft konzentriert sich in China, wo rund {ref:markt.json#/huerden/3/belege/0} der Anlagen zur Materialrückgewinnung stehen. Die börsennotierten Kandidaten aus dem Westen betreiben Recycling nur am Rand. Es bringt ihnen Umsatzanteile im Promillebereich. Wer heute über Aktien in das Thema investiert, kauft vor allem das Risiko von Zellherstellern, Chemie-, Energie- oder Bergbaukonzernen. Wir halten das Thema deshalb für beobachtenswert, aber noch nicht für investierbar.\n\nUmdenken müssten wir, wenn ein westlicher Recycler vier Quartale lang mit Batterierecycling einen operativen Gewinn ausweist. Dasselbe gilt, wenn Umicore, BASF oder Glencore den Bau einer Großanlage beschließen, die noch vor 2030 in Betrieb geht."
+    },
+    {
+      "datei": "report.json",
+      "pfad": "/abschnitte/markt",
+      "text": "Die Marktprognosen liegen weit auseinander, und die Spanne ist mit Vorsicht zu lesen. Für 2030 schätzt BCC Research den Markt auf {ref:markt.json#/schaetzungen/2/marktgroesse}, MarketsandMarkets dagegen auf {ref:markt.json#/schaetzungen/0/marktgroesse}. Dabei rechnen beide mit fast derselben jährlichen Wachstumsrate: {ref:markt.json#/schaetzungen/2/cagr} und {ref:markt.json#/schaetzungen/0/cagr}. Der Unterschied liegt also nicht in der Prognose, sondern schon im Ausgangsjahr: Beide grenzen den heutigen Markt verschieden ab. Precedence Research kommt für 2035 auf {ref:markt.json#/schaetzungen/3/marktgroesse} bei einer Wachstumsrate von {ref:markt.json#/schaetzungen/3/cagr}. Nur diese Zahl beschränkt sich auf Lithium-Ionen-Batterien. Sie ist aber auch die einzige mit einem anderen Zieljahr. Einen Durchschnitt der Schätzungen bilden wir nicht.\n\nZwei Einschränkungen sind wichtig. Erstens zählen drei der vier Prognosen auch das Recycling von Blei-Säure-Batterien mit. Das ist ein reifer Markt, der mit unserem Thema nichts zu tun hat. MarketsandMarkets beziffert allein diesen Teil für 2030 auf {ref:redteam.json#/einwaende/0/beleg}, also rund die Hälfte der eigenen Gesamtzahl. Eine Spanne nur für Lithium-Ionen haben wir nicht. Zweitens stammen alle vier Zahlen aus Pressemitteilungen oder Verkaufsseiten von Marktforschern, deren Methodik sich nicht einsehen lässt. Außerdem sind die Marktgrößen in Geld gemessen und schwanken deshalb mit den Metallpreisen. Lithiumcarbonat kostete 2025 nur noch {ref:redteam.json#/einwaende/3/beleg}, ein Bruchteil des Preises von 2022. Die Datenlage ist dünn. Wir lesen die Prognosen als Richtungsangabe, nicht als Planungsgröße."
+    },
+    {
+      "datei": "report.json",
+      "pfad": "/abschnitte/treiber_und_huerden",
+      "text": "Der stärkste Treiber ist die Regulierung. Die EU-Batterieverordnung schreibt verbindlich vor, wie viel Material zurückgewonnen werden muss und wie viel Rezyklat neue Batterien enthalten müssen. Die Vorgaben greifen in zwei Stufen, 2027 und 2031. Damit ist in Europa Nachfrage nach Recyclingkapazität gesichert, egal wie sich die Metallpreise entwickeln. Der zweite Treiber ist die Menge: In Europa werden bis 2040 rund {ref:markt.json#/treiber/1/belege/2} an recycelbaren Batterien erwartet. Der dritte Treiber ist die Versorgungssicherheit. China kontrolliert im Durchschnitt {ref:markt.json#/treiber/2/belege/0} der Raffination kritischer Mineralien. Rohstoffländer wie die DR Kongo führen Exportquoten ein. So wird Recycling zur Aufgabe der Industriepolitik.\n\nKurzfristig wiegen die Hürden schwerer. Erstens fehlt das Rohmaterial: Die meisten E-Autos sind zu jung, um schon als Altbatterie zurückzukommen. Europäische Recycler sind nicht ausgelastet. Trotzdem werden in Europa bis 2030 Kapazitäten von {ref:markt.json#/huerden/0/belege/2} erwartet – mehr, als an Altbatterien zurückkommt. Zweitens sinkt der Wert je Tonne. LFP-Zellen enthalten kaum Kobalt und Nickel, und ihr Anteil liegt inzwischen über {ref:markt.json#/huerden/1/belege/0}. Drittens werden neue Zellen billiger. Ein Batteriepack kostete 2025 im Schnitt {ref:markt.json#/huerden/2/belege/0}, ein LFP-Pack nur {ref:markt.json#/huerden/2/belege/1}. Das drückt den Preis, den recyceltes Material gegenüber neu gewonnenen Rohstoffen erzielen kann. Viertens gilt Black Mass in der EU ab dem 9. November 2026 als gefährlicher Abfall. Das hält die Verarbeitung in Europa, verbietet aber den Export nach China. Genau diesen Absatzweg hatte China den europäischen Vorbehandlern erst 2025 geöffnet, als es Importe erlaubte. Für europäische Anbieter heben sich dieser Treiber und diese Hürde gegenseitig auf."
+    },
+    {
+      "datei": "report.json",
+      "pfad": "/abschnitte/wertschoepfung",
+      "text": "Wir teilen die Kette in sechs Stufen: Sammeln und Zerlegen, Vorbehandlung zu Black Mass, Hydrometallurgie und Raffination, Rückführung in Kathodenmaterial, Anlagenbau und schließlich die Abnehmer, also Zellhersteller und Autobauer. Ursprünglich hatten wir der Hydrometallurgie die höchsten Margen zugeschrieben, weil sie viel Kapital und Prozesswissen erfordert. Die Analyse der einzelnen Firmen zeigt, dass das heute nicht stimmt. Umicores Batterierecycling schreibt Verluste. GEM erzielt im Batterierecycling nur eine einstellige Bruttomarge, die operative Marge des Gesamtkonzerns liegt bei {ref:../../data/kennzahlen/002340.SZ.json#/kennzahlen/operative_marge}. Und Li-Cycle scheiterte genau an seiner Hydrometallurgie-Anlage. Derzeit sind die Margen nirgends in der Kette hoch. Zum Engpass wird die Hydrometallurgie erst in Zukunft, heute ist sie es nicht.\n\nGeografisch ist der Wettbewerb entschieden. China hält über {ref:markt.json#/huerden/3/belege/1} der Vorbehandlung und rund {ref:markt.json#/huerden/3/belege/0} der Materialrückgewinnung. Chinesische Anbieter haben Kostenvorteile, und die Zellhersteller im eigenen Verbund nehmen ihnen das Material ab. Im Westen wandert das Geschäft derzeit in die andere Richtung: Anlagen werden verschoben oder geschlossen. Das beste Verhältnis von Risiko und Absehbarkeit bietet der Anlagenbau. Doch auch er hängt davon ab, wie viel die Recycler investieren, und in Europa gehen diese Investitionen zurück."
+    },
+    {
+      "datei": "report.json",
+      "pfad": "/abschnitte/unternehmen",
+      "text": "Unsere Auswahl umfasst acht Firmen aus allen sechs Stufen der Kette. Die Analyse der einzelnen Firmen ergibt ein eindeutiges Bild: Alle acht sind Mitläufer oder Zulieferer, keine profitiert im Kern vom Thema. Bei sieben von acht ist unsere Überzeugung niedrig. Der Themenanteil reicht von {ref:firmen/GLEN.L.json#/themen_exposure} bei Glencore bis {ref:firmen/002340.SZ.json#/themen_exposure} bei GEM. Auch der höchste Wert, {ref:firmen/300750.SZ.json#/themen_exposure} bei CATL, ist nur geschätzt. Denn das Segment, das CATL berichtet, enthält auch Batteriematerialien.\n\nCATL ist über seine Tochter Brunp der weltweit größte Batterierecycler, gemessen an der Menge. Das Recycling ist strategisch sinnvoll. Wer in CATL investiert, bekommt es aber nur als Beigabe zu einem Zellhersteller. Anders sähen wir das, wenn CATL den Recyclingumsatz gesondert ausweist und der Erlös je Tonne steigt. GEM stellt das Batterierecycling ins Zentrum seiner Marke, macht damit aber nur {ref:firmen/002340.SZ.json#/themen_exposure} des Umsatzes. Der Rest sind Batteriematerialien und neu gewonnenes Nickel. Falsch läge unsere Einschätzung, wenn GEM im Batterierecycling eine höhere Bruttomarge erzielt als im Materialgeschäft. Umicore ist der wichtigste Vergleichsfall in Europa. Das Unternehmen weist Batterierecycling nicht einzeln aus, wir schätzen den Anteil auf {ref:firmen/UMI.BR.json#/themen_exposure}. Die geplante Großanlage ist auf frühestens 2032 verschoben. Neu bewerten würden wir Umicore, wenn das Unternehmen den Bau mit einem früheren Termin beschließt.\n\nBASF, Fortum, Veolia und Glencore sind Konzerne, bei denen Batterierecycling nach unserer Schätzung zwischen {ref:firmen/GLEN.L.json#/themen_exposure} und {ref:firmen/FORTUM.HE.json#/themen_exposure} des Umsatzes ausmacht. BASF hat die geplante Großraffinerie pausiert. Fortum schließt zwei von drei finnischen Standorten. Glencore hat die Anlagen von Li-Cycle aus der Insolvenz übernommen. Hier würde uns ein Wiederanlauf der Anlage in Rochester umstimmen, wenn Glencore dazu einen Investitionsbeschluss veröffentlicht. Andritz ist der einzige Zulieferer in der Auswahl, mit einem geschätzten Themenanteil von {ref:firmen/ANDR.VI.json#/themen_exposure}. Belegt ist kein einziger Auftrag aus dem Batterierecycling. Anders urteilen würden wir, wenn Andritz Aufträge für komplette Recyclinglinien in Europa oder Nordamerika meldet.\n\nUnsere Bottom-up-Rechnung bestätigt das Bild. Zusammen kommen die acht Firmen auf Themenumsätze von {ref:bottom_up.json#/summe_themenumsatz}. Den Großteil davon trägt ein CATL-Segment, das auch Batteriematerialien enthält. Gemessen an den Marktprognosen deckt die Auswahl nur {ref:bottom_up.json#/abdeckung_bei_oberer_schaetzung} bis {ref:bottom_up.json#/abdeckung_bei_unterer_schaetzung} des Marktes ab. Sie bildet den Markt also nicht ab. Das ist der Hauptbefund dieses Reports, keine Fußnote."
+    },
+    {
+      "datei": "report.json",
+      "pfad": "/abschnitte/risiken",
+      "text": "Bei unserer internen Gegenprüfung kamen drei Einwände auf, die wir teilen. Erstens misst die Spanne der Marktprognosen zu großen Teilen etwas anderes als unser Thema. Drei von vier Quellen zählen das Recycling von Blei-Säure-Batterien mit. Der Markt für Lithium-Ionen ist kleiner, als die Spanne vermuten lässt. Zweitens bietet unsere Auswahl keinen echten Zugang zum Thema. Wer diese Aktien hält, trägt vor allem das Risiko von Zellherstellern, Chemie-, Energie- und Bergbaukonzernen, mit etwas Recycling als Beimischung. Drittens hängen die Marktgrößen an den Metallpreisen. Diese fielen von 2022 bis 2025 stark und rissen Li-Cycle und Northvolt mit. Die jüngste Erholung der Preise steht auf wackligen Beinen.\n\nWeitere Punkte betreffen unsere eigenen Rechnungen. Den Themenanteil von Umicore haben wir auf den Umsatz ohne Metallwert bezogen. Die Bottom-up-Rechnung multipliziert ihn aber mit dem Umsatz einschließlich Metall. Die Zahl fällt dadurch deutlich zu hoch aus. Bei CATL stammt der Segmentanteil aus zweiter Hand, und das Segment umfasst mehr als Recycling. Fortum gibt die Vorbehandlung auf. Damit ist diese Stufe in unserer Auswahl faktisch unbesetzt. Zwei unserer Begründungen für die Auswahl waren sachlich falsch. Umicores Berichtssegment „Recycling“ steht für Edelmetallraffination, nicht für Batterierecycling. Und GEM ist weder ein reiner Recycler noch der größte in China. Beides korrigieren wir in diesem Report. Ein Risiko können wir nicht beziffern: das sogenannte Second Life. Werden Batterien aus E-Autos zunächst als stationäre Speicher weitergenutzt, kommen sie erst Jahre später zum Recycling."
+    },
+    {
+      "datei": "report.json",
+      "pfad": "/antworten_auf_einwaende/0/antwort",
+      "text": "Der Einwand ist berechtigt. Drei der vier Schätzungen umfassen auch das Recycling von Blei-Säure-Batterien. MarketsandMarkets beziffert allein diesen Teil für 2030 auf {ref:redteam.json#/einwaende/0/beleg}. Nur Precedence Research betrachtet ausschließlich Lithium-Ionen und kommt auf {ref:markt.json#/schaetzungen/3/marktgroesse}. Diese Zahl gilt allerdings für 2035. Ihre Wachstumsrate von {ref:markt.json#/schaetzungen/3/cagr} passt zudem nicht zu den Hürden, die wir selbst festgestellt haben. Eine verlässliche Spanne nur für Lithium-Ionen im Jahr 2030 konnten wir nicht ermitteln, weil zwei weitere Marktforscher den Zugriff auf ihre Daten sperrten."
+    },
+    {
+      "datei": "report.json",
+      "pfad": "/antworten_auf_einwaende/0/konsequenz",
+      "text": "Im Report stellen wir die Spanne deshalb nicht als Größe des Themenmarkts dar, sondern als Obergrenze. Den Anteil des Blei-Säure-Recyclings weisen wir dabei gesondert aus. Die Zahl von Precedence nennen wir, nutzen sie aber nicht als Obergrenze für unsere These. Zusätzlich beobachten wir eine Schätzung, die auf Mengen beruht: Tonnen mal Payables. Sie soll in einer späteren Ausgabe die Werte in Geld ersetzen."
+    },
+    {
+      "datei": "report.json",
+      "pfad": "/antworten_auf_einwaende/1/antwort",
+      "text": "Wir stimmen zu und machen den Punkt zum Hauptbefund. Alle acht Firmen sind Mitläufer oder Zulieferer, bei sieben ist unsere Überzeugung niedrig. Der Themenanteil liegt zwischen {ref:firmen/GLEN.L.json#/themen_exposure} und {ref:firmen/002340.SZ.json#/themen_exposure}. Die Summe der Themenumsätze aus der Bottom-up-Rechnung von {ref:bottom_up.json#/summe_themenumsatz} ist zudem zu hoch. Den Großteil davon trägt CATL mit einem geschätzten Anteil von {ref:firmen/300750.SZ.json#/themen_exposure}. Diese Schätzung beruht aber auf einer unbelegten Annahme. Und bei Umicore wurde mit der falschen Bezugsgröße gerechnet. Nur bei GEM ist der Themenanteil berichtet, die übrigen sieben sind Schätzungen. Die reinen Recycler sind entweder pleite, oder sie waren zu klein für unsere Vorauswahl."
+    },
+    {
+      "datei": "report.json",
+      "pfad": "/antworten_auf_einwaende/1/konsequenz",
+      "text": "Unsere These lautet nicht mehr: „Batterierecycling lässt sich über Aktien abbilden.“ Sie lautet jetzt: „Batterierecycling ist ein realer Trend ohne investierbare Aktie.“ Die Auswahl bleibt im Report, um zu zeigen, was der Aktienmarkt bietet. Eine Empfehlung ist sie nicht. Wir korrigieren zwei Begründungen für die Auswahl (Umicore, GEM). Fortum stufen wir als Vertreter der Vorbehandlung herab, weil das Unternehmen diese Stufe aufgibt."
+    },
+    {
+      "datei": "report.json",
+      "pfad": "/beobachtungspunkte/1",
+      "text": "EU-Regeln: Ab dem 9. November 2026 gilt Black Mass als gefährlicher Abfall. Liefern europäische Vorbehandler danach an westliche Hydrometallurgie-Betriebe, oder schließen sie Standorte?"
+    },
+    {
+      "datei": "report.json",
+      "pfad": "/beobachtungspunkte/2",
+      "text": "Payables für Black Mass (laut SMM und Fastmarkets), getrennt nach nickel- und kobalthaltigem Material und LFP-Material: Steigen sie über mehrere Quartale, stützt das die Wertprognosen. Fallen sie weiter, bestätigt das unsere These, dass der Markt an den Metallpreisen hängt."
+    },
+    {
+      "datei": "report.json",
+      "pfad": "/beobachtungspunkte/4",
+      "text": "Glencore: veröffentlichter Investitionsbeschluss für den Wiederanlauf der Anlage in Rochester. Sie ist die einzige Hydrometallurgie-Anlage in Nordamerika, die Glencore mit Li-Cycle übernommen hat."
+    },
+    {
+      "datei": "firmen/002340.SZ.json",
+      "pfad": "/geschaeftsmodell",
+      "text": "Chinesischer Konzern für Kreislaufwirtschaft mit drei Standbeinen. Erstens gewinnt und recycelt GEM wichtige Metalle: Nickel aus eigener Produktion in Indonesien (als Zwischenprodukt MHP und als Nickelplatten), dazu Kobalt und Wolfram. Zweitens recycelt GEM Antriebsbatterien aus E-Autos und Altfahrzeuge. Drittens stellt GEM Batteriematerialien her, etwa Vorprodukte für Kathoden, Kobaltoxid (Trikobalttetroxid) und Kathodenmaterial. Das Geld verdient GEM überwiegend mit dem Verkauf von Metallen und Vorprodukten an Zell- und Kathodenhersteller. Das reine Batterierecycling ist das kleinste der drei Standbeine. Ein Teil der recycelten Rohstoffe fließt in die eigene Materialproduktion und schließt so den Kreislauf. Wie groß dieser Teil ist, weist GEM nicht aus."
+    },
+    {
+      "datei": "firmen/002340.SZ.json",
+      "pfad": "/ueberzeugung/begruendung",
+      "text": "GEM ist zwar Chinas größter Recycler, doch das ausgewiesene Batterierecycling macht nur 4,9 % des Umsatzes aus. Die Bruttomarge liegt dort bei rund 8 %. Das Ergebnis hängt stärker an den Preisen für Nickel, Kobalt und Kathoden-Vorprodukte als an der recycelten Menge. Die operative Marge des Konzerns liegt nahe null."
+    },
+    {
+      "datei": "firmen/002340.SZ.json",
+      "pfad": "/bull_case/0",
+      "text": "Die recycelte Menge wächst: Bei Antriebsbatterien stieg sie 2025 laut Unternehmen um 46 %. Ziel sind über 80.000 t im Jahr 2026 und über 120.000 t im Jahr 2028. Je mehr ausgediente E-Auto-Batterien in China zurückkommen, desto mehr Rohstoff steht zur Verfügung."
+    },
+    {
+      "datei": "firmen/002340.SZ.json",
+      "pfad": "/bull_case/1",
+      "text": "Die Ergebnisse 2025 waren deutlich besser: Der Umsatz stieg um 11,8 % auf 37,1 Mrd CNY, der Nettogewinn laut Unternehmen um 54,9 %. Davon profitierten das Kobaltrecycling (Marge 21,8 %) und Kobaltoxid (Umsatz +171 %). Grund sind höhere Kobaltpreise, laut IEA +130 % von Januar 2025 bis April 2026."
+    },
+    {
+      "datei": "firmen/002340.SZ.json",
+      "pfad": "/bull_case/2",
+      "text": "Der Auslandsanteil stieg um 63 % auf 34,5 % des Umsatzes. Die eigene Nickelproduktion in Indonesien (60.000 t elektrolytisch gewonnenes Nickel, über 110.000 t geliefertes MHP) und Kathodenmaterial für Kunden in Japan machen GEM unabhängiger vom Heimatmarkt."
+    },
+    {
+      "datei": "firmen/002340.SZ.json",
+      "pfad": "/bear_case/0",
+      "text": "Das Thema ist ein Randgeschäft. Batterierecycling bringt 4,9 % des Umsatzes, wuchs nur um 2,2 % und hat eine Bruttomarge von 8,2 %. Das Geschäft mit Altfahrzeugen schrumpfte um 11 %, bei 2,8 % Marge. 54 % des Umsatzes stammen aus Batteriematerialien (Kathoden-Vorprodukte: −28 %), 35 % aus Metallen."
+    },
+    {
+      "datei": "firmen/002340.SZ.json",
+      "pfad": "/bear_case/1",
+      "text": "In China gibt es dauerhaft zu viel Kapazität: Dort stehen laut IEA rund 90 % der Anlagen zur Materialrückgewinnung. Zugleich setzen sich LFP-Zellen durch (über 55 % Anteil), die je Tonne wenig Metallwert enthalten. Beides macht Recycling weniger rentabel. Die Bruttomarge des Konzerns liegt nur bei 14,9 %, die operative Marge bei 0,6 %."
+    },
+    {
+      "datei": "firmen/002340.SZ.json",
+      "pfad": "/bear_case/2",
+      "text": "GEM hängt stark an Metallpreisen und wenigen Kunden. Der Gewinnanstieg beruht auf schwankenden Kobalt- und Nickelpreisen. Die Bruttomarge bei Nickel sank um 7 Prozentpunkte auf 18,1 %, bei Vorprodukten für Nickel-Kobalt-Kathoden auf 14,1 %. Politische Risiken lassen sich schwer abschätzen, etwa in Indonesien, durch chinesische Exportkontrollen oder durch Importregeln für Black Mass."
+    },
+    {
+      "datei": "firmen/002340.SZ.json",
+      "pfad": "/was_uns_widerlegen_wuerde",
+      "text": "Wächst das Segment Power lithium battery recycling im Halbjahres- oder Jahresbericht 2026 erneut um weniger als 10 % und bleibt seine Bruttomarge unter 10 %, während die Konzernmarge nur mit den Kobalt- und Nickelpreisen schwankt, trägt das Recycling nicht zur Ertragskraft bei. Umgekehrt: Macht das Recycling über 10 % des Umsatzes aus und steigt die Marge, läge unsere niedrige Überzeugung falsch."
+    },
+    {
+      "datei": "firmen/300750.SZ.json",
+      "pfad": "/geschaeftsmodell",
+      "text": "CATL ist der weltgrößte Hersteller von Lithium-Ionen-Zellen für E-Autos und stationäre Speicher. 2025 setzte der Konzern rund 424 Mrd RMB um, über 94 % davon mit Batteriesystemen für Fahrzeuge und Speicher. Über die Mehrheitsbeteiligung an Brunp Recycling deckt CATL auch Rohstoffe, Batteriematerialien und Recycling selbst ab. Brunp verarbeitete 2025 rund 210.000 t Altbatterien (+63 %) und gewann daraus 24.000 t Lithiumsalze zurück. Bis 2030 soll die Kapazität auf über 1 Mio t steigen. Die zurückgewonnenen Metalle Nickel, Kobalt, Mangan und Lithium fließen in den eigenen Materialkreislauf."
+    },
+    {
+      "datei": "firmen/300750.SZ.json",
+      "pfad": "/ueberzeugung/begruendung",
+      "text": "Nach unserer Schätzung hängen rund 3 % des Umsatzes am Thema. Die Obergrenze sind 5,16 % für das gesamte Segment, das auch Batteriematerialien enthält. Bewertung und Ergebnis bestimmt das Zellgeschäft. Beim Recycling ist CATL stark aufgestellt, und das ist strategisch sinnvoll. Wer auf Recycling setzen will, bekommt es hier aber nur als Beigabe zu einem Zellhersteller."
+    },
+    {
+      "datei": "firmen/300750.SZ.json",
+      "pfad": "/bull_case/0",
+      "text": "Alles aus einer Hand: CATL liefert Brunp immer mehr eigene Altbatterien und Produktionsausschuss. Die recycelte Menge stieg 2025 um 63 % auf 210.000 t. Das Ziel von über 1 Mio t Kapazität bis 2030 wäre ein Vielfaches des heutigen Niveaus."
+    },
+    {
+      "datei": "firmen/300750.SZ.json",
+      "pfad": "/bull_case/2",
+      "text": "Das Kerngeschäft ist sehr profitabel und wächst stark: Der Nettogewinn lag 2025 bei rund 10 Mrd USD, wie Berichte über den Geschäftsbericht melden. Als Marktführer bei Zellen kann CATL den Ausbau des Recyclings bezahlen, ohne dass das Geld knapp wird."
+    },
+    {
+      "datei": "firmen/300750.SZ.json",
+      "pfad": "/bear_case/0",
+      "text": "Das Segment Battery Materials and Recycling bringt nur 5,16 % des Umsatzes. Das ist die Obergrenze für das Recycling, wir schätzen rund 3 %. 2025 sank der Umsatz des Segments um rund 24 %. Selbst ein starkes Recyclinggeschäft bewegt die Zahlen des Konzerns kaum."
+    },
+    {
+      "datei": "firmen/300750.SZ.json",
+      "pfad": "/bear_case/1",
+      "text": "Mit einem LFP-Anteil von über 55 % (IEA) lohnt sich Recycling weniger. Black Mass aus LFP-Zellen enthält wenig Nickel und Kobalt, der Materialwert je Tonne sinkt. CATL treibt diesen Wandel selbst am stärksten voran."
+    },
+    {
+      "datei": "firmen/300750.SZ.json",
+      "pfad": "/bear_case/2",
+      "text": "Altbatterien bleiben bis Mitte der 2030er knapp. Brunp will trotzdem stark wachsen, und zwar in einem chinesischen Markt mit ohnehin zu vielen Anbietern (über 85 % der weltweiten Kapazität). Hinzu kommt Preisdruck bei neuen Zellen: Batteriepacks kosteten 2025 laut BNEF im Schnitt 108 USD/kWh."
+    },
+    {
+      "datei": "firmen/300750.SZ.json",
+      "pfad": "/was_uns_widerlegen_wuerde",
+      "text": "Unsere Einstufung als Mitläufer wäre falsch, wenn CATL das Recycling gesondert ausweist und dessen Anteil am Konzernumsatz über 10 % steigt. Dasselbe gilt, wenn Brunp die angestrebte Kapazität von über 1 Mio t pro Jahr sichtbar hochfährt. Umgekehrt: Schrumpft das Segment Battery Materials and Recycling auch 2026 und wird Kapazität zurückgestellt, spricht das für eine reine Randrolle."
+    },
+    {
+      "datei": "firmen/ANDR.VI.json",
+      "pfad": "/geschaeftsmodell",
+      "text": "Österreichischer Technologie- und Anlagenbaukonzern mit vier Geschäftsbereichen: Hydropower, Pulp & Paper, Metals sowie Environment & Energy. 2025 setzte Andritz rund 7,9 Mrd EUR um, der Auftragsbestand liegt bei rund 10,5 Mrd EUR. Der Konzern baut und wartet Anlagen für Wasserkraft, Zellstoff und Papier, Metallumformung und Umwelttechnik. Batterierecycling ist ein Nischenangebot. Andritz liefert dafür Schredder (Vor- und Feinzerkleinerung unter Stickstoff), Trockner (2026 kam der neue Helix-Trockner hinzu), Anlagen zum Entwässern und Trennen sowie Prozesspakete für die Hydrometallurgie."
+    },
+    {
+      "datei": "firmen/ANDR.VI.json",
+      "pfad": "/ueberzeugung/begruendung",
+      "text": "Andritz liefert zwar wichtige Anlagenteile, doch das Thema macht geschätzt nur etwa 0,5 % des Umsatzes aus. Das Konzernergebnis bestimmen Wasserkraft, Zellstoff und Metallumformung. Wer auf Recycling setzen will, erreicht mit dieser Aktie nur wenig."
+    },
+    {
+      "datei": "firmen/ANDR.VI.json",
+      "pfad": "/bull_case/0",
+      "text": "Die EU-Batterieverordnung verlangt ab 2031, dass 80 % des Lithiums zurückgewonnen werden, und schreibt Rezyklatquoten vor. Das erzwingt Investitionen in Recyclinganlagen. Andritz verkauft die Ausrüstung, egal welcher Recycler sich am Ende durchsetzt – nach dem Prinzip „Schaufeln und Spitzhacken verkaufen“."
+    },
+    {
+      "datei": "firmen/ANDR.VI.json",
+      "pfad": "/bull_case/1",
+      "text": "Das Konzerngeschäft ist stabil. Der Auftragsbestand ist mit rund 10,5 Mrd EUR so hoch wie nie, und die neuen Aufträge übersteigen den Umsatz (Book-to-Bill 1,13). Die bereinigte operative Marge (EBITA) liegt bei 8,9 %. Das gibt Spielraum, das Angebot für Batterien mit neuen Produkten wie dem Helix-Trockner auszubauen."
+    },
+    {
+      "datei": "firmen/ANDR.VI.json",
+      "pfad": "/bear_case/1",
+      "text": "Laut Fastmarkets sind Europas Recycler nicht ausgelastet, weil Altbatterien fehlen. Zugleich wächst die Kapazität schneller als die Menge: Fraunhofer ISI erwartet bis 2030 in Europa 520 kt pro Jahr. Das bremst neue Investitionen in Ausrüstung."
+    },
+    {
+      "datei": "firmen/ANDR.VI.json",
+      "pfad": "/was_uns_widerlegen_wuerde",
+      "text": "Als bloßen Randzulieferer sähen wir Andritz nicht mehr, wenn der Konzern Aufträge im Batterierecycling von mindestens 100 Mio EUR pro Jahr meldet oder das Geschäft eigens ausweist (Anteil über 2 % des Umsatzes). Umgekehrt würde die These schwächer, wenn wichtige europäische Recycler geplante Anlagen absagen oder verschieben und Andritz in den Bereichen Metals und Environment weiter sinkende Auftragseingänge meldet."
+    },
+    {
+      "datei": "firmen/BAS.DE.json",
+      "pfad": "/geschaeftsmodell",
+      "text": "Größter Chemiekonzern der Welt mit rund 60 Mrd EUR Umsatz 2025 und den Segmenten Chemicals, Materials, Industrial Solutions, Nutrition & Care, Agricultural Solutions und Surface Technologies. Das Batterierecycling gehört zur Einheit Battery Materials im Segment Surface Technologies. BASF stellt in Schwarzheide und Harjavalta Kathodenmaterial her. In Schwarzheide steht zudem eine Anlage für Black Mass, die seit Juni 2025 regulär läuft. Sie verarbeitet bis zu 15.000 t Altbatterien und Produktionsausschuss pro Jahr. Dazu kommt eine Versuchsraffinerie, die Metalle zurückgewinnt. Ziel ist, recycelte Metalle wieder ins Kathodenmaterial zu führen."
+    },
+    {
+      "datei": "firmen/BAS.DE.json",
+      "pfad": "/ueberzeugung/begruendung",
+      "text": "Batterierecycling macht geschätzt etwa 0,1 % des Konzernumsatzes aus. Ergebnis und Bewertung hängen an den Chemiezyklen, am Agrargeschäft und an den Energiekosten in Europa. Über BASF lässt sich das Thema nicht sinnvoll abbilden."
+    },
+    {
+      "datei": "firmen/BAS.DE.json",
+      "pfad": "/bull_case/0",
+      "text": "Ab 2031 schreibt die EU-Batterieverordnung Mindestanteile an Rezyklat vor, bei Kobalt etwa 16 %. BASF produziert Kathodenmaterial und betreibt eine Black-Mass-Anlage und eine Versuchsraffinerie am selben Standort. Damit gehört BASF zu den wenigen europäischen Anbietern, die den Kreislauf schließen wollen."
+    },
+    {
+      "datei": "firmen/BAS.DE.json",
+      "pfad": "/bear_case/0",
+      "text": "Für einen Konzern mit rund 60 Mrd EUR Umsatz spielt das Recyclinggeschäft beim Ergebnis fast keine Rolle. Die Aktie folgt den Zyklen von Chemie und Agrar sowie den Energiekosten in Europa."
+    },
+    {
+      "datei": "firmen/BAS.DE.json",
+      "pfad": "/bear_case/1",
+      "text": "Altbatterien bleiben bis Mitte der 2030er knapp, bis dahin überwiegt Produktionsausschuss. Europäische Recycler sind laut Fastmarkets nicht ausgelastet. Mit 15.000 t pro Jahr ist die Anlage zu klein, um bei den Kosten mit chinesischen Wettbewerbern mitzuhalten. Diese halten rund 90 % der Kapazität zur Materialrückgewinnung (IEA)."
+    },
+    {
+      "datei": "firmen/BAS.DE.json",
+      "pfad": "/bear_case/2",
+      "text": "Der Wechsel zu LFP-Zellen (laut IEA über 55 % der E-Auto-Batterien) trifft BASF doppelt. Er schadet dem Kathodenmaterial mit hohem Nickelgehalt, auf das BASF setzt. Und er schwächt das Recycling, weil Black Mass aus LFP kaum wertvolle Metalle enthält."
+    },
+    {
+      "datei": "firmen/BAS.DE.json",
+      "pfad": "/bear_case/3",
+      "text": "Die Raffinerie ist erst ein Prototyp. Wann sie hochfährt, was sie kostet und ob BASF investiert, ist offen. Zudem konkurriert das Projekt im Konzern mit vielen anderen Vorhaben um Kapital."
+    },
+    {
+      "datei": "firmen/BAS.DE.json",
+      "pfad": "/was_uns_widerlegen_wuerde",
+      "text": "Falsch läge unsere Einschätzung, dass BASF kaum am Thema hängt, wenn der Konzern im Geschäftsbericht ein eigenes Recyclingergebnis mit mehr als 1 % des Konzernumsatzes ausweist. Dasselbe gilt, wenn BASF in Schwarzheide den Bau einer industriellen Raffinerie beschließt, die deutlich größer ist als der Prototyp, etwa über 100.000 t pro Jahr. In die andere Richtung wiesen eine Stilllegung der Black-Mass-Anlage oder eine Abschreibung im Bereich Battery Materials."
+    },
+    {
+      "datei": "firmen/FORTUM.HE.json",
+      "pfad": "/geschaeftsmodell",
+      "text": "Nordischer Energiekonzern, der vor allem Strom mit wenig CO2 erzeugt (aus Wasser- und Kernkraft) und verkauft. Das Abfall- und Recyclinggeschäft (Fortum Recycling & Waste) verkaufte Fortum im November 2024 für rund 800 Mio EUR an Summa Equity. Das Batterierecycling (Fortum Battery Recycling) blieb im Konzern. Es betreibt in Harjavalta in Finnland eine hydrometallurgische Anlage, die Nickel, Kobalt und Lithium aus Black Mass zurückgewinnt."
+    },
+    {
+      "datei": "firmen/FORTUM.HE.json",
+      "pfad": "/ueberzeugung/begruendung",
+      "text": "Batterierecycling ist ein Randgeschäft eines Energiekonzerns, dessen Bewertung von Strompreisen und Stromerzeugung abhängt. Zwei Standorte werden geschlossen, und das Geschäft hängt an Fördermitteln. Beides zeigt, dass es schwierig läuft. Für die Kursentwicklung spielt das Thema kaum eine Rolle."
+    },
+    {
+      "datei": "firmen/FORTUM.HE.json",
+      "pfad": "/bull_case/0",
+      "text": "Die Anlage in Harjavalta ist seit März 2025 ein strategisches Projekt der EU. Rund 85 Mio EUR staatliche Förderung aus Finnland und möglicherweise bis zu 40 Mio EUR aus dem EU-Innovationsfonds senken das Kapitalrisiko für den Ausbau. Die Kapazität soll von 3.000 auf 28.000 t Black Mass steigen."
+    },
+    {
+      "datei": "firmen/FORTUM.HE.json",
+      "pfad": "/bull_case/1",
+      "text": "Fortum bündelt die Hydrometallurgie am Hauptstandort und baut die Vorbehandlung in Deutschland auf. So kann das Unternehmen einen größeren Teil der Wertschöpfung selbst übernehmen. Die EU-Vorgaben stützen den Standort Europa langfristig: Lithium muss ab 2027 zu 50 % und ab 2031 zu 80 % zurückgewonnen werden, und ab dem 9. November 2026 gilt Black Mass als gefährlicher Abfall."
+    },
+    {
+      "datei": "firmen/FORTUM.HE.json",
+      "pfad": "/bull_case/2",
+      "text": "Das Kerngeschäft finanziert die Batteriesparte. So kann Fortum eine Durststrecke überstehen, ohne wie kleine Recycler unter Druck von Geldgebern zu geraten."
+    },
+    {
+      "datei": "firmen/FORTUM.HE.json",
+      "pfad": "/bear_case/0",
+      "text": "Fortum schließt im ersten Halbjahr 2026 die Standorte Ikaalinen und Tornio. Das zeigt, dass die Vorbehandlung in Finnland bei den heutigen Mengen nicht ausgelastet war oder sich nicht rechnete. Bis Mitte der 2030er stammt das meiste Material aus Produktionsausschuss, nicht aus Altbatterien."
+    },
+    {
+      "datei": "firmen/FORTUM.HE.json",
+      "pfad": "/was_uns_widerlegen_wuerde",
+      "text": "Aufgeben müssten wir unsere niedrige Überzeugung, wenn Fortum das Batterierecycling im Geschäftsbericht als eigenes Segment ausweist, mit positivem bereinigtem Betriebsergebnis und über 5 % des Konzernumsatzes. Dasselbe gilt, wenn Fortum die Finanzierung für den Ausbau von Harjavalta auf 28.000 t beschließt und die Anlage zu über 70 % ausgelastet ist."
+    },
+    {
+      "datei": "firmen/GLEN.L.json",
+      "pfad": "/geschaeftsmodell",
+      "text": "Breit aufgestellter Rohstoffkonzern mit Bergbau, Hütten und Raffinerien sowie Rohstoffhandel. Die Schwerpunkte sind Kupfer, Kobalt, Nickel, Zink, Kohle und Energiehandel. Im Batterierecycling gehören Glencore seit August 2025 die Anlagen von Li-Cycle, gekauft für rund 43,6 Mio USD. Dazu zählen Anlagen für Black Mass in Nordamerika und Deutschland sowie die unfertige Hydrometallurgie-Anlage in Rochester, für die ursprünglich rund 485 Mio USD vorgesehen waren. Glencore hat angekündigt, den Bau wieder aufzunehmen. Außerdem setzt der Konzern Recyclingrohstoffe in eigenen Hütten ein, unter anderem über den Handel mit Sekundärmaterial."
+    },
+    {
+      "datei": "firmen/GLEN.L.json",
+      "pfad": "/ueberzeugung/begruendung",
+      "text": "Das Thema macht geschätzt rund 0,02 % des Umsatzes aus. Kurs und Ergebnis bestimmen Kupfer, Kohle, Kobalt und der Handel. Als Anlage in das Thema eignet sich Glencore nicht. Was das Recycling künftig wert sein könnte, lässt sich kaum beziffern."
+    },
+    {
+      "datei": "firmen/GLEN.L.json",
+      "pfad": "/bull_case/0",
+      "text": "Läuft die Anlage in Rochester wieder an, hätte Glencore eine der wenigen Hydrometallurgie-Anlagen für Black Mass in Nordamerika. Der Kaufpreis von 43,6 Mio USD liegt weit unter den ursprünglichen Baukosten von rund 485 Mio USD."
+    },
+    {
+      "datei": "firmen/GLEN.L.json",
+      "pfad": "/bull_case/2",
+      "text": "Die Bilanz erlaubt es Glencore, das Projekt auch durch schwache Jahre zu tragen, während kleinere Recycler pleitegehen, wie Li-Cycle selbst. Die US-Politik will die Versorgung mit kritischen Mineralien sichern und stützt damit die Verarbeitung im Inland."
+    },
+    {
+      "datei": "firmen/GLEN.L.json",
+      "pfad": "/bear_case/1",
+      "text": "Die Anlage in Rochester lag schon vor der Insolvenz auf Eis, weil die Kosten aus dem Ruder liefen. Ein Neustart bringt Bau- und Prozessrisiken. Zudem sind die Recycler in Europa und Nordamerika laut Fastmarkets nicht ausgelastet, weil Altbatterien knapp sind."
+    },
+    {
+      "datei": "firmen/GLEN.L.json",
+      "pfad": "/was_uns_widerlegen_wuerde",
+      "text": "Unsere Einstufung als Mitläufer mit verschwindend kleinem Themenanteil wäre falsch, wenn drei Dinge zusammenkommen. Glencore nimmt die Anlage in Rochester mit veröffentlichtem Investitionsbeschluss in Betrieb. Der Konzern weist das Recycling als eigenes Segment aus, mit getrennt berichtetem Umsatz und EBITDA. Und der Bereich erreicht in einem Geschäftsjahr mehr als 1 % des Konzernumsatzes. Umgekehrt gilt: Wird die Anlage erneut gestoppt oder abgeschrieben, entfällt die Recycling-These ganz."
+    },
+    {
+      "datei": "firmen/UMI.BR.json",
+      "pfad": "/geschaeftsmodell",
+      "text": "Belgischer Konzern für Materialtechnik und Recycling mit drei Berichtssegmenten. Catalysis stellt Abgaskatalysatoren her. Battery Materials Solutions umfasst Kathodenmaterialien und das Batterierecycling (Battery Recycling Solutions). Das Segment Recycling steht für Edelmetallraffination, Schmuck und Industriemetalle. Den Gewinn erwirtschaftet Umicore überwiegend mit dem Edelmetallrecycling. Das Batterierecycling ist eine Unterabteilung von Battery Materials Solutions und belastete laut Halbjahresbericht 2026 weiterhin das Ergebnis."
+    },
+    {
+      "datei": "firmen/UMI.BR.json",
+      "pfad": "/ueberzeugung/begruendung",
+      "text": "Bei Umicore ist Batterierecycling ein kleines Geschäft, das Verluste macht. Das Ergebnis treiben das Edelmetallrecycling und die Kathodenmaterialien. Bei Letzteren helfen vor allem Ausgleichszahlungen von Kunden, die vereinbarte Mengen nicht abnehmen (Take-or-pay). Das Thema Batterierecycling schlägt sich deshalb kaum in der Bewertung nieder. Für eine reine Anlage in das Recycling eignet sich Umicore nicht."
+    },
+    {
+      "datei": "firmen/UMI.BR.json",
+      "pfad": "/bull_case/0",
+      "text": "Der Konzern hebt seine Prognose für das bereinigte EBITDA 2026 auf etwas über 1 Mrd EUR an. Im Segment Recycling (Edelmetalle) stieg das bereinigte EBITDA im ersten Halbjahr 2026 um 36 %. Das stärkt die Bilanz, sodass die Batteriesparte nicht unter Finanzierungsdruck steht."
+    },
+    {
+      "datei": "firmen/UMI.BR.json",
+      "pfad": "/bull_case/1",
+      "text": "Die EU-Batterieverordnung verlangt, dass Lithium ab 2027 zu 50 % und ab 2031 zu 80 % zurückgewonnen wird, und schreibt ab 2031 Rezyklatanteile vor. Ab dem 9. November 2026 gilt Black Mass zudem als gefährlicher Abfall. Beides hält die Verwertung in Europa. Davon könnte ein Anbieter mit eigener Raffination in Belgien profitieren, falls die Mengen Mitte der 2030er tatsächlich wachsen."
+    },
+    {
+      "datei": "firmen/UMI.BR.json",
+      "pfad": "/bear_case/0",
+      "text": "Das Batterierecycling schrieb im ersten Halbjahr 2026 Verluste in gleicher Höhe wie im Vorjahr. Weil sein Anteil am Umsatz derzeit gering ist, verändert ein wachsender Markt den Konzern kaum. Im Aktienkurs spielt das Thema faktisch kaum eine Rolle oder wird von anderen Faktoren überdeckt."
+    },
+    {
+      "datei": "firmen/UMI.BR.json",
+      "pfad": "/bear_case/2",
+      "text": "Im Kathodengeschäft stammt das Ergebnis vor allem aus Take-or-pay-Ausgleichszahlungen, nicht aus wachsenden Mengen. Laut Prognose bleiben die Mengen 2026 weitgehend stabil. Für die Batteriesparte insgesamt ist das eine schwache Grundlage."
+    },
+    {
+      "datei": "firmen/UMI.BR.json",
+      "pfad": "/was_uns_widerlegen_wuerde",
+      "text": "Neu bewerten würden wir Umicore, wenn der Konzern Battery Recycling Solutions im Geschäftsbericht als eigenes Segment ausweist, mit positivem bereinigtem EBITDA und mindestens 10 % des Konzernumsatzes (ohne Metall). Dasselbe gilt, wenn Umicore eine neue Großanlage für Batterierecycling ankündigt und den Bau beschließt."
+    },
+    {
+      "datei": "firmen/VIE.PA.json",
+      "pfad": "/geschaeftsmodell",
+      "text": "Weltweit größter Umweltdienstleister für Wasser, Abfall und Energie mit 44,4 Mrd EUR Konzernumsatz 2025. Das Geschäft beruht überwiegend auf langfristigen Verträgen mit Kommunen und Industrie. Im Abfallgeschäft betreibt Veolia auch eine Sparte für Gefahrstoffe. Dort werden Batterien gesammelt, zerlegt und zu Black Mass aufbereitet, etwa in Dieuze und Metz in Frankreich sowie in Großbritannien und Slowenien. Innerhalb dieser Sparte ist Batterierecycling ein kleines Nischenprojekt. Die Weiterverarbeitung per Hydrometallurgie läuft über Partnerschaften, etwa das Projekt 'Liberty' mit Solvay und Renault."
+    },
+    {
+      "datei": "firmen/VIE.PA.json",
+      "pfad": "/ueberzeugung/begruendung",
+      "text": "Gemessen am 44-Mrd-EUR-Konzern ist Batterierecycling verschwindend klein, geschätzt rund 0,1 % des Umsatzes, und wird nicht einzeln ausgewiesen. Veolia ist ein Versorger- und Umweltwert, dessen Ergebnis von Verträgen für Wasser, Energie und Abfall abhängt. Als Aktie für das Thema taugt Veolia kaum."
+    },
+    {
+      "datei": "firmen/VIE.PA.json",
+      "pfad": "/bull_case/0",
+      "text": "Die EU-Vorgaben sind verbindlich: Rückgewinnungsquoten ab 2027 und 2031, Black Mass als gefährlicher Abfall ab dem 9. November 2026. Das erhöht in Europa den Bedarf an zertifizierter Sammlung und Behandlung. Veolia ist dort mit Genehmigungen für Gefahrgut und eigener Logistik etabliert."
+    },
+    {
+      "datei": "firmen/VIE.PA.json",
+      "pfad": "/bull_case/1",
+      "text": "Das Thema bringt kein Kapitalrisiko: Über Partnerschaften mit Solvay und Renault kann Veolia Wissen aufbauen, ohne die Bilanz stark zu belasten. Die Gefahrstoffsparte setzt in Europa 2,4 Mrd EUR um und wuchs 2025 bereinigt um 3,3 %, getragen von Preiserhöhungen und dem Lagergeschäft."
+    },
+    {
+      "datei": "firmen/VIE.PA.json",
+      "pfad": "/bear_case/1",
+      "text": "Europas Recyclinganlagen sind bis Mitte der 2030er nicht ausgelastet, weil Altbatterien fehlen. Vorbehandler hängen davon ab, welchen Anteil des Metallwerts die Raffinerien bezahlen (Payables). Und Chinas Kostenvorsprung drückt die Preise, dort findet rund 90 % der Materialrückgewinnung statt."
+    },
+    {
+      "datei": "firmen/VIE.PA.json",
+      "pfad": "/bear_case/2",
+      "text": "Für den Kurs zählen andere Faktoren mehr: Bewertungsrisiken im Kerngeschäft mit Wasser, Energie und Abfall sowie die hohe Verschuldung eines kapitalintensiven Versorgers. Das Etikett „Batterie“ kann Anlegern einen Themenanteil vorgaukeln, den es nicht gibt."
+    },
+    {
+      "datei": "firmen/VIE.PA.json",
+      "pfad": "/was_uns_widerlegen_wuerde",
+      "text": "Falsch läge unsere Einstufung als kleiner Mitläufer, wenn Veolia Batterierecycling erstmals als eigenes Geschäft mit mehr als 1 % des Konzernumsatzes ausweist (über ca. 450 Mio EUR). Dasselbe gilt, wenn Veolia eine Großanlage mit über 50.000 t Kapazität pro Jahr und langfristigen Abnahmeverträgen meldet."
+    },
+    {
+      "datei": "markt.json",
+      "pfad": "/schaetzungen/0/abgrenzung",
+      "text": "Breite Abgrenzung: Die Schätzung umfasst alle Batteriearten, also Blei-Säure, Lithium-Ionen, Lithium-Primärbatterien und Alkalibatterien. Sie stammen aus E-Autos und anderen Fahrzeugen, der Industrie, der Unterhaltungselektronik, der Schifffahrt und aus smarten Geräten. Das Recycling von Blei-Säure-Batterien, ein reifer Markt, ist enthalten."
+    },
+    {
+      "datei": "markt.json",
+      "pfad": "/schaetzungen/1/abgrenzung",
+      "text": "Umfasst Sammlung, Aufbereitung und Wiederverwertung gebrauchter Batterien, um Lithium, Kobalt, Nickel, Blei und andere Stoffe zurückzugewinnen. Enthalten sind Blei-Säure- und Lithium-Ionen-Batterien aus Fahrzeugen, Industrie und Unterhaltungselektronik. Erfasst sind Hydro- und Pyrometallurgie sowie mechanisches und direktes Recycling."
+    },
+    {
+      "datei": "markt.json",
+      "pfad": "/schaetzungen/2/abgrenzung",
+      "text": "Umfasst Blei-Säure-, Lithium-Ionen-, Nickel- und sonstige Batterien, wobei Blei-Säure überwiegt. Die Batterien stammen aus Fahrzeugen, Industrie und Unterhaltungselektronik. Erfasst sind Hydro- und Pyrometallurgie sowie direktes Recycling, als Anwendungen unter anderem die Wiederaufbereitung von Batterien und die Metallraffination. Der Wert für das Basisjahr 2024 liegt deutlich unter dem von MarketsandMarkets und Arizton."
+    },
+    {
+      "datei": "markt.json",
+      "pfad": "/schaetzungen/3/abgrenzung",
+      "text": "Nur Lithium-Ionen-Batterien der gängigen Zellchemien (LFP, LCO, NMC, NCA, LMO), ohne Blei-Säure. Die Batterien stammen aus Elektro- und Hybridautos (BEV/HEV/PHEV), Unterhaltungselektronik, Industrie und Speichern. Erfasst sind Sammlung und Metallrückgewinnung mit Pyro- und Hydrometallurgie sowie direktem Recycling. Die Abgrenzung ist enger, doch wegen der sehr hohen jährlichen Wachstumsrate ergibt sich die höchste Zahl der Spanne."
+    },
+    {
+      "datei": "markt.json",
+      "pfad": "/treiber/0/beschreibung",
+      "text": "Die EU-Batterieverordnung legt Mindestquoten für die Rückgewinnung fest: Lithium zu 50 % ab 2027 und zu 80 % ab 2031, Kobalt, Nickel und Kupfer zu 90 % bzw. 95 %. Ab August 2031 müssen Antriebsbatterien zudem Mindestanteile an Rezyklat enthalten. Das schafft in der zweiten Hälfte der 2020er und Anfang der 2030er eine verbindliche Nachfrage nach recyceltem Material."
+    },
+    {
+      "datei": "markt.json",
+      "pfad": "/treiber/1/beschreibung",
+      "text": "Der Batteriebestand wächst rasant. In E-Autos wurden 2025 Batterien mit 1,2 TWh verbaut, 30 % mehr als im Vorjahr. Bis 2030 werden knapp 3 TWh erwartet. Mit rund 15 Jahren Verzögerung kommen daraus ab Mitte der 2030er große Mengen Altbatterien zurück. In Europa steigt das Angebot laut T&E von etwa 170 GWh (2035) auf 470 GWh (2040)."
+    },
+    {
+      "datei": "markt.json",
+      "pfad": "/treiber/2/beschreibung",
+      "text": "China kontrolliert im Durchschnitt rund 72 % der Raffination kritischer Mineralien und weitet seine Exportkontrollen aus. Auch die DR Kongo (Quoten für Kobalt) und Simbabwe (Lithium) beschränken Ausfuhren. Rohstoffe aus heimischem Recycling werden dadurch strategisch wichtiger. Die Wirkung setzt mittelfristig ein und hängt an der Politik."
+    },
+    {
+      "datei": "markt.json",
+      "pfad": "/treiber/4/beschreibung",
+      "text": "China erlaubte im August 2025 die Einfuhr hochwertiger Black Mass und senkte Anfang 2026 die Zölle. Recycler außerhalb Chinas bekommen so einen zusätzlichen Absatzweg, was Vorbehandler im Westen stützt. Die Wirkung ist kurzfristig und kann politisch wieder zurückgenommen werden."
+    },
+    {
+      "datei": "markt.json",
+      "pfad": "/huerden/0/beschreibung",
+      "text": "Bis Mitte der 2030er stammt das meiste Material aus Produktionsausschuss, nicht aus Altbatterien, weil die meisten E-Autos noch zu jung sind. Europäische Recycler sind deutlich unterausgelastet und haben hohe Fixkosten. Die Kapazität wächst schneller als die Menge an Altbatterien."
+    },
+    {
+      "datei": "markt.json",
+      "pfad": "/huerden/1/beschreibung",
+      "text": "LFP-Zellen enthalten kaum Kobalt und Nickel und sind deshalb je Tonne weniger wert. Ihr Anteil ist auf über 55 % gestiegen. Das macht Recycling weniger rentabel und verlangt andere Geschäftsmodelle oder Regeln. Natrium-Ionen-Batterien verstärken den Effekt."
+    },
+    {
+      "datei": "markt.json",
+      "pfad": "/huerden/2/beschreibung",
+      "text": "Batteriepacks kosteten 2025 im Schnitt 108 USD/kWh (−8 %), LFP-Packs nur 81 USD/kWh. Überkapazitäten und Wettbewerb halten die Preise niedrig. Dadurch schrumpft der Kostenvorteil von Rezyklat gegenüber neu gewonnenen Rohstoffen, und der Preisdruck auf die Recycler steigt."
+    },
+    {
+      "datei": "markt.json",
+      "pfad": "/huerden/3/beschreibung",
+      "text": "China hat über drei Viertel der weltweiten Kapazität für die Vorbehandlung und rund 90 % der Kapazität für die Materialrückgewinnung. Chinesische Recycler produzieren günstiger. Westliche Anbieter müssen bei Größe und Kosten mit ihnen konkurrieren und werden nur durch Regulierung gestützt."
+    },
+    {
+      "datei": "markt.json",
+      "pfad": "/huerden/4/beschreibung",
+      "text": "Die EU stuft Black Mass ab dem 9. November 2026 verbindlich als gefährlichen Abfall ein. Der Export in Länder außerhalb der OECD ist damit faktisch verboten. Das hält die Wertschöpfung in Europa, erhöht aber die Kosten für Logistik und Genehmigungen und schränkt Absatzwege ein."
+    },
+    {
+      "datei": "markt.json",
+      "pfad": "/huerden/0/belege/0/aussage",
+      "text": "Zwischen dem Einbau einer Batterie und ihrer Rückkehr zum Recycling liegen rund 15 Jahre. Bis Mitte der 2030er fehlt deshalb Material."
+    },
+    {
+      "datei": "markt.json",
+      "pfad": "/segmente/1/beschreibung",
+      "text": "Die Zellen werden geschreddert, getrennt und getrocknet. Es entsteht Black Mass, eine Mischung aus Lithium, Nickel, Kobalt, Mangan und Graphit, dazu Kupfer und Aluminium."
+    },
+    {
+      "datei": "markt.json",
+      "pfad": "/segmente/2/beschreibung",
+      "text": "Die Black Mass wird chemisch aufgelöst, dann werden die Metalle ausgefällt. So entstehen Nickel-, Kobalt-, Mangan- und Lithiumsalze oder Metalle, die sich für neue Batterien eignen."
+    },
+    {
+      "datei": "markt.json",
+      "pfad": "/segmente/3/beschreibung",
+      "text": "Aus recyceltem und neu gewonnenem Metall entstehen Vorprodukte (pCAM) und das eigentliche Kathodenmaterial. Damit schließt sich der Materialkreislauf für die Zellhersteller."
+    },
+    {
+      "datei": "markt.json",
+      "pfad": "/segmente/0/margenprofil/begruendung",
+      "text": "Viele kleine Anbieter mit ähnlichen Leistungen. Der Preis folgt den Rohstoffpreisen und Entsorgungsgebühren. Genehmigungen für Gefahrgut schützen nur begrenzt vor Konkurrenz."
+    },
+    {
+      "datei": "markt.json",
+      "pfad": "/segmente/1/margenprofil/begruendung",
+      "text": "Ausbeute und Qualität der Black Mass unterscheiden die Anbieter. Die Erlöse hängen aber an den Payables, also daran, welchen Anteil des Metallwerts die Raffinerien bezahlen. Überkapazitäten in Europa und China drücken die Margen."
+    },
+    {
+      "datei": "markt.json",
+      "pfad": "/segmente/2/margenprofil/begruendung",
+      "text": "Hier liegt ein Engpass: Die Stufe braucht viel Kapital und Prozesswissen. Anbieter mit Zugang zur Kobalt- und Nickelchemie und mit Kundenverträgen können die Preise bestimmen. Das Ergebnis hängt aber stark an den Metallpreisen."
+    },
+    {
+      "datei": "markt.json",
+      "pfad": "/segmente/3/margenprofil/begruendung",
+      "text": "Zellhersteller müssen Kathodenmaterial aufwendig prüfen und freigeben. Das erschwert den Wechsel des Lieferanten und schafft geschütztes technisches Wissen. Die Spannen bleiben trotzdem begrenzt, weil die Metallpreise an die Kunden weitergereicht werden und die Konkurrenz aus China stark ist."
+    },
+    {
+      "datei": "markt.json",
+      "pfad": "/segmente/4/margenprofil/begruendung",
+      "text": "Projektgeschäft mit einem Anteil an Service und Ersatzteilen. Referenzen und Ingenieurwissen stützen die Preise. Wie viele Aufträge kommen, hängt aber davon ab, wie viel die Recycler gerade investieren."
+    },
+    {
+      "datei": "redteam.json",
+      "pfad": "/einwaende/0/einwand",
+      "text": "Falscher Markt: Drei der vier Schätzungen (MarketsandMarkets, Arizton, BCC) enthalten das Recycling von Blei-Säure-Batterien. Das ist ein reifer Markt mit einstelligem Wachstum. Mit unserem Thema (Lithium-Ionen-Batterien aus E-Autos und Speichern) und unserer Auswahl hat er nichts zu tun. MarketsandMarkets beziffert das Blei-Säure-Recycling selbst auf 23,94 Mrd USD im Jahr 2030, bei einer jährlichen Wachstumsrate von 6,3 %. Das sind rund 44 % der eigenen Gesamtzahl von 54,3 Mrd USD. Bei BCC überwiegt Blei-Säure sogar. Die Spanne von 19,8 bis 114,7 Mrd USD misst also zu großen Teilen etwas anderes als unser Thema. Die einzige Zahl nur für Lithium-Ionen (Precedence) ist zugleich die mit dem abweichenden Zieljahr. Der Report braucht eine Spanne nur für Lithium-Ionen, sonst ist die Marktgröße zu hoch angesetzt."
+    },
+    {
+      "datei": "redteam.json",
+      "pfad": "/einwaende/1/einwand",
+      "text": "Die Abgrenzungen sind nicht vergleichbar, und keine Quelle ist so verlässlich, wie wir es verlangen. Alle vier Zahlen stammen aus Pressemitteilungen oder Verkaufsseiten von Marktforschern. Diese wollen ihre Studien verkaufen und haben daher ein Interesse an großen, wachsenden Zahlen. Schon beim Ausgangswert liegen sie um den Faktor 2,3 auseinander: MarketsandMarkets nennt 26,9 Mrd USD für 2023, BCC 11,9 Mrd USD für 2024. Bei einer heutigen Größe ist das kein Prognosefehler. Es liegt an unterschiedlichen Definitionen: Metallwert oder Umsatz mit Dienstleistungen, mit oder ohne Sammlung. Es fehlt eine Rechnung auf Basis von Mengen, etwa mit Daten von IEA, Benchmark oder Fastmarkets (Tonnen oder GWh recycelbares Material mal Payables). Damit ließen sich die Wertangaben überprüfen."
+    },
+    {
+      "datei": "redteam.json",
+      "pfad": "/einwaende/2/einwand",
+      "text": "Precedence rechnet bis 2035 mit 24,3 % Wachstum pro Jahr. Das widerspricht den Hürden, die wir selbst festgestellt haben. Laut IEA liegen bis Mitte der 2030er rund 15 Jahre zwischen dem Einbau einer Batterie und ihrer Rückkehr als Altbatterie. Europäische Recycler sind nicht ausgelastet, und der LFP-Anteil (über 55 %) senkt den Metallwert je Tonne. Damit sich der Marktwert in zehn Jahren verneunfacht, müssten Menge und Preis gleichzeitig steigen. Das ist nicht hergeleitet, und die Zahl stammt von einer Produktseite ohne Methodik. Als Obergrenze der Spanne sollte sie im Report nicht stehen."
+    },
+    {
+      "datei": "redteam.json",
+      "pfad": "/einwaende/3/einwand",
+      "text": "Der Treiber „Hohe Metallpreise“ ist ein Zyklus, kein Trend. Die Marktgrößen sind in Geld gemessen, also als Metallerlöse, und schwanken deshalb mit. Lithiumcarbonat fiel laut USGS von 63.700 USD/t (2022) auf 9.000 USD/t (2025), ein Minus von 86 %. Genau in dieser Phase gingen Li-Cycle und Northvolt/Hydrovolt unter. Die jüngste Erholung wackelt bereits wieder. Laut SMM fielen die Payables für Black Mass aus Nickel-Kobalt- und LCO-Material vom 14. bis 17.09.2026 erneut. Grund: Kobaltsulfat gibt nach, und die Käufer aus der Hydrometallurgie halten sich zurück. Die Basisjahre 2023 bis 2025 und die Prognosen übernehmen diese Preisannahmen, ohne sie offenzulegen."
+    },
+    {
+      "datei": "redteam.json",
+      "pfad": "/einwaende/4/einwand",
+      "text": "Ein wichtiger Gegenbeleg fehlt: Im Westen ziehen sich die Anbieter zurück. Umicore hat seine Recyclinganlage für 150.000 t auf frühestens 2032 verschoben und 1,6 Mrd EUR auf Batteriematerialien abgeschrieben. BASF hat die Raffinerie in Tarragona pausiert. Li-Cycle ging im Mai 2025 in die Insolvenz, die Anlagen gingen für rund 40 Mio USD an Glencore. Northvolt verkaufte seinen Anteil an Hydrovolt für 6,8 Mio USD, und Fortum schließt 2026 die Standorte Ikaalinen und Tornio. Das ist kein Randrisiko, sondern die heutige Lage im Westen. Unsere Marktanalyse nennt die schwache Auslastung nur allgemein, ohne diese Belege. Nicht untersucht wurden außerdem zwei Punkte: die Weiternutzung von E-Auto-Batterien als Speicher (Second Life), die den Rücklauf zusätzlich verzögert, und Exportbeschränkungen der USA für Black Mass."
+    },
+    {
+      "datei": "redteam.json",
+      "pfad": "/einwaende/5/einwand",
+      "text": "Die eigene Analyse widerspricht sich. Der Treiber „Chinas Öffnung für Black-Mass-Importe“ soll westliche Vorbehandler stützen. Die Hürde „Black Mass als Gefahrgut“ verbietet aber ab dem 9. November 2026 den Export aus der EU in Länder außerhalb der OECD, und China ist kein OECD-Mitglied. Für die europäischen Firmen unserer Auswahl (Fortum, Veolia, BASF, Umicore) fällt dieser Absatzweg also in sieben Wochen weg. Der Treiber gilt höchstens für Anbieter in Nordamerika oder Asien und muss entsprechend eingeschränkt werden."
+    },
+    {
+      "datei": "redteam.json",
+      "pfad": "/einwaende/6/einwand",
+      "text": "Dass die Hydrometallurgie hohe Margen bringt, widerlegen unsere eigenen Firmenanalysen. Umicores Batterierecycling macht weiterhin Verluste. GEMs Batterierecycling erzielt 8,2 % Bruttomarge. Li-Cycle scheiterte genau an seiner Hydrometallurgie-Anlage in Rochester. China hält rund 90 % der Materialrückgewinnung und hat Überkapazitäten. Dass die Stufe ein Engpass mit Macht über die Preise sei, ist nur eine Annahme. Belegt ist: Außerhalb Chinas sind die Margen niedrig bis negativ. Unsere Auswahl gewichtet die Hydrometallurgie mit drei Firmen als Kernstufe. Deshalb hängt die Logik der ganzen Auswahl an diesem Punkt."
+    },
+    {
+      "datei": "redteam.json",
+      "pfad": "/einwaende/7/einwand",
+      "text": "Unsere Auswahl bietet keinen investierbaren Zugang zum Thema. Alle acht Firmenanalysen stufen ihre Firma als Mitläufer ein, Andritz als Zulieferer, sieben davon mit niedriger Überzeugung. Den höchsten Themenanteil hat GEM mit 4,9 % (berichtet), dann CATL mit geschätzt 3 % (Obergrenze 5,16 % für ein Segment, das auch Batteriematerialien umfasst). Der Rest liegt zwischen 0,02 % und 2 %. Die einzigen reinen Recyclingwerte sind entweder pleite (Li-Cycle) oder fielen bei der Vorauswahl durch. Damit kippt die unausgesprochene These, Batterierecycling lasse sich über börsennotierte Aktien abbilden. Wer diese Liste hält, trägt das Risiko von Zellherstellern, Edelmetall-, Chemie-, Energie- und Bergbaukonzernen, mit Recycling als Beimischung im Promillebereich. Der Report muss das als Hauptbefund sagen, nicht als Fußnote."
+    },
+    {
+      "datei": "redteam.json",
+      "pfad": "/einwaende/8/einwand",
+      "text": "Sachlich falsch ist die Begründung „Recycling ist ein eigenes Berichtssegment, der Themenanteil daher belegbar“. Umicores Segment Recycling umfasst Edelmetallraffination, Schmuck und Industriemetalle. Das Batterierecycling gehört zu Battery Materials Solutions und wird nicht einzeln ausgewiesen. Deshalb musste auch unsere Firmenanalyse den Themenanteil schätzen. So darf die Begründung nicht in den Report."
+    },
+    {
+      "datei": "redteam.json",
+      "pfad": "/einwaende/9/einwand",
+      "text": "Etikettenschwindel in der Begründung für die Auswahl von GEM: Sie nennt GEM „Chinas größten reinen Batterierecycler; Recycling ist Kerngeschäft, nicht Beimischung“. Laut unserer eigenen Firmenanalyse macht Batterierecycling aber nur 4,9 % des Umsatzes aus. 54 % entfallen auf Batteriematerialien, 35 % auf Metalle, darunter neu gewonnenes Nickel aus Indonesien. Auch „größter“ stimmt nicht: GEM zerlegte 2025 rund 52.600 t, die CATL-Tochter Brunp verarbeitete rund 210.000 t."
+    },
+    {
+      "datei": "redteam.json",
+      "pfad": "/einwaende/10/einwand",
+      "text": "Ein Fehler bei der Bezugsgröße verzerrt die Bottom-up-Rechnung. Die 2 % beziehen sich laut Begründung auf den Umsatz ohne Metall, im Halbjahr rund 1,9 Mrd EUR. Die Rechnung multipliziert sie aber mit dem Umsatz einschließlich Metall (28,28 Mrd USD). Heraus kommen 0,57 Mrd USD Themenumsatz. Realistisch wären etwa 0,08 Mrd USD, also 2 % von rund 3,8 Mrd EUR Jahresumsatz ohne Metall. Die Zahl ist damit rund um den Faktor 7 zu hoch. Außerdem ist die Annahme „höchstens ein Sechstel von Battery Materials Solutions“ nicht hergeleitet. Das Geschäft macht Verluste, und seine Großanlage ist auf frühestens 2032 verschoben. Das spricht eher für einen Anteil unter 1 %. Rechnet man den Themenanteil auf den Umsatz einschließlich Metall um, ergeben sich rund 0,3 %."
+    },
+    {
+      "datei": "redteam.json",
+      "pfad": "/einwaende/11/einwand",
+      "text": "Bei den Argumenten gegen Umicore fehlt der stärkste Beleg. Umicore hat die Anlage für 150.000 t auf frühestens 2032 verschoben und rund 1,6 Mrd EUR auf Anlagen für Batteriematerial abgeschrieben. Damit sagt das Unternehmen selbst: Das Management glaubt vor 2032 nicht an wirtschaftlich große Mengen."
+    },
+    {
+      "datei": "redteam.json",
+      "pfad": "/einwaende/12/einwand",
+      "text": "Die Aussage „Chinas größter Recycler von Antriebsbatterien“ stammt aus Unternehmensangaben, obwohl unsere eigene Recherche das Gegenteil belegt. Brunp (CATL) verarbeitete 2025 rund 210.000 t, GEM 52.576 t. Brunp verarbeitete also etwa das Vierfache. Selbst bei enger Definition (nur Zerlegung) hält der Superlativ nicht. Zudem enthält der Themenanteil von 4,89 % auch Altfahrzeuge (0,56 Mrd CNY). Reines Batterierecycling liegt bei rund 3,4 %."
+    },
+    {
+      "datei": "redteam.json",
+      "pfad": "/einwaende/13/einwand",
+      "text": "Zwei Kernaussagen sind nicht belegt. Erstens steht der Satz „Glencore hat angekündigt, den Bau [der Anlage in Rochester] wieder aufzunehmen“ ohne Quelle da. Solange kein Investitionsbeschluss veröffentlicht ist, ist das eine Möglichkeit, keine Tatsache. Zweitens hat die Analyse den Umsatz von Li-Cycle (20–30 Mio USD) laut eigener Begründung nicht selbst geprüft. Dabei hat Li-Cycle bis 2025 bei der US-Börsenaufsicht SEC berichtet. Die Einstufung als Mitläufer bleibt richtig, aber die Argumente für die Aktie stehen auf ungeprüfter Grundlage."
+    },
+    {
+      "datei": "redteam.json",
+      "pfad": "/einwaende/14/einwand",
+      "text": "Die 10 % des Umsatzes von Battery Materials (rund 60 Mio EUR) sind eine Annahme ohne Herleitung. Ein Blick auf die Mengen: Schwarzheide verarbeitet höchstens 15.000 t Batterien und Ausschuss pro Jahr und fährt erst seit Juni 2025 hoch. Die gewonnene Black Mass nutzt BASF zudem weitgehend selbst für die eigene Raffinerie. Mit Dritten entsteht daraus kaum Umsatz. 0,1 % ist daher eher eine Obergrenze als ein Mittelwert. Bei den Argumenten gegen BASF fehlt, dass die Großraffinerie in Tarragona pausiert. Das war der einzige Schritt, der BASF im Recycling bedeutend gemacht hätte."
+    },
+    {
+      "datei": "redteam.json",
+      "pfad": "/einwaende/15/einwand",
+      "text": "Die Zuordnung zur Stufe passt nicht mehr. Fortum ist in unserer Auswahl der einzige Vertreter für Vorbehandlung und Black Mass. Laut eigener Mitteilung gibt Fortum aber die Vorbehandlung in Finnland (Ikaalinen, Tornio) im ersten Halbjahr 2026 auf und konzentriert sich auf die Hydrometallurgie. Die Stufe Vorbehandlung ist in unserer Auswahl damit faktisch unbesetzt. Zudem wurde der Themenanteil von 0,5 % geschätzt, ohne in den Geschäftsbericht zu schauen, weil sich das PDF nicht maschinell lesen ließ. Bei einer Kennzahl wie „Other Operations“, die sich beim Unternehmen erfragen lässt, sollte das nachgeholt werden."
+    },
+    {
+      "datei": "redteam.json",
+      "pfad": "/einwaende/16/einwand",
+      "text": "Die Herleitung stützt sich auf Kapazitätsangaben aus 2021 und 2022 und auf einen angenommenen Erlös von 2.000 EUR je Tonne Black Mass. Ob die Anlagen heute mit dieser Kapazität laufen, ist nicht geprüft. Das Projekt mit Solvay und Renault steckt seit 2021 im Demonstrationsstadium. Unstrittig ist die Richtung: Das Geschäft ist verschwindend klein. Der eigentliche Punkt ist Etikettenschwindel. Veolia vermarktet sich als europäischer Vorreiter im Batterierecycling, bei einem geschätzten Umsatzanteil von 0,1 %. Und die Begründung für die Auswahl („realeres Batterie-Exposure als Sims oder Derichebourg“) ist für keinen der drei Werte gemessen."
+    },
+    {
+      "datei": "redteam.json",
+      "pfad": "/einwaende/17/einwand",
+      "text": "Das Prinzip „Schaufeln und Spitzhacken verkaufen“ funktioniert nur, wenn Recycler investieren. In Europa laufen die Investitionen aber gerade zurück: Umicore (Großanlage auf 2032 oder später verschoben), BASF (Tarragona pausiert), Northvolt/Hydrovolt, Li-Cycle (Insolvenz), Fortum (Standortschließungen). Fraunhofer ISI erwartet für 2030 eine Kapazität von 520 kt pro Jahr. Das deutet eher auf Überkapazität als auf künftige Aufträge. Für Andritz ist zudem kein einziger Auftrag im Batterierecycling einzeln belegt. Der Themenanteil von 0,5 % ist eine reine Annahme."
+    },
+    {
+      "datei": "redteam.json",
+      "pfad": "/einwaende/18/einwand",
+      "text": "CATL trägt 2,34 der 3,44 Mrd USD aus der Bottom-up-Rechnung, also 68 %. Die 3 % beruhen aber auf einer unbelegten Annahme: „60 % des Segments Battery Materials and Recycling entfallen auf Brunp-Recycling und recyclingnahe Materialien.“ Das Segment umfasst auch Batteriematerialien und Lithium-Rohstoffe. Die Ausgangszahl von 5,16 % stammt zudem nur aus einem Medienbericht (carnewschina), nicht aus dem Geschäftsbericht. Auffällig: Die recycelte Menge stieg um 63 %, der Umsatz des Segments sank um 24 %. Der Erlös je Tonne ist also massiv gefallen. Das spricht dagegen, dass das Mengenwachstum viel wert ist. Die Überzeugung „mittel“, die einzige in der Liste, ist für einen Mitläufer mit unbekanntem Recyclingumsatz nicht begründet."
+    },
+    {
+      "datei": "redteam.json",
+      "pfad": "/einwaende/13/beleg/aussage",
+      "text": "Glencore übernahm die Anlagen von Li-Cycle im August 2025 aus der Insolvenz und bezahlte mit eigenen Forderungen an das Unternehmen (Credit Bid). Das Eröffnungsgebot lag bei 40 Mio USD."
+    },
+    {
+      "datei": "redteam.json",
+      "pfad": "/einwaende/18/beleg/aussage",
+      "text": "Das CATL-Segment Batteriematerialien und Recycling setzte 21,86 Mrd RMB um (−23,83 %). Das sind 5,16 % des Gesamtumsatzes, bei einer Bruttomarge von 27,27 %. Zugleich stieg die recycelte Menge auf 210.000 t (+63,2 %)."
+    },
+    {
+      "datei": "redteam.json",
+      "pfad": "/bottom_up_kommentar",
+      "text": "Unsere Bottom-up-Rechnung ergibt 3,44 Mrd USD Themenumsatz in den letzten zwölf Monaten (TTM). Die Marktprognosen reichen von 19,8 Mrd USD (BCC, 2030) bis 114,7 Mrd USD (Precedence, 2035). Die Auswahl deckt davon also 3,0 bis 17,4 % ab. Sieben der acht Themenanteile sind geschätzt, nur der von GEM ist berichtet. Die Summe ist in drei Richtungen verzerrt.\n\nErstens entfallen 68 % auf CATL (2,34 Mrd USD). Dort beruht der Anteil von 3 % auf einer unbelegten 60-%-Annahme innerhalb eines Segments, das auch Batteriematerialien enthält.\n\nZweitens ist Umicore mit 0,57 Mrd USD etwa siebenfach zu hoch angesetzt. Ein Anteil, der sich auf den Umsatz ohne Metall bezieht, wurde mit dem Umsatz einschließlich Metall multipliziert. Realistisch wären rund 0,08 Mrd USD. Bereinigt kommen die übrigen sieben Firmen zusammen auf etwa 0,6 Mrd USD, die Gesamtsumme auf rund 2,9 Mrd USD.\n\nDrittens hinkt der Vergleich. Er stellt Umsätze der letzten zwölf Monate den Prognosen für 2030 und 2035 gegenüber. Und drei der vier Prognosen enthalten Blei-Säure-Recycling, das die Auswahl gar nicht abdeckt. Sinnvoller ist der Vergleich mit der einzigen Zahl nur für Lithium-Ionen, die ein aktuelles Basisjahr hat: Precedence nennt für 2025 12,99 Mrd USD. Davon deckt die Auswahl rechnerisch rund 22 bis 26 % ab. Den Großteil trägt CATL, was zu Chinas Anteil von über 85 % an der Recyclingkapazität passt.\n\nFazit: Die geringe Abdeckung deutet nicht auf einen verborgenen großen Markt hin. Sie zeigt, dass die westlichen Firmen unserer Auswahl am Thema kaum teilhaben. Die Bottom-up-Rechnung widerspricht der Spanne der Marktprognosen nicht. Sie stützt aber auch keine Zahl über rund 20 Mrd USD für das Recycling von Lithium-Ionen-Batterien vor 2030."
+    },
+    {
+      "datei": "redteam.json",
+      "pfad": "/gesamturteil",
+      "text": "Das stärkste Gegenargument lautet: Batterierecycling ist 2026 ein reales, politisch gewolltes Thema, aber keines, in das man über börsennotierte Aktien investieren kann. Erstens ist der Markt kleiner, als die Spanne der Prognosen nahelegt. Drei von vier Prognosen enthalten Blei-Säure-Recycling, bei MarketsandMarkets rund 44 %. Alle stammen aus Verkaufsunterlagen ohne einsehbare Methodik. Und die Werte hängen an einem Metallpreiszyklus, der gerade wieder dreht: Lithiumcarbonat verlor von 2022 bis 2025 86 %. Zweitens kommt das Rohmaterial erst ab Mitte der 2030er in großen Mengen. Bis dahin entstehen Überkapazitäten, und der Westen zieht sich sichtbar zurück: Umicore verschiebt auf 2032 oder später, BASF pausiert Tarragona, Li-Cycle ist pleite, Fortum schließt Standorte. Drittens bildet unsere Auswahl das Thema kaum ab. Alle acht Firmen sind Mitläufer, sieben mit niedriger Überzeugung. Der Themenanteil liegt zwischen 0,02 % und 4,9 %, und nur einer davon (GEM) ist berichtet. Zwei Begründungen für die Auswahl (Umicore, GEM) sind sachlich falsch. Die Firmenanalysen selbst sind überwiegend ehrlich und vorsichtig. Die Schwächen liegen in der Abgrenzung des Marktes, in den Begründungen für die Auswahl und in der falschen Bezugsgröße bei Umicore. Zwei Einwände haben hohe Priorität und müssen im Report beantwortet werden: die Abgrenzung des Marktes und die Frage, ob sich das Thema überhaupt investieren lässt. Keine Anlageberatung."
+    }
+  ],
+  "glossar": [
+    {
+      "begriff": "Black Mass",
+      "erklaerung": "Schwarzes Pulver aus geschredderten Batteriezellen, das die wertvollen Metalle wie Lithium, Nickel und Kobalt enthält."
+    },
+    {
+      "begriff": "Vorbehandlung",
+      "erklaerung": "Mechanischer Schritt, in dem Altbatterien entladen, zerlegt, geschreddert und zu Black Mass verarbeitet werden."
+    },
+    {
+      "begriff": "Hydrometallurgie",
+      "erklaerung": "Chemisches Verfahren, das die Metalle mit Flüssigkeiten aus der Black Mass herauslöst und so rein zurückgewinnt, dass sie wieder in Batterien eingesetzt werden können."
+    },
+    {
+      "begriff": "LFP-Zellen",
+      "erklaerung": "Batteriezellen auf Basis von Lithium-Eisenphosphat, die kaum Nickel und Kobalt enthalten und für Recycler deshalb weniger wert sind."
+    },
+    {
+      "begriff": "Rezyklat",
+      "erklaerung": "Material, das durch Recycling gewonnen wurde und neu geförderte Rohstoffe ersetzt."
+    },
+    {
+      "begriff": "Themenanteil (Exposure)",
+      "erklaerung": "Anteil des Umsatzes einer Firma, der am Thema Batterierecycling hängt."
+    },
+    {
+      "begriff": "Mitläufer",
+      "erklaerung": "Unsere Einstufung für eine Firma, die am Thema nur am Rand beteiligt ist, weil es einen kleinen Teil ihres Geschäfts ausmacht."
+    },
+    {
+      "begriff": "Bottom-up-Rechnung",
+      "erklaerung": "Wir addieren die geschätzten Themenumsätze der einzelnen Firmen und vergleichen die Summe mit den Prognosen für den Gesamtmarkt."
+    },
+    {
+      "begriff": "Jährliche Wachstumsrate (CAGR)",
+      "erklaerung": "Durchschnittliches Wachstum pro Jahr über einen längeren Zeitraum, mit Zinseszinseffekt gerechnet."
+    },
+    {
+      "begriff": "Bruttomarge und operative Marge",
+      "erklaerung": "Die Bruttomarge ist der Anteil vom Umsatz, der nach den direkten Herstellungskosten übrig bleibt; die operative Marge zieht zusätzlich alle übrigen laufenden Kosten ab, vor Zinsen und Steuern."
+    },
+    {
+      "begriff": "Payables",
+      "erklaerung": "Anteil des Metallwerts, den Raffinerien einem Recycler beim Kauf von Black Mass tatsächlich bezahlen."
+    },
+    {
+      "begriff": "Second Life",
+      "erklaerung": "Weiternutzung ausgedienter Autobatterien, etwa als stationärer Stromspeicher, bevor sie ins Recycling gehen."
+    }
+  ]
+}

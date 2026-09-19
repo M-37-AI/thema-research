@@ -1,0 +1,680 @@
+{
+  "thema": "Batterierecycling",
+  "datum": "2026-09-19",
+  "regeln": {
+    "datei": "tools/screen_regeln.json",
+    "score_formel": "score = 100 * (0.4 * rang(umsatzwachstum_yoy) + 0.3 * rang(operative_marge) + 0.3 * (1 - rang(ev_umsatz)))",
+    "ausschluss": {
+      "min_marktkapitalisierung_usd_mrd": 1.0,
+      "pflichtfelder": [
+        "marktkapitalisierung_usd",
+        "umsatz_ttm_usd"
+      ],
+      "pflichtfelder_erklaerung": "Ohne Marktkapitalisierung und Umsatz in USD sind weder Groessenfilter noch Bottom-up-Check moeglich."
+    }
+  },
+  "statistik": {
+    "kandidaten": 27,
+    "aufgenommen": 24,
+    "ausgeschlossen": 3
+  },
+  "kandidaten": [
+    {
+      "ticker": "VIE.PA",
+      "name": "Veolia Environnement",
+      "segment_id": "sammlung-logistik",
+      "segment_name": "Sammlung, Demontage & Logistik",
+      "begruendung_kette": "Sammelt und behandelt Industrie- und Altbatterien im Rahmen der Abfall- und Gefahrstoffsparte; Batterie-Recycling ist Teilgeschäft.",
+      "kennzahlen_datei": "data/kennzahlen/VIE.PA.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 27.06,
+        "umsatz_ttm_usd": 51.173,
+        "umsatzwachstum_yoy": 0.7,
+        "operative_marge": 7.9,
+        "ev_umsatz": 1.12
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.136,
+        "operative_marge": 0.609,
+        "ev_umsatz": 0.636
+      },
+      "score": 42.8
+    },
+    {
+      "ticker": "DBG.PA",
+      "name": "Derichebourg",
+      "segment_id": "sammlung-logistik",
+      "segment_name": "Sammlung, Demontage & Logistik",
+      "begruendung_kette": "Französischer Metallrecycler mit Rücknahme und Vorsortierung von E-Fahrzeug-Batterien und Elektroschrott.",
+      "kennzahlen_datei": "data/kennzahlen/DBG.PA.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 1.579,
+        "umsatz_ttm_usd": 3.985,
+        "umsatzwachstum_yoy": 7.8,
+        "operative_marge": 5.3,
+        "ev_umsatz": 0.59
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.318,
+        "operative_marge": 0.478,
+        "ev_umsatz": 0.909
+      },
+      "score": 54.3
+    },
+    {
+      "ticker": "SGM.AX",
+      "name": "Sims Limited",
+      "segment_id": "sammlung-logistik",
+      "segment_name": "Sammlung, Demontage & Logistik",
+      "begruendung_kette": "Metall- und Elektronikrecycler mit Sammlungs- und Aufbereitungsnetz; Lithium-Ionen-Batterien als wachsender Stoffstrom.",
+      "kennzahlen_datei": "data/kennzahlen/SGM.AX.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 3.409,
+        "umsatz_ttm_usd": 5.72,
+        "umsatzwachstum_yoy": null,
+        "operative_marge": 3.9,
+        "ev_umsatz": 0.67
+      },
+      "status": "aufgenommen",
+      "hinweise": [
+        "umsatzwachstum_yoy fehlt – neutral mit 0.5 gewertet"
+      ],
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.5,
+        "operative_marge": 0.391,
+        "ev_umsatz": 0.864
+      },
+      "score": 57.6
+    },
+    {
+      "ticker": "FORTUM.HE",
+      "name": "Fortum",
+      "segment_id": "vorbehandlung-black-mass",
+      "segment_name": "Mechanische Vorbehandlung & Black Mass",
+      "begruendung_kette": "Finnischer Energiekonzern mit eigener Batterierecycling-Anlage in Harjavalta (Schwarzmasse-Erzeugung und Hydrometallurgie).",
+      "kennzahlen_datei": "data/kennzahlen/FORTUM.HE.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 25.297,
+        "umsatz_ttm_usd": 6.306,
+        "umsatzwachstum_yoy": 15.4,
+        "operative_marge": 9.5,
+        "ev_umsatz": 4.34
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.455,
+        "operative_marge": 0.696,
+        "ev_umsatz": 0.136
+      },
+      "score": 43.2
+    },
+    {
+      "ticker": "NMT.AX",
+      "name": "Neometals",
+      "segment_id": "vorbehandlung-black-mass",
+      "segment_name": "Mechanische Vorbehandlung & Black Mass",
+      "begruendung_kette": "Australischer Entwickler, Partner im Primobius-JV mit SMS group für modulare Recyclinganlagen (Schreddern plus Hydromet).",
+      "kennzahlen_datei": "data/kennzahlen/NMT.AX.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 0.018,
+        "umsatz_ttm_usd": null,
+        "umsatzwachstum_yoy": null,
+        "operative_marge": 0.0,
+        "ev_umsatz": null
+      },
+      "status": "ausgeschlossen",
+      "grund": "Datenlücke: umsatz_ttm_usd fehlt"
+    },
+    {
+      "ticker": "ABAT",
+      "name": "American Battery Technology Company",
+      "segment_id": "vorbehandlung-black-mass",
+      "segment_name": "Mechanische Vorbehandlung & Black Mass",
+      "begruendung_kette": "US-Recycler mit Anlage in Nevada; Vorbehandlung und Hydromet-Prozess, Fokus auf Lithium-Ionen-Rezyklat.",
+      "kennzahlen_datei": "data/kennzahlen/ABAT.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 0.311,
+        "umsatz_ttm_usd": 0.022,
+        "umsatzwachstum_yoy": 196.6,
+        "operative_marge": -246.5,
+        "ev_umsatz": 12.03
+      },
+      "status": "ausgeschlossen",
+      "grund": "Marktkapitalisierung 0.31 Mrd USD unter Mindestwert 1.0 Mrd USD"
+    },
+    {
+      "ticker": "AQMS",
+      "name": "Aqua Metals",
+      "segment_id": "vorbehandlung-black-mass",
+      "segment_name": "Mechanische Vorbehandlung & Black Mass",
+      "begruendung_kette": "US-Kleinunternehmen mit Elektrochemie-Verfahren (AquaRefining) für Metallrückgewinnung aus Batterieabfällen.",
+      "kennzahlen_datei": "data/kennzahlen/AQMS.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 0.008,
+        "umsatz_ttm_usd": null,
+        "umsatzwachstum_yoy": null,
+        "operative_marge": 0.0,
+        "ev_umsatz": null
+      },
+      "status": "ausgeschlossen",
+      "grund": "Datenlücke: umsatz_ttm_usd fehlt"
+    },
+    {
+      "ticker": "UMI.BR",
+      "name": "Umicore",
+      "segment_id": "hydrometallurgie-raffination",
+      "segment_name": "Hydrometallurgie & Metallraffination",
+      "begruendung_kette": "Belgischer Materialkonzern mit Pyro-/Hydromet-Verfahren für Batterierecycling und Edelmetallraffination; Verwertung liefert Ni/Co-Konzentrate.",
+      "kennzahlen_datei": "data/kennzahlen/UMI.BR.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 5.995,
+        "umsatz_ttm_usd": 28.28,
+        "umsatzwachstum_yoy": 60.1,
+        "operative_marge": 3.0,
+        "ev_umsatz": 0.27
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.955,
+        "operative_marge": 0.261,
+        "ev_umsatz": 1.0
+      },
+      "score": 76.0
+    },
+    {
+      "ticker": "002340.SZ",
+      "name": "GEM Co.",
+      "segment_id": "hydrometallurgie-raffination",
+      "segment_name": "Hydrometallurgie & Metallraffination",
+      "begruendung_kette": "Chinesischer Marktführer im Recycling von Batterien und Metallabfällen; Herstellung von Ni-/Co-Vorprodukten.",
+      "kennzahlen_datei": "data/kennzahlen/002340.SZ.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 4.746,
+        "umsatz_ttm_usd": 5.607,
+        "umsatzwachstum_yoy": -0.7,
+        "operative_marge": 0.6,
+        "ev_umsatz": 1.69
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.091,
+        "operative_marge": 0.043,
+        "ev_umsatz": 0.455
+      },
+      "score": 18.6
+    },
+    {
+      "ticker": "603799.SS",
+      "name": "Zhejiang Huayou Cobalt",
+      "segment_id": "hydrometallurgie-raffination",
+      "segment_name": "Hydrometallurgie & Metallraffination",
+      "begruendung_kette": "Kobalt-/Nickelchemie-Konzern mit Recyclingkreislauf zur Rückgewinnung aus Altbatterien.",
+      "kennzahlen_datei": "data/kennzahlen/603799.SS.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 10.116,
+        "umsatz_ttm_usd": 14.84,
+        "umsatzwachstum_yoy": 53.8,
+        "operative_marge": 12.3,
+        "ev_umsatz": 1.38
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.818,
+        "operative_marge": 0.826,
+        "ev_umsatz": 0.545
+      },
+      "score": 73.8
+    },
+    {
+      "ticker": "5713.T",
+      "name": "Sumitomo Metal Mining",
+      "segment_id": "hydrometallurgie-raffination",
+      "segment_name": "Hydrometallurgie & Metallraffination",
+      "begruendung_kette": "Japanischer Metallhersteller mit Nickel-Raffination und Rückgewinnung aus Batterien (Kupfer-Nickel-Kreislauf).",
+      "kennzahlen_datei": "data/kennzahlen/5713.T.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 16.449,
+        "umsatz_ttm_usd": 12.126,
+        "umsatzwachstum_yoy": 42.3,
+        "operative_marge": 16.4,
+        "ev_umsatz": 1.78
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.682,
+        "operative_marge": 1.0,
+        "ev_umsatz": 0.409
+      },
+      "score": 69.5
+    },
+    {
+      "ticker": "5714.T",
+      "name": "DOWA Holdings",
+      "segment_id": "hydrometallurgie-raffination",
+      "segment_name": "Hydrometallurgie & Metallraffination",
+      "begruendung_kette": "Japanischer Nichteisenmetall- und Recyclingspezialist; Umweltsparte verarbeitet Batterie- und Elektronikschrott.",
+      "kennzahlen_datei": "data/kennzahlen/5714.T.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 3.43,
+        "umsatz_ttm_usd": 5.347,
+        "umsatzwachstum_yoy": 58.2,
+        "operative_marge": 9.8,
+        "ev_umsatz": 0.74
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.909,
+        "operative_marge": 0.739,
+        "ev_umsatz": 0.818
+      },
+      "score": 83.1
+    },
+    {
+      "ticker": "GLEN.L",
+      "name": "Glencore",
+      "segment_id": "hydrometallurgie-raffination",
+      "segment_name": "Hydrometallurgie & Metallraffination",
+      "begruendung_kette": "Rohstoffkonzern mit Co-/Ni-Raffinationskapazität und Anteil an Li-Cycle-Aktivitäten (Rochester-Hub-Vermögenswerte).",
+      "kennzahlen_datei": "data/kennzahlen/GLEN.L.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 87.488,
+        "umsatz_ttm_usd": 304.569,
+        "umsatzwachstum_yoy": 48.6,
+        "operative_marge": 2.8,
+        "ev_umsatz": 0.34
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.727,
+        "operative_marge": 0.217,
+        "ev_umsatz": 0.955
+      },
+      "score": 64.2
+    },
+    {
+      "ticker": "066970.KS",
+      "name": "L&F Co.",
+      "segment_id": "kathodenmaterial-rueckfuehrung",
+      "segment_name": "Kathoden- & Vorprodukte-Rückführung",
+      "begruendung_kette": "Koreanischer Hochnickel-Kathodenhersteller, Lieferant von LGES und Tesla; Recyclingmaterial als Rohstoffquelle.",
+      "kennzahlen_datei": "data/kennzahlen/066970.KS.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 3.012,
+        "umsatz_ttm_usd": 2.09,
+        "umsatzwachstum_yoy": 70.2,
+        "operative_marge": 2.4,
+        "ev_umsatz": 2.01
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 1.0,
+        "operative_marge": 0.109,
+        "ev_umsatz": 0.318
+      },
+      "score": 52.8
+    },
+    {
+      "ticker": "247540.KQ",
+      "name": "EcoPro BM",
+      "segment_id": "kathodenmaterial-rueckfuehrung",
+      "segment_name": "Kathoden- & Vorprodukte-Rückführung",
+      "begruendung_kette": "Koreanischer Kathodenproduzent mit integrierter Recyclingsparte (EcoPro CnG) und Rückgewinnungspfaden.",
+      "kennzahlen_datei": "data/kennzahlen/247540.KQ.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 7.409,
+        "umsatz_ttm_usd": 1.664,
+        "umsatzwachstum_yoy": -26.0,
+        "operative_marge": 3.1,
+        "ev_umsatz": 5.63
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.0,
+        "operative_marge": 0.304,
+        "ev_umsatz": 0.045
+      },
+      "score": 10.5
+    },
+    {
+      "ticker": "003670.KS",
+      "name": "POSCO Future M",
+      "segment_id": "kathodenmaterial-rueckfuehrung",
+      "segment_name": "Kathoden- & Vorprodukte-Rückführung",
+      "begruendung_kette": "Kathoden- und Anodenhersteller mit Ausbau von Recycling-Rohstoffkreisläufen im POSCO-Verbund.",
+      "kennzahlen_datei": "data/kennzahlen/003670.KS.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 11.81,
+        "umsatz_ttm_usd": 2.072,
+        "umsatzwachstum_yoy": 2.8,
+        "operative_marge": 2.4,
+        "ev_umsatz": 7.11
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.182,
+        "operative_marge": 0.109,
+        "ev_umsatz": 0.0
+      },
+      "score": 10.6
+    },
+    {
+      "ticker": "688005.SS",
+      "name": "Ronbay Technology",
+      "segment_id": "kathodenmaterial-rueckfuehrung",
+      "segment_name": "Kathoden- & Vorprodukte-Rückführung",
+      "begruendung_kette": "Chinesischer Kathodenhersteller mit Rezyklat-Einsatz und Recyclingbeteiligung.",
+      "kennzahlen_datei": "data/kennzahlen/688005.SS.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 2.567,
+        "umsatz_ttm_usd": 2.201,
+        "umsatzwachstum_yoy": 50.4,
+        "operative_marge": 3.4,
+        "ev_umsatz": 1.53
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.773,
+        "operative_marge": 0.348,
+        "ev_umsatz": 0.5
+      },
+      "score": 56.4
+    },
+    {
+      "ticker": "BAS.DE",
+      "name": "BASF",
+      "segment_id": "kathodenmaterial-rueckfuehrung",
+      "segment_name": "Kathoden- & Vorprodukte-Rückführung",
+      "begruendung_kette": "Chemiekonzern mit Kathodenmaterial und Black-Mass-Raffinationsanlage in Schwarzheide.",
+      "kennzahlen_datei": "data/kennzahlen/BAS.DE.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 51.058,
+        "umsatz_ttm_usd": 70.756,
+        "umsatzwachstum_yoy": 16.4,
+        "operative_marge": 5.2,
+        "ev_umsatz": 1.05
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.5,
+        "operative_marge": 0.435,
+        "ev_umsatz": 0.682
+      },
+      "score": 53.5
+    },
+    {
+      "ticker": "ANDR.VI",
+      "name": "Andritz",
+      "segment_id": "anlagenbau-ausruestung",
+      "segment_name": "Anlagenbau & Prozessausrüstung",
+      "begruendung_kette": "Österreichischer Anlagenbauer; liefert Shredder-, Trennungs- und Entwässerungstechnik für Batterie- und Metallrecycling.",
+      "kennzahlen_datei": "data/kennzahlen/ANDR.VI.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 9.48,
+        "umsatz_ttm_usd": 9.275,
+        "umsatzwachstum_yoy": 8.5,
+        "operative_marge": 7.5,
+        "ev_umsatz": 0.97
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.364,
+        "operative_marge": 0.565,
+        "ev_umsatz": 0.727
+      },
+      "score": 53.3
+    },
+    {
+      "ticker": "METSO.HE",
+      "name": "Metso",
+      "segment_id": "anlagenbau-ausruestung",
+      "segment_name": "Anlagenbau & Prozessausrüstung",
+      "begruendung_kette": "Finnischer Technikkonzern; Zerkleinerungs- und Hydrometallurgie-Ausrüstung für Raffination und Recycling.",
+      "kennzahlen_datei": "data/kennzahlen/METSO.HE.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 16.383,
+        "umsatz_ttm_usd": 6.156,
+        "umsatzwachstum_yoy": 6.1,
+        "operative_marge": 13.9,
+        "ev_umsatz": 2.89
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.227,
+        "operative_marge": 0.913,
+        "ev_umsatz": 0.227
+      },
+      "score": 43.3
+    },
+    {
+      "ticker": "TOM.OL",
+      "name": "Tomra Systems",
+      "segment_id": "anlagenbau-ausruestung",
+      "segment_name": "Anlagenbau & Prozessausrüstung",
+      "begruendung_kette": "Norwegischer Sensor-Sortierspezialist; sortiert Metall- und Batteriefraktionen im Recyclingfluss.",
+      "kennzahlen_datei": "data/kennzahlen/TOM.OL.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 2.859,
+        "umsatz_ttm_usd": 1.639,
+        "umsatzwachstum_yoy": 24.6,
+        "operative_marge": 12.1,
+        "ev_umsatz": null
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.591,
+        "operative_marge": 0.783,
+        "ev_umsatz": 0.5
+      },
+      "hinweise": [
+        "ev_umsatz fehlt – neutral mit 0.5 gewertet"
+      ],
+      "score": 62.1
+    },
+    {
+      "ticker": "G1A.DE",
+      "name": "GEA Group",
+      "segment_id": "anlagenbau-ausruestung",
+      "segment_name": "Anlagenbau & Prozessausrüstung",
+      "begruendung_kette": "Deutscher Anlagenbauer; Zentrifugen, Trockner und Separationstechnik für Prozessstufen der Hydrometallurgie.",
+      "kennzahlen_datei": "data/kennzahlen/G1A.DE.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 12.064,
+        "umsatz_ttm_usd": 6.481,
+        "umsatzwachstum_yoy": 10.0,
+        "operative_marge": 12.5,
+        "ev_umsatz": 1.85
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.409,
+        "operative_marge": 0.87,
+        "ev_umsatz": 0.364
+      },
+      "score": 53.4
+    },
+    {
+      "ticker": "300750.SZ",
+      "name": "Contemporary Amperex Technology (CATL)",
+      "segment_id": "zellhersteller-oem-abnahme",
+      "segment_name": "Zellhersteller & OEM (Rücknahme, Rezyklat-Abnahme)",
+      "begruendung_kette": "Weltgrößter Zellhersteller; Tochter Brunp betreibt einen der größten Recyclingverbünde.",
+      "kennzahlen_datei": "data/kennzahlen/300750.SZ.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 208.617,
+        "umsatz_ttm_usd": 77.901,
+        "umsatzwachstum_yoy": 56.9,
+        "operative_marge": 15.5,
+        "ev_umsatz": 2.17
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.864,
+        "operative_marge": 0.957,
+        "ev_umsatz": 0.273
+      },
+      "score": 71.5
+    },
+    {
+      "ticker": "373220.KS",
+      "name": "LG Energy Solution",
+      "segment_id": "zellhersteller-oem-abnahme",
+      "segment_name": "Zellhersteller & OEM (Rücknahme, Rezyklat-Abnahme)",
+      "begruendung_kette": "Zellhersteller mit Recycling-Kooperationen und Rezyklat-Abnahme für den Materialkreislauf.",
+      "kennzahlen_datei": "data/kennzahlen/373220.KS.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 61.499,
+        "umsatz_ttm_usd": 18.208,
+        "umsatzwachstum_yoy": 28.3,
+        "operative_marge": -4.3,
+        "ev_umsatz": 4.56
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.636,
+        "operative_marge": 0.0,
+        "ev_umsatz": 0.091
+      },
+      "score": 28.2
+    },
+    {
+      "ticker": "006400.KS",
+      "name": "Samsung SDI",
+      "segment_id": "zellhersteller-oem-abnahme",
+      "segment_name": "Zellhersteller & OEM (Rücknahme, Rezyklat-Abnahme)",
+      "begruendung_kette": "Koreanischer Zellhersteller mit Recycling-Partnerschaften und Rückführung von Produktionsausschuss.",
+      "kennzahlen_datei": "data/kennzahlen/006400.KS.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 30.739,
+        "umsatz_ttm_usd": 10.293,
+        "umsatzwachstum_yoy": 18.5,
+        "operative_marge": 2.5,
+        "ev_umsatz": 3.86
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.545,
+        "operative_marge": 0.174,
+        "ev_umsatz": 0.182
+      },
+      "score": 32.5
+    },
+    {
+      "ticker": "6752.T",
+      "name": "Panasonic Holdings",
+      "segment_id": "zellhersteller-oem-abnahme",
+      "segment_name": "Zellhersteller & OEM (Rücknahme, Rezyklat-Abnahme)",
+      "begruendung_kette": "Zellhersteller (u. a. Tesla-Zellen) mit Rücknahme- und Recyclinginitiativen in Japan und den USA.",
+      "kennzahlen_datei": "data/kennzahlen/6752.T.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 63.816,
+        "umsatz_ttm_usd": 52.092,
+        "umsatzwachstum_yoy": 6.4,
+        "operative_marge": 9.2,
+        "ev_umsatz": 1.3
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.273,
+        "operative_marge": 0.652,
+        "ev_umsatz": 0.591
+      },
+      "score": 48.2
+    },
+    {
+      "ticker": "1211.HK",
+      "name": "BYD",
+      "segment_id": "zellhersteller-oem-abnahme",
+      "segment_name": "Zellhersteller & OEM (Rücknahme, Rezyklat-Abnahme)",
+      "begruendung_kette": "Integrierter Zell- und Fahrzeughersteller mit eigenem Batterie-Rücknahmesystem und Rezyklat-Einsatz.",
+      "kennzahlen_datei": "data/kennzahlen/1211.HK.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 94.724,
+        "umsatz_ttm_usd": 116.09,
+        "umsatzwachstum_yoy": -3.2,
+        "operative_marge": 7.2,
+        "ev_umsatz": 0.96
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.045,
+        "operative_marge": 0.522,
+        "ev_umsatz": 0.773
+      },
+      "score": 40.6
+    }
+  ],
+  "shortlist_vorschlag": [
+    {
+      "ticker": "5714.T",
+      "name": "DOWA Holdings",
+      "segment_id": "hydrometallurgie-raffination",
+      "score": 83.1,
+      "runde": 1
+    },
+    {
+      "ticker": "300750.SZ",
+      "name": "Contemporary Amperex Technology (CATL)",
+      "segment_id": "zellhersteller-oem-abnahme",
+      "score": 71.5,
+      "runde": 1
+    },
+    {
+      "ticker": "TOM.OL",
+      "name": "Tomra Systems",
+      "segment_id": "anlagenbau-ausruestung",
+      "score": 62.1,
+      "runde": 1
+    },
+    {
+      "ticker": "SGM.AX",
+      "name": "Sims Limited",
+      "segment_id": "sammlung-logistik",
+      "score": 57.6,
+      "runde": 1
+    },
+    {
+      "ticker": "688005.SS",
+      "name": "Ronbay Technology",
+      "segment_id": "kathodenmaterial-rueckfuehrung",
+      "score": 56.4,
+      "runde": 1
+    },
+    {
+      "ticker": "FORTUM.HE",
+      "name": "Fortum",
+      "segment_id": "vorbehandlung-black-mass",
+      "score": 43.2,
+      "runde": 1
+    },
+    {
+      "ticker": "UMI.BR",
+      "name": "Umicore",
+      "segment_id": "hydrometallurgie-raffination",
+      "score": 76.0,
+      "runde": 2
+    },
+    {
+      "ticker": "DBG.PA",
+      "name": "Derichebourg",
+      "segment_id": "sammlung-logistik",
+      "score": 54.3,
+      "runde": 2
+    },
+    {
+      "ticker": "BAS.DE",
+      "name": "BASF",
+      "segment_id": "kathodenmaterial-rueckfuehrung",
+      "score": 53.5,
+      "runde": 2
+    },
+    {
+      "ticker": "G1A.DE",
+      "name": "GEA Group",
+      "segment_id": "anlagenbau-ausruestung",
+      "score": 53.4,
+      "runde": 2
+    }
+  ]
+}

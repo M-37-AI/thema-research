@@ -1,0 +1,98 @@
+{
+  "ticker": "ANDR.VI",
+  "name": "Andritz AG",
+  "waehrung": "EUR",
+  "berichtswaehrung": "EUR",
+  "branche": "Specialty Industrial Machinery",
+  "land": "Austria",
+  "abgerufen": "2026-09-19",
+  "kennzahlen": {
+    "marktkapitalisierung": {
+      "wert": 8.251,
+      "einheit": "Mrd EUR",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/ANDR.VI",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "umsatz_ttm": {
+      "wert": 8.073,
+      "einheit": "Mrd EUR",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/ANDR.VI",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "umsatzwachstum_yoy": {
+      "wert": 8.5,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/ANDR.VI",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "bruttomarge": {
+      "wert": 49.7,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/ANDR.VI",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "operative_marge": {
+      "wert": 7.5,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/ANDR.VI",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "ev_umsatz": {
+      "wert": 0.97,
+      "einheit": "x",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/ANDR.VI",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "kgv": {
+      "wert": 17.76,
+      "einheit": "x",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/ANDR.VI",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    }
+  },
+  "umsatz_ttm_usd": {
+    "wert": 9.275,
+    "einheit": "Mrd USD",
+    "typ": "berichtet",
+    "quelle": "https://finance.yahoo.com/quote/ANDR.VI",
+    "abgerufen": "2026-09-19",
+    "herausgeber": "Yahoo Finance (via yfinance)",
+    "hinweis": "umgerechnet mit 1.1489 USD je Einheit (Kurs vom 2026-09-18)"
+  },
+  "marktkapitalisierung_usd": {
+    "wert": 9.48,
+    "einheit": "Mrd USD",
+    "typ": "berichtet",
+    "quelle": "https://finance.yahoo.com/quote/ANDR.VI",
+    "abgerufen": "2026-09-19",
+    "herausgeber": "Yahoo Finance (via yfinance)",
+    "hinweis": "umgerechnet mit 1.1489 USD je Einheit (Kurs vom 2026-09-18)"
+  },
+  "wechselkurse": {
+    "EUR": {
+      "wert": 1.148897,
+      "einheit": "USD je EUR",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/EURUSD=X",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)",
+      "jahr": 2026,
+      "hinweis": "Schlusskurs vom 2026-09-18"
+    }
+  },
+  "hinweise": []
+}

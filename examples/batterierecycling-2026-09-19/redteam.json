@@ -1,0 +1,266 @@
+{
+  "einwaende": [
+    {
+      "id": "E1",
+      "ziel": {
+        "datei": "markt.json",
+        "pfad": "/schaetzungen"
+      },
+      "einwand": "Falscher Markt: Drei der vier Schätzungen (MarketsandMarkets, Arizton, BCC) enthalten Blei-Säure-Recycling, einen reifen Markt mit einstelligem Wachstum, der mit dem Thema (Lithium-Ionen aus EV und Speichern) und der Shortlist nichts zu tun hat. MarketsandMarkets beziffert Blei-Säure-Recycling selbst auf 23,94 Mrd USD 2030 (CAGR 6,3 %) – das sind rund 44 % der eigenen Gesamtzahl von 54,3 Mrd USD; bei BCC dominiert Blei-Säure laut markt.json sogar. Die Spanne 19,8–114,7 Mrd USD misst also zu großen Teilen ein Nicht-Thema; die einzige reine Lithium-Ionen-Zahl (Precedence) ist zugleich die mit dem abweichenden Prognosejahr. Für den Report muss eine Lithium-Ionen-only-Spanne her, sonst ist die Marktgröße überzeichnet.",
+      "schwere": "hoch",
+      "beleg": {
+        "wert": 23.94,
+        "einheit": "Mrd USD",
+        "typ": "berichtet",
+        "quelle": "https://www.prnewswire.com/news-releases/lead-acid-battery-recycling-market-worth-23-94-billion-by-2030---exclusive-report-by-marketsandmarkets-302645594.html",
+        "abgerufen": "2026-09-19",
+        "jahr": 2030,
+        "herausgeber": "MarketsandMarkets",
+        "hinweis": "Pressemitteilung vom 18.12.2025, Methodik nicht einsehbar. Basis 2025: 17,64 Mrd USD, CAGR 6,3 % (2025–2030) – Blei-Säure-Recycling allein."
+      }
+    },
+    {
+      "id": "E2",
+      "ziel": {
+        "datei": "markt.json",
+        "pfad": "/schaetzungen/2/marktgroesse"
+      },
+      "einwand": "Die Abgrenzungen sind nicht vergleichbar, und keine Quelle erfüllt die Qualitätsstufen 1–3: alle vier Zahlen stammen aus Pressemitteilungen oder Verkaufsseiten von Marktforschern, die ihre Studien verkaufen (Interesse an großen, wachsenden Zahlen). Schon das historische Basisjahr divergiert um Faktor 2,3 (MarketsandMarkets 26,9 Mrd USD 2023 vs. BCC 11,9 Mrd USD 2024) – bei einer Ist-Größe ist das kein Prognosefehler, sondern ein Definitionsunterschied (Metallwert vs. Dienstleistungsumsatz, mit/ohne Sammlung). Es fehlt ein volumenbasierter Anker aus IEA, Benchmark oder Fastmarkets (t bzw. GWh recycelbares Material × Payables), mit dem man die Wertgrößen plausibilisieren könnte.",
+      "schwere": "mittel"
+    },
+    {
+      "id": "E3",
+      "ziel": {
+        "datei": "markt.json",
+        "pfad": "/schaetzungen/3/cagr"
+      },
+      "einwand": "Precedence-CAGR von 24,3 % p.a. bis 2035 widerspricht dem eigenen Hürden-Befund: Laut IEA klafft bis Mitte der 2030er eine Versorgungslücke von rund 15 Jahren zwischen Batterieeinsatz und Altbatterien, europäische Recycler laufen unter Auslastung, und der LFP-Anteil (über 55 %) senkt den Metallwert je Tonne. Eine Verneunfachung des Werts in zehn Jahren setzt voraus, dass Menge und Preis gleichzeitig steigen – das ist nicht hergeleitet, und die Zahl stammt von einer Produktseite ohne Methodik. Sie sollte nicht als Obergrenze der Spanne im Report stehen.",
+      "schwere": "mittel"
+    },
+    {
+      "id": "E4",
+      "ziel": {
+        "datei": "markt.json",
+        "pfad": "/treiber/3"
+      },
+      "einwand": "Der Treiber 'Hohe Metallpreise' ist ein Zyklus, kein Trend – und die Marktgrößen sind in Wert (Metallerlöse) gemessen, schwanken also mit. Lithiumcarbonat fiel laut USGS von 63.700 USD/t (2022) auf 9.000 USD/t (2025), minus 86 %; in genau dieser Phase gingen Li-Cycle und Northvolt/Hydrovolt unter. Die aktuelle Erholung ist schon wieder fragil: Laut SMM fielen die Black-Mass-Payables für Ternär- und LCO-Material in der Woche 14.–17.09.2026 erneut, weil Kobaltsulfat nachgibt und Hydromet-Käufer zurückhaltend sind. Basisjahre 2023–2025 und die Prognosen erben diese Preisannahmen, ohne sie offenzulegen.",
+      "schwere": "mittel",
+      "beleg": {
+        "wert": 9000,
+        "einheit": "USD/t Lithiumcarbonat (Jahresdurchschnitt, Batteriequalität, real)",
+        "typ": "berichtet",
+        "quelle": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-lithium.pdf",
+        "abgerufen": "2026-09-19",
+        "jahr": 2025,
+        "herausgeber": "USGS, Mineral Commodity Summaries 2026",
+        "hinweis": "Vergleichswert 2022: 63.700 USD/t (gleiche Tabelle). Payables-Rückgang: https://news.metal.com/newscontent/104120803-smm-weekly-review-hydrometallurgical-recycling-market-this-week-black-mass-payables-for-pure-cobalt-and-ternary-fell-steadily-lfp-prices-fluctuated-2026914-2026917"
+      }
+    },
+    {
+      "id": "E5",
+      "ziel": {
+        "datei": "markt.json",
+        "pfad": "/huerden"
+      },
+      "einwand": "Fehlender Gegenbeleg: die Rückzugswelle westlicher Kapazität. Umicore hat seine 150.000-t-Recyclinganlage auf frühestens 2032 verschoben und 1,6 Mrd EUR auf Batteriematerialien abgeschrieben, BASF hat die Raffinerie in Tarragona pausiert, Li-Cycle ging im Mai 2025 in die Insolvenz (Assets für rund 40 Mio USD an Glencore), Northvolt verkaufte seinen Hydrovolt-Anteil für 6,8 Mio USD, Fortum schließt 2026 die Standorte Ikaalinen und Tornio. Das ist kein Randrisiko, sondern der Ist-Zustand des Segments im Westen – die Hürden in markt.json nennen Unterauslastung abstrakt, aber nicht diese Belege. Nicht gesucht wurden außerdem: Second-Life-Nutzung von EV-Batterien in Speichern (verzögert den Rücklauf zusätzlich) und US-Exportbeschränkungen für Black Mass.",
+      "schwere": "mittel",
+      "beleg": {
+        "aussage": "Umicore verschiebt die geplante europäische Batterierecycling-Großanlage (150.000 t/a) auf frühestens 2032 und verbucht rund 1,6 Mrd EUR Wertminderung auf Batteriematerial-Anlagen.",
+        "quelle": "https://resource-recycling.com/e-scrap/2025/04/10/market-factors-combine-to-shift-umicores-capital-plans/"
+      }
+    },
+    {
+      "id": "E6",
+      "ziel": {
+        "datei": "markt.json",
+        "pfad": "/treiber/4"
+      },
+      "einwand": "Innerer Widerspruch: Der Treiber 'Chinas Öffnung für Black-Mass-Importe' soll westliche Vorbehandler stützen, die Hürde 'Black Mass als Gefahrgut' verbietet aber ab 9. November 2026 den Export aus der EU in Nicht-OECD-Staaten – China ist kein OECD-Mitglied. Für die europäischen Kandidaten der Shortlist (Fortum, Veolia, BASF, Umicore) entfällt dieser Absatzkanal also in sieben Wochen. Der Treiber gilt allenfalls für nordamerikanische oder asiatische Anbieter und ist entsprechend einzugrenzen.",
+      "schwere": "mittel",
+      "beleg": {
+        "aussage": "Die EU-Einstufung von Black Mass als gefährlicher Abfall gilt ab 9. November 2026 verbindlich und untersagt Exporte in Nicht-OECD-Staaten.",
+        "quelle": "https://www.euwid-recycling.com/news/policy/eu-classifies-black-mass-as-hazardous-waste-effectively-barring-exports-to-non-oecd-states-110325/"
+      }
+    },
+    {
+      "id": "E7",
+      "ziel": {
+        "datei": "kette.json",
+        "pfad": "/segmente/2/margenprofil"
+      },
+      "einwand": "Margenprofil 'hoch' für Hydrometallurgie ist durch die eigenen Deep Dives widerlegt: Umicores Batterierecycling ist laut firmen/UMI.BR.json weiterhin verlustbringend, GEMs Batterierecycling hat 8,2 % Bruttomarge (firmen/002340.SZ.json), Li-Cycle scheiterte genau am Hydromet-Hub in Rochester. China hält rund 90 % der Materialrückgewinnung mit Überkapazität. 'Engpass mit Preissetzungsmacht' ist eine Hypothese, die belegte Ist-Lage ist 'niedrig bis negativ außerhalb Chinas'. Da die Shortlist Hydrometallurgie als Kernsegment mit drei Firmen gewichtet, trägt dieser Punkt die Segmentlogik.",
+      "schwere": "mittel"
+    },
+    {
+      "id": "E8",
+      "ziel": {
+        "datei": "shortlist.json",
+        "pfad": "/auswahl"
+      },
+      "einwand": "Die Shortlist liefert kein investierbares Exposure zum Thema. Alle acht Deep Dives stufen ihre Firma als 'Mitlaeufer' ein (Andritz als Zulieferer), sieben mit Überzeugung 'niedrig'; der höchste Themenanteil liegt bei 4,9 % (GEM, berichtet) bzw. geschätzt 3 % (CATL, Obergrenze 5,16 % für ein Segment inkl. Batteriematerialien), der Rest zwischen 0,02 % und 2 %. Die einzigen reinen Titel sind entweder insolvent (Li-Cycle) oder scheiterten am Screening. Damit kippt die implizite These 'Batterierecycling ist über börsennotierte Aktien abbildbar': Wer diese Liste hält, hält Zellen-, Edelmetall-, Chemie-, Energie- und Bergbaurisiko mit einer Recycling-Beimischung im Promillebereich. Der Report muss das als Hauptbefund sagen, nicht als Fußnote.",
+      "schwere": "hoch",
+      "beleg": {
+        "wert": 3.44,
+        "einheit": "Mrd USD",
+        "typ": "schaetzung",
+        "begruendung": "Bottom-up-Summe der Themenumsätze aller acht Shortlist-Firmen (bottom_up.py); davon 2,34 Mrd USD allein CATL, die übrigen sieben Firmen zusammen rund 1,1 Mrd USD.",
+        "abgerufen": "2026-09-19",
+        "herausgeber": "eigene Berechnung (bottom_up.py)"
+      }
+    },
+    {
+      "id": "E9",
+      "ziel": {
+        "datei": "shortlist.json",
+        "pfad": "/auswahl/0/begruendung"
+      },
+      "einwand": "Sachlich falsch: 'Recycling ist ein eigenes Berichtssegment, Exposure daher belegbar'. Umicores Segment Recycling umfasst Edelmetallraffination, Schmuck und Industriemetalle; Batterierecycling liegt in Battery Materials Solutions und wird nicht ausgewiesen – der eigene Deep Dive musste das Exposure deshalb schätzen. Die Auswahlbegründung darf so nicht in den Report.",
+      "schwere": "mittel",
+      "beleg": {
+        "aussage": "Die Recycling Business Group von Umicore besteht aus Precious Metals Refining, Jewelry & Industrial Metals und Precious Metals Management; Battery Recycling Solutions gehört zu Battery Materials Solutions.",
+        "quelle": "https://www.umicore.com/en/media/newsroom/full-year-results-2025/"
+      }
+    },
+    {
+      "id": "E10",
+      "ziel": {
+        "datei": "shortlist.json",
+        "pfad": "/auswahl/1/begruendung"
+      },
+      "einwand": "Etikettenschwindel in der Auswahlbegründung: GEM sei 'Chinas grösster reiner Batterierecycler; Recycling ist Kerngeschäft, nicht Beimischung'. Laut eigenem Deep Dive macht Batterierecycling 4,9 % des Umsatzes aus, 54 % sind Batteriematerialien, 35 % Metalle (u. a. Primärnickel aus Indonesien). Auch 'größter' stimmt nicht: GEM zerlegte 2025 rund 52.600 t, CATL-Tochter Brunp verarbeitete rund 210.000 t.",
+      "schwere": "mittel",
+      "beleg": {
+        "aussage": "CATL (Brunp) recycelte 2025 rund 210.000 t Altbatterien (+63,2 %) und gewann 24.000 t Lithiumsalze zurück.",
+        "quelle": "https://www.catl.com/en/news/6773.html"
+      }
+    },
+    {
+      "id": "E11",
+      "ziel": {
+        "datei": "firmen/UMI.BR.json",
+        "pfad": "/themen_exposure"
+      },
+      "einwand": "Nenner-Fehler mit Folgen für den Bottom-up-Check: Die 2 % beziehen sich laut Begründung auf den Umsatz ohne Metall (rund 1,9 Mrd EUR im Halbjahr), bottom_up.py multipliziert sie aber mit dem Umsatz inklusive Metall aus der Kennzahlen-Datei (28,28 Mrd USD). Ergebnis: 0,57 Mrd USD Themenumsatz, realistisch wären bei 2 % von rund 3,8 Mrd EUR Jahresumsatz ohne Metall etwa 0,08 Mrd USD – Überzeichnung um rund Faktor 7. Außerdem ist 'höchstens ein Sechstel von BMS' nicht hergeleitet; für ein verlustbringendes Geschäft, dessen Großanlage auf frühestens 2032 verschoben ist, spricht mehr für einen Anteil unter 1 %. Exposure auf den Kennzahlen-Nenner (inkl. Metall) umrechnen, dann rund 0,3 %.",
+      "schwere": "mittel",
+      "beleg": {
+        "wert": 28.28,
+        "einheit": "Mrd USD",
+        "typ": "berichtet",
+        "quelle": "https://finance.yahoo.com/quote/UMI.BR",
+        "abgerufen": "2026-09-19",
+        "herausgeber": "Kennzahlen-Datei data/kennzahlen/UMI.BR.json (umsatz_ttm_usd, inkl. Metallanteil)"
+      }
+    },
+    {
+      "id": "E12",
+      "ziel": {
+        "datei": "firmen/UMI.BR.json",
+        "pfad": "/bear_case"
+      },
+      "einwand": "Im Bear Case fehlt der härteste Beleg: die Verschiebung der 150.000-t-Anlage auf frühestens 2032 und die Wertminderung von rund 1,6 Mrd EUR auf Batteriematerial-Anlagen. Das ist die unternehmenseigene Aussage, dass das Management vor 2032 nicht an ein wirtschaftliches Großvolumen glaubt.",
+      "schwere": "niedrig",
+      "beleg": {
+        "aussage": "Die geplante Batterierecyclinganlage (150.000 t/a) soll nicht vor 2032 in Betrieb gehen.",
+        "quelle": "https://resource-recycling.com/e-scrap/2025/04/10/market-factors-combine-to-shift-umicores-capital-plans/"
+      }
+    },
+    {
+      "id": "E13",
+      "ziel": {
+        "datei": "firmen/002340.SZ.json",
+        "pfad": "/wettbewerbsposition"
+      },
+      "einwand": "Die Aussage 'Chinas größter Traktionsbatterie-Recycler' wird aus Unternehmensangaben übernommen, obwohl der Lauf selbst das Gegenteil belegt: Brunp (CATL) verarbeitete 2025 rund 210.000 t gegen 52.576 t bei GEM, also etwa das Vierfache. Selbst mit enger Definition (nur 'Zerlegung') ist der Superlativ nicht haltbar. Zudem enthält das Exposure von 4,89 % auch Altfahrzeuge (0,56 Mrd CNY); reines Batterierecycling liegt bei rund 3,4 %.",
+      "schwere": "mittel",
+      "beleg": {
+        "aussage": "Brunp (CATL) verarbeitete 2025 rund 210.000 t Altbatterien.",
+        "quelle": "https://www.catl.com/en/news/6773.html"
+      }
+    },
+    {
+      "id": "E14",
+      "ziel": {
+        "datei": "firmen/GLEN.L.json",
+        "pfad": "/geschaeftsmodell"
+      },
+      "einwand": "Zwei unbelegte Kernbehauptungen: (1) 'Glencore hat angekündigt, den Bau [des Rochester-Hubs] wieder aufzunehmen' – ohne Quelle; bis zu einem veröffentlichten Investitionsbeschluss ist das Optionalität, keine Tatsache. (2) Die Li-Cycle-Umsatzgröße (20–30 Mio USD) ist laut Begründung 'nicht selbst verifiziert', obwohl Li-Cycle bis 2025 bei der SEC berichtet hat. Einordnung als Mitläufer bleibt richtig, aber der Bull Case steht auf ungeprüfter Grundlage.",
+      "schwere": "niedrig",
+      "beleg": {
+        "aussage": "Glencore übernahm die Li-Cycle-Assets im August 2025 per Credit Bid aus der Insolvenz; das Eröffnungsgebot lag bei 40 Mio USD.",
+        "quelle": "https://www.esgdive.com/news/glencore-completes-takeover-of-li-cycle-battery-recycling-assets/757412/"
+      }
+    },
+    {
+      "id": "E15",
+      "ziel": {
+        "datei": "firmen/BAS.DE.json",
+        "pfad": "/themen_exposure"
+      },
+      "einwand": "Die 10 % des Battery-Materials-Umsatzes (rund 60 Mio EUR) sind eine nicht hergeleitete Annahme. Physisch plausibilisiert: Schwarzheide verarbeitet höchstens 15.000 t Batterien und Ausschuss pro Jahr, im Hochlauf seit Juni 2025; die daraus gewonnene Black Mass wird zudem weitgehend intern für die eigene Raffinerie genutzt und erzeugt kaum externen Umsatz. 0,1 % ist eher Ober- als Mittelwert. Im Bear Case fehlt die Pausierung der Großraffinerie in Tarragona, der einzige Schritt, der BASF im Recycling relevant gemacht hätte.",
+      "schwere": "niedrig",
+      "beleg": {
+        "aussage": "BASF pausiert die große Batterierecycling-Raffinerie in Tarragona, bis Zellkapazitätsaufbau und E-Auto-Hochlauf in Europa wieder Fahrt aufnehmen.",
+        "quelle": "https://www.euwid-recycling.com/news/business/basf-puts-battery-recycling-project-in-spain-on-hold-as-sales-plummet-on-ev-market-060824/"
+      }
+    },
+    {
+      "id": "E16",
+      "ziel": {
+        "datei": "firmen/FORTUM.HE.json",
+        "pfad": "/segment_id"
+      },
+      "einwand": "Segment-Zuordnung passt nicht mehr: Fortum ist der einzige Shortlist-Vertreter für 'Vorbehandlung & Black Mass', gibt aber laut eigener Mitteilung die finnische Vorbehandlung (Ikaalinen, Tornio) im H1 2026 auf und konzentriert sich auf Hydrometallurgie. Das Segment Vorbehandlung ist damit in der Shortlist faktisch unbesetzt. Zudem ist das Exposure von 0,5 % ohne Blick in den Geschäftsbericht geschätzt ('PDF nicht maschinenlesbar') – bei einer Rückfrage-fähigen Kennzahl wie 'Other Operations' sollte das nachgeholt werden.",
+      "schwere": "mittel",
+      "beleg": {
+        "aussage": "Der Betrieb in Ikaalinen und Tornio wird im ersten Halbjahr 2026 auslaufen; Hauptfokus ist künftig hydrometallurgisches Recycling.",
+        "quelle": "https://www.fortum.com/media/2025/12/fortum-battery-recycling-completes-change-negotiations-finland"
+      }
+    },
+    {
+      "id": "E17",
+      "ziel": {
+        "datei": "firmen/VIE.PA.json",
+        "pfad": "/themen_exposure"
+      },
+      "einwand": "Die Herleitung ruht auf Kapazitätsangaben aus 2021–2022 und einem angenommenen Erlös von 2.000 EUR/t Black Mass; ob die Anlagen heute mit dieser Kapazität laufen, ist nicht geprüft, und das Solvay/Renault-Projekt steht seit 2021 im Demo-Status. Richtung (verschwindend klein) ist unstrittig. Der eigentliche Punkt ist Etikettenschwindel: Veolia vermarktet sich als europäischer Vorreiter im Batterierecycling bei geschätzt 0,1 % Umsatzanteil – und die Shortlist-Begründung ('realeres Batterie-Exposure als Sims oder Derichebourg') ist für keinen der drei Werte gemessen.",
+      "schwere": "niedrig",
+      "beleg": {
+        "aussage": "Veolia, Solvay und Renault befinden sich in einer experimentellen Phase mit einer vorindustriellen Demo-Anlage in Frankreich.",
+        "quelle": "https://www.veolia.com/en/news/recycling-electric-vehicles-batteries-solvay-renault-veolia"
+      }
+    },
+    {
+      "id": "E18",
+      "ziel": {
+        "datei": "firmen/ANDR.VI.json",
+        "pfad": "/bull_case"
+      },
+      "einwand": "Die 'Picks-and-Shovels'-Logik greift nur, wenn Recycler investieren – und der Investitionszyklus in Europa ist gerade im Rückwärtsgang: Umicore (Großanlage auf ≥2032), BASF (Tarragona pausiert), Northvolt/Hydrovolt, Li-Cycle (Insolvenz), Fortum (Standortschließungen). Die von Fraunhofer ISI prognostizierten 520 kt/a Kapazität 2030 sind eher ein Zeichen von Überkapazität als von künftigen Aufträgen. Für Andritz ist zudem kein einziger einzeln gemeldeter Batterierecycling-Auftrag belegt; das Exposure von 0,5 % ist eine reine Annahme.",
+      "schwere": "mittel",
+      "beleg": {
+        "wert": 520,
+        "einheit": "kt/Jahr Recyclingkapazität in Europa (Prognose)",
+        "typ": "berichtet",
+        "quelle": "https://www.isi.fraunhofer.de/en/blog/themen/batterie-update/batterie-recycling_europa_kapazitaeten_bedarf_update_2025.html",
+        "abgerufen": "2026-09-19",
+        "jahr": 2030,
+        "herausgeber": "Fraunhofer ISI"
+      }
+    },
+    {
+      "id": "E19",
+      "ziel": {
+        "datei": "firmen/300750.SZ.json",
+        "pfad": "/themen_exposure"
+      },
+      "einwand": "CATL trägt 2,34 der 3,44 Mrd USD Bottom-up-Summe (68 %), aber die 3 % ruhen auf einer unbelegten Annahme: '60 % des Segments Battery Materials and Recycling entfallen auf Brunp-Recycling und recyclingnahe Materialien'. Das Segment umfasst auch Batteriematerialien und Lithium-Rohstoffe; die Ausgangszahl 5,16 % stammt zudem nur aus einer Sekundärquelle (carnewschina), nicht aus dem Geschäftsbericht. Auffällig: Recyclingmenge +63 %, Segmentumsatz −24 % – der Erlös je Tonne ist massiv gefallen, was gegen die Werthaltigkeit des Mengenwachstums spricht. Die Überzeugung 'mittel' (einzige der Liste) ist für einen Mitläufer mit unbekanntem Recyclingumsatz nicht begründet.",
+      "schwere": "mittel",
+      "beleg": {
+        "aussage": "CATL-Segment Batteriematerialien und Recycling: Umsatz 21,86 Mrd RMB (−23,83 %), 5,16 % des Gesamtumsatzes, Bruttomarge 27,27 %; zugleich Recyclingmenge 210.000 t (+63,2 %).",
+        "quelle": "https://carnewschina.com/2026/03/10/catl-reports-record-breaking-financial-results-in-2025-with-10-billion-usd-net-profit/"
+      }
+    }
+  ],
+  "bottom_up_kommentar": "bottom_up.py ergibt 3,44 Mrd USD Themenumsatz (TTM) gegen eine Top-down-Spanne von 19,8 Mrd USD (BCC, 2030) bis 114,7 Mrd USD (Precedence, 2035), also 3,0–17,4 % Abdeckung. Sieben von acht Exposures sind Schätzungen (nur GEM berichtet). Die Zahl ist in drei Richtungen verzerrt: (1) Sie ist zu 68 % CATL (2,34 Mrd USD), und dort beruht der Anteil von 3 % auf einer unbelegten 60-%-Annahme innerhalb eines Segments inklusive Batteriematerialien. (2) Umicore ist mit 0,57 Mrd USD etwa siebenfach überzeichnet, weil ein Exposure ohne Metall mit dem Umsatz inklusive Metall multipliziert wird (realistisch rund 0,08 Mrd USD). Bereinigt liegen die übrigen sieben Firmen zusammen bei etwa 0,6 Mrd USD, die Gesamtsumme bei rund 2,9 Mrd USD. (3) Der Vergleich ist schief: TTM-Umsätze gegen Prognosejahre 2030/2035, und drei von vier Top-down-Zahlen enthalten Blei-Säure-Recycling, das die Shortlist gar nicht abdeckt. Sinnvoller Vergleich: gegen die einzige Lithium-Ionen-Zahl mit aktuellem Basisjahr (Precedence 2025: 12,99 Mrd USD). Dort deckt die Shortlist rechnerisch rund 22–26 % ab – getragen überwiegend von CATL, was zu Chinas Anteil von über 85 % an der Recyclingkapazität passt. Fazit: Die geringe Abdeckung ist kein Hinweis auf einen verborgenen großen Markt, sondern darauf, dass die westliche Shortlist am Thema kaum teilhat. Bottom-up widerspricht der Top-down-Spanne nicht, stützt aber auch keine Zahl über rund 20 Mrd USD für Lithium-Ionen-Recycling vor 2030.",
+  "gesamturteil": "Der stärkste Bear Case: Batterierecycling ist 2026 ein reales, politisch gewolltes Thema, aber kein über börsennotierte Aktien investierbares. Erstens ist der Markt kleiner als die Spanne suggeriert: drei von vier Prognosen enthalten Blei-Säure (bei MarketsandMarkets rund 44 %), alle stammen aus Verkaufsunterlagen ohne einsehbare Methodik, und die Wertgrößen hängen an einem Metallpreis-Zyklus (Lithiumcarbonat 2022–2025 −86 %), der gerade wieder dreht. Zweitens kommt das Rohmaterial erst ab Mitte der 2030er in großen Mengen; bis dahin baut sich Überkapazität auf, und der Westen zieht sich sichtbar zurück (Umicore ≥2032, BASF Tarragona pausiert, Li-Cycle insolvent, Fortum schließt Standorte). Drittens bildet die Shortlist das Thema kaum ab: alle acht Firmen sind Mitläufer, sieben mit niedriger Überzeugung, der Themenanteil liegt zwischen 0,02 % und 4,9 %, und nur einer davon (GEM) ist berichtet, und zwei Auswahlbegründungen (Umicore, GEM) sind sachlich falsch. Die Deep Dives selbst sind überwiegend ehrlich und vorsichtig; die Schwächen liegen in Marktabgrenzung, Shortlist-Begründungen und dem Umicore-Nenner. Zwei Einwände sind 'hoch' (E1 Marktabgrenzung, E8 Investierbarkeit) und müssen im Report beantwortet werden. Keine Anlageberatung."
+}

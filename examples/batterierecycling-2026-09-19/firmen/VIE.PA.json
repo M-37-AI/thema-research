@@ -1,0 +1,31 @@
+{
+  "name": "Veolia Environnement",
+  "ticker": "VIE.PA",
+  "segment_id": "sammlung-logistik",
+  "geschaeftsmodell": "Weltweit größter Umweltdienstleister mit Wasser-, Abfall- und Energiedienstleistungen (Konzernumsatz 2025: 44,4 Mrd EUR), überwiegend langfristige kommunale und industrielle Verträge. Im Abfallgeschäft betreibt Veolia auch die Sparte Gefahrstoffe, in der Batterien gesammelt, demontiert und zu Black Mass aufbereitet werden (Standorte u. a. Dieuze und Metz in Frankreich, Anlagen in Großbritannien und Slowenien). Batterierecycling ist ein kleines Nischenprojekt innerhalb dieser Sparte; hydrometallurgische Weiterverarbeitung läuft über Partnerschaften (Solvay/Renault-Projekt 'Liberty').",
+  "themen_exposure": {
+    "wert": 0.1,
+    "einheit": "% Umsatz",
+    "typ": "schaetzung",
+    "begruendung": "Veolia weist keinen Umsatz für Batterierecycling aus. Herleitung: Genannte Kapazitäten (Dieuze bis ca. 7.000 t Black Mass, UK ca. 4.000 t, Slowenien ca. 7.000 t, also maximal rund 18.000 t/Jahr) mit rund 2.000 EUR Erlös je Tonne ergeben höchstens ca. 36 Mio EUR bei Vollauslastung; bei realistischer Auslastung eher 20–40 Mio EUR, das sind ca. 0,05–0,1 % von 44,4 Mrd EUR. Kapazitätsangaben stammen aus älteren Unternehmens- und Pressequellen (2021–2022), Erlös je Tonne ist eine Annahme. Unsicherheit hoch, Größenordnung aber unstrittig klein.",
+    "abgerufen": "2026-09-19"
+  },
+  "kennzahlen_datei": "data/kennzahlen/VIE.PA.json",
+  "wettbewerbsposition": "Veolia bezeichnet sich selbst als Vorreiter im Batterierecycling in Europa, verfügt über Sammellogistik und Gefahrgut-Genehmigungen, aber in der Vorbehandlung über keine skalierte Position gegenüber Umicore, Fortum oder chinesischen Anbietern. Stärke ist der Zugang zu Gefahrstoffströmen und Industriekunden sowie die Bilanz für Partnerschaften. Wettbewerber im Abfallmarkt: Suez/andere Entsorger, Derichebourg, Sims und spezialisierte Recycler; europäische Anlagen sind laut Marktbericht wegen fehlender Altbatterien unterausgelastet.",
+  "rolle_im_thema": "Mitlaeufer",
+  "ueberzeugung": {
+    "stufe": "niedrig",
+    "begruendung": "Batterierecycling ist im Verhältnis zum 44-Mrd-EUR-Konzern vernachlässigbar (geschätzt rund 0,1 % des Umsatzes) und nicht einzeln ausgewiesen; Veolia ist ein Versorgungs-/Umweltwert, dessen Ergebnis von Wasser-, Energie- und Abfallverträgen bestimmt wird. Als Thementitel kaum tauglich."
+  },
+  "bull_case": [
+    "Verbindliche EU-Vorgaben (Rückgewinnungsquoten ab 2027/2031, Black Mass als gefährlicher Abfall ab 9. November 2026) erhöhen den Bedarf an zertifizierter Sammlung und Behandlung in Europa, wo Veolia mit Gefahrgutgenehmigungen und Logistik etabliert ist.",
+    "Kein Kapitalrisiko aus dem Thema: Veolia kann über Partnerschaften (Solvay, Renault) Know-how aufbauen, ohne die Bilanz stark zu belasten; Gefahrstoffsparte (Europa 2,4 Mrd EUR Umsatz, 2025 +3,3 % vergleichbar) wächst mit Preiserhöhungen und Lagergeschäft.",
+    "Konzern mit Rekordergebnissen 2025 (laut Unternehmen über Prognose); stabile Vertragsbasis begrenzt zyklische Schwankungen der Batteriemetallpreise."
+  ],
+  "bear_case": [
+    "Thema kaum kursrelevant: Selbst eine Verdopplung des Batteriegeschäfts würde bei geschätzt unter 0,1 % Umsatzanteil das Konzernergebnis nicht messbar bewegen.",
+    "Europäische Recyclingkapazitäten sind bis Mitte der 2030er unterausgelastet, weil Altbatterien fehlen; Vorbehandlung hängt an der Payability der Raffinerien, und Chinas Kostenvorsprung (rund 90 % der Materialrückgewinnung) drückt die Preise.",
+    "Bewertungsrisiko im Kerngeschäft (Wasser/Energie/Abfall) und hohe Verschuldung eines kapitalintensiven Versorgers überwiegen als Kursfaktoren; das Batterie-Etikett kann Investoren ein Exposure vorspiegeln, das nicht vorhanden ist."
+  ],
+  "was_uns_widerlegen_wuerde": "Veolia weist Batterierecycling erstmals als eigenes Geschäft mit mehr als 1 % des Konzernumsatzes (über ca. 450 Mio EUR) aus oder meldet eine Großanlage mit über 50.000 t/Jahr Kapazität mit langfristigen Abnahmeverträgen – dann wäre unsere Einstufung als kleiner Mitläufer falsch."
+}

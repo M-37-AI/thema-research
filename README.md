@@ -8,7 +8,9 @@ Ein Team aus Claude-Code-Agenten recherchiert einen Investment-Trend (z. B. „R
 
 > **Keine Anlageberatung.** Das Projekt dient Lern- und Demonstrationszwecken. Es gibt keine Kauf- oder Verkaufsempfehlungen und keine Kursziele.
 
-**Beispiel:** `examples/robotik-2026-09-18/report.html` ist ein echter, unveränderter Lauf zum Thema Robotik (8 Firmen, 14 Einwände des Red Teams, 36 belegte Zahlen, ~15 Minuten Laufzeit). Einfach im Browser öffnen.
+**Beispiele** (echte, unveränderte Läufe – einfach `report.html` im Browser öffnen):
+- `examples/robotik-2026-09-18/` – Robotik: 8 Firmen, 14 Einwände des Red Teams, 36 belegte Zahlen. Ergebnis: „einstelliges Volumenwachstum, zweistellige Prognosen hängen an den Humanoiden“.
+- `examples/batterierecycling-2026-09-19/` – Batterierecycling: 8 Firmen, 19 Einwände. Ergebnis: „politisch gewolltes Thema ohne investierbare Aktie“ – kein Kernprofiteur über 1 Mrd USD. Lief ohne einen manuellen Eingriff in 23 Minuten für ≈ 15 $ (API-Listenpreise; Details in `docs/testlauf-2-2026-09-19.md`).
 
 ## Ablauf eines Laufs
 
@@ -45,7 +47,7 @@ Jede Aufgabe trägt ihre Ergebnisdatei im Titel (`[runs/<lauf>/kette.json] Werts
 - **tmux** für die Split-Pane-Ansicht (empfohlen; ohne tmux erscheinen die Teammates im Agenten-Panel unter der Eingabezeile).
 - Internet für Websuche und Yahoo Finance. Keine API-Keys nötig.
 
-**Kosten und Dauer:** Ein Lauf startet bis zu **neun Agenten** mit je eigenem Kontext (7 × Sonnet, 2 × Opus plus Lead) und dauert etwa 15–25 Minuten. Das verbraucht deutlich mehr Tokens als eine normale Session. Am Ende eines Laufs `/cost` eingeben – die Zahl steht bewusst nicht hier, weil sie von Thema, Modell und Preisen abhängt.
+**Kosten und Dauer:** Ein Lauf startet bis zu **neun Agenten** mit je eigenem Kontext (7 × Sonnet, 2 × Opus plus Lead) und dauert etwa 15–25 Minuten. Das verbraucht deutlich mehr Tokens als eine normale Session. Referenz: Der Batterierecycling-Lauf kostete **≈ 15 $ zu API-Listenpreisen** (Lead auf Fable 5.1 5,83 $, Red Team und Lektor auf Opus je ~3,40 $, alle sieben Sonnet-Agenten zusammen 2,50 $). Auf einem Max-Abo zählt stattdessen Kontingent. **`/cost` im Lead zeigt nur den Lead** – Teammates in tmux-Panes sind eigene Prozesse; ihre Kosten stehen in den Transkripten unter `~/.claude/projects/`.
 
 ## Setup
 

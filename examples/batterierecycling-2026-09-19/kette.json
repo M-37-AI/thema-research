@@ -1,0 +1,80 @@
+{
+  "thema": "Batterierecycling",
+  "segmente": [
+    {
+      "id": "sammlung-logistik",
+      "name": "Sammlung, Demontage & Logistik",
+      "beschreibung": "Rücknahme von Altbatterien und Produktionsausschuss, Gefahrgut-Transport, Entladung und Demontage von Packs bis zur Zellebene.",
+      "margenprofil": {"stufe": "niedrig", "begruendung": "Fragmentierte Dienstleistung mit geringer Differenzierung; Preis folgt Rohstoffpreisen und Entsorgungsgebühren. Gefahrgut-Genehmigungen bieten nur begrenzten Schutz."},
+      "kandidaten": [
+        {"name": "Veolia Environnement", "ticker": "VIE.PA", "begruendung": "Sammelt und behandelt Industrie- und Altbatterien im Rahmen der Abfall- und Gefahrstoffsparte; Batterie-Recycling ist Teilgeschäft."},
+        {"name": "Derichebourg", "ticker": "DBG.PA", "begruendung": "Französischer Metallrecycler mit Rücknahme und Vorsortierung von E-Fahrzeug-Batterien und Elektroschrott."},
+        {"name": "Sims Limited", "ticker": "SGM.AX", "begruendung": "Metall- und Elektronikrecycler mit Sammlungs- und Aufbereitungsnetz; Lithium-Ionen-Batterien als wachsender Stoffstrom."}
+      ]
+    },
+    {
+      "id": "vorbehandlung-black-mass",
+      "name": "Mechanische Vorbehandlung & Black Mass",
+      "beschreibung": "Schreddern, Trennen und Trocknen der Zellen zu Black Mass (Mischung aus Lithium, Nickel, Kobalt, Mangan, Graphit) sowie Kupfer-/Aluminiumfraktionen.",
+      "margenprofil": {"stufe": "mittel", "begruendung": "Ausbeute und Schwarzmasse-Qualität differenzieren, doch Erlöse hängen an der Payability, also dem Preisabschlag der Raffinerien auf Metallwerte; Überkapazitäten in Europa und China drücken Margen."},
+      "kandidaten": [
+        {"name": "Fortum", "ticker": "FORTUM.HE", "begruendung": "Finnischer Energiekonzern mit eigener Batterierecycling-Anlage in Harjavalta (Schwarzmasse-Erzeugung und Hydrometallurgie)."},
+        {"name": "Neometals", "ticker": "NMT.AX", "begruendung": "Australischer Entwickler, Partner im Primobius-JV mit SMS group für modulare Recyclinganlagen (Schreddern plus Hydromet)."},
+        {"name": "American Battery Technology Company", "ticker": "ABAT", "begruendung": "US-Recycler mit Anlage in Nevada; Vorbehandlung und Hydromet-Prozess, Fokus auf Lithium-Ionen-Rezyklat."},
+        {"name": "Aqua Metals", "ticker": "AQMS", "begruendung": "US-Kleinunternehmen mit Elektrochemie-Verfahren (AquaRefining) für Metallrückgewinnung aus Batterieabfällen."}
+      ]
+    },
+    {
+      "id": "hydrometallurgie-raffination",
+      "name": "Hydrometallurgie & Metallraffination",
+      "beschreibung": "Chemische Laugung und Fällung der Black Mass zu batterietauglichen Nickel-, Kobalt-, Mangan- und Lithiumsalzen bzw. Metallen.",
+      "margenprofil": {"stufe": "hoch", "begruendung": "Engpass mit hohem Kapitalbedarf und Prozess-Know-how; Anbieter mit Zugang zu Kobalt-/Nickelchemie und Kundenverträgen setzen Preise. Ergebnis bleibt jedoch stark metallpreisabhängig."},
+      "kandidaten": [
+        {"name": "Umicore", "ticker": "UMI.BR", "begruendung": "Belgischer Materialkonzern mit Pyro-/Hydromet-Verfahren für Batterierecycling und Edelmetallraffination; Verwertung liefert Ni/Co-Konzentrate."},
+        {"name": "GEM Co.", "ticker": "002340.SZ", "begruendung": "Chinesischer Marktführer im Recycling von Batterien und Metallabfällen; Herstellung von Ni-/Co-Vorprodukten."},
+        {"name": "Zhejiang Huayou Cobalt", "ticker": "603799.SS", "begruendung": "Kobalt-/Nickelchemie-Konzern mit Recyclingkreislauf zur Rückgewinnung aus Altbatterien."},
+        {"name": "Sumitomo Metal Mining", "ticker": "5713.T", "begruendung": "Japanischer Metallhersteller mit Nickel-Raffination und Rückgewinnung aus Batterien (Kupfer-Nickel-Kreislauf)."},
+        {"name": "DOWA Holdings", "ticker": "5714.T", "begruendung": "Japanischer Nichteisenmetall- und Recyclingspezialist; Umweltsparte verarbeitet Batterie- und Elektronikschrott."},
+        {"name": "Glencore", "ticker": "GLEN.L", "begruendung": "Rohstoffkonzern mit Co-/Ni-Raffinationskapazität und Anteil an Li-Cycle-Aktivitäten (Rochester-Hub-Vermögenswerte)."}
+      ]
+    },
+    {
+      "id": "kathodenmaterial-rueckfuehrung",
+      "name": "Kathoden- & Vorprodukte-Rückführung",
+      "beschreibung": "Herstellung von Precursor (pCAM) und Kathodenaktivmaterial aus Rezyklat und primären Metallen; Schließung des Materialkreislaufs für Zellhersteller.",
+      "margenprofil": {"stufe": "mittel", "begruendung": "Qualifizierung bei Zellherstellern schafft Wechselkosten und technologische IP, aber Metallpreis-Durchreichung und starker Wettbewerb aus China begrenzen Spannen."},
+      "kandidaten": [
+        {"name": "L&F Co.", "ticker": "066970.KS", "begruendung": "Koreanischer Hochnickel-Kathodenhersteller, Lieferant von LGES und Tesla; Recyclingmaterial als Rohstoffquelle."},
+        {"name": "EcoPro BM", "ticker": "247540.KQ", "begruendung": "Koreanischer Kathodenproduzent mit integrierter Recyclingsparte (EcoPro CnG) und Rückgewinnungspfaden."},
+        {"name": "POSCO Future M", "ticker": "003670.KS", "begruendung": "Kathoden- und Anodenhersteller mit Ausbau von Recycling-Rohstoffkreisläufen im POSCO-Verbund."},
+        {"name": "Ronbay Technology", "ticker": "688005.SS", "begruendung": "Chinesischer Kathodenhersteller mit Rezyklat-Einsatz und Recyclingbeteiligung."},
+        {"name": "BASF", "ticker": "BAS.DE", "begruendung": "Chemiekonzern mit Kathodenmaterial und Black-Mass-Raffinationsanlage in Schwarzheide."}
+      ]
+    },
+    {
+      "id": "anlagenbau-ausruestung",
+      "name": "Anlagenbau & Prozessausrüstung",
+      "beschreibung": "Lieferanten von Schreddern, Sortieranlagen, Reaktoren, Trennern und Automatisierung für Recyclinganlagen.",
+      "margenprofil": {"stufe": "mittel", "begruendung": "Projektgeschäft mit Service- und Ersatzteilanteil; Referenzen und Engineering-Know-how stützen die Preise, Auftragsvergabe schwankt aber mit Investitionszyklen der Recycler."},
+      "kandidaten": [
+        {"name": "Andritz", "ticker": "ANDR.VI", "begruendung": "Österreichischer Anlagenbauer; liefert Shredder-, Trennungs- und Entwässerungstechnik für Batterie- und Metallrecycling."},
+        {"name": "Metso", "ticker": "METSO.HE", "begruendung": "Finnischer Technikkonzern; Zerkleinerungs- und Hydrometallurgie-Ausrüstung für Raffination und Recycling."},
+        {"name": "Tomra Systems", "ticker": "TOM.OL", "begruendung": "Norwegischer Sensor-Sortierspezialist; sortiert Metall- und Batteriefraktionen im Recyclingfluss."},
+        {"name": "GEA Group", "ticker": "G1A.DE", "begruendung": "Deutscher Anlagenbauer; Zentrifugen, Trockner und Separationstechnik für Prozessstufen der Hydrometallurgie."}
+      ]
+    },
+    {
+      "id": "zellhersteller-oem-abnahme",
+      "name": "Zellhersteller & OEM (Rücknahme, Rezyklat-Abnahme)",
+      "beschreibung": "Nachfrageseite: Zellhersteller und Autobauer, die Rücknahmepflichten, Recyclat-Quoten (EU-Batterieverordnung) und geschlossene Materialkreisläufe umsetzen.",
+      "margenprofil": {"stufe": "mittel", "begruendung": "Recycling ist hier Kostenersparnis und Regulierungspflicht statt Hauptertragsquelle; Zellhersteller haben Skalenvorteile, stehen aber unter starkem Preisdruck."},
+      "kandidaten": [
+        {"name": "Contemporary Amperex Technology (CATL)", "ticker": "300750.SZ", "begruendung": "Weltgrößter Zellhersteller; Tochter Brunp betreibt einen der größten Recyclingverbünde."},
+        {"name": "LG Energy Solution", "ticker": "373220.KS", "begruendung": "Zellhersteller mit Recycling-Kooperationen und Rezyklat-Abnahme für den Materialkreislauf."},
+        {"name": "Samsung SDI", "ticker": "006400.KS", "begruendung": "Koreanischer Zellhersteller mit Recycling-Partnerschaften und Rückführung von Produktionsausschuss."},
+        {"name": "Panasonic Holdings", "ticker": "6752.T", "begruendung": "Zellhersteller (u. a. Tesla-Zellen) mit Rücknahme- und Recyclinginitiativen in Japan und den USA."},
+        {"name": "BYD", "ticker": "1211.HK", "begruendung": "Integrierter Zell- und Fahrzeughersteller mit eigenem Batterie-Rücknahmesystem und Rezyklat-Einsatz."}
+      ]
+    }
+  ]
+}

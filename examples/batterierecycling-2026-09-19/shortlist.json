@@ -1,0 +1,21 @@
+{
+  "auswahl": [
+    {"ticker": "UMI.BR", "name": "Umicore", "segment_id": "hydrometallurgie-raffination",
+     "begruendung": "Europas grösster Batterierecycler mit eigener Hydrometallurgie (Hoboken) und geplanter Grossanlage; Recycling ist ein eigenes Berichtssegment, Exposure daher belegbar."},
+    {"ticker": "002340.SZ", "name": "GEM Co.", "segment_id": "hydrometallurgie-raffination",
+     "begruendung": "Chinas grösster reiner Batterierecycler; Recycling ist Kerngeschäft, nicht Beimischung. Niedriger Score, aber ohne GEM fehlt der Weltmarktführer im Segment."},
+    {"ticker": "GLEN.L", "name": "Glencore", "segment_id": "hydrometallurgie-raffination",
+     "begruendung": "Übernahm 2025 die Anlagen von Li-Cycle und betreibt Batterierecycling in Sudbury; Beispiel für den Einstieg eines Bergbaukonzerns – Exposure am Konzernumsatz klein, Deep Dive soll das quantifizieren."},
+    {"ticker": "BAS.DE", "name": "BASF", "segment_id": "kathodenmaterial-rueckfuehrung",
+     "begruendung": "Black-Mass-Anlage Schwarzheide und Kathodenmaterial aus Rezyklat; einziger europäischer Kandidat im Segment mit belegbarer Recycling-Kapazität."},
+    {"ticker": "FORTUM.HE", "name": "Fortum", "segment_id": "vorbehandlung-black-mass",
+     "begruendung": "Einziger investierbarer Kandidat im Segment (Harjavalta, Ikaalinen); die kleinen US-/AU-Werte scheiterten am Screening."},
+    {"ticker": "VIE.PA", "name": "Veolia Environnement", "segment_id": "sammlung-logistik",
+     "begruendung": "Betreibt Batterierecycling-Anlagen in Frankreich (Dieuze) und Partnerschaften mit Solvay/Renault; realeres Batterie-Exposure als Sims oder Derichebourg trotz niedrigerem Score."},
+    {"ticker": "ANDR.VI", "name": "Andritz", "segment_id": "anlagenbau-ausruestung",
+     "begruendung": "Bietet komplette Batterierecycling-Linien (Zerkleinerung bis Hydrometallurgie) an; Tomra und GEA haben kein spezifisches Batterie-Angebot."},
+    {"ticker": "300750.SZ", "name": "Contemporary Amperex Technology (CATL)", "segment_id": "zellhersteller-oem-abnahme",
+     "begruendung": "Tochter Brunp ist der weltweit grösste Batterierecycler nach Kapazität; Beispiel für vertikale Integration eines Zellherstellers."}
+  ],
+  "abweichungen_vom_vorschlag": "Ersetzt: Tomra und GEA (Anlagenbau, kein spezifisches Batterierecycling-Angebot) durch Andritz; DOWA (Hydrometallurgie, Score-Spitzenreiter, aber Batterierecycling nur kleiner Teil des Umweltgeschäfts) durch GEM und Glencore, die im Thema direkt tätig sind; Ronbay (Kathoden, Recycling nicht belegbar) gestrichen, BASF bleibt; Sims und Derichebourg (Schrottrecycler ohne nennenswertes Batterie-Geschäft) durch Veolia ersetzt. Beibehalten: Umicore, BASF, Fortum, CATL. Damit sind alle 6 Segmente vertreten, Hydrometallurgie als Kernsegment mit drei Firmen."
+}

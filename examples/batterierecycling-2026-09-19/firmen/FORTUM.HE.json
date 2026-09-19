@@ -1,0 +1,33 @@
+{
+  "name": "Fortum",
+  "ticker": "FORTUM.HE",
+  "segment_id": "vorbehandlung-black-mass",
+  "geschaeftsmodell": "Nordischer Energiekonzern mit Schwerpunkt auf CO2-armer Stromerzeugung (Wasser- und Kernkraft) und Stromvertrieb. Das Abfall- und Recyclinggeschäft (Fortum Recycling & Waste) wurde im November 2024 für rund 800 Mio EUR an Summa Equity verkauft. Das Batterierecycling (Fortum Battery Recycling) blieb im Konzern: hydrometallurgische Anlage in Harjavalta, Finnland, die Rückgewinnung von Nickel, Kobalt und Lithium aus Black Mass betreibt.",
+  "themen_exposure": {
+    "wert": 0.5,
+    "einheit": "% Umsatz",
+    "typ": "schaetzung",
+    "begruendung": "Fortum weist Batterierecycling in den uns zugänglichen Quellen nicht als eigenes Umsatzsegment aus. Die Harjavalta-Anlage verarbeitet laut Sekundärquellen bisher rund 3.000 t Black Mass pro Jahr (Ausbauziel 28.000 t) und ist damit im Verhältnis zu einem Konzern mit rund 6 Mrd USD Umsatz (Kennzahlen-Datei) sehr klein. Wir schätzen den Umsatzanteil auf unter 1 %.",
+    "abgerufen": "2026-09-19",
+    "hinweis": "Kein berichteter Wert gefunden; Segmentangaben aus dem Geschäftsbericht 2025 konnten nicht ausgewertet werden (PDF nicht maschinenlesbar). Größenordnung ist unsicher, die Richtung (klar unter 5 %) nicht."
+  },
+  "kennzahlen_datei": "data/kennzahlen/FORTUM.HE.json",
+  "wettbewerbsposition": "Fortum hat mit Harjavalta eine der wenigen hydrometallurgischen Batterierecyclinganlagen in Europa und wurde im März 2025 von der EU-Kommission als Strategic Project unter dem Critical Raw Materials Act anerkannt. Es gibt Fördermittel von rund 85 Mio EUR (Business Finland) und die Aussicht auf bis zu 40 Mio EUR aus dem EU Innovation Fund für den Ausbau. Gleichzeitig stellt Fortum die Standorte Ikaalinen und Tornio im ersten Halbjahr 2026 ein und konzentriert sich auf Hydrometallurgie in Harjavalta, dazu Vorbehandlung in Deutschland. Das zeigt Konsolidierung statt Wachstum bei der mechanischen Vorbehandlung. Die Anlage ist im Vergleich zu chinesischen Anbietern klein, die laut IEA rund 90 % der Materialrückgewinnung stellen.",
+  "rolle_im_thema": "Mitlaeufer",
+  "ueberzeugung": {
+    "stufe": "niedrig",
+    "begruendung": "Batterierecycling ist ein Randgeschäft eines Energiekonzerns, dessen Bewertung von Strompreisen und Erzeugung bestimmt wird. Die Schließung von zwei Standorten und die Abhängigkeit von Fördermitteln zeigen einen schwierigen Geschäftsverlauf; das Thema erklärt kaum Kursbewegungen."
+  },
+  "bull_case": [
+    "Harjavalta gilt seit März 2025 als EU-Strategic-Project. Etwa 85 Mio EUR nationale Förderung und ein möglicher Zuschuss von bis zu 40 Mio EUR aus dem EU Innovation Fund senken das Kapitalrisiko des Ausbaus von 3.000 auf 28.000 t Black Mass.",
+    "Die Konzentration auf Hydrometallurgie im Kernstandort und der Aufbau von Vorbehandlung in Deutschland können die Wertschöpfung erhöhen. Die EU-Vorgaben (Lithium-Rückgewinnung 50 % ab 2027, 80 % ab 2031; Black Mass als gefährlicher Abfall ab 9. November 2026) stützen den europäischen Standort langfristig.",
+    "Die Kernsparte finanziert die Batteriesparte, sodass Fortum das Geschäft auch in einer Durststrecke weiterführen kann, ohne Kapitalmarktdruck wie bei kleinen Recyclern."
+  ],
+  "bear_case": [
+    "Die Schließung von Ikaalinen und Tornio (H1 2026) belegt, dass die Vorbehandlung in Finnland bei aktuellen Volumina nicht ausgelastet oder nicht wirtschaftlich war. Bis Mitte der 2030er stammt der Großteil des Materials aus Produktionsausschuss statt aus Altbatterien.",
+    "Der Wechsel zu LFP-Zellen (über 55 % Anteil der EV-Batterien) verringert den Materialwert je Tonne, während Fortums Hydrometallurgie auf Nickel- und Kobaltgehalte ausgerichtet ist.",
+    "Das Batteriegeschäft macht nur einen sehr kleinen Teil des Konzernumsatzes aus. Selbst ein erfolgreicher Ausbau würde die Konzernergebnisse kaum bewegen, während ein Scheitern das Thema zur Randnotiz macht.",
+    "Chinesische Wettbewerber haben Kosten- und Skalenvorteile; eine Marge ohne Förderung ist nicht belegt."
+  ],
+  "was_uns_widerlegen_wuerde": "Unsere niedrige Überzeugung wäre widerlegt, wenn Fortum Batterierecycling in einem Geschäftsbericht als eigenes Segment mit positivem vergleichbarem Betriebsergebnis und über 5 % des Konzernumsatzes ausweist oder wenn die Finanzierungsentscheidung für den Ausbau von Harjavalta auf 28.000 t getroffen und die Anlage mit über 70 % ausgelastet betrieben wird."
+}
