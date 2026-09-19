@@ -418,9 +418,9 @@
     {% if gate %}
     <p>Jedes Arbeitsergebnis wurde beim Abschluss automatisch gegen sein Schema geprüft. Ungültige Dateien wurden zurückgewiesen und mussten korrigiert werden.</p>
     <div class="kennziffern">
-      <div class="kennziffer"><div class="wert">{{ gate.pruefungen }}</div><div class="label">Prüfungen</div></div>
-      <div class="kennziffer"><div class="wert">{{ gate.akzeptiert }}</div><div class="label">akzeptiert</div></div>
-      <div class="kennziffer"><div class="wert">{{ gate.abgelehnt }}</div><div class="label">abgelehnt</div></div>
+      <div class="kennziffer"><div class="wert">{{ gate.aufgaben }}</div><div class="label">Aufgaben geprüft</div></div>
+      <div class="kennziffer"><div class="wert">{{ gate.abgelehnt }}</div><div class="label">Ablehnungen</div></div>
+      <div class="kennziffer"><div class="wert">{{ gate.pruefungen }}</div><div class="label">Prüfvorgänge</div></div>
     </div>
     {% if gate.abgelehnt %}
     <div class="tabelle"><table>

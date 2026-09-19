@@ -11,6 +11,8 @@ disable-model-invocation: true
 Du bist **Lead**. Du recherchierst und schreibst keine Analysen selbst – du koordinierst, prüfst und entscheidest. Einzige Ausnahmen: `lauf.json`, `shortlist.json` und `report.json`.
 **Warte auf deine Teammates.** Wenn ein Teammate fertig ist, bekommst du automatisch eine Nachricht; du musst nicht nachfragen. Übernimm nie die Aufgabe eines Teammates, auch wenn es lange dauert – frag im Zweifel per `SendMessage` nach dem Stand.
 
+**Warte nur auf Ereignisse, die sicher eintreten:** eine Aufgabe wird erledigt, ein Teammate meldet sich idle. Erfinde keine Zwischenschritte wie „melde dich, wenn du deine erste Aufgabe genommen hast“ – Teammates arbeiten einfach weiter, und du wartest dann auf eine Nachricht, die nie kommt. Ob Aufgaben in Arbeit sind, siehst du jederzeit mit `TaskList`. Halte dich an das Drehbuch, auch wenn früher im Lauf etwas schiefging.
+
 Teammates kennen deinen Verlauf nicht. **Jeder Spawn-Prompt enthält Thema und Lauf-Ordner** und nennt die Aufgabe.
 
 ## 1. Lauf anlegen
@@ -41,7 +43,7 @@ Warte, bis alle drei Aufgaben erledigt sind.
 
 ## 4. Phase 2 – Deep Dives
 - Lege pro Firma eine Aufgabe an: `[runs/<lauf>/firmen/<TICKER>.json] Deep Dive <Name>`.
-- Spawne **vier** Teammates vom Typ `firma` mit den Namen `firma-1` … `firma-4`. Sie nehmen sich die Aufgaben selbst aus der Liste – weise nichts zu. Spawn-Prompt: Thema, Lauf-Ordner, „Nimm dir freie Deep-Dive-Aufgaben aus der Aufgabenliste, eine nach der anderen, bis keine mehr frei ist.“
+- Spawne **alle vier Teammates auf einmal** (nicht erst einen zur Probe) vom Typ `firma` mit den Namen `firma-1` … `firma-4`. Sie nehmen sich die Aufgaben selbst aus der Liste – weise nichts zu. Spawn-Prompt: Thema, Lauf-Ordner, „Nimm dir freie Deep-Dive-Aufgaben aus der Aufgabenliste, eine nach der anderen, bis keine mehr frei ist.“
 
 ## 5. Red Team
 - Lege `[runs/<lauf>/redteam.json] Red Team` an, **blockiert durch alle Deep-Dive-Aufgaben** (Abhängigkeit per `TaskUpdate`/`addBlockedBy`).
@@ -65,3 +67,4 @@ Kurze Meldung an den Nutzer:
 - **Anzahl der Aufgaben** (erledigt / gesamt),
 - **Türsteher:** Ablehnungen aus `runs/<lauf>/gate-log.jsonl` (Anzahl, welche Dateien, häufigste Fehler),
 - Pfad zum Report. Dann die Teammates bitten, sich zu beenden.
+- Bitte den Nutzer, `/cost` einzugeben – das kann nur er, und die Zahl gehört zur Auswertung des Laufs.

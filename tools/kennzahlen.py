@@ -164,13 +164,28 @@ def berechne(ticker: str, roh: dict, fx_handel: dict | None, fx_bericht: dict | 
     pe = info.get("trailingPE")
     kgv = _zahl(pe, "x", ticker, ab, "nicht verfügbar (z. B. Verlust in den letzten 12 Monaten)")
 
+    # Plausibilität EV/Umsatz: Yahoo liefert gelegentlich Unsinn (negativ, oder Marktkapitalisierung
+    # und Umsatz in verschiedenen Währungen vermischt). Vergleich mit Marktkapitalisierung/Umsatz,
+    # beides in USD. Unplausible Werte werden null – ein falscher Wert ist schlimmer als ein fehlender.
+    ev_u = info.get("enterpriseToRevenue")
+    ev_hinweis = None
+    mk, um = info.get("marketCap"), info.get("totalRevenue")
+    if ev_u is not None and mk and um and fx_handel and fx_bericht:
+        kurs_umsatz = (mk * fx_handel["kurs"]) / (um * fx_bericht["kurs"])
+        if ev_u <= 0:
+            ev_hinweis = f"unplausibel: Yahoo meldet {ev_u:.2f}, Marktkapitalisierung/Umsatz ergibt {kurs_umsatz:.1f} – Wert verworfen"
+        elif ev_u > kurs_umsatz * 3 or ev_u < kurs_umsatz / 3:
+            ev_hinweis = (f"unplausibel: Yahoo meldet {ev_u:.2f}, Marktkapitalisierung/Umsatz ergibt {kurs_umsatz:.1f} "
+                          "(Abweichung über Faktor 3) – Wert verworfen")
+    ev_zahl = _zahl(None if ev_hinweis else ev_u, "x", ticker, ab, ev_hinweis or fehlt, 2)
+
     kennzahlen = {
         "marktkapitalisierung": _zahl(_mal(info.get("marketCap"), 1e-9), f"Mrd {handel}", ticker, ab, fehlt, 3),
         "umsatz_ttm": _zahl(_mal(info.get("totalRevenue"), 1e-9), f"Mrd {bericht}", ticker, ab, fehlt, 3),
         "umsatzwachstum_yoy": _zahl(_mal(info.get("revenueGrowth"), 100), "%", ticker, ab, fehlt, 1),
         "bruttomarge": _zahl(_mal(info.get("grossMargins"), 100), "%", ticker, ab, fehlt, 1),
         "operative_marge": _zahl(_mal(info.get("operatingMargins"), 100), "%", ticker, ab, fehlt, 1),
-        "ev_umsatz": _zahl(info.get("enterpriseToRevenue"), "x", ticker, ab, fehlt, 2),
+        "ev_umsatz": ev_zahl,
         "kgv": kgv,
     }
     hinweise = [f"{name}: {z['hinweis']}" for name, z in kennzahlen.items() if z["wert"] is None]

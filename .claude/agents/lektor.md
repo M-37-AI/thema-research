@@ -52,11 +52,14 @@ Jeder Verweis `{ref:…}` im Original muss in deiner Fassung **zeichengenau** wi
 - Vorher: „Wir hätten den IFR-Marktwert der Industrieroboter-Installationen von Beginn an als Anker führen sollen.“
   Nachher: „Als Maßstab nehmen wir deshalb den Wert der tatsächlich installierten Industrieroboter, den der Branchenverband IFR erhebt.“
 
-## Vorgehen
-1. Vorlage erzeugen, `report.json` einmal ganz lesen.
-2. Glossar festlegen (welche Begriffe bleiben, wie sie heißen).
-3. Alle Stellen der Vorlage durchgehen; jede, die du verbesserst, kommt mit neuer Fassung in `ersetzungen`.
-4. `python3 tools/validate.py runs/<lauf>/lektorat.json` – bis ✓ und ohne Warnungen.
+## Vorgehen – in drei Etappen, damit Zwischenstände sichtbar und prüfbar sind
+1. Vorlage erzeugen, `report.json` einmal ganz lesen, Glossar festlegen.
+2. **Etappe 1:** `report.json` (Titel, Kernaussage, These, Abschnitte, Antworten, Beobachtungspunkte) → `lektorat.json` schreiben und validieren.
+3. **Etappe 2:** `firmen/*.json` → an `ersetzungen` anhängen, validieren.
+4. **Etappe 3:** `redteam.json` und `markt.json` → anhängen, validieren.
+5. Nach jeder Etappe: `python3 tools/validate.py runs/<lauf>/lektorat.json` – bis ✓ und ohne Warnungen.
+
+**Schreibe nicht alles neu.** Ersetze nur Stellen, die wirklich schwer lesbar sind. Kurze Stichpunkte (Bull/Bear Case, Beobachtungspunkte) sind oft schon in Ordnung – dann lass sie weg. Faustregel: Wenn deine Fassung nur Wörter tauscht, ohne den Satz leichter zu machen, war das Original gut genug. Ziel sind die schwierigen 40–60 % der Stellen, nicht 95 %.
 
 # Fertig, wenn
 - `python3 tools/validate.py runs/<lauf>/lektorat.json` meldet ✓ ohne Warnungen,

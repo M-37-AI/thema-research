@@ -319,7 +319,12 @@ def tuersteher_statistik(lauf: Path) -> dict | None:
             art = re.sub(r"\(\d+\)", "(n)", art)
             fehlerarten[art] += 1
     je_teammate = Counter(e["teammate"] for e in abgelehnt)
-    return {"pruefungen": len(eintraege), "akzeptiert": len(eintraege) - len(abgelehnt),
+    # TaskCompleted kann je Aufgabe mehrfach feuern (Abhaken + Zug-Ende) – Endstand je task_id zählt
+    letzte = {}
+    for e in eintraege:
+        letzte[e.get("task_id") or e["datei"]] = e["entscheidung"]
+    return {"pruefungen": len(eintraege), "aufgaben": len(letzte),
+            "akzeptiert": sum(1 for v in letzte.values() if v == "akzeptiert"),
             "abgelehnt": len(abgelehnt), "je_teammate": je_teammate.most_common(),
             "fehlerarten": fehlerarten.most_common(5),
             "dateien": sorted({e["datei"].split("/", 2)[-1] for e in abgelehnt})}
@@ -394,15 +399,22 @@ def daten_sammeln(lauf: Path, mit_lektorat: bool = True) -> dict:
 
 
 def rendern(lauf: Path, mit_lektorat: bool = True) -> Path:
-    zu_pruefen = ["report.json"]
+    # Alle Dateien des Laufs prüfen, nicht nur den Report: Der Türsteher prüft im Moment des
+    # Abhakens; eine danach geänderte Datei fällt spätestens hier auf.
+    zu_pruefen = [n for n in ("markt-groesse.json", "treiber.json", "kette.json", "markt.json", "redteam.json")
+                  if (lauf / n).is_file()]
+    zu_pruefen += [f"firmen/{f.name}" for f in sorted((lauf / "firmen").glob("*.json"))] if (lauf / "firmen").is_dir() else []
+    zu_pruefen.append("report.json")
     if mit_lektorat and (lauf / "lektorat.json").is_file():
         zu_pruefen.append("lektorat.json")
+    alle_fehler = []
     for name in zu_pruefen:
         fehler, warnungen = validiere_datei(lauf / name)
-        if fehler:
-            raise ToolFehler(f"{name} ist ungültig – erst korrigieren:\n  " + "\n  ".join(fehler))
+        alle_fehler += [f"{name}: {f}" for f in fehler]
         for w in warnungen:
             print(f"! {name}: {w}")
+    if alle_fehler:
+        raise ToolFehler(f"{len(alle_fehler)} Fehler in den Dateien des Laufs – erst korrigieren:\n  " + "\n  ".join(alle_fehler))
     umgebung = Environment(loader=FileSystemLoader(PROJEKT / "templates"), autoescape=select_autoescape(["html", "j2"]),
                            trim_blocks=True, lstrip_blocks=True)
     seite = umgebung.get_template("report.html.j2").render(**daten_sammeln(lauf, mit_lektorat))
