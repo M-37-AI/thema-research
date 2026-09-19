@@ -1,0 +1,95 @@
+{
+  "thema": "Robotik",
+  "segmente": [
+    {
+      "id": "getriebe-bewegung",
+      "name": "Präzisionsgetriebe & Bewegungskomponenten",
+      "beschreibung": "Spannungswellen- und Zykloidgetriebe, Linearführungen, Kugelgewindetriebe und Lager – die mechanischen Gelenke jedes Roboters.",
+      "margenprofil": {"stufe": "hoch", "begruendung": "Enge Oligopole mit jahrzehntelanger Fertigungs-IP (Harmonic Drive, Nabtesco), hohe Qualifizierungs- und Wechselkosten bei OEMs; chinesische Nachahmer drücken aber im Volumensegment die Preise."},
+      "kandidaten": [
+        {"name": "Harmonic Drive Systems", "ticker": "6324.T", "begruendung": "Weltmarktführer bei Spannungswellengetrieben (Strain Wave Gears) für Roboter-Gelenke und Humanoide."},
+        {"name": "Nabtesco", "ticker": "6268.T", "begruendung": "Dominanter Anbieter von RV-Zykloidgetrieben für Industrieroboter-Hauptachsen."},
+        {"name": "THK", "ticker": "6481.T", "begruendung": "Linearführungen und Kugelgewindetriebe (LM Guide), Bewegungskomponenten für Roboter und Automation."},
+        {"name": "Zhejiang Leaderdrive", "ticker": "688017.SS", "begruendung": "Chinas größter Hersteller von Harmonic-Getrieben; Herausforderer im Preissegment und für Humanoide."},
+        {"name": "Schaeffler", "ticker": "SHA.DE", "begruendung": "Präzisionslager und Aktuatorik-Module; Entwicklung von Humanoiden-Aktuatoren."}
+      ]
+    },
+    {
+      "id": "motoren-antriebe",
+      "name": "Motoren, Servoantriebe & Aktuatorik",
+      "beschreibung": "Servomotoren, Frameless-Motoren, Servoverstärker und Motion-Control-Lösungen, die Bewegung elektrisch erzeugen und regeln.",
+      "margenprofil": {"stufe": "mittel", "begruendung": "Technisch differenzierte Servo- und Hochleistungsmotoren erlauben Preisaufschläge, aber viele Wettbewerber und zunehmende Standardisierung begrenzen die Preissetzungsmacht."},
+      "kandidaten": [
+        {"name": "Nidec", "ticker": "6594.T", "begruendung": "Weltgrößter Motorenhersteller, liefert Präzisions- und Servomotoren für Robotik und Automation."},
+        {"name": "Shenzhen Inovance Technology", "ticker": "300124.SZ", "begruendung": "Chinas führender Servo- und Frequenzumrichter-Anbieter, Aktuator-Lieferant für Roboter-OEMs."},
+        {"name": "Sanyo Denki", "ticker": "6516.T", "begruendung": "Spezialist für Servosysteme und Schrittmotoren in Präzisionsautomation und Halbleiter-Robotik."},
+        {"name": "Regal Rexnord", "ticker": "RRX", "begruendung": "Kollmorgen-Frameless-Motoren und Motion Control für Robotergelenke, Cobots und Medizinrobotik."}
+      ]
+    },
+    {
+      "id": "sensorik-wahrnehmung",
+      "name": "Sensorik & Wahrnehmung",
+      "beschreibung": "Machine Vision, LiDAR, Encoder und Messtechnik, mit denen Roboter ihre Umgebung und ihre eigene Lage erfassen.",
+      "margenprofil": {"stufe": "hoch", "begruendung": "Differenzierte Optik-, Algorithmus- und Sensor-IP mit hohen Wechselkosten in der Integration (Keyence, Cognex); LiDAR bleibt dagegen preisgetrieben und unprofitabler."},
+      "kandidaten": [
+        {"name": "Keyence", "ticker": "6861.T", "begruendung": "Bildverarbeitungs- und Sensorsysteme für Automation mit sehr hoher Marge."},
+        {"name": "Cognex", "ticker": "CGNX", "begruendung": "Industrielle Machine-Vision-Systeme und Vision-Software, u. a. für vision-geführte Robotik."},
+        {"name": "Basler", "ticker": "BSL.DE", "begruendung": "Industriekameras und Embedded-Vision-Module für Robotik und Automation."},
+        {"name": "Hesai Group", "ticker": "HSAI", "begruendung": "LiDAR-Sensoren, zunehmend auch für Mähroboter und Servicerobotik."},
+        {"name": "Renishaw", "ticker": "RSW.L", "begruendung": "Präzisionsencoder und Messtechnik für Positionsrückmeldung in Robotern."}
+      ]
+    },
+    {
+      "id": "compute-halbleiter",
+      "name": "Compute, Halbleiter & Robotik-KI-Plattformen",
+      "beschreibung": "KI-Chips, Edge-Prozessoren, Leistungshalbleiter und Analog-ICs sowie Plattform-Software für Steuerung und physische KI.",
+      "margenprofil": {"stufe": "hoch", "begruendung": "Preissetzungsmacht bei KI-Plattformen durch CUDA-Ökosystem und Softwarebindung (NVIDIA); Analog- und Leistungshalbleiter mit stabilen Margen, Edge-SoCs aus China dagegen preisaggressiver."},
+      "kandidaten": [
+        {"name": "NVIDIA", "ticker": "NVDA", "begruendung": "Jetson-Module, Isaac-Plattform und Omniverse für Roboter-KI und Simulation."},
+        {"name": "Infineon", "ticker": "IFX.DE", "begruendung": "Leistungshalbleiter, Mikrocontroller und Sensor-ICs für Motorsteuerung und Roboterelektronik."},
+        {"name": "Analog Devices", "ticker": "ADI", "begruendung": "Präzisions-Analog-, Motorsteuerungs- und Industrial-Ethernet-Chips für Robotik."},
+        {"name": "Horizon Robotics", "ticker": "9660.HK", "begruendung": "Edge-KI-Prozessoren für autonome Systeme mit Ausbau in Robotik."},
+        {"name": "Rockchip Electronics", "ticker": "603893.SS", "begruendung": "Kostengünstige Edge-KI-SoCs, verbreitet in Service- und Consumer-Robotern."}
+      ]
+    },
+    {
+      "id": "industrieroboter-cobots",
+      "name": "Industrieroboter & Cobots",
+      "beschreibung": "Hersteller von Roboterarmen, Steuerungen und kollaborativen Robotern für die Fertigung.",
+      "margenprofil": {"stufe": "mittel", "begruendung": "Etablierte Marken mit Servicegeschäft und Steuerungs-Lock-in, doch zyklische Nachfrage (Auto, Elektronik) und aggressiver Preisdruck durch chinesische Hersteller."},
+      "kandidaten": [
+        {"name": "Fanuc", "ticker": "6954.T", "begruendung": "Weltgrößter Industrieroboter-Hersteller mit eigener CNC-Steuerung."},
+        {"name": "Yaskawa Electric", "ticker": "6506.T", "begruendung": "Motoman-Industrieroboter kombiniert mit eigenen Servoantrieben."},
+        {"name": "ABB", "ticker": "ABBN.SW", "begruendung": "Industrieroboter und Steuerungen; Robotics-Sparte ist zum Verkauf an SoftBank vorgesehen."},
+        {"name": "Teradyne", "ticker": "TER", "begruendung": "Universal Robots und MiR: Marktführer bei Cobots und mobilen Robotern."},
+        {"name": "Estun Automation", "ticker": "002747.SZ", "begruendung": "Chinas größter einheimischer Industrieroboter-Anbieter."},
+        {"name": "Doosan Robotics", "ticker": "454910.KS", "begruendung": "Südkoreanischer Cobot-Hersteller mit Ausbau in KI-Robotik."}
+      ]
+    },
+    {
+      "id": "service-logistik-humanoid",
+      "name": "Service-, Medizin-, Logistikroboter & Humanoide",
+      "beschreibung": "Spezialisierte Robotersysteme außerhalb der klassischen Fertigung: OP-Roboter, Lagerautomation, Serviceroboter und humanoide Plattformen.",
+      "margenprofil": {"stufe": "mittel", "begruendung": "Medizinrobotik erzielt hohe Margen durch Verbrauchsmaterial und Installed Base; Logistik- und Humanoidenanbieter stehen noch in Skalierung, teils mit Verlusten."},
+      "kandidaten": [
+        {"name": "Intuitive Surgical", "ticker": "ISRG", "begruendung": "da-Vinci-OP-Roboter mit großem Installed-Base- und Verbrauchsmaterialgeschäft."},
+        {"name": "Symbotic", "ticker": "SYM", "begruendung": "Robotergestützte Lager-Automation für Großhandel und Handel, u. a. für Walmart."},
+        {"name": "Ocado Group", "ticker": "OCDO.L", "begruendung": "Robotisierte Kommissionierzentren und Technologie für Online-Lebensmittelhandel."},
+        {"name": "Daifuku", "ticker": "6383.T", "begruendung": "Weltmarktführer bei Materialflusssystemen und Lagerautomation."},
+        {"name": "UBTech Robotics", "ticker": "9880.HK", "begruendung": "Humanoide Roboter (Walker-Serie) und Servicerobotik, gelistet in Hongkong."}
+      ]
+    },
+    {
+      "id": "integration-software",
+      "name": "Systemintegration & Automatisierungssoftware",
+      "beschreibung": "Steuerungs- und Engineering-Software, Simulation sowie Integratoren, die Roboter in Fabriken und Anlagen einbinden.",
+      "margenprofil": {"stufe": "mittel", "begruendung": "Software und Steuerungsplattformen mit Lock-in tragen hohe Margen; das Projektgeschäft der Integratoren ist dagegen personalintensiv und margenschwächer."},
+      "kandidaten": [
+        {"name": "Siemens", "ticker": "SIE.DE", "begruendung": "Automatisierungssoftware (TIA Portal, Digital Twin) und Steuerungen für Robotikzellen."},
+        {"name": "Rockwell Automation", "ticker": "ROK", "begruendung": "Steuerungen und Software; Anbieter mobiler Roboter (Clearpath/OTTO)."},
+        {"name": "Omron", "ticker": "6645.T", "begruendung": "Steuerungen, Sicherheits- und mobile Roboter für die Fabrikautomation."},
+        {"name": "Dürr", "ticker": "DUE.DE", "begruendung": "Integrator und Anlagenbauer mit Robotik-Lackier- und Applikationssystemen."}
+      ]
+    }
+  ]
+}

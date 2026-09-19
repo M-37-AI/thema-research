@@ -1,0 +1,825 @@
+{
+  "thema": "Robotik",
+  "datum": "2026-09-18",
+  "regeln": {
+    "datei": "tools/screen_regeln.json",
+    "score_formel": "score = 100 * (0.4 * rang(umsatzwachstum_yoy) + 0.3 * rang(operative_marge) + 0.3 * (1 - rang(ev_umsatz)))",
+    "ausschluss": {
+      "min_marktkapitalisierung_usd_mrd": 1.0,
+      "pflichtfelder": [
+        "marktkapitalisierung_usd",
+        "umsatz_ttm_usd"
+      ],
+      "pflichtfelder_erklaerung": "Ohne Marktkapitalisierung und Umsatz in USD sind weder Groessenfilter noch Bottom-up-Check moeglich."
+    }
+  },
+  "statistik": {
+    "kandidaten": 34,
+    "aufgenommen": 32,
+    "ausgeschlossen": 2
+  },
+  "kandidaten": [
+    {
+      "ticker": "6324.T",
+      "name": "Harmonic Drive Systems",
+      "segment_id": "getriebe-bewegung",
+      "segment_name": "Präzisionsgetriebe & Bewegungskomponenten",
+      "begruendung_kette": "Weltmarktführer bei Spannungswellengetrieben (Strain Wave Gears) für Roboter-Gelenke und Humanoide.",
+      "kennzahlen_datei": "data/kennzahlen/6324.T.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 3.745,
+        "umsatz_ttm_usd": 0.4,
+        "umsatzwachstum_yoy": 23.6,
+        "operative_marge": 11.0,
+        "ev_umsatz": 9.27
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.613,
+        "operative_marge": 0.403,
+        "ev_umsatz": 0.323
+      },
+      "score": 46.3
+    },
+    {
+      "ticker": "6268.T",
+      "name": "Nabtesco",
+      "segment_id": "getriebe-bewegung",
+      "segment_name": "Präzisionsgetriebe & Bewegungskomponenten",
+      "begruendung_kette": "Dominanter Anbieter von RV-Zykloidgetrieben für Industrieroboter-Hauptachsen.",
+      "kennzahlen_datei": "data/kennzahlen/6268.T.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 3.426,
+        "umsatz_ttm_usd": 1.976,
+        "umsatzwachstum_yoy": 0.5,
+        "operative_marge": 9.1,
+        "ev_umsatz": 1.65
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.065,
+        "operative_marge": 0.323,
+        "ev_umsatz": 0.806
+      },
+      "score": 36.5
+    },
+    {
+      "ticker": "6481.T",
+      "name": "THK",
+      "segment_id": "getriebe-bewegung",
+      "segment_name": "Präzisionsgetriebe & Bewegungskomponenten",
+      "begruendung_kette": "Linearführungen und Kugelgewindetriebe (LM Guide), Bewegungskomponenten für Roboter und Automation.",
+      "kennzahlen_datei": "data/kennzahlen/6481.T.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 4.485,
+        "umsatz_ttm_usd": 1.374,
+        "umsatzwachstum_yoy": -10.2,
+        "operative_marge": 18.1,
+        "ev_umsatz": 3.37
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.0,
+        "operative_marge": 0.71,
+        "ev_umsatz": 0.613
+      },
+      "score": 39.7
+    },
+    {
+      "ticker": "688017.SS",
+      "name": "Zhejiang Leaderdrive",
+      "segment_id": "getriebe-bewegung",
+      "segment_name": "Präzisionsgetriebe & Bewegungskomponenten",
+      "begruendung_kette": "Chinas größter Hersteller von Harmonic-Getrieben; Herausforderer im Preissegment und für Humanoide.",
+      "kennzahlen_datei": "data/kennzahlen/688017.SS.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 8.066,
+        "umsatz_ttm_usd": 0.1,
+        "umsatzwachstum_yoy": 35.9,
+        "operative_marge": 9.8,
+        "ev_umsatz": 77.52
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.774,
+        "operative_marge": 0.355,
+        "ev_umsatz": 0.032
+      },
+      "score": 42.6
+    },
+    {
+      "ticker": "SHA.DE",
+      "name": "Schaeffler",
+      "segment_id": "getriebe-bewegung",
+      "segment_name": "Präzisionsgetriebe & Bewegungskomponenten",
+      "begruendung_kette": "Präzisionslager und Aktuatorik-Module; Entwicklung von Humanoiden-Aktuatoren.",
+      "status": "ausgeschlossen",
+      "grund": "keine Daten: SHA.DE: unbekannter Ticker oder keine Daten bei Yahoo Finance (Börsensuffix prüfen, z. B. .DE, .SW, .T)"
+    },
+    {
+      "ticker": "6594.T",
+      "name": "Nidec",
+      "segment_id": "motoren-antriebe",
+      "segment_name": "Motoren, Servoantriebe & Aktuatorik",
+      "begruendung_kette": "Weltgrößter Motorenhersteller, liefert Präzisions- und Servomotoren für Robotik und Automation.",
+      "kennzahlen_datei": "data/kennzahlen/6594.T.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 20.89,
+        "umsatz_ttm_usd": 16.694,
+        "umsatzwachstum_yoy": 2.9,
+        "operative_marge": 7.2,
+        "ev_umsatz": 1.34
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.097,
+        "operative_marge": 0.258,
+        "ev_umsatz": 0.935
+      },
+      "score": 39.7
+    },
+    {
+      "ticker": "300124.SZ",
+      "name": "Shenzhen Inovance Technology",
+      "segment_id": "motoren-antriebe",
+      "segment_name": "Motoren, Servoantriebe & Aktuatorik",
+      "begruendung_kette": "Chinas führender Servo- und Frequenzumrichter-Anbieter, Aktuator-Lieferant für Roboter-OEMs.",
+      "kennzahlen_datei": "data/kennzahlen/300124.SZ.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 21.252,
+        "umsatz_ttm_usd": 7.368,
+        "umsatzwachstum_yoy": 26.0,
+        "operative_marge": 11.7,
+        "ev_umsatz": 3.38
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.645,
+        "operative_marge": 0.452,
+        "ev_umsatz": 0.581
+      },
+      "score": 56.8
+    },
+    {
+      "ticker": "6516.T",
+      "name": "Sanyo Denki",
+      "segment_id": "motoren-antriebe",
+      "segment_name": "Motoren, Servoantriebe & Aktuatorik",
+      "begruendung_kette": "Spezialist für Servosysteme und Schrittmotoren in Präzisionsautomation und Halbleiter-Robotik.",
+      "kennzahlen_datei": "data/kennzahlen/6516.T.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 1.208,
+        "umsatz_ttm_usd": 0.737,
+        "umsatzwachstum_yoy": 33.5,
+        "operative_marge": 13.1,
+        "ev_umsatz": 1.45
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.742,
+        "operative_marge": 0.548,
+        "ev_umsatz": 0.903
+      },
+      "score": 73.2
+    },
+    {
+      "ticker": "RRX",
+      "name": "Regal Rexnord",
+      "segment_id": "motoren-antriebe",
+      "segment_name": "Motoren, Servoantriebe & Aktuatorik",
+      "begruendung_kette": "Kollmorgen-Frameless-Motoren und Motion Control für Robotergelenke, Cobots und Medizinrobotik.",
+      "kennzahlen_datei": "data/kennzahlen/RRX.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 9.774,
+        "umsatz_ttm_usd": 6.058,
+        "umsatzwachstum_yoy": 4.2,
+        "operative_marge": 12.3,
+        "ev_umsatz": 2.34
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.129,
+        "operative_marge": 0.516,
+        "ev_umsatz": 0.71
+      },
+      "score": 41.9
+    },
+    {
+      "ticker": "6861.T",
+      "name": "Keyence",
+      "segment_id": "sensorik-wahrnehmung",
+      "segment_name": "Sensorik & Wahrnehmung",
+      "begruendung_kette": "Bildverarbeitungs- und Sensorsysteme für Automation mit sehr hoher Marge.",
+      "kennzahlen_datei": "data/kennzahlen/6861.T.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 118.507,
+        "umsatz_ttm_usd": 8.007,
+        "umsatzwachstum_yoy": 32.8,
+        "operative_marge": 54.0,
+        "ev_umsatz": 13.57
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.71,
+        "operative_marge": 0.968,
+        "ev_umsatz": 0.161
+      },
+      "score": 62.3
+    },
+    {
+      "ticker": "CGNX",
+      "name": "Cognex",
+      "segment_id": "sensorik-wahrnehmung",
+      "segment_name": "Sensorik & Wahrnehmung",
+      "begruendung_kette": "Industrielle Machine-Vision-Systeme und Vision-Software, u. a. für vision-geführte Robotik.",
+      "kennzahlen_datei": "data/kennzahlen/CGNX.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 10.307,
+        "umsatz_ttm_usd": 1.089,
+        "umsatzwachstum_yoy": 16.9,
+        "operative_marge": 29.4,
+        "ev_umsatz": 9.1
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.452,
+        "operative_marge": 0.806,
+        "ev_umsatz": 0.355
+      },
+      "score": 52.9
+    },
+    {
+      "ticker": "BSL.DE",
+      "name": "Basler",
+      "segment_id": "sensorik-wahrnehmung",
+      "segment_name": "Sensorik & Wahrnehmung",
+      "begruendung_kette": "Industriekameras und Embedded-Vision-Module für Robotik und Automation.",
+      "kennzahlen_datei": "data/kennzahlen/BSL.DE.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 0.782,
+        "umsatz_ttm_usd": 0.305,
+        "umsatzwachstum_yoy": 43.7,
+        "operative_marge": 13.6,
+        "ev_umsatz": 2.67
+      },
+      "status": "ausgeschlossen",
+      "grund": "Marktkapitalisierung 0.78 Mrd USD unter Mindestwert 1.0 Mrd USD"
+    },
+    {
+      "ticker": "HSAI",
+      "name": "Hesai Group",
+      "segment_id": "sensorik-wahrnehmung",
+      "segment_name": "Sensorik & Wahrnehmung",
+      "begruendung_kette": "LiDAR-Sensoren, zunehmend auch für Mähroboter und Servicerobotik.",
+      "kennzahlen_datei": "data/kennzahlen/HSAI.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 20.787,
+        "umsatz_ttm_usd": 0.499,
+        "umsatzwachstum_yoy": 21.9,
+        "operative_marge": 0.3,
+        "ev_umsatz": -0.99
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.581,
+        "operative_marge": 0.129,
+        "ev_umsatz": 1.0
+      },
+      "score": 57.1
+    },
+    {
+      "ticker": "RSW.L",
+      "name": "Renishaw",
+      "segment_id": "sensorik-wahrnehmung",
+      "segment_name": "Sensorik & Wahrnehmung",
+      "begruendung_kette": "Präzisionsencoder und Messtechnik für Positionsrückmeldung in Robotern.",
+      "kennzahlen_datei": "data/kennzahlen/RSW.L.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 5.04,
+        "umsatz_ttm_usd": 0.987,
+        "umsatzwachstum_yoy": 7.1,
+        "operative_marge": 11.0,
+        "ev_umsatz": 4.79
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.194,
+        "operative_marge": 0.403,
+        "ev_umsatz": 0.516
+      },
+      "score": 35.3
+    },
+    {
+      "ticker": "NVDA",
+      "name": "NVIDIA",
+      "segment_id": "compute-halbleiter",
+      "segment_name": "Compute, Halbleiter & Robotik-KI-Plattformen",
+      "begruendung_kette": "Jetson-Module, Isaac-Plattform und Omniverse für Roboter-KI und Simulation.",
+      "kennzahlen_datei": "data/kennzahlen/NVDA.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 5303.14,
+        "umsatz_ttm_usd": 302.97,
+        "umsatzwachstum_yoy": 105.9,
+        "operative_marge": 66.2,
+        "ev_umsatz": 17.37
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.968,
+        "operative_marge": 1.0,
+        "ev_umsatz": 0.065
+      },
+      "score": 70.7
+    },
+    {
+      "ticker": "IFX.DE",
+      "name": "Infineon",
+      "segment_id": "compute-halbleiter",
+      "segment_name": "Compute, Halbleiter & Robotik-KI-Plattformen",
+      "begruendung_kette": "Leistungshalbleiter, Mikrocontroller und Sensor-ICs für Motorsteuerung und Roboterelektronik.",
+      "kennzahlen_datei": "data/kennzahlen/IFX.DE.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 83.351,
+        "umsatz_ttm_usd": 17.902,
+        "umsatzwachstum_yoy": 12.6,
+        "operative_marge": 14.2,
+        "ev_umsatz": 4.91
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.387,
+        "operative_marge": 0.581,
+        "ev_umsatz": 0.484
+      },
+      "score": 47.4
+    },
+    {
+      "ticker": "ADI",
+      "name": "Analog Devices",
+      "segment_id": "compute-halbleiter",
+      "segment_name": "Compute, Halbleiter & Robotik-KI-Plattformen",
+      "begruendung_kette": "Präzisions-Analog-, Motorsteuerungs- und Industrial-Ethernet-Chips für Robotik.",
+      "kennzahlen_datei": "data/kennzahlen/ADI.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 179.226,
+        "umsatz_ttm_usd": 13.882,
+        "umsatzwachstum_yoy": 39.6,
+        "operative_marge": 39.5,
+        "ev_umsatz": 13.15
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.806,
+        "operative_marge": 0.935,
+        "ev_umsatz": 0.194
+      },
+      "score": 66.1
+    },
+    {
+      "ticker": "9660.HK",
+      "name": "Horizon Robotics",
+      "segment_id": "compute-halbleiter",
+      "segment_name": "Compute, Halbleiter & Robotik-KI-Plattformen",
+      "begruendung_kette": "Edge-KI-Prozessoren für autonome Systeme mit Ausbau in Robotik.",
+      "kennzahlen_datei": "data/kennzahlen/9660.HK.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 6.656,
+        "umsatz_ttm_usd": 0.638,
+        "umsatzwachstum_yoy": 31.2,
+        "operative_marge": -81.3,
+        "ev_umsatz": 12.28
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.677,
+        "operative_marge": 0.0,
+        "ev_umsatz": 0.258
+      },
+      "score": 34.8
+    },
+    {
+      "ticker": "603893.SS",
+      "name": "Rockchip Electronics",
+      "segment_id": "compute-halbleiter",
+      "segment_name": "Compute, Halbleiter & Robotik-KI-Plattformen",
+      "begruendung_kette": "Kostengünstige Edge-KI-SoCs, verbreitet in Service- und Consumer-Robotern.",
+      "kennzahlen_datei": "data/kennzahlen/603893.SS.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 12.025,
+        "umsatz_ttm_usd": 0.782,
+        "umsatzwachstum_yoy": 43.9,
+        "operative_marge": 34.2,
+        "ev_umsatz": 14.56
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.839,
+        "operative_marge": 0.903,
+        "ev_umsatz": 0.129
+      },
+      "score": 64.5
+    },
+    {
+      "ticker": "6954.T",
+      "name": "Fanuc",
+      "segment_id": "industrieroboter-cobots",
+      "segment_name": "Industrieroboter & Cobots",
+      "begruendung_kette": "Weltgrößter Industrieroboter-Hersteller mit eigener CNC-Steuerung.",
+      "kennzahlen_datei": "data/kennzahlen/6954.T.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 34.697,
+        "umsatz_ttm_usd": 5.695,
+        "umsatzwachstum_yoy": 17.7,
+        "operative_marge": 23.2,
+        "ev_umsatz": 5.28
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.484,
+        "operative_marge": 0.774,
+        "ev_umsatz": 0.452
+      },
+      "score": 56.1
+    },
+    {
+      "ticker": "6506.T",
+      "name": "Yaskawa Electric",
+      "segment_id": "industrieroboter-cobots",
+      "segment_name": "Industrieroboter & Cobots",
+      "begruendung_kette": "Motoman-Industrieroboter kombiniert mit eigenen Servoantrieben.",
+      "kennzahlen_datei": "data/kennzahlen/6506.T.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 7.254,
+        "umsatz_ttm_usd": 3.544,
+        "umsatzwachstum_yoy": 10.6,
+        "operative_marge": 6.1,
+        "ev_umsatz": 2.18
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.323,
+        "operative_marge": 0.194,
+        "ev_umsatz": 0.742
+      },
+      "score": 41.0
+    },
+    {
+      "ticker": "ABBN.SW",
+      "name": "ABB",
+      "segment_id": "industrieroboter-cobots",
+      "segment_name": "Industrieroboter & Cobots",
+      "begruendung_kette": "Industrieroboter und Steuerungen; Robotics-Sparte ist zum Verkauf an SoftBank vorgesehen.",
+      "kennzahlen_datei": "data/kennzahlen/ABBN.SW.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 176.184,
+        "umsatz_ttm_usd": 35.752,
+        "umsatzwachstum_yoy": 14.2,
+        "operative_marge": 16.9,
+        "ev_umsatz": 4.14
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.419,
+        "operative_marge": 0.677,
+        "ev_umsatz": 0.548
+      },
+      "score": 53.5
+    },
+    {
+      "ticker": "TER",
+      "name": "Teradyne",
+      "segment_id": "industrieroboter-cobots",
+      "segment_name": "Industrieroboter & Cobots",
+      "begruendung_kette": "Universal Robots und MiR: Marktführer bei Cobots und mobilen Robotern.",
+      "kennzahlen_datei": "data/kennzahlen/TER.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 56.191,
+        "umsatz_ttm_usd": 4.464,
+        "umsatzwachstum_yoy": 103.9,
+        "operative_marge": 33.2,
+        "ev_umsatz": 12.32
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.903,
+        "operative_marge": 0.839,
+        "ev_umsatz": 0.226
+      },
+      "score": 68.1
+    },
+    {
+      "ticker": "002747.SZ",
+      "name": "Estun Automation",
+      "segment_id": "industrieroboter-cobots",
+      "segment_name": "Industrieroboter & Cobots",
+      "begruendung_kette": "Chinas größter einheimischer Industrieroboter-Anbieter.",
+      "kennzahlen_datei": "data/kennzahlen/002747.SZ.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 4.315,
+        "umsatz_ttm_usd": 0.735,
+        "umsatzwachstum_yoy": 4.3,
+        "operative_marge": 6.7,
+        "ev_umsatz": 6.14
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.161,
+        "operative_marge": 0.226,
+        "ev_umsatz": 0.387
+      },
+      "score": 24.8
+    },
+    {
+      "ticker": "454910.KS",
+      "name": "Doosan Robotics",
+      "segment_id": "industrieroboter-cobots",
+      "segment_name": "Industrieroboter & Cobots",
+      "begruendung_kette": "Südkoreanischer Cobot-Hersteller mit Ausbau in KI-Robotik.",
+      "kennzahlen_datei": "data/kennzahlen/454910.KS.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 3.237,
+        "umsatz_ttm_usd": 0.031,
+        "umsatzwachstum_yoy": 189.7,
+        "operative_marge": -78.9,
+        "ev_umsatz": 100.19
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 1.0,
+        "operative_marge": 0.032,
+        "ev_umsatz": 0.0
+      },
+      "score": 41.0
+    },
+    {
+      "ticker": "ISRG",
+      "name": "Intuitive Surgical",
+      "segment_id": "service-logistik-humanoid",
+      "segment_name": "Service-, Medizin-, Logistikroboter & Humanoide",
+      "begruendung_kette": "da-Vinci-OP-Roboter mit großem Installed-Base- und Verbrauchsmaterialgeschäft.",
+      "kennzahlen_datei": "data/kennzahlen/ISRG.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 140.746,
+        "umsatz_ttm_usd": 11.034,
+        "umsatzwachstum_yoy": 18.5,
+        "operative_marge": 33.6,
+        "ev_umsatz": 11.82
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.516,
+        "operative_marge": 0.871,
+        "ev_umsatz": 0.29
+      },
+      "score": 55.5
+    },
+    {
+      "ticker": "SYM",
+      "name": "Symbotic",
+      "segment_id": "service-logistik-humanoid",
+      "segment_name": "Service-, Medizin-, Logistikroboter & Humanoide",
+      "begruendung_kette": "Robotergestützte Lager-Automation für Großhandel und Handel, u. a. für Walmart.",
+      "kennzahlen_datei": "data/kennzahlen/SYM.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 25.365,
+        "umsatz_ttm_usd": 2.646,
+        "umsatzwachstum_yoy": 21.7,
+        "operative_marge": 4.6,
+        "ev_umsatz": 1.7
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.548,
+        "operative_marge": 0.161,
+        "ev_umsatz": 0.774
+      },
+      "score": 50.0
+    },
+    {
+      "ticker": "OCDO.L",
+      "name": "Ocado Group",
+      "segment_id": "service-logistik-humanoid",
+      "segment_name": "Service-, Medizin-, Logistikroboter & Humanoide",
+      "begruendung_kette": "Robotisierte Kommissionierzentren und Technologie für Online-Lebensmittelhandel.",
+      "kennzahlen_datei": "data/kennzahlen/OCDO.L.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 2.546,
+        "umsatz_ttm_usd": 2.335,
+        "umsatzwachstum_yoy": 53.9,
+        "operative_marge": 11.9,
+        "ev_umsatz": 1.64
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.871,
+        "operative_marge": 0.484,
+        "ev_umsatz": 0.839
+      },
+      "score": 74.5
+    },
+    {
+      "ticker": "6383.T",
+      "name": "Daifuku",
+      "segment_id": "service-logistik-humanoid",
+      "segment_name": "Service-, Medizin-, Logistikroboter & Humanoide",
+      "begruendung_kette": "Weltmarktführer bei Materialflusssystemen und Lagerautomation.",
+      "kennzahlen_datei": "data/kennzahlen/6383.T.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 12.928,
+        "umsatz_ttm_usd": 4.401,
+        "umsatzwachstum_yoy": 10.0,
+        "operative_marge": 16.6,
+        "ev_umsatz": 2.62
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.29,
+        "operative_marge": 0.645,
+        "ev_umsatz": 0.677
+      },
+      "score": 51.3
+    },
+    {
+      "ticker": "9880.HK",
+      "name": "UBTech Robotics",
+      "segment_id": "service-logistik-humanoid",
+      "segment_name": "Service-, Medizin-, Logistikroboter & Humanoide",
+      "begruendung_kette": "Humanoide Roboter (Walker-Serie) und Servicerobotik, gelistet in Hongkong.",
+      "kennzahlen_datei": "data/kennzahlen/9880.HK.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 5.188,
+        "umsatz_ttm_usd": 0.396,
+        "umsatzwachstum_yoy": 104.2,
+        "operative_marge": -17.3,
+        "ev_umsatz": 14.78
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.935,
+        "operative_marge": 0.065,
+        "ev_umsatz": 0.097
+      },
+      "score": 42.3
+    },
+    {
+      "ticker": "SIE.DE",
+      "name": "Siemens",
+      "segment_id": "integration-software",
+      "segment_name": "Systemintegration & Automatisierungssoftware",
+      "begruendung_kette": "Automatisierungssoftware (TIA Portal, Digital Twin) und Steuerungen für Robotikzellen.",
+      "kennzahlen_datei": "data/kennzahlen/SIE.DE.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 236.525,
+        "umsatz_ttm_usd": 93.138,
+        "umsatzwachstum_yoy": 7.3,
+        "operative_marge": 14.9,
+        "ev_umsatz": 3.11
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.226,
+        "operative_marge": 0.613,
+        "ev_umsatz": 0.645
+      },
+      "score": 46.8
+    },
+    {
+      "ticker": "ROK",
+      "name": "Rockwell Automation",
+      "segment_id": "integration-software",
+      "segment_name": "Systemintegration & Automatisierungssoftware",
+      "begruendung_kette": "Steuerungen und Software; Anbieter mobiler Roboter (Clearpath/OTTO).",
+      "kennzahlen_datei": "data/kennzahlen/ROK.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 45.692,
+        "umsatz_ttm_usd": 8.973,
+        "umsatzwachstum_yoy": 7.9,
+        "operative_marge": 21.0,
+        "ev_umsatz": 5.42
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.258,
+        "operative_marge": 0.742,
+        "ev_umsatz": 0.419
+      },
+      "score": 45.1
+    },
+    {
+      "ticker": "6645.T",
+      "name": "Omron",
+      "segment_id": "integration-software",
+      "segment_name": "Systemintegration & Automatisierungssoftware",
+      "begruendung_kette": "Steuerungen, Sicherheits- und mobile Roboter für die Fabrikautomation.",
+      "kennzahlen_datei": "data/kennzahlen/6645.T.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 7.739,
+        "umsatz_ttm_usd": 5.173,
+        "umsatzwachstum_yoy": 10.8,
+        "operative_marge": 9.0,
+        "ev_umsatz": 1.59
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.355,
+        "operative_marge": 0.29,
+        "ev_umsatz": 0.871
+      },
+      "score": 49.0
+    },
+    {
+      "ticker": "DUE.DE",
+      "name": "Dürr",
+      "segment_id": "integration-software",
+      "segment_name": "Systemintegration & Automatisierungssoftware",
+      "begruendung_kette": "Integrator und Anlagenbauer mit Robotik-Lackier- und Applikationssystemen.",
+      "kennzahlen_datei": "data/kennzahlen/DUE.DE.json",
+      "kennzahlen": {
+        "marktkapitalisierung_usd": 1.313,
+        "umsatz_ttm_usd": 4.687,
+        "umsatzwachstum_yoy": -2.0,
+        "operative_marge": -6.5,
+        "ev_umsatz": 0.29
+      },
+      "status": "aufgenommen",
+      "score_teile": {
+        "umsatzwachstum_yoy": 0.032,
+        "operative_marge": 0.097,
+        "ev_umsatz": 0.968
+      },
+      "score": 33.2
+    }
+  ],
+  "shortlist_vorschlag": [
+    {
+      "ticker": "OCDO.L",
+      "name": "Ocado Group",
+      "segment_id": "service-logistik-humanoid",
+      "score": 74.5,
+      "runde": 1
+    },
+    {
+      "ticker": "6516.T",
+      "name": "Sanyo Denki",
+      "segment_id": "motoren-antriebe",
+      "score": 73.2,
+      "runde": 1
+    },
+    {
+      "ticker": "NVDA",
+      "name": "NVIDIA",
+      "segment_id": "compute-halbleiter",
+      "score": 70.7,
+      "runde": 1
+    },
+    {
+      "ticker": "TER",
+      "name": "Teradyne",
+      "segment_id": "industrieroboter-cobots",
+      "score": 68.1,
+      "runde": 1
+    },
+    {
+      "ticker": "6861.T",
+      "name": "Keyence",
+      "segment_id": "sensorik-wahrnehmung",
+      "score": 62.3,
+      "runde": 1
+    },
+    {
+      "ticker": "6645.T",
+      "name": "Omron",
+      "segment_id": "integration-software",
+      "score": 49.0,
+      "runde": 1
+    },
+    {
+      "ticker": "6324.T",
+      "name": "Harmonic Drive Systems",
+      "segment_id": "getriebe-bewegung",
+      "score": 46.3,
+      "runde": 1
+    },
+    {
+      "ticker": "ADI",
+      "name": "Analog Devices",
+      "segment_id": "compute-halbleiter",
+      "score": 66.1,
+      "runde": 2
+    },
+    {
+      "ticker": "HSAI",
+      "name": "Hesai Group",
+      "segment_id": "sensorik-wahrnehmung",
+      "score": 57.1,
+      "runde": 2
+    },
+    {
+      "ticker": "300124.SZ",
+      "name": "Shenzhen Inovance Technology",
+      "segment_id": "motoren-antriebe",
+      "score": 56.8,
+      "runde": 2
+    }
+  ]
+}

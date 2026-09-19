@@ -1,0 +1,33 @@
+{
+  "name": "Rockwell Automation, Inc.",
+  "ticker": "ROK",
+  "segment_id": "integration-software",
+  "geschaeftsmodell": "Rockwell Automation ist ein US-Anbieter von Fabrik- und Prozessautomatisierung mit drei Segmenten: Intelligent Devices (Antriebe, Motion, Sicherheit, Sensorik, Materialfluss; 45 % des Umsatzes im Geschäftsjahr 2025), Software & Control (Steuerungen, Visualisierung, Digital Twin, Simulation; 29 %) und Lifecycle Services (Dienstleistungen, Wartungsverträge; 26 %). Kunden sind Diskrete Fertigung, Hybrid- und Prozessindustrien. Mit der Übernahme von Clearpath/OTTO Motors verfügt das Unternehmen zusätzlich über autonome mobile Roboter.",
+  "themen_exposure": {
+    "wert": 8,
+    "einheit": "% Umsatz",
+    "typ": "schaetzung",
+    "begruendung": "Rockwell weist keine Robotik-Umsätze aus (Segmente laut 10-K FY2025: Intelligent Devices 45 %, Software & Control 29 %, Lifecycle Services 26 % von 8,34 Mrd USD). Robotikbezug hat vor allem das Teilgeschäft Materialfluss/Motion und mobile Roboter (Clearpath/OTTO) innerhalb von Intelligent Devices sowie Steuerungen für Roboterzellen; angesetzt werden ca. 8 % des Umsatzes. Der Großteil ist klassische Fabrikautomation ohne Robotikbezug.",
+    "abgerufen": "2026-09-18"
+  },
+  "kennzahlen_datei": "data/kennzahlen/ROK.json",
+  "wettbewerbsposition": "Zweitgrößter Anbieter von Fabrikautomation in Nordamerika mit hohem Marktanteil bei SPS-Steuerungen (Allen-Bradley/Logix) und starkem Lock-in durch installierte Basis und Engineering-Software. Wichtigste Wettbewerber: Siemens, Schneider Electric, ABB, Mitsubishi Electric, Emerson. Im Robotikgeschäft selbst (mobile Roboter) ist Rockwell klein im Vergleich zu Spezialisten; die Stärke liegt in der Integrationsebene (Steuerung, Software, Services), nicht im Roboter.",
+  "rolle_im_thema": "Mitlaeufer",
+  "ueberzeugung": {
+    "stufe": "niedrig",
+    "begruendung": "Robotik ist nur ein Randgeschäft; die Aktie hängt am Investitionszyklus der Fabrikautomation und nicht an Robotik. Laut Kennzahlen liegt der EV/Umsatz bei ca. 5,4, das operative Ergebnis ist solide, der Themenbezug aber indirekt."
+  },
+  "bull_case": [
+    "Installierte Basis an Steuerungen und Software (Allen-Bradley/FactoryTalk) schafft Lock-in; Roboterzellen und mobile Roboter werden in dieselben Steuerungsarchitekturen eingebunden.",
+    "Software & Control und Lifecycle Services (zusammen ca. 55 % des Umsatzes) sind wiederkehrender und margenstärker als reine Hardware.",
+    "Reshoring und Automatisierung in den USA (Halbleiter, Batterien, Konsumgüter) stützen die Nachfrage nach Steuerungen und Integrationsleistungen.",
+    "Mit Clearpath/OTTO bietet Rockwell autonome mobile Roboter als Zusatz zum bestehenden Kundenstamm an."
+  ],
+  "bear_case": [
+    "Das Geschäft ist zyklisch: schwache Industrieinvestitionen (Lagerabbau bei Kunden, Zinsniveau) haben zuletzt die Umsätze belastet; Robotik dämpft den Zyklus nicht, da nur ca. 8 % des Umsatzes betroffen sind.",
+    "Die Robotik-Exposure ist geschätzt und klein; Anleger, die Robotik-Wachstum suchen, kaufen mit Rockwell überwiegend klassische Fabrikautomation (Etikettenrisiko).",
+    "Starker Wettbewerb durch Siemens, Schneider und ABB, die Software und Steuerungen ebenfalls bündeln, sowie durch offene, softwarebasierte Steuerungen, die den Hardware-Lock-in schwächen können.",
+    "Hoher Anteil an Nordamerika und wenige Kundenbranchen machen das Unternehmen anfällig für regionale Investitionsflauten."
+  ],
+  "was_uns_widerlegen_wuerde": "Rockwell weist in einem Geschäftsbericht Roboter- bzw. AMR-Umsätze von deutlich über 10 % des Umsatzes aus und diese wachsen zweistellig (dann wäre die Einstufung als Mitläufer und die niedrige Exposure zu revidieren)."
+}

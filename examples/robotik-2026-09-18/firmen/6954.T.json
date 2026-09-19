@@ -1,0 +1,37 @@
+{
+  "name": "Fanuc",
+  "ticker": "6954.T",
+  "segment_id": "industrieroboter-cobots",
+  "geschaeftsmodell": "Japanischer Hersteller mit vier Sparten: FA (CNC-Steuerungen, Servomotoren und -antriebe für Werkzeugmaschinen), Robot (Industrieroboter, Cobots, Robotersteuerungen), Robomachine (Bearbeitungszentren Robodrill, Spritzgießmaschinen Roboshot, Drahterodiermaschinen) und Service (Wartung, Ersatzteile, Reparatur der installierten Basis). Kunden sind Werkzeugmaschinenbauer, Automobil-, Elektronik- und allgemeine Industrie, Erlöse überwiegend aus Neugeräten, dazu wiederkehrendes Servicegeschäft. Sehr hohe Fertigungstiefe im eigenen Haus.",
+  "themen_exposure": {
+    "wert": 44.1,
+    "einheit": "% Umsatz",
+    "typ": "berichtet",
+    "quelle": "https://www.fanuc.co.jp/en/ir/announce/pdf/2026/financialresult202603_e.pdf",
+    "abgerufen": "2026-09-18",
+    "jahr": 2026,
+    "herausgeber": "Fanuc Corporation",
+    "hinweis": "Anteil der Robot-Sparte (378,6 Mrd JPY) am Konzernumsatz (857,8 Mrd JPY) im Geschäftsjahr bis März 2026, laut Suchergebnis-Zusammenfassung der Quelle; Spartenseite des Originals nicht selbst geöffnet. CNC-/Servo-Geschäft (FA) und Robomachine nicht eingerechnet, obwohl teils robotiknah."
+  },
+  "kennzahlen_datei": "data/kennzahlen/6954.T.json",
+  "wettbewerbsposition": "Einer der weltweit größten Industrieroboter-Hersteller neben Yaskawa, ABB und KUKA, mit sehr hoher Zuverlässigkeit, eigener Steuerung und Servotechnik sowie einem großen Servicegeschäft auf der installierten Basis. Stärken: Fertigungstiefe, Marke, Steuerungs-Lock-in bei Kunden. Schwächen: Preisdruck im größten Markt China, wo einheimische Anbieter 2024 laut IFR 57 % Marktanteil hielten (markt.json), und ein bislang zurückhaltender Auftritt bei humanoiden bzw. KI-nativen Robotern.",
+  "rolle_im_thema": "Kernprofiteur",
+  "ueberzeugung": {
+    "stufe": "mittel",
+    "begruendung": "Robotik ist mit rund 44 % Umsatzanteil berichtetes Hauptgeschäft, Profitabilität hoch und Nachfrage in China und Amerika zuletzt anziehend. Zyklik, chinesischer Preisdruck und offene US-Zollfragen (Section 232) begrenzen die Sicherheit; das Wachstum kommt derzeit eher aus klassischer Automatisierung als aus dem KI-/Humanoiden-Narrativ."
+  },
+  "bull_case": [
+    "Robot-Sparte wuchs im Geschäftsjahr bis März 2026 laut Fanuc um 14,9 % auf 378,6 Mrd JPY, getragen von Amerika und China; das Management erwartet für das Folgejahr weiter Rekordumsatz (909,6 Mrd JPY Prognose) und höhere Marge (23,3 % operativ).",
+    "Strukturelle Nachfrage: IFR sieht Neuinstallationen von 542.000 Einheiten (2024) auf über 700.000 bis 2028 steigen; Fanuc als Marktführer mit großer installierter Basis (weltweit 4,66 Mio Roboter laut IFR) profitiert direkt.",
+    "Wiederkehrendes Servicegeschäft: Die Service-Sparte setzte in den neun Monaten bis Dezember 2025 rund 103,9 Mrd JPY um (+1,5 %, laut Sekundärzusammenfassung der Quartalszahlen) und stabilisiert Erträge im Zyklus.",
+    "Hohe Marge und eigene Steuerungs- und Servotechnik (operative Marge laut Kennzahlen-Datei 23,2 %) geben Puffer gegen Preisdruck und erlauben Investitionen in KI-Funktionen, ohne von Zulieferern abzuhängen."
+  ],
+  "bear_case": [
+    "Zyklik: Der Umsatz lag im Geschäftsjahr 2022 bei 852,0 Mrd JPY, fiel danach auf 795,3 Mrd JPY und übertraf erst 2026 wieder das alte Hoch; Auto- und Elektronikkunden investieren schwankend, die Roboternachfrage der Automobilindustrie sank 2024 um 7 %.",
+    "Chinesische Anbieter erreichten 2024 einen Heimatmarktanteil von 57 % (Vorjahr 47 %); die China-getriebene Erholung des aktuellen Jahres kann durch Preiskämpfe und Substitution rasch an Marge verlieren.",
+    "Zölle und Handelsbeschränkungen: Die US-Untersuchung nach Section 232 zu Robotik und Industriemaschinen könnte Importe aus Japan verteuern; Fanuc verkauft einen erheblichen Teil in Amerika.",
+    "Bewertung hoch für einen zyklischen Maschinenbauer: KGV rund 33 und EV/Umsatz 5,3 laut Kennzahlen-Datei preisen bereits Wachstum und Margenausweitung ein.",
+    "Währung: Fanuc plant für das Geschäftsjahr bis März 2027 mit 150 Yen/USD und 170 Yen/EUR (Ist 2025: 150,77 bzw. 174,79); ein deutlich stärkerer Yen würde Umsatz und Marge in Yen belasten."
+  ],
+  "was_uns_widerlegen_wuerde": "Fanuc weist zwei Quartale in Folge sinkende Robot-Sparten-Umsätze gegenüber dem Vorjahr aus, oder die operative Marge fällt unter 20 %, oder die USA verhängen nach Section 232 Zölle auf Industrieroboter, die Fanuc nicht über Preise weitergeben kann."
+}

@@ -1,0 +1,828 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Robotik wächst einstellig und schwankt mit der Konjunktur – zweistellige Prognosen setzen auf humanoide Roboter</title>
+<style>
+  :root {
+    --marine: #0b2545; --mittel: #3e6ea8; --gold: #b8912f;
+    --text: #1b1f27; --leise: #5d6677; --linie: #d9dee6; --zart: #eef1f5; --flaeche: #f5f7fa;
+    --rot: #a3261a; --ocker: #9a6a00;
+    --serif: Georgia, "Times New Roman", serif;
+    --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: #fff; color: var(--text); font: 15px/1.6 var(--sans); }
+  a { color: var(--mittel); }
+  p { margin: 0 0 .9em; }
+
+  /* ---------- Kopf ---------- */
+  .kopfbereich { max-width: 900px; margin: 0 auto; padding: 40px 32px 0; }
+  .kopf-zeile { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px 24px;
+                font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: var(--leise);
+                border-top: 3px solid var(--text); padding-top: 10px; }
+  .kopf-zeile b { color: var(--text); font-weight: 700; }
+  .kopfbereich h1 { font: normal 2.5rem/1.15 var(--serif); color: var(--text); margin: 30px 0 18px; }
+  .kopfbereich .goldlinie { width: 64px; height: 3px; background: var(--gold); margin-bottom: 12px; }
+  .kopfbereich .meta { font-size: .8rem; color: var(--leise); padding-bottom: 20px; border-bottom: 1px solid var(--linie); }
+  .fiktiv { max-width: 900px; margin: 16px auto 0; padding: 0 32px; font-size: .8rem; }
+  .fiktiv div { background: #fff6e6; color: #6b4600; border: 1px solid #ecd09b; padding: 8px 12px; }
+
+  /* ---------- Rahmen ---------- */
+  .rahmen { max-width: 900px; margin: 0 auto; padding: 30px 32px 64px; }
+
+  /* ---------- Kernaussage ---------- */
+  .kern { border-left: 4px solid var(--gold); padding: 2px 0 2px 20px; margin: 0 0 8px; }
+  .kern .label { font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
+  .kern .text { font: 1.28rem/1.5 var(--serif); color: var(--marine); }
+  .kern .text p { margin: .2em 0 0; }
+
+  /* ---------- Glossar ---------- */
+  .glossar { margin: 22px 0 0; border-top: 1px solid var(--linie); border-bottom: 1px solid var(--linie); padding: 12px 0 4px; }
+  .glossar .label { font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; color: var(--leise); font-weight: 700; margin-bottom: 8px; }
+  .glossar dl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 28px; margin: 0; font-size: .82rem; }
+  @media (max-width: 700px) { .glossar dl { grid-template-columns: 1fr; } }
+  .glossar div { padding-bottom: 8px; }
+  .glossar dt { font-weight: 700; color: var(--marine); display: inline; }
+  .glossar dd { display: inline; margin: 0; color: var(--text); }
+  .glossar dd::before { content: " – "; color: var(--leise); }
+
+  /* ---------- Abschnitte ---------- */
+  section { margin-top: 44px; }
+  h2 { display: flex; align-items: baseline; gap: 14px; margin: 0 0 16px; padding-bottom: 8px;
+       border-bottom: 1px solid var(--marine); font: normal 1.5rem/1.2 var(--serif); color: var(--marine); }
+  h2 .nr { font: 600 .85rem/1 var(--sans); color: var(--gold); letter-spacing: .06em; }
+  h3 { font: 600 .74rem/1.3 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--marine); margin: 26px 0 10px; }
+
+  /* ---------- Zahlen und Fußnoten ---------- */
+  .zahl { white-space: nowrap; font-variant-numeric: tabular-nums; font-weight: 600; }
+  .schaetzung { font-style: italic; }
+  sup.fn { font-size: .66em; line-height: 0; margin-left: 1px; font-weight: normal; font-style: normal; }
+  sup.fn a { text-decoration: none; color: var(--mittel); }
+
+  /* ---------- Exhibits ---------- */
+  .exhibit { border-top: 2px solid var(--marine); margin: 22px 0 26px; }
+  .exhibit .kopf { display: flex; gap: 10px; align-items: baseline; padding: 8px 0 4px; }
+  .exhibit .nr { font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); font-weight: 700; white-space: nowrap; }
+  .exhibit .titel { font-weight: 600; color: var(--marine); font-size: .92rem; }
+  .exhibit .quelle { border-top: 1px solid var(--linie); padding-top: 6px; font-size: .74rem; color: var(--leise); }
+
+  /* ---------- Exhibit 1: Balken ab null ---------- */
+  .balken { margin: 10px 0 4px; font-size: .82rem; }
+  .balken .zeile { display: grid; grid-template-columns: minmax(150px, 34%) 1fr; gap: 14px; align-items: center; padding: 6px 0; }
+  .balken .wer { line-height: 1.3; }
+  .balken .wer b { display: block; color: var(--text); font-weight: 600; }
+  .balken .wer span { color: var(--leise); font-size: .74rem; }
+  .balken .spur { position: relative; height: 18px; margin-right: 96px; }
+  .balken .gitter { position: absolute; top: -6px; bottom: -6px; width: 1px; background: #e1e0d9; }
+  .balken .gitter.null { background: #c3c2b7; }
+  .balken .balken-fuellung { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 0 4px 4px 0; }
+  .balken .wert { position: absolute; top: 50%; transform: translateY(-50%); white-space: nowrap; font-size: .8rem; }
+  .balken .achse-zeile { display: grid; grid-template-columns: minmax(150px, 34%) 1fr; gap: 14px; }
+  .balken .achse { position: relative; height: 18px; margin-right: 96px; font-size: .7rem; color: #898781; font-variant-numeric: tabular-nums; }
+  .balken .achse span { position: absolute; transform: translateX(-50%); top: 2px; }
+
+  /* ---------- Exhibit 2: Kandidaten als Kärtchen ---------- */
+  .chips { display: flex; flex-wrap: wrap; gap: 5px; }
+  .chip { display: inline-flex; align-items: baseline; gap: 5px; padding: 2px 8px; border-radius: 3px; font-size: .76rem;
+          border: 1px solid var(--linie); background: #fff; color: var(--text); white-space: nowrap; cursor: default; }
+  .chip small { font-size: .66rem; color: var(--leise); letter-spacing: .03em; }
+  .chip.gewaehlt { background: #2a78d6; border-color: #2a78d6; color: #fff; font-weight: 600; }
+  .chip.gewaehlt small { color: #dbe8f8; }
+  .chip.ausgeschlossen { color: #898781; background: var(--flaeche); text-decoration: line-through; }
+  .chip-legende { display: flex; flex-wrap: wrap; gap: 14px; font-size: .74rem; color: var(--leise); margin-top: 8px; }
+  .chip-legende .chip { text-decoration: none; }
+
+  /* ---------- Exhibit 4: Streudiagramm ---------- */
+  svg.streuung { width: 100%; height: auto; display: block; font-family: var(--sans); }
+  svg.streuung .achse { font-size: 11px; fill: #898781; font-variant-numeric: tabular-nums; }
+  svg.streuung .achsentitel { font-size: 11px; fill: #52514e; }
+  svg.streuung .marke { font-size: 11px; font-weight: 600; fill: #52514e; }
+  svg.streuung .punkt { cursor: default; outline: none; }
+  svg.streuung .punkt:hover circle:nth-of-type(3), svg.streuung .punkt:focus circle:nth-of-type(3) { stroke-width: 4; }
+  .legende { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: .76rem; color: var(--text); margin: 4px 0 6px; }
+  .legende span { display: inline-flex; align-items: center; gap: 6px; }
+  .legende i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  .legende i.offen { background: #fff; border: 2px solid #898781; width: 8px; height: 8px; }
+
+  /* ---------- Tooltip ---------- */
+  .tooltip { position: fixed; z-index: 10; pointer-events: none; background: #fff; border: 1px solid rgba(11,11,11,.12);
+             box-shadow: 0 4px 14px rgba(0,0,0,.08); border-radius: 4px; padding: 7px 10px; font-size: .76rem; line-height: 1.45;
+             color: #52514e; max-width: 280px; }
+  .tooltip b { color: var(--text); display: block; }
+
+  /* ---------- Tabellen ---------- */
+  .tabelle { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-size: .82rem; font-variant-numeric: tabular-nums; }
+  th { background: var(--marine); color: #fff; text-align: left; font-weight: 600; font-size: .68rem;
+       letter-spacing: .08em; text-transform: uppercase; padding: 7px 9px; white-space: nowrap; }
+  td { padding: 7px 9px; border-bottom: 1px solid var(--linie); vertical-align: top; }
+  tbody tr:nth-child(even) td { background: var(--flaeche); }
+  td.r, th.r { text-align: right; }
+  td .sub { display: block; font-size: .74rem; color: var(--leise); }
+  .ueberzeugung { color: var(--marine); letter-spacing: 2px; white-space: nowrap; }
+
+  /* ---------- Etiketten ---------- */
+  .tag { display: inline-block; font-size: .64rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+         padding: 2px 7px; border-radius: 2px; color: #fff; background: var(--leise); white-space: nowrap; }
+  .tag.hoch { background: var(--rot); } .tag.mittel { background: var(--ocker); } .tag.niedrig { background: #8a94a6; }
+  .tag.marge-hoch { background: var(--marine); } .tag.marge-mittel { background: var(--mittel); } .tag.marge-niedrig { background: #9aa7ba; }
+  .tag.rolle { background: transparent; color: var(--marine); border: 1px solid var(--marine); }
+
+  /* ---------- Treiber/Hürden ---------- */
+  .zwei { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  @media (max-width: 700px) { .zwei { grid-template-columns: 1fr; } }
+  .punkt { padding: 10px 0; border-bottom: 1px solid var(--linie); font-size: .9rem; }
+  .punkt b { display: block; color: var(--marine); }
+  .punkt .belege { font-size: .76rem; color: var(--leise); margin-top: 4px; }
+  .spalte-kopf { font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; padding-bottom: 6px; border-bottom: 2px solid; }
+  .spalte-kopf.plus { color: var(--marine); } .spalte-kopf.minus { color: var(--rot); }
+
+  /* ---------- Firmenkarten ---------- */
+  .karten { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 18px; }
+  @media (max-width: 760px) { .karten { grid-template-columns: 1fr; } }
+  .karte { border: 1px solid var(--linie); border-top: 3px solid var(--marine); padding: 12px 14px; font-size: .84rem; break-inside: avoid; }
+  .karte .kopf { display: flex; justify-content: space-between; gap: 8px; align-items: flex-start; }
+  .karte .name { font: 1.05rem/1.25 var(--serif); color: var(--marine); }
+  .karte .ticker { font-size: .72rem; color: var(--leise); letter-spacing: .05em; }
+  .karte .werte { display: flex; gap: 16px; margin: 10px 0; padding: 8px 0; border-top: 1px solid var(--zart); border-bottom: 1px solid var(--zart); }
+  .karte .werte div { font-size: .68rem; text-transform: uppercase; letter-spacing: .06em; color: var(--leise); }
+  .karte .werte b { display: block; font-size: .92rem; letter-spacing: 0; text-transform: none; color: var(--text); }
+  .karte ul { margin: 2px 0 8px; padding-left: 1.1em; }
+  .karte .pro { color: var(--marine); font-weight: 700; font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; }
+  .karte .contra { color: var(--rot); font-weight: 700; font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; }
+  .karte .widerlegen { background: var(--flaeche); padding: 7px 9px; font-size: .8rem; }
+
+  /* ---------- Red Team ---------- */
+  .urteil { background: var(--flaeche); border-left: 4px solid var(--marine); padding: 12px 16px; margin: 0 0 18px; }
+  .urteil .label { font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; color: var(--leise); font-weight: 700; }
+  .einwand { display: grid; grid-template-columns: 92px 1fr; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--linie); break-inside: avoid; }
+  .einwand .links { font-size: .76rem; color: var(--leise); }
+  .einwand .links .id { font: 600 1rem var(--serif); color: var(--marine); display: block; margin-bottom: 4px; }
+  .einwand .ziel { font: .72rem Menlo, Consolas, monospace; color: var(--leise); }
+  .einwand p { margin: .3em 0 0; font-size: .9rem; }
+  .antwort { margin-top: 8px; padding: 8px 12px; background: #eef3fa; border-left: 3px solid var(--mittel); font-size: .84rem; }
+  .antwort.fehlt { background: #fbeceb; border-left-color: var(--rot); }
+
+  /* ---------- Kennziffern ---------- */
+  .kennziffern { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 2px solid var(--marine); border-bottom: 1px solid var(--linie); margin: 12px 0 18px; }
+  @media (max-width: 600px) { .kennziffern { grid-template-columns: 1fr; } }
+  .kennziffer { padding: 12px 14px; border-right: 1px solid var(--linie); }
+  .kennziffer:last-child { border-right: 0; }
+  .kennziffer .wert { font: 1.35rem/1.3 var(--serif); color: var(--marine); }
+  .kennziffer .wert .zahl { font-weight: normal; }
+  .kennziffer .label { font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--leise); margin-top: 2px; }
+
+  /* ---------- Listen, Quellen, Hinweise ---------- */
+  ol.beobachtung { list-style: none; padding: 0; margin: 0; counter-reset: b; }
+  ol.beobachtung li { counter-increment: b; display: grid; grid-template-columns: 34px 1fr; padding: 9px 0; border-bottom: 1px solid var(--linie); }
+  ol.beobachtung li::before { content: counter(b); font: 600 .95rem/1.6 var(--sans); color: var(--gold); }
+  ol.beobachtung li p { margin: 0; }
+  .klein { font-size: .8rem; color: var(--leise); }
+  code { font: .78rem Menlo, Consolas, monospace; background: var(--flaeche); padding: 1px 4px; }
+  ol.quellen { font-size: .74rem; color: var(--leise); padding-left: 2.2em; columns: 2; column-gap: 32px; }
+  @media (max-width: 700px) { ol.quellen { columns: 1; } }
+  ol.quellen li { margin-bottom: .4em; word-break: break-word; break-inside: avoid; }
+  ol.quellen li::marker { color: var(--marine); font-weight: 600; }
+  .hinweise { margin-top: 48px; background: var(--flaeche); border-top: 3px solid var(--marine); padding: 16px 20px; font-size: .76rem; color: var(--leise); }
+  .hinweise h4 { margin: 0 0 8px; font-size: .7rem; letter-spacing: .16em; text-transform: uppercase; color: var(--marine); }
+  .fuss { max-width: 900px; margin: 0 auto; padding: 14px 32px 40px; font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; color: var(--leise);
+          display: flex; justify-content: space-between; border-top: 1px solid var(--linie); }
+
+  /* ---------- Druck / PDF ---------- */
+  @page { size: A4; margin: 14mm 13mm 16mm; }
+  @media print {
+    body { font-size: 9.5pt; }
+    .tag, th, .fiktiv div, tbody tr:nth-child(even) td { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .kopfbereich, .rahmen, .fuss, .fiktiv { padding-left: 0; padding-right: 0; max-width: none; }
+    section { margin-top: 26px; }
+    h2 { break-after: avoid; }
+    .exhibit, .karte, .einwand, tr, .kennziffern { break-inside: avoid; }
+    a { color: inherit; text-decoration: none; }
+    .tooltip { display: none; }
+    .chip.gewaehlt, .balken .balken-fuellung, svg.streuung { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<header class="kopfbereich">
+  <div class="kopf-zeile"><span><b>Thematic Research</b> &nbsp;·&nbsp; Robotik</span><span>2026-09-18</span></div>
+  <h1>Robotik wächst einstellig und schwankt mit der Konjunktur – zweistellige Prognosen setzen auf humanoide Roboter</h1>
+  <div class="goldlinie"></div>
+  <div class="meta">Research-Team: KI-Agenten (Markt, Treiber, Wertschöpfungskette, Deep Dives, Red Team) &nbsp;·&nbsp; Keine Anlageberatung</div>
+</header>
+
+<div class="rahmen">
+<main>
+
+  <div class="kern"><div class="label">Kernaussage</div><div class="text"><p>Robotik ist ein echter, aber konjunkturabhängiger Markt: Die Stückzahlen wachsen laut der einzigen Prognose aus erster Hand nur um mittlere einstellige Raten, zweistellige Raten setzen einen unbelegten Durchbruch humanoider Roboter voraus. Bei diesem Befund sind wir uns einigermaßen sicher, bei jeder genauen Zahl zur Marktgröße kaum.</p></div></div>
+  <div class="glossar"><div class="label">Begriffe kurz erklärt</div>
+    <dl><div><dt>Robotikanteil (Themen-Exposure)</dt><dd>Anteil des Umsatzes einer Firma, der am Thema Robotik hängt – entweder von der Firma selbst ausgewiesen oder von uns geschätzt.</dd></div><div><dt>IFR</dt><dd>Internationaler Branchenverband der Robotik; er zählt jedes Jahr weltweit die neu installierten Industrieroboter und erstellt Prognosen.</dd></div><div><dt>Roboterdichte</dt><dd>Zahl der Industrieroboter je zehntausend Beschäftigte in der Industrie eines Landes.</dd></div><div><dt>Humanoider Roboter</dt><dd>Roboter mit menschenähnlicher Gestalt, der für viele verschiedene Aufgaben gedacht ist und heute erst in kleinen Stückzahlen gebaut wird.</dd></div><div><dt>Spannungswellengetriebe</dt><dd>Sehr präzises, kompaktes Getriebe, das vor allem in den Gelenken von Robotern steckt.</dd></div><div><dt>Operative Marge</dt><dd>Anteil des Umsatzes, der nach Abzug der laufenden Kosten als Gewinn aus dem Kerngeschäft übrig bleibt.</dd></div><div><dt>Marktkapitalisierung</dt><dd>Börsenwert einer Firma, also Aktienkurs mal Zahl der Aktien.</dd></div><div><dt>EV/Umsatz</dt><dd>Unternehmenswert (Börsenwert plus Schulden minus Barmittel) im Verhältnis zum Jahresumsatz; je höher der Wert, desto teurer ist die Firma bewertet.</dd></div><div><dt>KGV (Kurs-Gewinn-Verhältnis)</dt><dd>Aktienkurs geteilt durch den Gewinn je Aktie; zeigt, wie viele Jahresgewinne Anleger für eine Aktie bezahlen.</dd></div><div><dt>Section 232</dt><dd>US-Vorschrift, nach der die Regierung Zölle oder Einfuhrquoten verhängen darf, wenn Importe die nationale Sicherheit gefährden.</dd></div><div><dt>Cobot</dt><dd>Kollaborativer Roboter, der ohne Schutzzaun direkt neben Menschen arbeiten kann.</dd></div><div><dt>Kernprofiteur, Zulieferer, Mitläufer</dt><dd>Unsere Einstufung, wie direkt eine Firma vom Thema profitiert: mit ihrem Hauptgeschäft, über wichtige Bauteile oder nur mit einem kleinen Nebengeschäft.</dd></div></dl>
+  </div>
+
+  <section id="these">
+    <h2><span class="nr">01</span>These</h2>
+    <p>Der Bedarf an Automatisierung ist von Dauer. In China schrumpft die Zahl der Menschen im erwerbsfähigen Alter. Außerhalb Asiens arbeiten weit weniger Roboter je Beschäftigten als in den führenden Ländern. Und weltweit sind jedes Jahr mehr Roboter im Einsatz. Diese Kräfte tragen das Wachstum der Stückzahlen, das der Branchenverband IFR erwartet: von <span class="zahl">542 000 Einheiten Neuinstallationen weltweit</span><sup class="fn"><a href="#fn1" id="r1">1</a></sup> neu installierten Robotern auf über <span class="zahl">700 000 Einheiten Neuinstallationen p. a. (IFR-Prognose)</span><sup class="fn"><a href="#fn1" id="r1">1</a></sup> im Jahr 2028. Beim Umsatz fällt das Wachstum kleiner aus. Chinesische Hersteller drücken die Preise – sie beliefern inzwischen <span class="zahl">57 % Marktanteil chinesischer Anbieter im Heimatmarkt</span><sup class="fn"><a href="#fn2" id="r2">2</a></sup> ihres Heimatmarktes.</p><p>Am verlässlichsten profitieren nach unserer Einschätzung deshalb die Hersteller wichtiger Bauteile und einige wenige große Roboterhersteller, die ihren Robotikumsatz offen ausweisen. Humanoide Roboter bleiben eine Chance mit hoher Unsicherheit. Bei den meisten Firmen unserer Auswahl ist der Robotikanteil nur geschätzt. Unsere Aussagen zu einzelnen Firmen sind deshalb vorläufig. Falsch läge unsere Einschätzung, wenn die IFR für 2025 und 2026 deutlich mehr Installationen meldet, als sie selbst vorhergesagt hat, und zugleich die Durchschnittspreise je Roboter steigen statt fallen.</p>
+  </section>
+
+  <section id="markt">
+    <h2><span class="nr">02</span>Markt</h2>
+    <p>Die veröffentlichten Schätzungen für 2030 reichen von <span class="zahl">50,3 Mrd USD</span><sup class="fn"><a href="#fn3" id="r3">3</a></sup> bis <span class="zahl">215 Mrd USD</span><sup class="fn"><a href="#fn4" id="r4">4</a></sup>. Den niedrigsten Wert nennt MarketsandMarkets, gezählt wird dort nur KI-gestützte Robotik. Den höchsten nennt Market Research Future, ohne offenzulegen, was dazugehört. Dazwischen liegt Persistence Market Research mit <span class="zahl">84,7 Mrd USD</span><sup class="fn"><a href="#fn5" id="r5">5</a></sup> nur für Industrieroboter. ABI Research kommt auf <span class="zahl">111 Mrd USD</span><sup class="fn"><a href="#fn6" id="r6">6</a></sup> für fünf Roboterarten ohne Medizinroboter.</p><p>Die Zahlen liegen so weit auseinander, weil jede Studie etwas anderes misst. Sie bestätigen also keinen gemeinsamen Wert. Alle vier Quellen sind Pressemitteilungen oder Blogeinträge von Firmen, die ihre Studien verkaufen. Keine legt ihre Methode offen. Einen Durchschnitt bilden wir deshalb nicht.</p><p>Als Maßstab nehmen wir den Wert der tatsächlich installierten Industrieroboter, den der Branchenverband IFR erhebt: <span class="zahl">16,7 Mrd USD Marktwert Industrieroboter-Installationen weltweit (Allzeithoch)</span><sup class="fn"><a href="#fn7" id="r7">7</a></sup>. Darin stecken nur die Roboter selbst, ohne Software, Zubehör und Einbau in die Fabrik. Die Studien erwarten jährliche Wachstumsraten zwischen <span class="zahl">12,7 % p.a.</span><sup class="fn"><a href="#fn5" id="r5">5</a></sup> und <span class="zahl">29,2 % p.a.</span><sup class="fn"><a href="#fn3" id="r3">3</a></sup>. Die oberen Werte passen nur dann zur Stückzahlprognose der IFR, wenn neue Roboterarten wie humanoide Roboter in großem Umfang hinzukommen.</p><p>Auch eine Gegenrechnung aus den Firmenzahlen mahnt zur Vorsicht. Wir haben die Robotikumsätze unserer acht Firmen addiert: Sie ergeben <span class="zahl schaetzung">~21,2 Mrd USD</span><sup class="fn"><a href="#fn8" id="r8">8</a></sup>. Das sind zwischen <span class="zahl schaetzung">~9,9 %</span><sup class="fn"><a href="#fn9" id="r9">9</a></sup> und <span class="zahl schaetzung">~42,1 %</span><sup class="fn"><a href="#fn10" id="r10">10</a></sup> der geschätzten Marktgröße. Rund die Hälfte davon stammt aus Medizinrobotik, die die meisten Studien gar nicht mitzählen. Der Vergleich spricht eher für die unteren Schätzungen.</p>
+    <div class="exhibit">
+      <div class="kopf"><span class="nr">Exhibit 1</span><span class="titel">Marktschätzungen nach Herausgeber (Mrd USD)</span></div>
+      <div class="balken" role="img" aria-label="Balkendiagramm der Marktschätzungen">
+        <div class="zeile">
+          <div class="wer"><b>Market Research Future (MRFR) (2030)</b><span>Gesamter Robotikmarkt, aufgeteilt nach Bauart (etwa Knickarmroboter), Beweglichkeit (etwa mobile Roboter) und Kunden (etwa Fertigung).</span></div>
+          <div class="spur">
+<i class="gitter null" style="left: 0.0%"></i><i class="gitter" style="left: 20.0%"></i><i class="gitter" style="left: 40.0%"></i><i class="gitter" style="left: 60.0%"></i><i class="gitter" style="left: 80.0%"></i><i class="gitter" style="left: 100.0%"></i>            <div class="balken-fuellung" data-tipp="Market Research Future (MRFR)|Prognose für 2030: 214.6 Mrd USD|Gesamter Robotikmarkt, aufgeteilt nach Bauart (etwa Knickarmroboter), Beweglichkeit (etwa mobile Roboter) und Kunden (etwa Fertigung)."
+                 style="width: 85.84%; background: #2a78d6"></div>
+            <span class="wert" style="left: calc(85.84% + 8px)"><span class="zahl">215 Mrd USD</span><sup class="fn"><a href="#fn4" id="r4">4</a></sup></span>
+          </div>
+        </div>
+        <div class="zeile">
+          <div class="wer"><b>ABI Research (2030)</b><span>Fünf Roboterarten: Industrieroboter, Cobots, mobile Roboter, humanoide Roboter und Exoskelette.</span></div>
+          <div class="spur">
+<i class="gitter null" style="left: 0.0%"></i><i class="gitter" style="left: 20.0%"></i><i class="gitter" style="left: 40.0%"></i><i class="gitter" style="left: 60.0%"></i><i class="gitter" style="left: 80.0%"></i><i class="gitter" style="left: 100.0%"></i>            <div class="balken-fuellung" data-tipp="ABI Research|Prognose für 2030: 110.7 Mrd USD|Fünf Roboterarten: Industrieroboter, Cobots, mobile Roboter, humanoide Roboter und Exoskelette."
+                 style="width: 44.28%; background: #2a78d6"></div>
+            <span class="wert" style="left: calc(44.28% + 8px)"><span class="zahl">111 Mrd USD</span><sup class="fn"><a href="#fn6" id="r6">6</a></sup></span>
+          </div>
+        </div>
+        <div class="zeile">
+          <div class="wer"><b>Persistence Market Research (2030)</b><span>Nur Industrieroboter, also automatisierte Anlagen für Fabriken, etwa in der Auto-, Elektronik- und Gesundheitsbranche.</span></div>
+          <div class="spur">
+<i class="gitter null" style="left: 0.0%"></i><i class="gitter" style="left: 20.0%"></i><i class="gitter" style="left: 40.0%"></i><i class="gitter" style="left: 60.0%"></i><i class="gitter" style="left: 80.0%"></i><i class="gitter" style="left: 100.0%"></i>            <div class="balken-fuellung" data-tipp="Persistence Market Research|Prognose für 2030: 84.7 Mrd USD|Nur Industrieroboter, also automatisierte Anlagen für Fabriken, etwa in der Auto-, Elektronik- und Gesundheitsbranche."
+                 style="width: 33.88%; background: #2a78d6"></div>
+            <span class="wert" style="left: calc(33.88% + 8px)"><span class="zahl">84,7 Mrd USD</span><sup class="fn"><a href="#fn5" id="r5">5</a></sup></span>
+          </div>
+        </div>
+        <div class="zeile">
+          <div class="wer"><b>MarketsandMarkets (2030)</b><span>Nur „intelligente“ Roboter: Maschinen, die ihre Umgebung mithilfe von KI selbstständig wahrnehmen und darauf reagieren.</span></div>
+          <div class="spur">
+<i class="gitter null" style="left: 0.0%"></i><i class="gitter" style="left: 20.0%"></i><i class="gitter" style="left: 40.0%"></i><i class="gitter" style="left: 60.0%"></i><i class="gitter" style="left: 80.0%"></i><i class="gitter" style="left: 100.0%"></i>            <div class="balken-fuellung" data-tipp="MarketsandMarkets|Prognose für 2030: 50.3 Mrd USD|Nur „intelligente“ Roboter: Maschinen, die ihre Umgebung mithilfe von KI selbstständig wahrnehmen und darauf reagieren."
+                 style="width: 20.13%; background: #2a78d6"></div>
+            <span class="wert" style="left: calc(20.13% + 8px)"><span class="zahl">50,3 Mrd USD</span><sup class="fn"><a href="#fn3" id="r3">3</a></sup></span>
+          </div>
+        </div>
+        <div class="achse-zeile"><div></div><div class="achse"><span style="left: 0.0%">0</span><span style="left: 20.0%">50</span><span style="left: 40.0%">100</span><span style="left: 60.0%">150</span><span style="left: 80.0%">200</span><span style="left: 100.0%">250</span></div></div>
+      </div>
+      <div class="quelle">Quelle: Angaben der Herausgeber, eigene Darstellung. Balken ab null; hellere Balken mit „~“ sind Schätzungen, keine berichteten Werte. Die Abgrenzung erklärt die Unterschiede.
+</div>
+    </div>
+    <div class="tabelle"><table>
+      <thead><tr><th>Herausgeber</th><th class="r">Prognosejahr</th><th class="r">Marktgröße</th><th class="r">CAGR</th><th>Abgrenzung</th></tr></thead>
+      <tbody>
+      <tr><td><b>ABI Research</b></td><td class="r">2030</td><td class="r"><span class="zahl">111 Mrd USD</span><sup class="fn"><a href="#fn6" id="r6">6</a></sup></td>
+          <td class="r"><span class="zahl">13,8 % p.a.</span><sup class="fn"><a href="#fn6" id="r6">6</a></sup></td><td>Fünf Roboterarten: Industrieroboter, Cobots, mobile Roboter, humanoide Roboter und Exoskelette. Ausgangsjahr 2024 mit 45 Mrd USD.</td></tr>
+      <tr><td><b>Market Research Future (MRFR)</b></td><td class="r">2030</td><td class="r"><span class="zahl">215 Mrd USD</span><sup class="fn"><a href="#fn4" id="r4">4</a></sup></td>
+          <td class="r"><span class="zahl">22,8 % p.a.</span><sup class="fn"><a href="#fn4" id="r4">4</a></sup></td><td>Gesamter Robotikmarkt, aufgeteilt nach Bauart (etwa Knickarmroboter), Beweglichkeit (etwa mobile Roboter) und Kunden (etwa Fertigung). Was genau dazugehört, legt die Pressemitteilung nicht offen. Es ist die älteste der Schätzungen (2023).</td></tr>
+      <tr><td><b>MarketsandMarkets</b></td><td class="r">2030</td><td class="r"><span class="zahl">50,3 Mrd USD</span><sup class="fn"><a href="#fn3" id="r3">3</a></sup></td>
+          <td class="r"><span class="zahl">29,2 % p.a.</span><sup class="fn"><a href="#fn3" id="r3">3</a></sup></td><td>Nur „intelligente“ Roboter: Maschinen, die ihre Umgebung mithilfe von KI selbstständig wahrnehmen und darauf reagieren. Dazu zählen Industrie- und Serviceroboter sowie Cobots. Herkömmliche Roboter ohne KI zählen nicht mit. Der gemessene Markt ist daher deutlich kleiner.</td></tr>
+      <tr><td><b>Persistence Market Research</b></td><td class="r">2030</td><td class="r"><span class="zahl">84,7 Mrd USD</span><sup class="fn"><a href="#fn5" id="r5">5</a></sup></td>
+          <td class="r"><span class="zahl">12,7 % p.a.</span><sup class="fn"><a href="#fn5" id="r5">5</a></sup></td><td>Nur Industrieroboter, also automatisierte Anlagen für Fabriken, etwa in der Auto-, Elektronik- und Gesundheitsbranche. Service-, mobile und humanoide Roboter sind nicht ausdrücklich enthalten.</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section id="treiber">
+    <h2><span class="nr">03</span>Treiber und Hürden</h2>
+    <p>Drei Kräfte treiben den Markt. Die erste ist die Bevölkerungsentwicklung. In China ging die Zahl der Menschen im erwerbsfähigen Alter zuletzt um <span class="zahl">6,6 Mio Personen Rückgang der Bevölkerung 16–59 J. ggü. Vorjahr</span><sup class="fn"><a href="#fn11" id="r11">11</a></sup> zurück. Gleichzeitig entfallen auf China <span class="zahl">54 % der globalen Roboter-Neuinstallationen (China)</span><sup class="fn"><a href="#fn1" id="r1">1</a></sup> aller neu installierten Roboter weltweit. Fehlen Arbeitskräfte, steigen die Kosten, und Automatisierung rechnet sich früher. Die zweite Kraft ist der Nachholbedarf. Südkorea kommt auf <span class="zahl">1 220 Roboter je 10.000 Beschäftigte im Verarbeitenden Gewerbe (Südkorea)</span><sup class="fn"><a href="#fn12" id="r12">12</a></sup> Roboter je zehntausend Beschäftigte, die USA auf <span class="zahl">307 Roboter je 10.000 Beschäftigte im Verarbeitenden Gewerbe (USA)</span><sup class="fn"><a href="#fn12" id="r12">12</a></sup>. China liegt bei <span class="zahl">166 Roboter je 10.000 Beschäftigte im Verarbeitenden Gewerbe (China)</span><sup class="fn"><a href="#fn12" id="r12">12</a></sup>. Dieser Wert ist allerdings zum Teil davon beeinflusst, dass China seine Beschäftigtenstatistik überarbeitet hat. Drittens wird die Technik für humanoide Roboter billiger. Ihre Materialkosten sollen zuletzt um <span class="zahl">40 % Kostensenkung Materialkosten (Bill of Materials) humanoider Roboter</span><sup class="fn"><a href="#fn13" id="r13">13</a></sup> gesunken sein. Diese Zahl stammt allerdings nicht aus erster Hand.</p><p>Dem stehen mehrere Hürden gegenüber. Erstens schwankt die Nachfrage mit der Konjunktur. Die Roboternachfrage der Autoindustrie fiel 2024 um <span class="zahl">-7 % Roboternachfrage Automobilindustrie ggü. Vorjahr</span><sup class="fn"><a href="#fn14" id="r14">14</a></sup>, die Installationen in Europa gingen um <span class="zahl">-8 % Installationen Europa ggü. Vorjahr</span><sup class="fn"><a href="#fn1" id="r1">1</a></sup> zurück. Roboter sind Investitionsgüter: Firmen kaufen sie, wenn sie ohnehin investieren. Zweitens drückt die Konkurrenz aus China die Preise. Deshalb wird aus mehr verkauften Robotern nur zum Teil mehr Umsatz. Drittens sind Roboter teuer im Einsatz, und manche Technik ist noch unreif. Einbau, Software und Wartung machen nach Branchenangaben mindestens <span class="zahl">40 % Untergrenze Anteil Integration, Software, Wartung an Projektkosten (Spanne 40–60 %)</span><sup class="fn"><a href="#fn15" id="r15">15</a></sup> der Projektkosten aus. Von humanoiden Robotern wurden 2025 weltweit erst <span class="zahl">13 000 Einheiten weltweit ausgelieferte Humanoide</span><sup class="fn"><a href="#fn16" id="r16">16</a></sup> ausgeliefert. Hinzu kommen zwei politische Risiken. Die US-Regierung prüft Zölle auf importierte Roboter (Section 232). Und bei Seltenen Erden hängt die Branche von China ab, das rund <span class="zahl">90 % Raffination und Permanentmagnet-Produktion bei China</span><sup class="fn"><a href="#fn16" id="r16">16</a></sup> der Raffination und Magnetfertigung stellt.</p>
+    <div class="zwei">
+      <div><div class="spalte-kopf plus">Treiber</div>
+<div class="punkt"><b>Alternde Belegschaft in China</b>In China gibt es dauerhaft immer weniger Menschen im erwerbsfähigen Alter. Steigende Löhne und fehlende Arbeitskräfte machen Automatisierung attraktiver. China stellt 54 % der weltweit neu installierten Roboter. Deshalb wirkt diese Entwicklung direkt auf die weltweite Nachfrage. Sie wird über Jahrzehnte anhalten.
+          <div class="belege">Belege: <span class="zahl">6,6 Mio Personen Rückgang der Bevölkerung 16–59 J. ggü. Vorjahr</span><sup class="fn"><a href="#fn11" id="r11">11</a></sup> · <span class="zahl">54 % der globalen Roboter-Neuinstallationen (China)</span><sup class="fn"><a href="#fn1" id="r1">1</a></sup></div></div><div class="punkt"><b>Verdopplung der Installationen in zehn Jahren</b>Heute werden jedes Jahr mehr als doppelt so viele Industrieroboter neu installiert wie vor zehn Jahren. Das vierte Jahr in Folge waren es über 500.000 Stück. Der Branchenverband IFR erwartet bis 2028 einen Anstieg auf über 700.000. So wächst der Bestand stetig, und mit ihm das Geschäft mit Service und Ersatz.
+          <div class="belege">Belege: <span class="zahl">542 000 Einheiten Neuinstallationen weltweit</span><sup class="fn"><a href="#fn1" id="r1">1</a></sup> · <span class="zahl">700 000 Einheiten Neuinstallationen p. a. (IFR-Prognose)</span><sup class="fn"><a href="#fn1" id="r1">1</a></sup> · <span class="zahl">4 664 000 Einheiten Betriebsbestand weltweit</span><sup class="fn"><a href="#fn1" id="r1">1</a></sup></div></div><div class="punkt"><b>Aufholpotenzial bei Roboterdichte</b>Wie viele Roboter auf die Beschäftigten kommen, ist von Land zu Land sehr verschieden. Korea hat ein Vielfaches des chinesischen oder amerikanischen Werts. Schon wenn große Industrieländer nur teilweise aufholen, entsteht dauerhaft zusätzlicher Bedarf, auch ohne neue Einsatzgebiete. Zeitraum: 5–10 Jahre.
+          <div class="belege">Belege: <span class="zahl">1 220 Roboter je 10.000 Beschäftigte im Verarbeitenden Gewerbe (Südkorea)</span><sup class="fn"><a href="#fn12" id="r12">12</a></sup> · <span class="zahl">166 Roboter je 10.000 Beschäftigte im Verarbeitenden Gewerbe (China)</span><sup class="fn"><a href="#fn12" id="r12">12</a></sup> · <span class="zahl">307 Roboter je 10.000 Beschäftigte im Verarbeitenden Gewerbe (USA)</span><sup class="fn"><a href="#fn12" id="r12">12</a></sup></div></div><div class="punkt"><b>KI und billigere Technik für humanoide Roboter</b>KI-Modelle lernen zunehmend körperliche Aufgaben, und Bauteile werden billiger. Das öffnet Einsatzfelder jenseits der klassischen Fabrik. Goldman Sachs hat seine Prognose für humanoide Roboter im Jahr 2035 binnen kurzer Zeit mehrfach angehoben. Noch ist dieser Markt sehr klein. Für das Thema dürfte er eher ab Ende des Jahrzehnts eine Rolle spielen.
+          <div class="belege">Belege: <span class="zahl">40 % Kostensenkung Materialkosten (Bill of Materials) humanoider Roboter</span><sup class="fn"><a href="#fn13" id="r13">13</a></sup> · <span class="zahl">6 500 000 Einheiten Humanoiden-Absatz (Goldman-Prognose)</span><sup class="fn"><a href="#fn40" id="r40">40</a></sup></div></div><div class="punkt"><b>Erholung der US-Nachfrage 2025</b>Nach zwei Jahren mit Rückgängen wurden in den USA 2025 wieder mehr Roboter installiert. Gründe sind die Rückverlagerung von Produktion ins Inland und der Druck zur Automatisierung. Das macht die Branche etwas unabhängiger vom chinesischen Markt.
+          <div class="belege">Belege: <span class="zahl">11 % Wachstum US-Installationen ggü. Vorjahr (auf 38.000 Einheiten)</span><sup class="fn"><a href="#fn41" id="r41">41</a></sup></div></div>      </div>
+      <div><div class="spalte-kopf minus">Hürden</div>
+<div class="punkt"><b>Konjunkturschwäche bei den Kunden</b>Der Roboterabsatz hängt stark an der Auto- und Elektronikindustrie. 2024 kaufte die Autoindustrie weniger Roboter, und in Europa und den USA gingen die Installationen zurück. Halten sich diese Branchen mit Investitionen zurück, kann das das Wachstum über Quartale bis Jahre bremsen, unabhängig vom langfristigen Trend.
+          <div class="belege">Belege: <span class="zahl">-7 % Roboternachfrage Automobilindustrie ggü. Vorjahr</span><sup class="fn"><a href="#fn14" id="r14">14</a></sup> · <span class="zahl">-8 % Installationen Europa ggü. Vorjahr</span><sup class="fn"><a href="#fn1" id="r1">1</a></sup> · <span class="zahl">-9 % Installationen USA ggü. Vorjahr (34.200 Einheiten)</span><sup class="fn"><a href="#fn41" id="r41">41</a></sup></div></div><div class="punkt"><b>Zölle und Handelsschranken</b>Die US-Regierung untersucht nach Section 232 die Einfuhr von Robotern und Industriemaschinen. Diese Vorschrift kann zu Zöllen führen. Zölle würden Anlagen in den USA verteuern, und Firmen würden Investitionen aufschieben. Wie die Untersuchung ausgeht und welche Maßnahmen folgen, ist für die nächsten Monate offen.
+          <div class="belege">Belege: Das US-Handelsministerium hat am 2. September 2025 eine Untersuchung nach Section 232 zu Robotik und Industriemaschinen eingeleitet. Laut einer Analyse von Anwälten betrifft sie Ausrüstung und Vorprodukte im Wert von rund einer halben Billion USD. Sie kann zu Zöllen oder Einfuhrquoten führen.<sup class="fn"><a href="#fn42">42</a></sup> · Der US-Industrieverband NAM warnt: Zölle auf Vorprodukte für die Fertigung könnten Investitionen in neue Werke und Maschinen in den USA bremsen.<sup class="fn"><a href="#fn43">43</a></sup></div></div><div class="punkt"><b>Abhängigkeit von chinesischen Seltenen Erden</b>Antriebe brauchen starke Magnete aus Seltenen Erden (Neodym-Eisen-Bor). China kontrolliert rund 90 % ihrer Produktion. Seit April und Oktober 2025 beschränkt China die Ausfuhr. Das kann die Produktion verzögern, wie Tesla für seinen Roboter Optimus bestätigte. Besonders betroffen sind humanoide Roboter, weil jeder einzelne viele Magnete braucht.
+          <div class="belege">Belege: <span class="zahl">90 % Raffination und Permanentmagnet-Produktion bei China</span><sup class="fn"><a href="#fn16" id="r16">16</a></sup> · Tesla-Chef Musk sagte im April 2025, Chinas Ausfuhrbeschränkungen für Magnete aus Seltenen Erden hätten die Produktion des Roboters Optimus verzögert.<sup class="fn"><a href="#fn44">44</a></sup> · Mit der zweiten Welle von Ausfuhrkontrollen am 9. Oktober 2025 kamen fünf weitere Seltene Erden hinzu, außerdem Technologie und Fachwissen.<sup class="fn"><a href="#fn45">45</a></sup></div></div><div class="punkt"><b>Preisdruck durch chinesische Anbieter</b>Chinesische Hersteller haben 2024 erstmals mehr als die Hälfte ihres Heimatmarktes erobert. Das verschärft den Preisdruck auf die etablierten Anbieter und begrenzt ihre Margen im größten Markt. Die Wirkung ist schon da. Verlorene Anteile zurückzuholen, dürfte ausländischen Anbietern dauerhaft schwerfallen.
+          <div class="belege">Belege: <span class="zahl">57 % Marktanteil chinesischer Anbieter im Heimatmarkt</span><sup class="fn"><a href="#fn2" id="r2">2</a></sup></div></div><div class="punkt"><b>Hohe Einbaukosten, Markt für humanoide Roboter noch klein</b>Der Roboter selbst macht nur einen Teil der Projektkosten aus. Einbau, Software und Wartung belasten vor allem kleine Betriebe. Humanoide Roboter werden zudem erst in kleinen Serien gebaut. Die Prognosen für 2035 sind deshalb weit von den heutigen Stückzahlen entfernt. Beides bremst, dass Roboter neue Kundengruppen erreichen.
+          <div class="belege">Belege: <span class="zahl">40 % Untergrenze Anteil Integration, Software, Wartung an Projektkosten (Spanne 40–60 %)</span><sup class="fn"><a href="#fn15" id="r15">15</a></sup> · <span class="zahl">13 000 Einheiten weltweit ausgelieferte Humanoide</span><sup class="fn"><a href="#fn16" id="r16">16</a></sup></div></div>      </div>
+    </div>
+  </section>
+
+  <section id="kette">
+    <h2><span class="nr">04</span>Wertschöpfungskette</h2>
+    <p>Wir teilen die Branche in sieben Stufen ein: Präzisionsgetriebe, Motoren und Antriebe, Sensoren, Rechentechnik (Chips und Software), Industrieroboter, Service- und Lagerroboter sowie die Einbindung der Roboter in Fabriken.</p><p>Am meisten verdienen Firmen, die ihre Steuerungstechnik selbst entwickeln und viele Maschinen im Einsatz haben. Fanuc erreicht eine operative Marge von <span class="zahl">23,2 %</span><sup class="fn"><a href="#fn17" id="r17">17</a></sup>. Dahinter stehen eigene Steuerungen und Antriebe für Werkzeugmaschinen und ein Servicegeschäft, das regelmäßig Umsatz bringt. Präzisionsgetriebe sind technisch anspruchsvoll. Trotzdem kommt Harmonic Drive nur auf eine operative Marge von <span class="zahl">11 %</span><sup class="fn"><a href="#fn18" id="r18">18</a></sup>. Die Werke sind schwach ausgelastet, und chinesische Anbieter holen auf.</p><p>Am härtesten ist der Wettbewerb dort, wo chinesische Hersteller in großen Mengen produzieren: bei Antrieben und gängigen Industrierobotern. Der Einbau von Robotern in Fabriken ist ein großes Geschäft, hat aber wenig speziell mit Robotik zu tun. Steuerungen und Antriebe werden auch ohne Roboter verkauft. Chips und Software sind für KI-gestützte Roboter technisch zentral. Der Umsatz damit ist heute aber klein.</p>
+    <div class="exhibit">
+      <div class="kopf"><span class="nr">Exhibit 2</span><span class="titel">Segmente der Wertschöpfungskette und ihre börsennotierten Kandidaten</span></div>
+      <div class="tabelle"><table>
+        <thead><tr><th>Segment</th><th>Margenprofil</th><th>Unternehmen</th></tr></thead>
+        <tbody>
+        <tr><td style="min-width: 160px"><b>Präzisionsgetriebe &amp; Bewegungskomponenten</b><span class="sub">Präzisionsgetriebe (Spannungswellen- und Zykloidgetriebe), Linearführungen, Kugelgewindetriebe und Lager. Sie bilden die mechanischen Gelenke jedes Roboters.</span></td>
+            <td style="min-width: 150px"><span class="tag marge-hoch">hoch</span><span class="sub">Wenige Anbieter teilen den Markt unter sich auf und haben jahrzehntelanges Fertigungswissen (Harmonic Drive, Nabtesco). Roboterhersteller prüfen neue Lieferanten aufwendig und wechseln ungern. Bei einfacheren Getrieben in großen Stückzahlen drücken chinesische Nachahmer aber die Preise.</span></td>
+            <td><div class="chips"><span class="chip gewaehlt" tabindex="0" data-tipp="Harmonic Drive Systems (6324.T)|In der Auswahl">✓ Harmonic Drive Systems <small>6324.T</small></span><span class="chip gescreent" tabindex="0" data-tipp="Nabtesco (6268.T)|Gescreent, nicht ausgewählt">Nabtesco <small>6268.T</small></span><span class="chip gescreent" tabindex="0" data-tipp="THK (6481.T)|Gescreent, nicht ausgewählt">THK <small>6481.T</small></span><span class="chip gescreent" tabindex="0" data-tipp="Zhejiang Leaderdrive (688017.SS)|Gescreent, nicht ausgewählt">Zhejiang Leaderdrive <small>688017.SS</small></span><span class="chip ausgeschlossen" tabindex="0" data-tipp="Schaeffler (SHA.DE)|Ausgeschlossen: keine Daten: SHA.DE: unbekannter Ticker oder keine Daten bei Yahoo Finance (Börsensuffix prüfen, z. B. .DE, .SW, .T)">Schaeffler <small>SHA.DE</small></span></div></td></tr>
+        <tr><td style="min-width: 160px"><b>Motoren, Servoantriebe &amp; Aktuatorik</b><span class="sub">Präzise Elektromotoren (Servomotoren, rahmenlose Motoren), die zugehörige Leistungselektronik und Bewegungssteuerungen. Sie erzeugen und regeln die Bewegung.</span></td>
+            <td style="min-width: 150px"><span class="tag marge-mittel">mittel</span><span class="sub">Technisch überlegene Motoren erlauben höhere Preise. Viele Wettbewerber und zunehmend genormte Produkte begrenzen aber, wie stark Anbieter die Preise selbst bestimmen können.</span></td>
+            <td><div class="chips"><span class="chip gewaehlt" tabindex="0" data-tipp="Shenzhen Inovance Technology (300124.SZ)|In der Auswahl">✓ Shenzhen Inovance Technology <small>300124.SZ</small></span><span class="chip gescreent" tabindex="0" data-tipp="Nidec (6594.T)|Gescreent, nicht ausgewählt">Nidec <small>6594.T</small></span><span class="chip gescreent" tabindex="0" data-tipp="Sanyo Denki (6516.T)|Gescreent, nicht ausgewählt">Sanyo Denki <small>6516.T</small></span><span class="chip gescreent" tabindex="0" data-tipp="Regal Rexnord (RRX)|Gescreent, nicht ausgewählt">Regal Rexnord <small>RRX</small></span></div></td></tr>
+        <tr><td style="min-width: 160px"><b>Sensorik &amp; Wahrnehmung</b><span class="sub">Industriekameras mit Bildauswertung, Laserscanner (LiDAR), Drehgeber und Messtechnik. Damit erfassen Roboter ihre Umgebung und ihre eigene Lage.</span></td>
+            <td style="min-width: 150px"><span class="tag marge-hoch">hoch</span><span class="sub">Eigene Optik, Algorithmen und Sensortechnik sind schwer zu ersetzen, weil ein Wechsel für Kunden aufwendig ist (Keyence, Cognex). Laserscanner (LiDAR) konkurrieren dagegen vor allem über den Preis und sind weniger profitabel.</span></td>
+            <td><div class="chips"><span class="chip gewaehlt" tabindex="0" data-tipp="Cognex (CGNX)|In der Auswahl">✓ Cognex <small>CGNX</small></span><span class="chip gescreent" tabindex="0" data-tipp="Keyence (6861.T)|Gescreent, nicht ausgewählt">Keyence <small>6861.T</small></span><span class="chip gescreent" tabindex="0" data-tipp="Hesai Group (HSAI)|Gescreent, nicht ausgewählt">Hesai Group <small>HSAI</small></span><span class="chip gescreent" tabindex="0" data-tipp="Renishaw (RSW.L)|Gescreent, nicht ausgewählt">Renishaw <small>RSW.L</small></span><span class="chip ausgeschlossen" tabindex="0" data-tipp="Basler (BSL.DE)|Ausgeschlossen: Marktkapitalisierung 0.78 Mrd USD unter Mindestwert 1.0 Mrd USD">Basler <small>BSL.DE</small></span></div></td></tr>
+        <tr><td style="min-width: 160px"><b>Compute, Halbleiter &amp; Robotik-KI-Plattformen</b><span class="sub">KI-Chips, Prozessoren im Gerät selbst, Leistungs- und Analogchips sowie Software-Plattformen für die Steuerung und für KI, die in der physischen Welt handelt.</span></td>
+            <td style="min-width: 150px"><span class="tag marge-hoch">hoch</span><span class="sub">Bei KI-Plattformen kann NVIDIA die Preise weitgehend selbst bestimmen, weil Entwickler an seine Software (CUDA) gebunden sind. Analog- und Leistungschips bringen stabile Margen. Chinesische Chips für den Einsatz im Gerät werden dagegen über aggressive Preise verkauft.</span></td>
+            <td><div class="chips"><span class="chip gewaehlt" tabindex="0" data-tipp="NVIDIA (NVDA)|In der Auswahl">✓ NVIDIA <small>NVDA</small></span><span class="chip gescreent" tabindex="0" data-tipp="Infineon (IFX.DE)|Gescreent, nicht ausgewählt">Infineon <small>IFX.DE</small></span><span class="chip gescreent" tabindex="0" data-tipp="Analog Devices (ADI)|Gescreent, nicht ausgewählt">Analog Devices <small>ADI</small></span><span class="chip gescreent" tabindex="0" data-tipp="Horizon Robotics (9660.HK)|Gescreent, nicht ausgewählt">Horizon Robotics <small>9660.HK</small></span><span class="chip gescreent" tabindex="0" data-tipp="Rockchip Electronics (603893.SS)|Gescreent, nicht ausgewählt">Rockchip Electronics <small>603893.SS</small></span></div></td></tr>
+        <tr><td style="min-width: 160px"><b>Industrieroboter &amp; Cobots</b><span class="sub">Hersteller von Roboterarmen, Steuerungen und kollaborativen Robotern für die Fertigung.</span></td>
+            <td style="min-width: 150px"><span class="tag marge-mittel">mittel</span><span class="sub">Etablierte Marken verdienen am Service und binden Kunden über ihre Steuerungen. Die Nachfrage aus Auto- und Elektronikindustrie schwankt aber mit der Konjunktur, und chinesische Hersteller drücken aggressiv die Preise.</span></td>
+            <td><div class="chips"><span class="chip gewaehlt" tabindex="0" data-tipp="Fanuc (6954.T)|In der Auswahl">✓ Fanuc <small>6954.T</small></span><span class="chip gescreent" tabindex="0" data-tipp="Yaskawa Electric (6506.T)|Gescreent, nicht ausgewählt">Yaskawa Electric <small>6506.T</small></span><span class="chip gescreent" tabindex="0" data-tipp="ABB (ABBN.SW)|Gescreent, nicht ausgewählt">ABB <small>ABBN.SW</small></span><span class="chip gescreent" tabindex="0" data-tipp="Teradyne (TER)|Gescreent, nicht ausgewählt">Teradyne <small>TER</small></span><span class="chip gescreent" tabindex="0" data-tipp="Estun Automation (002747.SZ)|Gescreent, nicht ausgewählt">Estun Automation <small>002747.SZ</small></span><span class="chip gescreent" tabindex="0" data-tipp="Doosan Robotics (454910.KS)|Gescreent, nicht ausgewählt">Doosan Robotics <small>454910.KS</small></span></div></td></tr>
+        <tr><td style="min-width: 160px"><b>Service-, Medizin-, Logistikroboter &amp; Humanoide</b><span class="sub">Spezialroboter außerhalb der klassischen Fabrik: OP-Roboter, automatisierte Lager, Serviceroboter und humanoide Roboter.</span></td>
+            <td style="min-width: 150px"><span class="tag marge-mittel">mittel</span><span class="sub">Medizinroboter erzielen hohe Margen, weil jedes installierte Gerät laufend Verbrauchsmaterial benötigt. Anbieter von Lager- und humanoiden Robotern wachsen noch in die nötige Größe hinein, manche machen Verluste.</span></td>
+            <td><div class="chips"><span class="chip gewaehlt" tabindex="0" data-tipp="Intuitive Surgical (ISRG)|In der Auswahl">✓ Intuitive Surgical <small>ISRG</small></span><span class="chip gewaehlt" tabindex="0" data-tipp="Symbotic (SYM)|In der Auswahl">✓ Symbotic <small>SYM</small></span><span class="chip gescreent" tabindex="0" data-tipp="Ocado Group (OCDO.L)|Gescreent, nicht ausgewählt">Ocado Group <small>OCDO.L</small></span><span class="chip gescreent" tabindex="0" data-tipp="Daifuku (6383.T)|Gescreent, nicht ausgewählt">Daifuku <small>6383.T</small></span><span class="chip gescreent" tabindex="0" data-tipp="UBTech Robotics (9880.HK)|Gescreent, nicht ausgewählt">UBTech Robotics <small>9880.HK</small></span></div></td></tr>
+        <tr><td style="min-width: 160px"><b>Systemintegration &amp; Automatisierungssoftware</b><span class="sub">Software für Steuerung, Planung und Simulation sowie Firmen, die Roboter in Fabriken und Anlagen einbauen.</span></td>
+            <td style="min-width: 150px"><span class="tag marge-mittel">mittel</span><span class="sub">Software und Steuerungsplattformen binden Kunden und bringen hohe Margen. Das Projektgeschäft der Firmen, die Roboter einbauen, braucht dagegen viel Personal und ist weniger profitabel.</span></td>
+            <td><div class="chips"><span class="chip gewaehlt" tabindex="0" data-tipp="Rockwell Automation (ROK)|In der Auswahl">✓ Rockwell Automation <small>ROK</small></span><span class="chip gescreent" tabindex="0" data-tipp="Siemens (SIE.DE)|Gescreent, nicht ausgewählt">Siemens <small>SIE.DE</small></span><span class="chip gescreent" tabindex="0" data-tipp="Omron (6645.T)|Gescreent, nicht ausgewählt">Omron <small>6645.T</small></span><span class="chip gescreent" tabindex="0" data-tipp="Dürr (DUE.DE)|Gescreent, nicht ausgewählt">Dürr <small>DUE.DE</small></span></div></td></tr>
+        </tbody>
+      </table></div>
+      <div class="chip-legende"><span><span class="chip gewaehlt">✓ Name</span> in der Auswahl</span><span><span class="chip">Name</span> gescreent</span><span><span class="chip ausgeschlossen" style="text-decoration: line-through">Name</span> ausgeschlossen (Grund beim Überfahren)</span></div>
+      <div class="quelle">Quelle: Research-Team, Screening mit Kennzahlen von Yahoo Finance.</div>
+    </div>
+  </section>
+
+  <section id="unternehmen">
+    <h2><span class="nr">05</span>Unternehmen</h2>
+    <p>Fanuc ist die einzige Firma unserer Auswahl, die ihren Robotikanteil selbst ausweist: Die Robotersparte bringt <span class="zahl">44,1 %</span><sup class="fn"><a href="#fn19" id="r19">19</a></sup> des Umsatzes. Wir stufen Fanuc als Kernprofiteur ein, mit mittlerer Überzeugung. Umdenken müssten wir, wenn der Umsatz der Robotersparte zwei Quartale in Folge sinkt oder die operative Marge deutlich unter das heutige Niveau fällt.</p><p>Symbotic macht nach unserer Schätzung <span class="zahl schaetzung">~100 %</span><sup class="fn"><a href="#fn20" id="r20">20</a></sup> seines Umsatzes mit Lagerautomatisierung und ist damit fast ein reiner Robotikwert. Die Firma hängt aber stark an einem Großkunden. Mit einer operativen Marge von <span class="zahl">4,6 %</span><sup class="fn"><a href="#fn21" id="r21">21</a></sup> verdient sie noch wenig. Unsere Einschätzung wäre hinfällig, wenn der Großkunde die Einführung neuer Anlagen verschiebt oder kürzt und neue Kunden das nicht ausgleichen.</p><p>Harmonic Drive und Inovance sind Zulieferer, bei denen wir mittlere Überzeugung haben. Den Robotikanteil schätzen wir bei Harmonic Drive auf <span class="zahl schaetzung">~45 %</span><sup class="fn"><a href="#fn22" id="r22">22</a></sup>, bei Inovance auf <span class="zahl schaetzung">~12 %</span><sup class="fn"><a href="#fn23" id="r23">23</a></sup>. Bei Harmonic Drive hängt die Chance durch humanoide Roboter an wenigen Kunden. Falsch läge unsere These, wenn sich die Marge in den nächsten beiden Quartalsberichten nicht erholt. Bei Inovance ist der Robotikanteil schwach belegt. Hier wäre die These widerlegt, wenn das Automatisierungsgeschäft zwei Quartale in Folge deutlich langsamer wächst als die Roboterproduktion in China.</p><p>Cognex (geschätzter Anteil <span class="zahl schaetzung">~15 %</span><sup class="fn"><a href="#fn24" id="r24">24</a></sup>) sehen wir als Zulieferer mit niedriger Überzeugung. Wir lägen falsch, wenn das Logistikgeschäft zwei Quartale lang nicht wächst. NVIDIA (geschätzt <span class="zahl schaetzung">~1 %</span><sup class="fn"><a href="#fn25" id="r25">25</a></sup>) und Rockwell (geschätzt <span class="zahl schaetzung">~8 %</span><sup class="fn"><a href="#fn26" id="r26">26</a></sup>) sind Mitläufer. Sie sind technisch wichtig, machen aber wenig Umsatz mit Robotik. Bei NVIDIA müssten wir umdenken, wenn große Roboterhersteller öffentlich zu konkurrierenden Plattformen wechseln. Bei Rockwell wäre das der Fall, wenn die Firma Robotikumsätze ausweist und diese zweistellig wachsen.</p><p>Intuitive Surgical (geschätzt <span class="zahl schaetzung">~100 %</span><sup class="fn"><a href="#fn27" id="r27">27</a></sup>) führen wir als Medizintechnikwert am Rand des Themas, mit niedriger Überzeugung. Zu den Kernprofiteuren zählen wir die Firma nicht (siehe unsere Antworten auf die Einwände). Überdenken müssten wir die Einstufung, wenn die Zahl der Eingriffe zwei Quartale in Folge nur noch einstellig wächst.</p><p>Vor allem zeigt die Auswahl, wie wenige börsennotierte Firmen ihren Robotikumsatz überhaupt ausweisen. Bei der Hälfte unserer Firmen ist der geschätzte Robotikanteil niedrig.</p>
+    <div class="exhibit">
+      <div class="kopf"><span class="nr">Exhibit 3</span><span class="titel">Auswahl im Überblick</span></div>
+      <div class="tabelle"><table>
+        <thead><tr><th>Unternehmen</th><th>Rolle</th><th class="r">Exposure</th><th class="r">Wachstum</th>
+            <th class="r">Op. Marge</th><th class="r">EV/Umsatz</th><th>Überz.</th></tr></thead>
+        <tbody>
+        <tr><td><b>Shenzhen Inovance Technology</b><span class="sub">300124.SZ · Motoren, Servoantriebe &amp; Aktuatorik</span></td><td>Zulieferer</td>
+            <td class="r"><span class="zahl schaetzung">~12 %</span><sup class="fn"><a href="#fn23" id="r23">23</a></sup></td><td class="r"><span class="zahl">26 %</span><sup class="fn"><a href="#fn29" id="r29">29</a></sup></td><td class="r"><span class="zahl">11,7 %</span><sup class="fn"><a href="#fn29" id="r29">29</a></sup></td>
+            <td class="r"><span class="zahl">3,4x</span><sup class="fn"><a href="#fn29" id="r29">29</a></sup></td><td><span class="ueberzeugung" title="mittel">●●○</span></td></tr>
+        <tr><td><b>Harmonic Drive Systems</b><span class="sub">6324.T · Präzisionsgetriebe &amp; Bewegungskomponenten</span></td><td>Zulieferer</td>
+            <td class="r"><span class="zahl schaetzung">~45 %</span><sup class="fn"><a href="#fn22" id="r22">22</a></sup></td><td class="r"><span class="zahl">23,6 %</span><sup class="fn"><a href="#fn18" id="r18">18</a></sup></td><td class="r"><span class="zahl">11 %</span><sup class="fn"><a href="#fn18" id="r18">18</a></sup></td>
+            <td class="r"><span class="zahl">9,3x</span><sup class="fn"><a href="#fn18" id="r18">18</a></sup></td><td><span class="ueberzeugung" title="mittel">●●○</span></td></tr>
+        <tr><td><b>Fanuc</b><span class="sub">6954.T · Industrieroboter &amp; Cobots</span></td><td>Kernprofiteur</td>
+            <td class="r"><span class="zahl">44,1 %</span><sup class="fn"><a href="#fn19" id="r19">19</a></sup></td><td class="r"><span class="zahl">17,7 %</span><sup class="fn"><a href="#fn17" id="r17">17</a></sup></td><td class="r"><span class="zahl">23,2 %</span><sup class="fn"><a href="#fn17" id="r17">17</a></sup></td>
+            <td class="r"><span class="zahl">5,3x</span><sup class="fn"><a href="#fn17" id="r17">17</a></sup></td><td><span class="ueberzeugung" title="mittel">●●○</span></td></tr>
+        <tr><td><b>Cognex</b><span class="sub">CGNX · Sensorik &amp; Wahrnehmung</span></td><td>Zulieferer</td>
+            <td class="r"><span class="zahl schaetzung">~15 %</span><sup class="fn"><a href="#fn24" id="r24">24</a></sup></td><td class="r"><span class="zahl">16,9 %</span><sup class="fn"><a href="#fn30" id="r30">30</a></sup></td><td class="r"><span class="zahl">29,4 %</span><sup class="fn"><a href="#fn30" id="r30">30</a></sup></td>
+            <td class="r"><span class="zahl">9,1x</span><sup class="fn"><a href="#fn30" id="r30">30</a></sup></td><td><span class="ueberzeugung" title="niedrig">●○○</span></td></tr>
+        <tr><td><b>Intuitive Surgical</b><span class="sub">ISRG · Service-, Medizin-, Logistikroboter &amp; Humanoide</span></td><td>Kernprofiteur</td>
+            <td class="r"><span class="zahl schaetzung">~100 %</span><sup class="fn"><a href="#fn27" id="r27">27</a></sup></td><td class="r"><span class="zahl">18,5 %</span><sup class="fn"><a href="#fn31" id="r31">31</a></sup></td><td class="r"><span class="zahl">33,6 %</span><sup class="fn"><a href="#fn31" id="r31">31</a></sup></td>
+            <td class="r"><span class="zahl">11,8x</span><sup class="fn"><a href="#fn31" id="r31">31</a></sup></td><td><span class="ueberzeugung" title="niedrig">●○○</span></td></tr>
+        <tr><td><b>NVIDIA</b><span class="sub">NVDA · Compute, Halbleiter &amp; Robotik-KI-Plattformen</span></td><td>Mitläufer</td>
+            <td class="r"><span class="zahl schaetzung">~1 %</span><sup class="fn"><a href="#fn25" id="r25">25</a></sup></td><td class="r"><span class="zahl">106 %</span><sup class="fn"><a href="#fn32" id="r32">32</a></sup></td><td class="r"><span class="zahl">66,2 %</span><sup class="fn"><a href="#fn32" id="r32">32</a></sup></td>
+            <td class="r"><span class="zahl">17,6x</span><sup class="fn"><a href="#fn32" id="r32">32</a></sup></td><td><span class="ueberzeugung" title="niedrig">●○○</span></td></tr>
+        <tr><td><b>Rockwell Automation, Inc.</b><span class="sub">ROK · Systemintegration &amp; Automatisierungssoftware</span></td><td>Mitläufer</td>
+            <td class="r"><span class="zahl schaetzung">~8 %</span><sup class="fn"><a href="#fn26" id="r26">26</a></sup></td><td class="r"><span class="zahl">7,9 %</span><sup class="fn"><a href="#fn33" id="r33">33</a></sup></td><td class="r"><span class="zahl">21 %</span><sup class="fn"><a href="#fn33" id="r33">33</a></sup></td>
+            <td class="r"><span class="zahl">5,4x</span><sup class="fn"><a href="#fn33" id="r33">33</a></sup></td><td><span class="ueberzeugung" title="niedrig">●○○</span></td></tr>
+        <tr><td><b>Symbotic Inc.</b><span class="sub">SYM · Service-, Medizin-, Logistikroboter &amp; Humanoide</span></td><td>Kernprofiteur</td>
+            <td class="r"><span class="zahl schaetzung">~100 %</span><sup class="fn"><a href="#fn20" id="r20">20</a></sup></td><td class="r"><span class="zahl">21,7 %</span><sup class="fn"><a href="#fn21" id="r21">21</a></sup></td><td class="r"><span class="zahl">4,6 %</span><sup class="fn"><a href="#fn21" id="r21">21</a></sup></td>
+            <td class="r"><span class="zahl">n. v.</span><sup class="fn"><a href="#fn21" id="r21">21</a></sup></td><td><span class="ueberzeugung" title="mittel">●●○</span></td></tr>
+        </tbody>
+      </table></div>
+      <div class="quelle">Quelle: Unternehmensangaben, Kennzahlen letzte zwölf Monate. Exposure = Anteil des Umsatzes, der am Thema hängt; kursiv mit „~“ = Schätzung. Überzeugung ●●● hoch · ●●○ mittel · ●○○ niedrig.</div>
+    </div>
+    <div class="exhibit">
+      <div class="kopf"><span class="nr">Exhibit 4</span><span class="titel">Wie viel Umsatz am Thema hängt – und wie teuer die Aktie ist</span></div>
+      <div class="legende">
+        <span><i style="background: #2a78d6"></i>Kernprofiteur</span>
+        <span><i style="background: #eb6834"></i>Zulieferer</span>
+        <span><i style="background: #1baf7a"></i>Mitläufer</span>
+        <span><i class="offen"></i>offener Kreis = Exposure geschätzt</span>
+      </div>
+      <svg class="streuung" viewBox="0 0 760 380" role="img" aria-label="Streudiagramm: Themen-Exposure gegen EV/Umsatz für 7 Unternehmen"><line x1="56" x2="732" y1="328.0" y2="328.0" stroke="#c3c2b7" stroke-width="1"/><text x="48" y="332.0" text-anchor="end" class="achse">0x</text><line x1="56" x2="732" y1="250.5" y2="250.5" stroke="#e1e0d9" stroke-width="1"/><text x="48" y="254.5" text-anchor="end" class="achse">5x</text><line x1="56" x2="732" y1="173.0" y2="173.0" stroke="#e1e0d9" stroke-width="1"/><text x="48" y="177.0" text-anchor="end" class="achse">10x</text><line x1="56" x2="732" y1="95.5" y2="95.5" stroke="#e1e0d9" stroke-width="1"/><text x="48" y="99.5" text-anchor="end" class="achse">15x</text><line x1="56" x2="732" y1="18.0" y2="18.0" stroke="#e1e0d9" stroke-width="1"/><text x="48" y="22.0" text-anchor="end" class="achse">20x</text><line x1="56.0" x2="56.0" y1="18" y2="328" stroke="#e1e0d9" stroke-width="1"/><text x="56.0" y="346" text-anchor="middle" class="achse">0 %</text><line x1="225.0" x2="225.0" y1="18" y2="328" stroke="#e1e0d9" stroke-width="1"/><text x="225.0" y="346" text-anchor="middle" class="achse">25 %</text><line x1="394.0" x2="394.0" y1="18" y2="328" stroke="#e1e0d9" stroke-width="1"/><text x="394.0" y="346" text-anchor="middle" class="achse">50 %</text><line x1="563.0" x2="563.0" y1="18" y2="328" stroke="#e1e0d9" stroke-width="1"/><text x="563.0" y="346" text-anchor="middle" class="achse">75 %</text><line x1="732.0" x2="732.0" y1="18" y2="328" stroke="#e1e0d9" stroke-width="1"/><text x="732.0" y="346" text-anchor="middle" class="achse">100 %</text><text x="394.0" y="374" text-anchor="middle" class="achsentitel">Themen-Exposure (Anteil des Umsatzes)</text><text transform="translate(14 173.0) rotate(-90)" text-anchor="middle" class="achsentitel">EV / Umsatz</text><g class="punkt" tabindex="0" data-tipp="NVIDIA (NVDA)|Rolle: Mitläufer|Exposure: ~1 % (Schätzung)|EV/Umsatz: 17,6x|Marktkapitalisierung: 5 367 Mrd USD"><circle cx="62.8" cy="55.2" r="12" fill="transparent"/><circle cx="62.8" cy="55.2" r="8" fill="#ffffff"/><circle cx="62.8" cy="55.2" r="5.5" fill="#ffffff" stroke="#1baf7a" stroke-width="2.5"/><text x="72.8" y="46.2" class="marke">NVIDIA</text></g><g class="punkt" tabindex="0" data-tipp="Intuitive Surgical (ISRG)|Rolle: Kernprofiteur|Exposure: ~100 % (Schätzung)|EV/Umsatz: 11,8x|Marktkapitalisierung: 141 Mrd USD"><circle cx="732.0" cy="144.8" r="12" fill="transparent"/><circle cx="732.0" cy="144.8" r="8" fill="#ffffff"/><circle cx="732.0" cy="144.8" r="5.5" fill="#ffffff" stroke="#2a78d6" stroke-width="2.5"/><text x="722.0" y="135.8" text-anchor="end" class="marke">Intuitive Surgical</text></g><g class="punkt" tabindex="0" data-tipp="Rockwell Automation, Inc. (ROK)|Rolle: Mitläufer|Exposure: ~8 % (Schätzung)|EV/Umsatz: 5,4x|Marktkapitalisierung: 45,7 Mrd USD"><circle cx="110.1" cy="244.0" r="12" fill="transparent"/><circle cx="110.1" cy="244.0" r="8" fill="#ffffff"/><circle cx="110.1" cy="244.0" r="5.5" fill="#ffffff" stroke="#1baf7a" stroke-width="2.5"/><text x="120.1" y="235.0" class="marke">Rockwell Automation</text></g><g class="punkt" tabindex="0" data-tipp="Fanuc (6954.T)|Rolle: Kernprofiteur|Exposure: 44,1 %|EV/Umsatz: 5,3x|Marktkapitalisierung: 34,7 Mrd USD"><circle cx="354.1" cy="246.2" r="12" fill="transparent"/><circle cx="354.1" cy="246.2" r="8" fill="#ffffff"/><circle cx="354.1" cy="246.2" r="5.5" fill="#2a78d6" stroke="#2a78d6" stroke-width="2.5"/><text x="364.1" y="237.2" class="marke">Fanuc</text></g><g class="punkt" tabindex="0" data-tipp="Shenzhen Inovance Technology (300124.SZ)|Rolle: Zulieferer|Exposure: ~12 % (Schätzung)|EV/Umsatz: 3,4x|Marktkapitalisierung: 21,3 Mrd USD"><circle cx="137.1" cy="275.6" r="12" fill="transparent"/><circle cx="137.1" cy="275.6" r="8" fill="#ffffff"/><circle cx="137.1" cy="275.6" r="5.5" fill="#ffffff" stroke="#eb6834" stroke-width="2.5"/><text x="147.1" y="266.6" class="marke">Inovance</text></g><g class="punkt" tabindex="0" data-tipp="Cognex (CGNX)|Rolle: Zulieferer|Exposure: ~15 % (Schätzung)|EV/Umsatz: 9,1x|Marktkapitalisierung: 10,3 Mrd USD"><circle cx="157.4" cy="187.0" r="12" fill="transparent"/><circle cx="157.4" cy="187.0" r="8" fill="#ffffff"/><circle cx="157.4" cy="187.0" r="5.5" fill="#ffffff" stroke="#eb6834" stroke-width="2.5"/><text x="167.4" y="178.0" class="marke">Cognex</text></g><g class="punkt" tabindex="0" data-tipp="Harmonic Drive Systems (6324.T)|Rolle: Zulieferer|Exposure: ~45 % (Schätzung)|EV/Umsatz: 9,3x|Marktkapitalisierung: 3,7 Mrd USD"><circle cx="360.2" cy="184.3" r="12" fill="transparent"/><circle cx="360.2" cy="184.3" r="8" fill="#ffffff"/><circle cx="360.2" cy="184.3" r="5.5" fill="#ffffff" stroke="#eb6834" stroke-width="2.5"/><text x="370.2" y="175.3" class="marke">Harmonic Drive</text></g></svg>
+      <div class="quelle">Quelle: Research-Team, Kennzahlen von Yahoo Finance (letzte zwölf Monate). Die Werte stehen auch in Exhibit 3.</div>
+    </div>
+    <div class="karten">
+      <div class="karte">
+        <div class="kopf">
+          <div><div class="name">Shenzhen Inovance Technology</div><div class="ticker">300124.SZ · Motoren, Servoantriebe &amp; Aktuatorik</div></div>
+          <span class="tag rolle">Zulieferer</span>
+        </div>
+        <div class="werte">
+          <div>Exposure<b><span class="zahl schaetzung">~12 %</span><sup class="fn"><a href="#fn23" id="r23">23</a></sup></b></div>
+          <div>Op. Marge<b><span class="zahl">11,7 %</span><sup class="fn"><a href="#fn29" id="r29">29</a></sup></b></div>
+          <div>Überzeugung<b class="ueberzeugung">●●○</b></div>
+        </div>
+        <p>Chinesischer Hersteller von Industrieautomatisierung: Servosysteme, Frequenzumrichter, Industriesteuerungen (SPS) und Antriebe. Dazu kommen Antriebe für Elektroautos. Unter „Neue Geschäfte“ fasst Inovance Industrie- und Serviceroboter (etwa SCARA-Roboter, Sechsachser, Cobots) und digitale Energie zusammen. Die Firma verkauft Bauteile und Komplettsysteme an Maschinenbauer und Endkunden.</p>
+        <div class="pro">Bull Case</div><ul><li>Chinesische Roboterhersteller gewinnen im eigenen Land Marktanteile (57 % im Jahr 2024). Inovance beliefert genau diese Anbieter mit Servoantrieben und Steuerungen. Die Firma profitiert davon, dass Lieferketten zunehmend im Land bleiben.</li><li>Der Umsatz stieg 2025 um 21,8 %, der Nettogewinn um 17,8 %. Die Ausgaben für Forschung und Entwicklung wuchsen um 36 %, mit Schwerpunkt auf Robotik und Software. Das deutet darauf hin, dass Inovance seine Robotersparte gezielt ausbaut.</li><li>Inovance bietet Servoantriebe, Umrichter, Steuerungen und Roboter aus einer Hand. So kann die Firma komplette automatisierte Arbeitsplätze liefern, und Kunden wechseln ungern den Anbieter.</li></ul>
+        <div class="contra">Bear Case</div><ul><li>Der Robotikanteil ist klein: Robotik und digitale Energie bringen zusammen nur ca. 4 % des Umsatzes. Den Aktienkurs bestimmen eher die Antriebe für Elektroautos (ca. 45 % des Umsatzes) und die chinesische Konjunktur.</li><li>Im chinesischen Markt für Servoantriebe herrscht harter Preiswettbewerb (unter anderem Estun, Leadshine, Delta), der die Margen drückt. Zölle und politische Spannungen können die Expansion ins Ausland und den Einkauf von Chips erschweren.</li><li>In den Quartalszahlen mischen sich Robotik und das schwankende Geschäft mit Antrieben für Elektroautos. Werden in China weniger Elektroautos gekauft, litte das Konzernergebnis, obwohl das Robotikgeschäft davon nicht betroffen wäre.</li></ul>
+        <div class="widerlegen"><b>Was uns widerlegen würde:</b> Umdenken müssten wir, wenn die Industrieautomatisierung zwei Quartale in Folge deutlich langsamer wächst als die Roboterproduktion in China. Dasselbe gilt, wenn Inovance bei Servoantrieben den ersten Platz verliert (heute 31 %) oder die Neuen Geschäfte (Roboter) unter 5 % des Konzernumsatzes bleiben.</div>
+      </div>
+      <div class="karte">
+        <div class="kopf">
+          <div><div class="name">Harmonic Drive Systems</div><div class="ticker">6324.T · Präzisionsgetriebe &amp; Bewegungskomponenten</div></div>
+          <span class="tag rolle">Zulieferer</span>
+        </div>
+        <div class="werte">
+          <div>Exposure<b><span class="zahl schaetzung">~45 %</span><sup class="fn"><a href="#fn22" id="r22">22</a></sup></b></div>
+          <div>Op. Marge<b><span class="zahl">11 %</span><sup class="fn"><a href="#fn18" id="r18">18</a></sup></b></div>
+          <div>Überzeugung<b class="ueberzeugung">●●○</b></div>
+        </div>
+        <p>Harmonic Drive entwickelt und baut Präzisionsgetriebe (Spannungswellengetriebe), Stellantriebe und Servokomponenten. Kunden sind Roboterhersteller, Ausrüster für Halbleiter- und Bildschirmfabriken, die Medizintechnik sowie die Luft- und Raumfahrt. Die Firma verkauft Bauteile an Hersteller. Ihre Zahlen berichtet sie nach Produktionsstandorten (Japan, China, Nordamerika, Europa), nicht nach Kundenbranchen.</p>
+        <div class="pro">Bull Case</div><ul><li>Humanoide Roboter brauchen je Stück deutlich mehr Präzisionsgetriebe als klassische Industrieroboter. Gelingt der Start der Serienfertigung, würde Harmonic Drive als Marktführer bei Spannungswellengetrieben direkt profitieren.</li><li>Die Nachfrage erholt sich: Im ersten Quartal des laufenden Geschäftsjahres stiegen die Aufträge um 55,7 %. Für das Geschäftsjahr bis März 2027 erwartet die Firma 68 Mrd JPY Umsatz und 6,2 Mrd JPY operativen Gewinn, nach 2,6 Mrd JPY. Die Werke sollen dabei besser ausgelastet sein.</li><li>Nachfrage aus der Halbleiterausrüstung und der Medizintechnik verteilt das Geschäft auf mehr Kunden als nur Roboterhersteller.</li></ul>
+        <div class="contra">Bear Case</div><ul><li>Chinesische Wettbewerber wie Leaderdrive gewinnen Marktanteile bei Getrieben für große Stückzahlen. Das China-Geschäft fiel im Geschäftsjahr bis März 2026 um 28 %. Der Preisdruck kann die Marge dauerhaft senken.</li><li>Humanoide Roboter werden noch in Kleinserie gebaut (rund 13.000 Stück 2025). Ihr Beitrag zum Geschäft liegt weit in der Zukunft, die Bewertung nimmt ihn aber schon teilweise vorweg.</li><li>Das Geschäft schwankt stark und hängt an wenigen Kunden, die in Roboter- und Halbleiteranlagen investieren. Der operative Gewinn lag zuletzt bei rund 4 % vom Umsatz. Schon ein kleiner Umsatzrückgang schlägt deshalb stark auf das Ergebnis durch.</li></ul>
+        <div class="widerlegen"><b>Was uns widerlegen würde:</b> Falsch läge unsere Einschätzung, wenn sich die operative Marge in den nächsten beiden Quartalsberichten nicht in Richtung der Prognose erholt (6,2 Mrd JPY operativer Gewinn im Geschäftsjahr bis März 2027). Dasselbe gilt, wenn ein großer Hersteller humanoider oder anderer Roboter öffentlich ein chinesisches Getriebe statt Harmonic Drive als Hauptlieferanten auswählt.</div>
+      </div>
+      <div class="karte">
+        <div class="kopf">
+          <div><div class="name">Fanuc</div><div class="ticker">6954.T · Industrieroboter &amp; Cobots</div></div>
+          <span class="tag rolle">Kernprofiteur</span>
+        </div>
+        <div class="werte">
+          <div>Exposure<b><span class="zahl">44,1 %</span><sup class="fn"><a href="#fn19" id="r19">19</a></sup></b></div>
+          <div>Op. Marge<b><span class="zahl">23,2 %</span><sup class="fn"><a href="#fn17" id="r17">17</a></sup></b></div>
+          <div>Überzeugung<b class="ueberzeugung">●●○</b></div>
+        </div>
+        <p>Japanischer Hersteller mit vier Sparten. FA liefert Steuerungen (CNC), Servomotoren und Antriebe für Werkzeugmaschinen. Die Robotersparte baut Industrieroboter, Cobots und Robotersteuerungen. Robomachine umfasst Bearbeitungszentren (Robodrill), Spritzgießmaschinen (Roboshot) und Drahterodiermaschinen. Die Service-Sparte wartet und repariert installierte Maschinen und liefert Ersatzteile. Kunden sind Werkzeugmaschinenbauer, die Auto- und Elektronikindustrie sowie die übrige Industrie. Fanuc verdient vor allem mit neuen Maschinen, dazu kommt ein laufendes Servicegeschäft. Die Firma fertigt sehr viel selbst.</p>
+        <div class="pro">Bull Case</div><ul><li>Die Robotersparte wuchs im Geschäftsjahr bis März 2026 um 14,9 % auf 378,6 Mrd JPY, vor allem dank Amerika und China. Für das Folgejahr erwartet das Management einen neuen Rekordumsatz (Prognose 909,6 Mrd JPY) und eine höhere operative Marge (23,3 %).</li><li>Die Nachfrage wächst dauerhaft: Die IFR erwartet, dass die Neuinstallationen von 542.000 Robotern (2024) auf über 700.000 bis 2028 steigen. Fanuc ist Marktführer mit vielen installierten Maschinen (weltweit 4,66 Mio Roboter laut IFR) und profitiert direkt.</li><li>Das Servicegeschäft bringt regelmäßig Umsatz: In den neun Monaten bis Dezember 2025 setzte die Service-Sparte rund 103,9 Mrd JPY um (+1,5 %). Das stabilisiert die Erträge, wenn die Konjunktur schwankt.</li><li>Hohe Marge und eigene Steuerungs- und Antriebstechnik (operative Marge 23,2 %) schützen gegen Preisdruck. Sie erlauben Investitionen in KI-Funktionen, ohne dass Fanuc von Zulieferern abhängt.</li></ul>
+        <div class="contra">Bear Case</div><ul><li>Das Geschäft schwankt mit der Konjunktur. Der Umsatz lag im Geschäftsjahr 2022 bei 852,0 Mrd JPY, fiel dann auf 795,3 Mrd JPY und übertraf erst 2026 wieder das alte Hoch. Auto- und Elektronikkunden investieren mal mehr, mal weniger. 2024 sank die Roboternachfrage der Autoindustrie um 7 %.</li><li>Chinesische Anbieter hielten 2024 57 % ihres Heimatmarktes (Vorjahr 47 %). Die Erholung dieses Jahres kommt vor allem aus China. Preiskämpfe und der Ersatz durch einheimische Anbieter können die Marge dort schnell aufzehren.</li><li>Zölle und Handelsschranken: Die US-Untersuchung nach Section 232 zu Robotik und Industriemaschinen könnte Einfuhren aus Japan verteuern. Fanuc verkauft einen erheblichen Teil in Amerika.</li><li>Für einen konjunkturabhängigen Maschinenbauer ist die Aktie hoch bewertet. Ein KGV von rund 33 und ein EV/Umsatz von 5,3 nehmen Wachstum und steigende Margen schon vorweg.</li><li>Währung: Fanuc plant für das Geschäftsjahr bis März 2027 mit 150 Yen je Dollar und 170 Yen je Euro (tatsächlich 2025: 150,77 bzw. 174,79). Ein deutlich stärkerer Yen würde Umsatz und Marge in Yen schmälern.</li></ul>
+        <div class="widerlegen"><b>Was uns widerlegen würde:</b> Unsere Einschätzung wäre hinfällig, wenn Fanuc zwei Quartale in Folge weniger Umsatz in der Robotersparte meldet als im Vorjahr. Ebenso, wenn die operative Marge unter 20 % fällt oder die USA nach Section 232 Zölle auf Industrieroboter verhängen, die Fanuc nicht über die Preise weitergeben kann.</div>
+      </div>
+      <div class="karte">
+        <div class="kopf">
+          <div><div class="name">Cognex</div><div class="ticker">CGNX · Sensorik &amp; Wahrnehmung</div></div>
+          <span class="tag rolle">Zulieferer</span>
+        </div>
+        <div class="werte">
+          <div>Exposure<b><span class="zahl schaetzung">~15 %</span><sup class="fn"><a href="#fn24" id="r24">24</a></sup></b></div>
+          <div>Op. Marge<b><span class="zahl">29,4 %</span><sup class="fn"><a href="#fn30" id="r30">30</a></sup></b></div>
+          <div>Überzeugung<b class="ueberzeugung">●○○</b></div>
+        </div>
+        <p>Cognex entwickelt Kamerasysteme für die Industrie (Machine Vision), Barcode-Lesegeräte und Software zur Bildauswertung, auch mit KI. Fabriken und Logistikzentren nutzen sie, um Bauteile zu prüfen, Codes zu lesen und Roboter per Kamera zu führen. Cognex verkauft Hardware und Software an Endkunden und Maschinenbauer. Die wichtigsten Kundenbranchen sind Logistik, Verpackung, Unterhaltungselektronik und Autoindustrie.</p>
+        <div class="pro">Bull Case</div><ul><li>Das Logistikgeschäft wächst laut Cognex seit neun Quartalen zweistellig. Roboter, die in Lagern und Versandzentren per Kamera gesteuert werden, treiben direkt die Nachfrage nach Cognex-Kameras und -Software.</li><li>Hohe Profitabilität und wieder mehr Nachfrage: Im ersten Quartal 2026 wuchs der Umsatz um rund 24 %, und die Margen stiegen deutlich. Getragen wurde das von KI-gestützten Produkten.</li><li>Bildauswertung mit KI (Deep Learning) eröffnet neue Einsatzfelder in der Fertigung, etwa Prüfaufgaben, die sich mit festen Regeln nicht lösen ließen.</li></ul>
+        <div class="contra">Bear Case</div><ul><li>Nur teilweise Bezug zum Thema: Der Großteil des Umsatzes hängt an Logistik, Verpackung, Unterhaltungselektronik und Autoindustrie, nicht an neu installierten Robotern. Das Autogeschäft schrumpfte zuletzt weiter.</li><li>Cognex hängt stark am Zyklus der Unterhaltungselektronik (rund 19 % des Umsatzes). Dort bestimmen einzelne Großkunden und ihre Investitionspläne die Nachfrage.</li><li>Wettbewerb kommt von Keyence, günstigen chinesischen Anbietern und Kameras mit eingebauter KI. Zudem könnten Roboterhersteller die Bilderkennung in ihre eigenen Plattformen verlagern, etwa auf Basis von NVIDIA.</li></ul>
+        <div class="widerlegen"><b>Was uns widerlegen würde:</b> Widerlegt wäre unsere These, wenn der Logistikumsatz von Cognex zwei Quartale in Folge nicht mehr zweistellig wächst und der Konzernumsatz wieder unter das Vorjahr fällt. Dasselbe gilt, wenn Cognex erstmals einen Robotikanteil am Umsatz von deutlich unter 10 % ausweist.</div>
+      </div>
+      <div class="karte">
+        <div class="kopf">
+          <div><div class="name">Intuitive Surgical</div><div class="ticker">ISRG · Service-, Medizin-, Logistikroboter &amp; Humanoide</div></div>
+          <span class="tag rolle">Kernprofiteur</span>
+        </div>
+        <div class="werte">
+          <div>Exposure<b><span class="zahl schaetzung">~100 %</span><sup class="fn"><a href="#fn27" id="r27">27</a></sup></b></div>
+          <div>Op. Marge<b><span class="zahl">33,6 %</span><sup class="fn"><a href="#fn31" id="r31">31</a></sup></b></div>
+          <div>Überzeugung<b class="ueberzeugung">●○○</b></div>
+        </div>
+        <p>Intuitive Surgical entwickelt und verkauft Systeme für roboterunterstützte Operationen (da Vinci, Single Port und Ion für Lungenbiopsien). Das meiste Geld bringen Instrumente und Zubehör: 2025 rund 6,0 Mrd USD von rund 10,1 Mrd USD, also etwa 60 %. Sie werden bei jedem Eingriff neu verbraucht. Dazu kommen Verkauf und Leasing der Systeme sowie Service. Das Modell funktioniert wie bei Rasierer und Klingen: Die installierten Systeme (über 12.100 Ende 2025) bringen bei jeder Operation wiederkehrende Erlöse.</p>
+        <div class="pro">Bull Case</div><ul><li>Wiederkehrende Erlöse: Instrumente und Zubehör wuchsen 2025 um 19 % auf rund 6,0 Mrd USD. Sie folgen der Zahl der Eingriffe, die um 18 % auf über 3,1 Mio stieg. Jedes neue System erhöht die künftigen Erlöse.</li><li>Neue Produktgeneration da Vinci 5: Von den 1.721 im Jahr 2025 aufgestellten Systemen waren 870 vom Typ da Vinci 5 (2024: 362 von 1.526). Das kann Preise, Auslastung und die Nachfrage nach Aufrüstungen im Bestand stützen.</li><li>Sehr hohe Profitabilität (operative Marge 33,6 %, Bruttomarge 66,7 %) bei zweistelligem Umsatzwachstum (plus 18,5 % in den letzten zwölf Monaten). Kliniken wechseln ungern, weil Chirurgen auf das System geschult sind und viele Studien seinen Nutzen belegen.</li><li>Wachstumsspielraum außerhalb der USA: 2025 stiegen die Eingriffe international um 23 %, in den USA um 15 %. Weitere Chancen bieten neue Anwendungsgebiete und das System Ion.</li></ul>
+        <div class="contra">Bear Case</div><ul><li>Wenig Bezug zum Thema: Der Kurs hängt an Krankenhausbudgets, der Zahl der Eingriffe und der Kostenerstattung, nicht an Robotern in Fabriken, Lagern oder humanoiden Robotern. Als Robotikanlage streut die Aktie das Risiko daher nur begrenzt.</li><li>Anspruchsvolle Bewertung (KGV rund 45, EV/Umsatz rund 12): Wachsen die Eingriffe oder die Systemverkäufe langsamer, würde der Kurs stark reagieren.</li><li>Wettbewerb und Preisdruck: Medtronic (Hugo), J&amp;J (Ottava) und chinesische Anbieter sind mit Systemen auf dem Markt oder im Zulassungsverfahren. Öffentliche Einkäufer und Klinikketten können Rabatte verlangen.</li><li>Politische Risiken: Zölle auf Vorprodukte und Exporte, geänderte Kostenerstattung und Krankenhausbudgets können Marge und Nachfrage belasten.</li></ul>
+        <div class="widerlegen"><b>Was uns widerlegen würde:</b> Überdenken müssten wir unsere Einschätzung, wenn die Zahl der da-Vinci-Eingriffe weltweit zwei Quartale in Folge um weniger als 10 % wächst (2025: 18 %). Dasselbe gilt, wenn ein Wettbewerber wie Hugo oder Ottava in den USA bei neu aufgestellten Systemen erkennbar Marktanteile gewinnt und die Instrumentenerlöse je Eingriff deshalb sinken.</div>
+      </div>
+      <div class="karte">
+        <div class="kopf">
+          <div><div class="name">NVIDIA</div><div class="ticker">NVDA · Compute, Halbleiter &amp; Robotik-KI-Plattformen</div></div>
+          <span class="tag rolle">Mitläufer</span>
+        </div>
+        <div class="werte">
+          <div>Exposure<b><span class="zahl schaetzung">~1 %</span><sup class="fn"><a href="#fn25" id="r25">25</a></sup></b></div>
+          <div>Op. Marge<b><span class="zahl">66,2 %</span><sup class="fn"><a href="#fn32" id="r32">32</a></sup></b></div>
+          <div>Überzeugung<b class="ueberzeugung">●○○</b></div>
+        </div>
+        <p>NVIDIA entwickelt Grafikprozessoren (GPUs), Netzwerktechnik und Software-Plattformen (CUDA, Omniverse, Isaac) für KI-Rechenzentren, Computerspiele, Visualisierung und Autos. Für Roboter bietet NVIDIA Rechenmodule (Jetson), Robotik-Software und Simulation (Isaac) sowie KI-Grundmodelle für Maschinen, die in der physischen Welt handeln. Den weit überwiegenden Umsatz macht NVIDIA mit Rechenzentren.</p>
+        <div class="pro">Bull Case</div><ul><li>Vorteil der Plattform: Isaac, Omniverse und Jetson decken die gesamte Entwicklung von KI für Roboter ab. Roboterhersteller und junge Firmen für humanoide Roboter bauen darauf auf. Das dürfte langfristig Umsätze mit Chips und Software bringen.</li><li>Sehr hohe Gewinne und eine starke Bilanz erlauben es, die Robotikplattform über Jahre auszubauen, ohne dass sie sich schnell rechnen muss. Das Segment Auto und Robotik wuchs im Geschäftsjahr 2026 um 39 %.</li><li>Setzen sich humanoide Roboter durch (Goldman Sachs erwartet 6,5 Mio Stück im Jahr 2035), steigt der Bedarf an Rechenleistung zusätzlich: in jedem Roboter und beim Training in Rechenzentren.</li></ul>
+        <div class="contra">Bear Case</div><ul><li>Finanziell spielt Robotik kaum eine Rolle (geschätzt ca. 1 % des Umsatzes). Die Aktie folgt dem Zyklus der KI-Rechenzentren. Erfolg oder Misserfolg in der Robotik bewegt den Kurs daher kaum.</li><li>Abhängigkeit von wenigen Kunden: Ein großer Teil des Umsatzes entfällt auf wenige Abnehmer (genannt wird ein Kundenrisiko von 36 %). Die Bewertung (EV/Umsatz ca. 17) setzt weiterhin extremes Wachstum und Margen von über 60 % voraus.</li><li>Bei Chips für den Einsatz im Gerät drücken günstigere Anbieter aus China (Horizon Robotics, Rockchip) und Eigenentwicklungen großer Roboterhersteller die Preise. Exportkontrollen begrenzen den Zugang zu China, dem größten Produktionsstandort für Roboter.</li></ul>
+        <div class="widerlegen"><b>Was uns widerlegen würde:</b> Falsch läge unsere Sicht, wenn wichtige Robotikkunden wie Tesla, Figure oder große Industrieroboterhersteller öffentlich auf eigene oder konkurrierende Chips als Standard umsteigen. Dasselbe gilt, wenn NVIDIA erstmals einen Robotikumsatz ausweist, der deutlich unter 1 % des Konzernumsatzes liegt oder nach zwei Jahren nicht über die heutige Größenordnung hinauswächst.</div>
+      </div>
+      <div class="karte">
+        <div class="kopf">
+          <div><div class="name">Rockwell Automation, Inc.</div><div class="ticker">ROK · Systemintegration &amp; Automatisierungssoftware</div></div>
+          <span class="tag rolle">Mitläufer</span>
+        </div>
+        <div class="werte">
+          <div>Exposure<b><span class="zahl schaetzung">~8 %</span><sup class="fn"><a href="#fn26" id="r26">26</a></sup></b></div>
+          <div>Op. Marge<b><span class="zahl">21 %</span><sup class="fn"><a href="#fn33" id="r33">33</a></sup></b></div>
+          <div>Überzeugung<b class="ueberzeugung">●○○</b></div>
+        </div>
+        <p>Rockwell Automation ist ein US-Anbieter von Automatisierungstechnik für Fabriken und Prozessanlagen. Die Firma hat drei Segmente. Intelligent Devices umfasst Antriebe, Bewegungstechnik, Sicherheit, Sensoren und Materialfluss (45 % des Umsatzes im Geschäftsjahr 2025). Software &amp; Control umfasst Steuerungen, Visualisierung, digitale Zwillinge und Simulation (29 %). Lifecycle Services bietet Dienstleistungen und Wartungsverträge (26 %). Kunden sind Hersteller von Stückgütern sowie Hybrid- und Prozessindustrien. Durch die Übernahme von Clearpath/OTTO Motors hat Rockwell zudem autonome mobile Roboter im Angebot.</p>
+        <div class="pro">Bull Case</div><ul><li>Viele Kunden nutzen bereits Steuerungen und Software von Rockwell (Allen-Bradley, FactoryTalk) und wechseln ungern. Roboterzellen und mobile Roboter werden in dieselben Steuerungssysteme eingebunden.</li><li>Software &amp; Control und Lifecycle Services (zusammen ca. 55 % des Umsatzes) bringen regelmäßiger Umsatz und höhere Margen als reine Hardware.</li><li>Die Rückverlagerung von Produktion in die USA und die Automatisierung dort (Halbleiter, Batterien, Konsumgüter) stützen die Nachfrage nach Steuerungen und Einbauleistungen.</li><li>Mit Clearpath/OTTO bietet Rockwell autonome mobile Roboter als Zusatz zum bestehenden Kundenstamm an.</li></ul>
+        <div class="contra">Bear Case</div><ul><li>Das Geschäft schwankt mit der Konjunktur. Schwache Industrieinvestitionen haben zuletzt die Umsätze belastet, wegen Lagerabbaus bei Kunden und des Zinsniveaus. Robotik gleicht das nicht aus, da sie nur ca. 8 % des Umsatzes ausmacht.</li><li>Der Robotikanteil ist geschätzt und klein. Wer Robotikwachstum sucht, kauft mit Rockwell überwiegend klassische Fabrikautomatisierung. Das Etikett passt also nicht ganz.</li><li>Starker Wettbewerb durch Siemens, Schneider und ABB, die ebenfalls Software und Steuerungen im Paket anbieten. Dazu kommen offene, softwarebasierte Steuerungen, die die Bindung an Rockwells Hardware schwächen können.</li><li>Hoher Anteil an Nordamerika und wenige Kundenbranchen machen das Unternehmen anfällig für regionale Investitionsflauten.</li></ul>
+        <div class="widerlegen"><b>Was uns widerlegen würde:</b> Anders sähe es aus, wenn Rockwell in einem Geschäftsbericht Umsätze mit Robotern oder autonomen mobilen Robotern von deutlich über 10 % des Umsatzes ausweist und diese zweistellig wachsen. Dann müssten wir die Einstufung als Mitläufer und den niedrigen Robotikanteil überprüfen.</div>
+      </div>
+      <div class="karte">
+        <div class="kopf">
+          <div><div class="name">Symbotic Inc.</div><div class="ticker">SYM · Service-, Medizin-, Logistikroboter &amp; Humanoide</div></div>
+          <span class="tag rolle">Kernprofiteur</span>
+        </div>
+        <div class="werte">
+          <div>Exposure<b><span class="zahl schaetzung">~100 %</span><sup class="fn"><a href="#fn20" id="r20">20</a></sup></b></div>
+          <div>Op. Marge<b><span class="zahl">4,6 %</span><sup class="fn"><a href="#fn21" id="r21">21</a></sup></b></div>
+          <div>Überzeugung<b class="ueberzeugung">●●○</b></div>
+        </div>
+        <p>Symbotic verkauft und installiert vollautomatische Lagersysteme mit mobilen Robotern, Shuttle-Regalen und Software. Kunden sind Verteilzentren und Handelsketten. Symbotic verdient an Systemprojekten, zunehmend auch an Software, Wartung und Betrieb. Wichtigster Kunde ist Walmart mit 85 % des Umsatzes im Geschäftsjahr 2025 (laut Jahresbericht). Mit SoftBank betreibt Symbotic das Gemeinschaftsunternehmen GreenBox, das Lagerautomatisierung als Dienstleistung anbietet.</p>
+        <div class="pro">Bull Case</div><ul><li>Der Auftragsbestand von ca. 22,5 Mrd USD beträgt ein Mehrfaches des Jahresumsatzes (ca. 2,6 Mrd USD in den letzten zwölf Monaten). Das macht den Umsatz über mehrere Jahre gut absehbar.</li><li>Die GreenBox-Vereinbarung mit SoftBank sieht Systemkäufe von mindestens 7,5 Mrd USD über sechs Jahre vor. Das könnte Symbotic Kunden über Walmart hinaus bringen.</li><li>Mehr Software und günstigere Serienfertigung könnten die Margen deutlich anheben. Derzeit liegt die Bruttomarge bei ca. 21 %, die operative Marge bei ca. 5 %.</li><li>Fehlende Arbeitskräfte und wachsender Onlinehandel treiben die Automatisierung von Verteilzentren dauerhaft an.</li></ul>
+        <div class="contra">Bear Case</div><ul><li>Walmart steht für 85 % des Umsatzes und den Großteil des Auftragsbestands. Verzögert oder kürzt Walmart Aufträge, träfe das Umsatz und Bewertung sofort.</li><li>Das Projektgeschäft birgt Risiken bei der Installation. Symbotic musste schon frühere Abschlüsse nachträglich korrigieren. Kostenüberschreitungen bei der Einführung neuer Anlagen drücken die Marge.</li><li>Der Auftragsbestand ist kein garantierter Umsatz. GreenBox ist ein Gemeinschaftsunternehmen, und ob Geld fließt und Systeme abgerufen werden, hängt von SoftBank ab.</li><li>Starker Wettbewerb (AutoStore, Ocado, Dematic, Eigenentwicklungen von Amazon) und Preisdruck, sobald weitere Großkunden Aufträge ausschreiben.</li></ul>
+        <div class="widerlegen"><b>Was uns widerlegen würde:</b> Umdenken müssten wir, wenn Walmart die Einführung neuer Anlagen kürzt oder verschiebt. Dasselbe gilt, wenn Walmart zwei weitere Geschäftsjahre über 80 % des Umsatzes ausmacht, ohne dass GreenBox oder ein anderer Großkunde nennenswert beiträgt. Und schließlich, wenn die Bruttomarge trotz wachsenden Umsatzes dauerhaft unter 20 % bleibt.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="redteam">
+    <h2><span class="nr">06</span>Red Team und unsere Antworten</h2>
+    <p>Der stärkste Einwand betrifft die Größe des Marktes selbst. Alle Prognosen stammen von Firmen, die Studien verkaufen. Sie messen jeweils etwas anderes und lassen sich nicht vergleichen. Die einzige Quelle aus erster Hand, der Branchenverband IFR, erwartet nur ein moderates Wachstum der Stückzahlen. Wer mit zweistelligen Wachstumsraten argumentiert, setzt also auf humanoide Roboter.</p><p>Für diese Chance gibt es wenig Belege. Bisher werden humanoide Roboter nur in Stückzahlen für Pilotprojekte gebaut. Harmonic Drive berichtete, dass die Aufträge für autonome Roboter nach einem starken Quartal deutlich zurückgingen. Sie hängen zudem an wenigen Kunden.</p><p>Zweitens gibt es Gegenbelege aus dem Kern des Themas. Teradyne ist Marktführer bei Cobots, also Robotern, die direkt neben Menschen arbeiten. Seine Robotersparte ist zuletzt geschrumpft. Außerdem verlagern Firmen Produktion nach Süd- und Südostasien. Das kann den Druck zur Automatisierung mindern.</p><p>Drittens sind die Firmendaten unsicher. Bei sieben von acht Firmen ist der Robotikanteil geschätzt, teils auf Grundlage von Zusammenfassungen Dritter. Bei NVIDIA ist er nach Ansicht unseres internen Prüfteams zu hoch angesetzt. Das gesamte Autosegment einschließlich Robotik setzte im Geschäftsjahr 2026 <span class="zahl">2,3 Mrd USD Umsatz Segment Automotive (inkl. Robotik) Geschäftsjahr 2026</span><sup class="fn"><a href="#fn28" id="r28">28</a></sup> um. Symbotic ist höher bewertet, als unsere Kennzahlen zunächst auswiesen. Schließlich haben wir unsere Regel gegen Etikettenschwindel nicht einheitlich angewandt. Teradyne haben wir gestrichen, obwohl die Firma ihren Robotikumsatz ausweist. Aufgenommen haben wir dagegen Firmen, deren Robotikanteil klein und nur geschätzt ist.</p>
+    <div class="urteil"><div class="label">Gesamturteil des Red Teams</div>Die Kernthese, Robotik sei ein Markt mit zweistelligem Wachstum, ist schlechter belegt, als die Unterlagen nahelegen. Alle Zahlen zur Marktgröße stammen aus Pressemitteilungen oder Blogs von Studienverkäufern, die Unterschiedliches messen. Der höchste Wert ist 4,3-mal so groß wie der niedrigste. Die einzige Quelle aus erster Hand, der Branchenverband IFR, erwartet bis 2028 nur rund 6 bis 7 % mehr Stückzahlen pro Jahr, bei Preisdruck aus China. Zweistellige Raten hängen damit an humanoiden Robotern. Die werden 2025 aber erst in Stückzahlen für Pilotprojekte gebaut, und laut Harmonic Drive schwanken die Aufträge und hängen an wenigen Kunden. Nur eine Firma weist ihren Robotikanteil selbst aus (Fanuc). Vier von acht Firmen machen 15 % oder weniger ihres Umsatzes mit dem Thema. Damit wendet die Auswahl ihre eigene Regel gegen Etikettenschwindel, nach der Teradyne gestrichen wurde, nicht konsequent an. Der größte Beitrag zur Summe der Firmenumsätze (Intuitive Surgical) liegt außerhalb der Marktabgrenzungen. Echte reine Robotikwerte mit ausgewiesenem Anteil sind im Wesentlichen Fanuc und Symbotic. Symbotic hängt zu 85 % an Walmart und ist nicht so moderat bewertet wie angegeben. Das Thema bleibt real: Der Bestand wächst, Arbeitskräfte fehlen, und jedes Jahr werden 542.000 Roboter installiert. Der Report sollte Robotik aber als konjunkturabhängigen Ausrüstungsmarkt darstellen, dessen Stückzahlen um mittlere einstellige Raten wachsen, mit humanoiden Robotern als spekulativer Chance. Er sollte ihn nicht als Markt beschreiben, der dauerhaft um zwanzig Prozent wächst. Auf die drei schwersten Einwände muss der Report ausdrücklich antworten.</div>
+    <div class="einwand">
+      <div class="links"><span class="id">E1</span><span class="tag hoch">hoch</span></div>
+      <div>
+        <div class="ziel">markt.json/schaetzungen</div>
+        <p>Die Schätzungen für 2030 reichen von 50,3 bis 214,6 Mrd USD. Der höchste Wert ist 4,3-mal so groß wie der niedrigste. Das ist keine Spanne, in der der wahre Marktwert liegt. Die Studien messen vier verschiedene Dinge: nur KI-Robotik (MarketsandMarkets), nur Industrieroboter (Persistence), fünf Roboterarten ohne Medizinroboter (ABI) und eine nicht offengelegte Abgrenzung (MRFR). Alle vier Herausgeber verkaufen ihre Studien und haben daher ein Interesse an großen Zahlen. Keiner legt seine Methode offen. Zwei Quellen stammen aus dem Jahr 2023, MRFR rechnet sogar mit dem Ausgangsjahr 2021. Es fehlt der einzige Vergleichswert aus einer verlässlicheren Quelle, einem Branchenverband: Laut IFR waren die neu installierten Industrieroboter 16,7 Mrd USD wert. Persistence setzt schon für 2023 36,7 Mrd USD an, also mehr als das Doppelte. Ohne den IFR-Wert und eine einheitliche Abgrenzung lässt sich über die Marktgröße nichts Belastbares sagen. <span class="klein">Beleg: <span class="zahl">16,7 Mrd USD Marktwert Industrieroboter-Installationen weltweit (Allzeithoch)</span><sup class="fn"><a href="#fn7" id="r7">7</a></sup></span></p>
+<div class="antwort"><b>Unsere Antwort:</b> Wir teilen den Einwand. Die vier Schätzungen messen verschiedene Märkte. Sie bestätigen sich also nicht gegenseitig. Als Maßstab nehmen wir deshalb den Wert der tatsächlich installierten Industrieroboter, den der Branchenverband IFR erhebt.<br><b>Konsequenz:</b> Wir nennen deshalb weder eine einzelne Zahl noch eine Spanne für die Marktgröße. Jede Schätzung erscheint nur zusammen mit dem, was sie misst. Der Wert der IFR dient als Maßstab, um die Schätzungen auf Plausibilität zu prüfen. Die Summe der Firmenumsätze werten wir als Hinweis darauf, dass eher die unteren Schätzungen zutreffen.</div>
+      </div>
+    </div>
+    <div class="einwand">
+      <div class="links"><span class="id">E2</span><span class="tag hoch">hoch</span></div>
+      <div>
+        <div class="ziel">markt.json/schaetzungen/1/cagr</div>
+        <p>Jährliche Wachstumsraten von 22,8 % (MRFR) und 29,2 % (MarketsandMarkets) passen weder zur Vergangenheit noch zur einzigen Prognose aus erster Hand. Laut IFR haben sich die Stückzahlen in zehn Jahren verdoppelt. Das sind rund 7 % pro Jahr. Die IFR erwartet 575.000 Roboter im Jahr 2025 und über 700.000 bis 2028. Das entspricht etwa 6,6 % pro Jahr (von 542.000 auf 700.000 in vier Jahren). Zweistellige Umsatzraten setzen deshalb deutlich steigende Preise je Roboter voraus. Die Marktdaten zeigen aber das Gegenteil: Chinesische Anbieter halten 57 % ihres Heimatmarktes und drücken die Preise. Der Rest des Wachstums müsste von humanoiden Robotern kommen. Davon gab es 2025 rund 13.000 Stück. Zweistelliges Wachstum ist also nicht belegt. Es hängt an der Chance auf humanoide Roboter. <span class="klein">Beleg: IFR: Die Installationen sollen 2025 um 6 % auf 575.000 Roboter wachsen. Bis 2028 soll die Marke von 700.000 überschritten werden.<sup class="fn"><a href="#fn1">1</a></sup></span></p>
+<div class="antwort"><b>Unsere Antwort:</b> Der Einwand ist berechtigt. Die IFR erwartet, dass die Stückzahlen um mittlere einstellige Raten wachsen. Die Marktdaten zeigen zudem Preisdruck statt steigender Preise. Zweistellige Umsatzraten ließen sich nur mit einem schnellen Hochlauf humanoider Roboter erklären. Dafür gibt es heute keine belastbaren Belege.<br><b>Konsequenz:</b> Wir haben unsere These geändert. Wir beschreiben Robotik jetzt als konjunkturabhängigen Ausrüstungsmarkt, dessen Stückzahlen einstellig wachsen. Humanoide Roboter sehen wir als spekulative Chance. Die hohen Wachstumsraten der Studien nutzen wir nicht als Grundlage der These.</div>
+      </div>
+    </div>
+    <div class="einwand">
+      <div class="links"><span class="id">E7</span><span class="tag hoch">hoch</span></div>
+      <div>
+        <div class="ziel">firmen/ISRG.json/rolle_im_thema</div>
+        <p>Intuitive Surgical ist als Kernprofiteur mit einem Robotikanteil von 100 % eingestuft. Die Firma liegt aber außerhalb fast aller Marktschätzungen. ABI schließt Chirurgieroboter ausdrücklich aus, Persistence zählt nur Industrieroboter, MarketsandMarkets nur KI-Robotik. Trotzdem stammen 11,0 von 21,2 Mrd USD der addierten Firmenumsätze von Intuitive Surgical (52 %). Die Firmenanalyse sagt selbst, dass kaum ein Zusammenhang zu den Treibern des Themas besteht, also zur Bevölkerungsentwicklung in China, zur Roboterdichte und zu humanoiden Robotern. In diesem Thema ist Intuitive Surgical ein Medizintechnikwert mit eigenem Zyklus, abhängig von Krankenhausbudgets und Kostenerstattung. Nimmt man die Marktabgrenzung ernst, lassen sich weder die Einstufung als Kernprofiteur noch der große Beitrag zur Summe halten. <span class="klein">Beleg: ABI Research deckt fünf Roboterarten ab (Industrieroboter, Cobots, mobile Roboter, humanoide Roboter, Exoskelette). Chirurgieroboter sind nicht enthalten.<sup class="fn"><a href="#fn6">6</a></sup></span></p>
+<div class="antwort"><b>Unsere Antwort:</b> Wir stimmen zu. Intuitive Surgical ist ein profitables Robotikunternehmen. Fast alle Marktschätzungen zählen seine Chirurgieroboter aber nicht mit. Außerdem hängt das Geschäft an eigenen Faktoren wie Krankenhausbudgets und Kostenerstattung. Für dieses Thema war es zu weit gegriffen, die Firma als Kernprofiteur einzustufen.<br><b>Konsequenz:</b> Im Report führen wir Intuitive Surgical deshalb als Medizintechnikwert am Rand des Themas, nicht als Kernprofiteur. Die Summe der Firmenumsätze bewerten wir ohne diese Firma. Damit spricht sie noch deutlicher für die unteren Marktschätzungen.</div>
+      </div>
+    </div>
+    <div class="einwand">
+      <div class="links"><span class="id">E3</span><span class="tag mittel">mittel</span></div>
+      <div>
+        <div class="ziel">markt.json/schaetzungen/0/cagr</div>
+        <p>Die Zahlen von ABI passen nicht zusammen. Von 45 Mrd USD (2024) auf 110,7 Mrd USD (2030) ergibt ein jährliches Wachstum von rund 16,2 %, nicht 13,8 %. Der Blogeintrag nennt außerdem 50 Mrd USD für 2025 und ein jährliches Wachstum von 14 %. Von 50 Mrd USD in fünf Jahren auf 111 Mrd USD wären es aber rund 17 % pro Jahr. Die Quelle ist ein Analystenblog ohne offengelegte Methode. Wert und Wachstumsrate sollten nicht als berichtete Zahlen neben geprüften stehen, ohne dass der Widerspruch genannt wird. <span class="klein">Beleg: <span class="zahl schaetzung">~16,2 % p.a. implizite CAGR 2024–2030 aus ABI-Start- und Zielwert</span><sup class="fn"><a href="#fn34" id="r34">34</a></sup></span></p>
+      </div>
+    </div>
+    <div class="einwand">
+      <div class="links"><span class="id">E4</span><span class="tag mittel">mittel</span></div>
+      <div>
+        <div class="ziel">markt.json/treiber/3</div>
+        <p>Die Erwartungen an humanoide Roboter stützen sich auf schwache Quellen: eine Bankprognose, die nur über einen Zweitbericht (humanoid.guide) vorliegt, und Stückzahlen von Discovery Alert ohne offengelegte Methode. Von rund 13.000 Stück (2025) auf 6,5 Mio (2035) wäre ein Anstieg auf das 500-Fache. Dazu kommt ein direkter Gegenbeleg aus der Lieferkette. Harmonic Drive berichtete, die Aufträge für „autonome Roboter“ seien nach einem starken dritten Quartal stark zurückgegangen. Es gebe nur wenige Kunden, die Nachfrage hänge an einzelnen von ihnen. Ein erwarteter Großkunde habe seine Planung überprüft. Das sind Stückzahlen für Pilotprojekte, kein Markt für Serienprodukte. <span class="klein">Beleg: Harmonic Drive (Präsentation für Investoren, Mai 2025): Die Aufträge für autonome Roboter, die im dritten Quartal hoch gewesen seien, hätten sich stark abgeschwächt. Die Zahl der Kunden sei noch klein, und der Markt hänge stark vom Verhalten einzelner Kunden ab.<sup class="fn"><a href="#fn35">35</a></sup></span></p>
+      </div>
+    </div>
+    <div class="einwand">
+      <div class="links"><span class="id">E5</span><span class="tag mittel">mittel</span></div>
+      <div>
+        <div class="ziel">markt.json/huerden</div>
+        <p>Es fehlen Gegenbelege aus dem Kern des Themas. Erstens Cobots: Teradyne ist mit Universal Robots und MiR Marktführer bei diesen Robotern, die neben Menschen arbeiten. Seine Robotersparte schrumpfte im zweiten Quartal 2025 um 17 % gegenüber dem Vorjahr. Die Geschichte von „Cobots für den Mittelstand“ als Wachstumstreiber ist damit nicht belegt. Zweitens die Verlagerung: Produktion wandert nach Indien und Südostasien, wo die Löhne niedrig sind und wenige Roboter arbeiten. Das mindert den Druck zur Automatisierung. Drittens werden Überkapazitäten und fallende Preise in China nur als Risiko für die Margen genannt. Sie bremsen aber auch das Marktvolumen in Dollar. Viertens: Chinas Roboterdichte von 166 kommt daher, dass das Statistikamt die Beschäftigtenzahlen überarbeitet hat, nicht daher, dass es weniger Roboter gibt. Der Nachholbedarf ist also zum Teil ein statistischer Effekt. <span class="klein">Beleg: Teradyne Robotics (Universal Robots und MiR) setzte im zweiten Quartal 2025 75 Mio USD um, 17 % weniger als im Vorjahr. Im Gesamtjahr 2024 waren es 365 Mio USD.<sup class="fn"><a href="#fn36">36</a></sup></span></p>
+      </div>
+    </div>
+    <div class="einwand">
+      <div class="links"><span class="id">E6</span><span class="tag mittel">mittel</span></div>
+      <div>
+        <div class="ziel">shortlist.json/abweichungen_vom_vorschlag</div>
+        <p>Die Auswahl der Firmen misst Etikettenschwindel nicht mit einheitlichem Maß. Teradyne wurde gestrichen, weil die Robotersparte nur einen kleinen Teil des Konzerns ausmacht. Ihren Robotikumsatz weist die Firma aber selbst aus: 365 Mio USD im Jahr 2024, rund 13 % des Konzernumsatzes. Aufgenommen wurden dagegen vier Firmen mit gleich kleinem oder kleinerem Anteil, der zudem nur geschätzt ist: Rockwell 8 %, Inovance 12 %, Cognex 15 %, NVIDIA 1 %. Damit liegt der Robotikanteil bei der Hälfte der Auswahl bei höchstens 15 %. Nur Fanuc weist seinen Anteil selbst aus. <span class="klein">Beleg: Die Robotiksparte von Teradyne setzte 2024 insgesamt 365 Millionen Dollar um. Davon entfielen 293 Millionen auf Universal Robots und 72 Millionen auf MiR.<sup class="fn"><a href="#fn36">36</a></sup></span></p>
+      </div>
+    </div>
+    <div class="einwand">
+      <div class="links"><span class="id">E8</span><span class="tag mittel">mittel</span></div>
+      <div>
+        <div class="ziel">firmen/NVDA.json/themen_exposure</div>
+        <p>Der geschätzte Robotikanteil von 1 % wird in der Summe auf den Umsatz der letzten zwölf Monate von 303 Mrd USD angewendet. Das ergibt 3,0 Mrd USD Robotikumsatz. Das ist mehr als das gesamte Autosegment einschließlich Robotik im Geschäftsjahr 2026 mit 2,3 Mrd USD. Und dieses Segment besteht überwiegend aus Plattformen für autonomes Fahren. Die Begründung rechnet zudem noch mit dem Jahresumsatz von 216 Mrd USD, die Summe dagegen mit dem Umsatz der letzten zwölf Monate. Realistisch liegt der Robotikumsatz deutlich unter 1 Mrd USD, also unter 0,3 %. Die Einstufung als Mitläufer bleibt richtig. Der Beitrag zur Summe ist aber etwa um das 3- bis 10-Fache zu hoch. <span class="klein">Beleg: <span class="zahl">2,3 Mrd USD Umsatz Segment Automotive (inkl. Robotik) Geschäftsjahr 2026</span><sup class="fn"><a href="#fn28" id="r28">28</a></sup></span></p>
+      </div>
+    </div>
+    <div class="einwand">
+      <div class="links"><span class="id">E9</span><span class="tag mittel">mittel</span></div>
+      <div>
+        <div class="ziel">firmen/SYM.json/ueberzeugung</div>
+        <p>Die mittlere Überzeugung stützt sich unter anderem auf einen EV/Umsatz von etwa 1,7 laut Kennzahlen. Dieser Wert ist offensichtlich falsch. Bei 25,4 Mrd USD Marktkapitalisierung und 2,65 Mrd USD Umsatz in den letzten zwölf Monaten ergibt sich rund das 9,6-Fache. Das KGV liegt laut Kennzahlen sogar über 1.000. Die Aktie ist also nicht moderat, sondern hoch bewertet. Und das, obwohl Symbotic 85 % seines Umsatzes mit Walmart macht, nur eine einstellige operative Marge (4,6 %) erzielt und frühere Abschlüsse nachträglich korrigieren musste. Wegen dieser Abhängigkeit ist Symbotic eher eine Wette auf einen einzelnen Kunden als auf Lagerroboter. <span class="klein">Beleg: <span class="zahl schaetzung">~9,6 x Marktkapitalisierung/Umsatz TTM</span><sup class="fn"><a href="#fn37" id="r37">37</a></sup></span></p>
+      </div>
+    </div>
+    <div class="einwand">
+      <div class="links"><span class="id">E10</span><span class="tag mittel">mittel</span></div>
+      <div>
+        <div class="ziel">firmen/6324.T.json/themen_exposure</div>
+        <p>Der Robotikanteil von 45 % ist nur geschätzt. Dabei kommentiert Harmonic Drive in seinen Unterlagen für Investoren die Aufträge nach Anwendung (Roboter, Halbleiter, Auto). Schwerer wiegt etwas anderes. Die Chance durch humanoide Roboter ist das wichtigste Argument im positiven Szenario. Doch diese Aufträge schwankten schon 2025 stark und hingen an wenigen Kunden. Die Werke waren nur zu rund 50 % ausgelastet. Der Konkurrent Leaderdrive hält laut J.P. Morgan 30 bis 40 % des chinesischen Marktes für Spannungswellengetriebe, sein Umsatz stieg 2025 um 47 %. Bei einem EV/Umsatz von etwa 9 und einem KGV von über 300 ist die Erholung schon im Kurs enthalten. Gleichzeitig sinkt der Anteil in China dauerhaft. <span class="klein">Beleg: Harmonic Drive (Präsentation für Investoren, Mai 2025): Die Werke seien etwa zur Hälfte ihrer maximalen Kapazität ausgelastet. Aufträge für autonome Roboter schwankten stark und hingen an wenigen Kunden.<sup class="fn"><a href="#fn35">35</a></sup></span></p>
+      </div>
+    </div>
+    <div class="einwand">
+      <div class="links"><span class="id">E11</span><span class="tag mittel">mittel</span></div>
+      <div>
+        <div class="ziel">firmen/300124.SZ.json/themen_exposure</div>
+        <p>Hier droht Etikettenschwindel. Inovance weist nur den Bereich „Neue Geschäfte“ aus: 1,8 von 45,1 Mrd CNY, also knapp 4 % des Umsatzes. Darin steckt auch digitale Energie. Auf 12 % kommt man nur durch eine frei gewählte Annahme: dass ein Viertel der Sparte Industrieautomatisierung auf Roboter entfällt. Dafür gibt es keinen Beleg, und die Firmenanalyse nennt die Unsicherheit selbst hoch. Die Zahlen stammen aus der Zusammenfassung eines Dritten (Quartr), nicht aus dem Geschäftsbericht. Den größten Wachstumsschub liefern Antriebe für Elektroautos (ca. 45 % des Umsatzes). Inovance ist deshalb eine Wette auf chinesische Elektromobilität und Industrieinvestitionen, Robotik ist Nebensache. Bei einem Anteil von 4 statt 12 % sinkt der Beitrag zur Summe von 0,88 auf etwa 0,3 Mrd USD.</p>
+      </div>
+    </div>
+    <div class="einwand">
+      <div class="links"><span class="id">E12</span><span class="tag niedrig">niedrig</span></div>
+      <div>
+        <div class="ziel">firmen/CGNX.json/themen_exposure</div>
+        <p>Für den Robotikanteil von 15 % gibt es keinen Anhaltspunkt. Cognex berichtet nach Kundenbranchen, einen Robotikumsatz kann man daraus nicht ableiten. Und das Lesen von Codes in der Logistik ist überwiegend kein Roboterumsatz. Das Kriterium, an dem die Einschätzung scheitern soll („weist erstmals einen Robotikanteil unter 10 % aus“), kann praktisch nie eintreten. Denn Cognex berichtet einen solchen Anteil gar nicht. Es lässt sich also nicht überprüfen. Außerdem wird die Gefahr nur behauptet, nicht belegt, dass Roboterhersteller eigene Bildverarbeitung auf NVIDIA-Basis einsetzen und Cognex verdrängen.</p>
+      </div>
+    </div>
+    <div class="einwand">
+      <div class="links"><span class="id">E13</span><span class="tag niedrig">niedrig</span></div>
+      <div>
+        <div class="ziel">firmen/ROK.json/themen_exposure</div>
+        <p>Ein Robotikanteil von 8 % (ca. 0,7 Mrd USD) ist für Rockwell eher zu hoch. Das reine Robotergeschäft (Clearpath/OTTO, mobile Roboter) ist sehr klein. Der Rest sind Steuerungen und Antriebstechnik, die auch ohne Roboter verkauft werden. Wer sie mitzählt, müsste auch Siemens, Omron und Mitsubishi so behandeln. Dann wäre die Abgrenzung beliebig. Die Einstufung als Mitläufer ist richtig. Trotzdem trägt Rockwell mehr zur Summe bei als Harmonic Drive und Cognex zusammen, obwohl beide näher an der Robotik sind.</p>
+      </div>
+    </div>
+    <div class="einwand">
+      <div class="links"><span class="id">E14</span><span class="tag niedrig">niedrig</span></div>
+      <div>
+        <div class="ziel">firmen/6954.T.json/bull_case/1</div>
+        <p>Der Robotikanteil stimmt. Er wurde im Original-Geschäftsbericht nachgeprüft: Die Robotersparte setzte 378.610 Mio JPY um, das sind 44,1 % von 857.831 Mio JPY. Der Einwand richtet sich gegen das zweite Argument im positiven Szenario. Dort werden 4,66 Mio Roboter als Fanucs große Zahl installierter Maschinen dargestellt. Das ist aber laut IFR der weltweite Bestand aller Hersteller, nicht der von Fanuc. Auch das von der IFR erwartete Stückzahlwachstum (von 542.000 auf über 700.000 bis 2028, rund 6,6 % pro Jahr) kommt Fanuc nicht direkt zugute. Denn 54 % davon entstehen in China, wo einheimische Anbieter schon 57 % des Marktes halten. Fanuc begründet das Wachstum der Robotersparte in China selbst mit Aufträgen aus der Elektroauto- und der allgemeinen Industrie. Das sind Investitionen, die mit der Konjunktur schwanken. Für das Geschäftsjahr bis März 2027 erwartet Fanuc nur +6 % Konzernumsatz. Die Einstufung als Kernprofiteur mit mittlerer Überzeugung ist vertretbar. Das Argument des dauerhaften Wachstums im positiven Szenario ist aber zu großzügig formuliert. <span class="klein">Beleg: Fanuc, Geschäftsjahr bis März 2026: Robotersparte 378.610 Mio JPY Umsatz (+14,9 %, 44,1 % des Konzernumsatzes). In China sei der Umsatz dank starker Nachfrage aus der Elektroauto- und der allgemeinen Industrie deutlich gestiegen. Prognose für das Geschäftsjahr bis März 2027: Umsatz 909.600 Mio JPY (+6,0 %).<sup class="fn"><a href="#fn19">19</a></sup></span></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="bottomup">
+    <h2><span class="nr">07</span>Bottom-up-Check</h2>
+    <div class="kennziffern">
+      <div class="kennziffer"><div class="wert"><span class="zahl schaetzung">~21,2 Mrd USD</span><sup class="fn"><a href="#fn8" id="r8">8</a></sup></div><div class="label">Themen-Umsatz der Auswahl</div></div>
+      <div class="kennziffer"><div class="wert"><span class="zahl schaetzung">~50,3 Mrd USD</span><sup class="fn"><a href="#fn38" id="r38">38</a></sup> – <span class="zahl schaetzung">~215 Mrd USD</span><sup class="fn"><a href="#fn39" id="r39">39</a></sup></div><div class="label">Top-down-Spanne</div></div>
+      <div class="kennziffer"><div class="wert"><span class="zahl schaetzung">~9,9 %</span><sup class="fn"><a href="#fn9" id="r9">9</a></sup> – <span class="zahl schaetzung">~42,1 %</span><sup class="fn"><a href="#fn10" id="r10">10</a></sup></div><div class="label">Abdeckung</div></div>
+    </div>
+<p>Neu gerechnet mit dem endgültigen Stand aller acht Firmenanalysen, an den Ergebnissen ändert das nichts. Die Robotikumsätze der acht Firmen ergeben zusammen 21,2 Mrd USD in den letzten zwölf Monaten. Das sind 9,9 % der höchsten Marktschätzung (MRFR, 214,6) und 42,1 % der niedrigsten (MarketsandMarkets, 50,3), jeweils für 2030. Der Vergleich hinkt aus drei Gründen. Erstens die Zeit: Heutige Umsätze stehen gegen Prognosen für 2030. Fair wäre ein Vergleich mit den Ausgangsjahren der Studien (ABI 45 Mrd USD 2024, Persistence 36,7 Mrd USD 2023, MarketsandMarkets 14,0 Mrd USD 2025). Gegenüber MarketsandMarkets läge die Summe dann über dem ganzen Markt. Das zeigt, dass die Abgrenzungen nicht zusammenpassen. Zweitens die Zusammensetzung: 52 % der Summe stammen von Intuitive Surgical (11,0 Mrd USD), also aus Medizinrobotik. Diese zählen ABI, Persistence und MarketsandMarkets nicht mit. NVIDIA steuert 3,0 Mrd USD bei, mehr als sein ganzes Segment für Auto und Robotik (2,3 Mrd USD im Geschäftsjahr 2026). Ohne Intuitive Surgical und mit einem realistischen Wert für NVIDIA bleiben rund 8 bis 9 Mrd USD. Drittens die Datenqualität: Bei sieben von acht Firmen ist der Robotikanteil geschätzt. Nur Fanuc weist ihn aus, und dieser Wert wurde am Geschäftsbericht bestätigt. Als Maßstab taugt der Wert der installierten Industrieroboter laut IFR von 16,7 Mrd USD. Fanuc allein setzt 2,5 Mrd USD mit Robotern um, grob 15 % davon. Das passt zu Fanucs Rolle als einer der vier großen Hersteller. Die Summe spricht damit eher für die unteren Marktschätzungen. Die MRFR-Zahl von 214,6 Mrd USD lässt sich aus den Firmendaten nicht ableiten.</p>    <div class="tabelle"><table>
+      <thead><tr><th>Ticker</th><th class="r">Umsatz TTM (Mrd USD)</th><th class="r">Exposure</th><th class="r">Themen-Umsatz (Mrd USD)</th></tr></thead>
+      <tbody>
+      <tr><td>300124.SZ</td><td class="r">7.37</td>
+          <td class="r"><i>~12 %</i></td>
+          <td class="r">0.88</td></tr>
+      <tr><td>6324.T</td><td class="r">0.40</td>
+          <td class="r"><i>~45 %</i></td>
+          <td class="r">0.18</td></tr>
+      <tr><td>6954.T</td><td class="r">5.70</td>
+          <td class="r">44 %</td>
+          <td class="r">2.51</td></tr>
+      <tr><td>CGNX</td><td class="r">1.09</td>
+          <td class="r"><i>~15 %</i></td>
+          <td class="r">0.16</td></tr>
+      <tr><td>ISRG</td><td class="r">11.03</td>
+          <td class="r"><i>~100 %</i></td>
+          <td class="r">11.03</td></tr>
+      <tr><td>NVDA</td><td class="r">302.97</td>
+          <td class="r"><i>~1 %</i></td>
+          <td class="r">3.03</td></tr>
+      <tr><td>ROK</td><td class="r">8.97</td>
+          <td class="r"><i>~8 %</i></td>
+          <td class="r">0.72</td></tr>
+      <tr><td>SYM</td><td class="r">2.65</td>
+          <td class="r"><i>~100 %</i></td>
+          <td class="r">2.65</td></tr>
+      </tbody>
+    </table></div>
+    <p class="klein">Näherung – nur Shortlist, TTM-Umsätze gegen Prognosen für 2030. </p>
+  </section>
+
+  <section id="beobachtung">
+    <h2><span class="nr">08</span>Beobachtungspunkte</h2>
+    <ol class="beobachtung"><li><p>Bericht „World Robotics 2026“ der IFR: Wie viele Roboter wurden 2025 installiert, verglichen mit der eigenen Prognose des Verbands? Und wie entwickelt sich der Wert je installiertem Roboter?</p></li><li><p>Quartalsberichte von Fanuc: Umsatz der Robotersparte im Vergleich zum Vorjahr und operative Marge, vor allem mit Blick auf die Nachfrage aus China.</p></li><li><p>Harmonic Drive: Aufträge für humanoide und autonome Roboter und die Zahl der Kunden in diesem Bereich. Beides zeigt früh, ob humanoide Roboter in Serie gehen.</p></li><li><p>Ergebnis der US-Untersuchung zu Robotik und Industriemaschinen (Section 232) und mögliche Zölle auf importierte Roboter.</p></li><li><p>Geschäftsbericht von Symbotic für das Geschäftsjahr 2026: Welchen Anteil am Umsatz hat der Großkunde, und wie viele neue Kunden sind hinzugekommen?</p></li></ol>
+  </section>
+
+  <section id="methodik">
+    <h2><span class="nr">09</span>Methodik</h2>
+    <p>Dieser Report entstand in einem Team aus KI-Agenten mit fester Arbeitsteilung: Drei Agenten recherchierten Marktgröße, Treiber und Hürden sowie die Wertschöpfungskette; deterministischer Code führte die Ergebnisse zusammen, rief Finanzkennzahlen ab und screente die Kandidaten (34 Kandidaten, 32 aufgenommen, 2 ausgeschlossen).
+    Für jede ausgewählte Firma erstellte ein Agent einen Deep Dive; ein Red Team griff alle Ergebnisse an. Jede Zahl trägt ihre Herkunft – berichtet mit Quelle oder als Schätzung mit Begründung. Zum Schluss hat ein Lektorats-Agent 155 Textstellen sprachlich überarbeitet; ein Prüfprogramm hat sichergestellt, dass dabei keine Zahl verändert wurde.</p>
+<p class="klein">Screening-Score: <code>score = 100 * (0.4 * rang(umsatzwachstum_yoy) + 0.3 * rang(operative_marge) + 0.3 * (1 - rang(ev_umsatz)))</code></p>    <h3>Türsteher: automatische Qualitätsprüfung</h3>
+    <p>Jedes Arbeitsergebnis wurde beim Abschluss automatisch gegen sein Schema geprüft. Ungültige Dateien wurden zurückgewiesen und mussten korrigiert werden.</p>
+    <div class="kennziffern">
+      <div class="kennziffer"><div class="wert">14</div><div class="label">Aufgaben geprüft</div></div>
+      <div class="kennziffer"><div class="wert">0</div><div class="label">Ablehnungen</div></div>
+      <div class="kennziffer"><div class="wert">16</div><div class="label">Prüfvorgänge</div></div>
+    </div>
+  </section>
+
+  <section id="quellen">
+    <h2><span class="nr">10</span>Quellen</h2>
+    <ol class="quellen">
+      <li id="fn1">
+International Federation of Robotics (IFR), <a href="https://ifr.org/ifr-press-releases/news/global-robot-demand-in-factories-doubles-over-10-years">https://ifr.org/ifr-press-releases/news/global-robot-demand-in-factories-doubles-over-10-years</a>&nbsp;(abgerufen 2026-09-18)      </li>
+      <li id="fn2">
+IFR, zitiert via Xinhua, <a href="https://english.news.cn/20250926/0e0d8b4348b64c36951cc1c000498d38/c.html">https://english.news.cn/20250926/0e0d8b4348b64c36951cc1c000498d38/c.html</a>&nbsp;(abgerufen 2026-09-18)&nbsp;– Vorjahr 47 %      </li>
+      <li id="fn3">
+MarketsandMarkets, <a href="https://www.marketsandmarkets.com/Market-Reports/intelligent-robotics-market-99226522.html">https://www.marketsandmarkets.com/Market-Reports/intelligent-robotics-market-99226522.html</a>&nbsp;(abgerufen 2026-09-18)&nbsp;– Pressemitteilung, Methodik nicht einsehbar      </li>
+      <li id="fn4">
+Market Research Future (MRFR), <a href="https://www.globenewswire.com/en/news-release/2023/05/30/2678481/0/en/Robotics-Market-to-Reach-USD-214-60-Billion-at-a-22-80-CAGR-By-2030-Market-Research-Future-MRFR.html">https://www.globenewswire.com/en/news-release/2023/05/30/2678481/0/en/Robotics-Market-to-Reach-USD-214-60-Billion-at-a-22-80-CAGR-By-2030-Market-Research-Future-MRFR.html</a>&nbsp;(abgerufen 2026-09-18)&nbsp;– Pressemitteilung, Methodik nicht einsehbar; Stand Mai 2023, Basisjahr 2021      </li>
+      <li id="fn5">
+Persistence Market Research, <a href="https://www.globenewswire.com/news-release/2023/11/29/2787552/0/en/Global-Industrial-Robotics-Market-Size-Worth-84-7-Billion-by-2030-at-a-CAGR-of-12-7-Latest-Industry-Insights-by-Persistence-Market-Research.html">https://www.globenewswire.com/news-release/2023/11/29/2787552/0/en/Global-Industrial-Robotics-Market-Size-Worth-84-7-Billion-by-2030-at-a-CAGR-of-12-7-Latest-Industry-Insights-by-Persistence-Market-Research.html</a>&nbsp;(abgerufen 2026-09-18)&nbsp;– Pressemitteilung, Methodik nicht einsehbar; Stand November 2023      </li>
+      <li id="fn6">
+ABI Research, <a href="https://www.abiresearch.com/blog/global-robotics-market-outlook">https://www.abiresearch.com/blog/global-robotics-market-outlook</a>&nbsp;(abgerufen 2026-09-18)&nbsp;– Analystenblog (Juli 2025), Methodik nicht einsehbar      </li>
+      <li id="fn7">
+International Federation of Robotics (IFR), <a href="https://ifr.org/ifr-press-releases/top-5-global-robotics-trends-2026">https://ifr.org/ifr-press-releases/top-5-global-robotics-trends-2026</a>&nbsp;(abgerufen 2026-09-18)&nbsp;– Pressemitteilung vom 8. Januar 2026; Bezugsjahr im Text nicht genannt, vermutlich 2024; nur Roboter ohne Software, Peripherie und Integration      </li>
+      <li id="fn8">
+<i>Schätzung:</i> Summe aus 8 Firmen der Shortlist (Umsatz TTM × Themen-Exposure); 7 der Exposures sind Schätzungen.
+&nbsp;(abgerufen 2026-09-18)      </li>
+      <li id="fn9">
+<i>Schätzung:</i> Anteil des Bottom-up-Themenumsatzes an der höchsten Marktschätzung. Summe aus 8 Firmen der Shortlist (Umsatz TTM × Themen-Exposure); 7 der Exposures sind Schätzungen.
+&nbsp;(abgerufen 2026-09-18)      </li>
+      <li id="fn10">
+<i>Schätzung:</i> Anteil des Bottom-up-Themenumsatzes an der niedrigsten Marktschätzung. Summe aus 8 Firmen der Shortlist (Umsatz TTM × Themen-Exposure); 7 der Exposures sind Schätzungen.
+&nbsp;(abgerufen 2026-09-18)      </li>
+      <li id="fn11">
+Nationales Statistikamt China (NBS), zitiert via Asia Times, <a href="https://asiatimes.com/2026/01/chinas-population-falls-for-fourth-year-amid-economic-woes/">https://asiatimes.com/2026/01/chinas-population-falls-for-fourth-year-amid-economic-woes/</a>&nbsp;(abgerufen 2026-09-18)&nbsp;– Sekundärzitat der NBS-Daten      </li>
+      <li id="fn12">
+International Federation of Robotics (IFR), <a href="https://ifr.org/ifr-press-releases/news/robot-density-surges-in-europe-asia-and-americas">https://ifr.org/ifr-press-releases/news/robot-density-surges-in-europe-asia-and-americas</a>&nbsp;(abgerufen 2026-09-18)      </li>
+      <li id="fn13">
+Goldman Sachs Research, <a href="https://www.goldmansachs.com/insights/articles/the-global-market-for-robots-could-reach-38-billion-by-2035">https://www.goldmansachs.com/insights/articles/the-global-market-for-robots-could-reach-38-billion-by-2035</a>&nbsp;(abgerufen 2026-09-18)&nbsp;– Bankanalyse, Methodik nur teilweise einsehbar      </li>
+      <li id="fn14">
+IFR, zitiert via The Robot Report, <a href="https://www.therobotreport.com/ifr-industrial-robot-deployments-have-doubled-in-10-years/">https://www.therobotreport.com/ifr-industrial-robot-deployments-have-doubled-in-10-years/</a>&nbsp;(abgerufen 2026-09-18)      </li>
+      <li id="fn15">
+Standard Bots, <a href="https://standardbots.com/blog/robots-for-manufacturers-a-guide">https://standardbots.com/blog/robots-for-manufacturers-a-guide</a>&nbsp;(abgerufen 2026-09-18)&nbsp;– Anbieter-Blog, keine offengelegte Methodik      </li>
+      <li id="fn16">
+Discovery Alert, <a href="https://discoveryalert.com/humanoid-robotics-rare-earth-elements-2026/">https://discoveryalert.com/humanoid-robotics-rare-earth-elements-2026/</a>&nbsp;(abgerufen 2026-09-18)&nbsp;– Sekundärquelle, Methodik nicht einsehbar; Vergleich: Goldman-Prognose 6,5 Mio bis 2035      </li>
+      <li id="fn17">
+Yahoo Finance (via yfinance), <a href="https://finance.yahoo.com/quote/6954.T">https://finance.yahoo.com/quote/6954.T</a>&nbsp;(abgerufen 2026-09-18)      </li>
+      <li id="fn18">
+Yahoo Finance (via yfinance), <a href="https://finance.yahoo.com/quote/6324.T">https://finance.yahoo.com/quote/6324.T</a>&nbsp;(abgerufen 2026-09-18)      </li>
+      <li id="fn19">
+Fanuc Corporation, <a href="https://www.fanuc.co.jp/en/ir/announce/pdf/2026/financialresult202603_e.pdf">https://www.fanuc.co.jp/en/ir/announce/pdf/2026/financialresult202603_e.pdf</a>&nbsp;(abgerufen 2026-09-18)&nbsp;– Anteil der Robot-Sparte (378,6 Mrd JPY) am Konzernumsatz (857,8 Mrd JPY) im Geschäftsjahr bis März 2026, laut Suchergebnis-Zusammenfassung der Quelle; Spartenseite des Originals nicht selbst geöffnet. CNC-/Servo-Geschäft (FA) und Robomachine nicht eingerechnet, obwohl teils robotiknah.      </li>
+      <li id="fn20">
+<i>Schätzung:</i> Symbotic berichtet im Wesentlichen ein einziges Geschäftsfeld (Lagerautomatisierungssysteme auf Roboterbasis); praktisch der gesamte Umsatz stammt aus Robotik-Lagersystemen. Kleine Nebenerlöse (Software, Wartung) hängen am selben Systembestand. Kein separater Segmentausweis, daher als Schätzung markiert.
+&nbsp;(abgerufen 2026-09-18)      </li>
+      <li id="fn21">
+Yahoo Finance (via yfinance), <a href="https://finance.yahoo.com/quote/SYM">https://finance.yahoo.com/quote/SYM</a>&nbsp;(abgerufen 2026-09-18)      </li>
+      <li id="fn22">
+<i>Schätzung:</i> Das Unternehmen berichtet Segmente nach Region, nicht nach Endmarkt; ein Robotik-Anteil ist in den gefundenen Quellen nicht ausgewiesen. Geschätzt: Industrieroboter (inkl. Cobots, Humanoid-Prototypen) als größter Einzel-Endmarkt mit rund 40–50 % des Umsatzes; Halbleiter-/FPD-Ausrüster, Medizin (laut Sekundärquelle ca. 9 %) und Sonstiges bilden den Rest. Unsicherheit hoch, Herleitung nicht am Geschäftsbericht belegt.
+&nbsp;(abgerufen 2026-09-18)      </li>
+      <li id="fn23">
+<i>Schätzung:</i> Laut Sekundärzusammenfassung des Berichts 2025 (Quartr) entfielen auf Industrial Automation 22,25 Mrd CNY, NEV-Antriebe 20,32 Mrd CNY und Neue Geschäfte (Roboter und digitale Energie) 1,80 Mrd CNY bei 45,10 Mrd CNY Gesamtumsatz. Direktes Robotikgeschäft liegt unter den knapp 4 % der Neuen Geschäfte; Servos und Steuerungen, die in Roboter und Automation gehen, sind Teil der Sparte Industrial Automation (ca. 49 %). Angesetzt: rund ein Viertel davon plus Robotik in den Neuen Geschäften, also ca. 12 %. Robotikanteil im Servogeschäft nicht offengelegt, hohe Unsicherheit.
+&nbsp;(abgerufen 2026-09-18)      </li>
+      <li id="fn24">
+<i>Schätzung:</i> Cognex berichtet Umsatz nach Endmärkten (laut Sekundärquellen 2025: Logistik 26 %, Verpackung 21 %, Consumer Electronics 19 %, Automobil rund 20 %), nicht nach Robotik. Robotik-Bezug besteht dort, wo Vision Roboter führt (Pick-and-Place, Montage, Logistik-Handling). Geschätzt ein Anteil von etwa 15 % am Umsatz; der größere Teil sind Codelesen und Prüfaufgaben ohne Roboter. Unsicherheit hoch.
+&nbsp;(abgerufen 2026-09-18)      </li>
+      <li id="fn25">
+<i>Schätzung:</i> NVIDIA weist Robotik nicht separat aus; sie ist im Marktsegment Automotive (dort mit Robotik zusammengefasst) enthalten, das im Geschäftsjahr 2026 laut Sekundärquellen um 39 % wuchs, aber nur ein kleiner Bruchteil des Gesamtumsatzes (ca. 216 Mrd USD, davon Data Center 193,7 Mrd USD) ist. Robotik-Umsatz unter 1 bis 2 % geschätzt; Robotik-Trainings-Compute in Rechenzentren ist hier nicht enthalten und nicht trennbar.
+&nbsp;(abgerufen 2026-09-18)      </li>
+      <li id="fn26">
+<i>Schätzung:</i> Rockwell weist keine Robotik-Umsätze aus (Segmente laut 10-K FY2025: Intelligent Devices 45 %, Software &amp; Control 29 %, Lifecycle Services 26 % von 8,34 Mrd USD). Robotikbezug hat vor allem das Teilgeschäft Materialfluss/Motion und mobile Roboter (Clearpath/OTTO) innerhalb von Intelligent Devices sowie Steuerungen für Roboterzellen; angesetzt werden ca. 8 % des Umsatzes. Der Großteil ist klassische Fabrikautomation ohne Robotikbezug.
+&nbsp;(abgerufen 2026-09-18)      </li>
+      <li id="fn27">
+<i>Schätzung:</i> Intuitive weist kein Robotik-Segment aus, aber der gesamte Umsatz stammt aus robotergestützten Chirurgiesystemen samt Instrumenten und Service (2025: Instrumente/Zubehör 6,02 Mrd USD von rund 10,06 Mrd USD Umsatz laut Unternehmensmitteilung). Exposure damit nominell 100 %, allerdings ausschließlich zum Teilthema medizinische Robotik. Zu Industrie-, Logistik- oder Humanoid-Robotik und deren KI-Treibern besteht kaum ein Zusammenhang; wer das Thema so versteht, sollte den Wert deutlich niedriger ansetzen.
+&nbsp;(abgerufen 2026-09-18)      </li>
+      <li id="fn28">
+NVIDIA, <a href="https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026">https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026</a>&nbsp;(abgerufen 2026-09-18)&nbsp;– Gesamtumsatz Geschäftsjahr 2026: 215,9 Mrd USD      </li>
+      <li id="fn29">
+Yahoo Finance (via yfinance), <a href="https://finance.yahoo.com/quote/300124.SZ">https://finance.yahoo.com/quote/300124.SZ</a>&nbsp;(abgerufen 2026-09-18)      </li>
+      <li id="fn30">
+Yahoo Finance (via yfinance), <a href="https://finance.yahoo.com/quote/CGNX">https://finance.yahoo.com/quote/CGNX</a>&nbsp;(abgerufen 2026-09-18)      </li>
+      <li id="fn31">
+Yahoo Finance (via yfinance), <a href="https://finance.yahoo.com/quote/ISRG">https://finance.yahoo.com/quote/ISRG</a>&nbsp;(abgerufen 2026-09-18)      </li>
+      <li id="fn32">
+Yahoo Finance (via yfinance), <a href="https://finance.yahoo.com/quote/NVDA">https://finance.yahoo.com/quote/NVDA</a>&nbsp;(abgerufen 2026-09-19)      </li>
+      <li id="fn33">
+Yahoo Finance (via yfinance), <a href="https://finance.yahoo.com/quote/ROK">https://finance.yahoo.com/quote/ROK</a>&nbsp;(abgerufen 2026-09-18)      </li>
+      <li id="fn34">
+<i>Schätzung:</i> (110,7 / 45)^(1/6) − 1 ≈ 16,2 %; beide Werte aus markt.json bzw. dem ABI-Blog.
+&nbsp;(abgerufen 2026-09-18)      </li>
+      <li id="fn35">
+Harmonic Drive (Präsentation für Investoren, Mai 2025): Die Aufträge für autonome Roboter, die im dritten Quartal hoch gewesen seien, hätten sich stark abgeschwächt. Die Zahl der Kunden sei noch klein, und der Markt hänge stark vom Verhalten einzelner Kunden ab., <a href="https://www.hds.co.jp/Portals/0/files/english/ir/data/investor_event/pdf/E-script%2020250520%20v3.pdf">https://www.hds.co.jp/Portals/0/files/english/ir/data/investor_event/pdf/E-script%2020250520%20v3.pdf</a>      </li>
+      <li id="fn36">
+Teradyne Robotics (Universal Robots und MiR) setzte im zweiten Quartal 2025 75 Mio USD um, 17 % weniger als im Vorjahr. Im Gesamtjahr 2024 waren es 365 Mio USD., <a href="https://www.therobotreport.com/teradyne-robotics-generates-75m-in-q2/">https://www.therobotreport.com/teradyne-robotics-generates-75m-in-q2/</a>      </li>
+      <li id="fn37">
+<i>Schätzung:</i> 25,365 Mrd USD Marktkapitalisierung / 2,646 Mrd USD Umsatz TTM aus data/kennzahlen/SYM.json; der dort gemeldete EV/Umsatz von 1,7 ist damit nicht vereinbar, selbst bei hoher Nettoliquidität.
+&nbsp;(abgerufen 2026-09-18)      </li>
+      <li id="fn38">
+<i>Schätzung:</i> Niedrigste Top-down-Schätzung (MarketsandMarkets, Prognosejahr 2030).
+&nbsp;(abgerufen 2026-09-18)      </li>
+      <li id="fn39">
+<i>Schätzung:</i> Höchste Top-down-Schätzung (Market Research Future (MRFR), Prognosejahr 2030).
+&nbsp;(abgerufen 2026-09-18)      </li>
+      <li id="fn40">
+Goldman Sachs Research (via humanoid.guide), <a href="https://humanoid.guide/goldman-raises-2035-humanoid-robot-forecast-to-6-5-million/">https://humanoid.guide/goldman-raises-2035-humanoid-robot-forecast-to-6-5-million/</a>&nbsp;(abgerufen 2026-09-18)&nbsp;– Sekundärbericht; zuvor 1,4 Mio Einheiten      </li>
+      <li id="fn41">
+IFR, zitiert via Manufacturing Dive, <a href="https://www.manufacturingdive.com/news/us-robotics-rebounded-2025-on-track-more-growth-ifr-automate-2026/823874/">https://www.manufacturingdive.com/news/us-robotics-rebounded-2025-on-track-more-growth-ifr-automate-2026/823874/</a>&nbsp;(abgerufen 2026-09-18)      </li>
+      <li id="fn42">
+Das US-Handelsministerium hat am 2. September 2025 eine Untersuchung nach Section 232 zu Robotik und Industriemaschinen eingeleitet. Laut einer Analyse von Anwälten betrifft sie Ausrüstung und Vorprodukte im Wert von rund einer halben Billion USD. Sie kann zu Zöllen oder Einfuhrquoten führen., <a href="https://www.strtrade.com/trade-news-resources/tariff-actions-resources/section-232-investigation-robotics-industrial-machinery">https://www.strtrade.com/trade-news-resources/tariff-actions-resources/section-232-investigation-robotics-industrial-machinery</a>      </li>
+      <li id="fn43">
+Der US-Industrieverband NAM warnt: Zölle auf Vorprodukte für die Fertigung könnten Investitionen in neue Werke und Maschinen in den USA bremsen., <a href="https://nam.org/new-section-232-investigation-could-stall-investments-in-u-s-34829/">https://nam.org/new-section-232-investigation-could-stall-investments-in-u-s-34829/</a>      </li>
+      <li id="fn44">
+Tesla-Chef Musk sagte im April 2025, Chinas Ausfuhrbeschränkungen für Magnete aus Seltenen Erden hätten die Produktion des Roboters Optimus verzögert., <a href="https://www.malaymail.com/amp/news/money/2025/04/23/musk-says-teslas-optimus-humanoid-robots-affected-by-chinas-export-curbs-on-rare-earths/174192">https://www.malaymail.com/amp/news/money/2025/04/23/musk-says-teslas-optimus-humanoid-robots-affected-by-chinas-export-curbs-on-rare-earths/174192</a>      </li>
+      <li id="fn45">
+Mit der zweiten Welle von Ausfuhrkontrollen am 9. Oktober 2025 kamen fünf weitere Seltene Erden hinzu, außerdem Technologie und Fachwissen., <a href="https://www.europarl.europa.eu/RegData/etudes/ATAG/2025/779220/EPRS_ATA(2025)779220_EN.pdf">https://www.europarl.europa.eu/RegData/etudes/ATAG/2025/779220/EPRS_ATA(2025)779220_EN.pdf</a>      </li>
+    </ol>
+  </section>
+
+  <div class="hinweise">
+    <h4>Wichtige Hinweise</h4>
+    <b>Keine Anlageberatung.</b> Dieser Report dient ausschließlich Informations- und Lernzwecken. Er ist keine Anlageberatung, keine Finanzanalyse im Sinne des Wertpapierhandelsgesetzes und keine Aufforderung zum Kauf oder Verkauf von Wertpapieren. Er wurde weitgehend automatisiert von KI-Agenten erstellt und kann Fehler enthalten. Zahlen mit „~“ sind Schätzungen; die Herleitung steht im Quellenverzeichnis.
+  </div>
+
+</main>
+
+</div>
+
+<div class="fuss"><span>Thematic Research · Robotik</span><span>Keine Anlageberatung</span></div>
+<div class="tooltip" hidden></div>
+<script>
+/* Tooltips ergänzen nur – jeder Wert steht auch als Beschriftung oder in einer Tabelle. */
+(function () {
+  var tipp = document.querySelector(".tooltip");
+  function zeigen(el, x, y) {
+    var zeilen = (el.getAttribute("data-tipp") || "").split("|");
+    tipp.textContent = "";
+    zeilen.forEach(function (z, i) { var e = document.createElement(i ? "div" : "b"); e.textContent = z; tipp.appendChild(e); });
+    tipp.hidden = false;
+    var r = tipp.getBoundingClientRect();
+    tipp.style.left = Math.min(x + 14, window.innerWidth - r.width - 8) + "px";
+    tipp.style.top = Math.max(8, y - r.height - 12) + "px";
+  }
+  document.addEventListener("pointermove", function (ev) {
+    var el = ev.target.closest && ev.target.closest("[data-tipp]");
+    if (el) { zeigen(el, ev.clientX, ev.clientY); } else { tipp.hidden = true; }
+  });
+  document.addEventListener("focusin", function (ev) {
+    var el = ev.target.closest && ev.target.closest("[data-tipp]");
+    if (el) { var r = el.getBoundingClientRect(); zeigen(el, r.left + r.width / 2, r.top); }
+  });
+  document.addEventListener("focusout", function () { tipp.hidden = true; });
+})();
+</script>
+</body>
+</html>

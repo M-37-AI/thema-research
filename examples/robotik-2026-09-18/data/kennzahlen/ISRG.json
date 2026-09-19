@@ -1,0 +1,98 @@
+{
+  "ticker": "ISRG",
+  "name": "Intuitive Surgical, Inc.",
+  "waehrung": "USD",
+  "berichtswaehrung": "USD",
+  "branche": "Medical Instruments & Supplies",
+  "land": "United States",
+  "abgerufen": "2026-09-18",
+  "kennzahlen": {
+    "marktkapitalisierung": {
+      "wert": 140.746,
+      "einheit": "Mrd USD",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/ISRG",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "umsatz_ttm": {
+      "wert": 11.034,
+      "einheit": "Mrd USD",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/ISRG",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "umsatzwachstum_yoy": {
+      "wert": 18.5,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/ISRG",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "bruttomarge": {
+      "wert": 66.7,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/ISRG",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "operative_marge": {
+      "wert": 33.6,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/ISRG",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "ev_umsatz": {
+      "wert": 11.82,
+      "einheit": "x",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/ISRG",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "kgv": {
+      "wert": 44.95,
+      "einheit": "x",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/ISRG",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    }
+  },
+  "umsatz_ttm_usd": {
+    "wert": 11.034,
+    "einheit": "Mrd USD",
+    "typ": "berichtet",
+    "quelle": "https://finance.yahoo.com/quote/ISRG",
+    "abgerufen": "2026-09-18",
+    "herausgeber": "Yahoo Finance (via yfinance)",
+    "hinweis": "bereits in USD"
+  },
+  "marktkapitalisierung_usd": {
+    "wert": 140.746,
+    "einheit": "Mrd USD",
+    "typ": "berichtet",
+    "quelle": "https://finance.yahoo.com/quote/ISRG",
+    "abgerufen": "2026-09-18",
+    "herausgeber": "Yahoo Finance (via yfinance)",
+    "hinweis": "bereits in USD"
+  },
+  "wechselkurse": {
+    "USD": {
+      "wert": 1.0,
+      "einheit": "USD je USD",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/USDUSD=X",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Yahoo Finance (via yfinance)",
+      "jahr": 2026,
+      "hinweis": "Schlusskurs vom 2026-09-18"
+    }
+  },
+  "hinweise": []
+}

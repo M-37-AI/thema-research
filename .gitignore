@@ -13,3 +13,6 @@ runs/*
 **/report.html
 **/lektorat-vorlage.json
 **/report-ohne-lektorat.html
+
+# Beispiel-Lauf wird mitsamt Report versioniert
+!examples/**/report.html

@@ -1,0 +1,33 @@
+{
+  "name": "Intuitive Surgical",
+  "ticker": "ISRG",
+  "segment_id": "service-logistik-humanoid",
+  "geschaeftsmodell": "Entwickelt und vertreibt robotergestützte Chirurgiesysteme (da Vinci, Single Port, Ion für Lungenbiopsien). Erlöse: Instrumente und Zubehör (2025 rund 6,0 Mrd USD von rund 10,1 Mrd USD, also etwa 60 %, verbrauchsabhängig je Eingriff), Systemverkäufe und Leasing sowie Service. Das Modell folgt dem Razor-and-Blade-Prinzip: Der installierte Bestand (über 12.100 Systeme Ende 2025) erzeugt wiederkehrende Erlöse pro Operation.",
+  "themen_exposure": {
+    "wert": 100,
+    "einheit": "% Umsatz",
+    "typ": "schaetzung",
+    "begruendung": "Intuitive weist kein Robotik-Segment aus, aber der gesamte Umsatz stammt aus robotergestützten Chirurgiesystemen samt Instrumenten und Service (2025: Instrumente/Zubehör 6,02 Mrd USD von rund 10,06 Mrd USD Umsatz laut Unternehmensmitteilung). Exposure damit nominell 100 %, allerdings ausschließlich zum Teilthema medizinische Robotik. Zu Industrie-, Logistik- oder Humanoid-Robotik und deren KI-Treibern besteht kaum ein Zusammenhang; wer das Thema so versteht, sollte den Wert deutlich niedriger ansetzen.",
+    "abgerufen": "2026-09-18"
+  },
+  "kennzahlen_datei": "data/kennzahlen/ISRG.json",
+  "wettbewerbsposition": "Klarer Marktführer bei robotergestützter Weichteilchirurgie mit dem größten installierten Bestand, umfangreicher klinischer Evidenz, hohen Wechselkosten (Chirurgenschulung, Instrumentenökosystem) und über 3,1 Mio Eingriffen im Jahr 2025. Herausforderer sind Medtronic (Hugo), Johnson & Johnson (Ottava), CMR Surgical und chinesische Anbieter (z. B. MicroPort), die vor allem über den Preis und lokale Regulierung angreifen können. Die Gewinnmarge ist die höchste im Segment, was Preisdruck ausgesetzt sein kann.",
+  "rolle_im_thema": "Kernprofiteur",
+  "ueberzeugung": {
+    "stufe": "niedrig",
+    "begruendung": "Als Geschäft ist Intuitive stark (wiederkehrende Erlöse, hohe Marge, zweistelliges Wachstum), aber es ist ein Medizintechnik-Wert und kein Hebel auf das Kernthema Industrie-, Logistik- und KI-Robotik; die Zuordnung zum Thema ist überwiegend eine Frage der Definition. Die Bewertung (KGV rund 45) verlangt zudem fortgesetzt hohes Wachstum."
+  },
+  "bull_case": [
+    "Wiederkehrende Erlösbasis: Instrumente und Zubehör wuchsen 2025 um 19 % auf rund 6,0 Mrd USD und folgen dem Eingriffsvolumen (plus 18 % auf über 3,1 Mio Eingriffe); jedes neue System erhöht die künftigen Erlöse.",
+    "Produktzyklus da Vinci 5: 870 der 1.721 im Jahr 2025 platzierten Systeme waren da Vinci 5 (2024: 362 von 1.526), was Preise, Auslastung und Upgrade-Nachfrage im Bestand stützen kann.",
+    "Sehr hohe Profitabilität (operative Marge laut Kennzahlen 33,6 %, Bruttomarge 66,7 %) bei zweistelligem Umsatzwachstum (TTM plus 18,5 %); hoher Wechselkostenschutz durch Chirurgentraining und Evidenzbasis.",
+    "Wachstumsspielraum außerhalb der USA (2025: internationale Eingriffe plus 23 % gegenüber plus 15 % in den USA) und in neuen Indikationen sowie bei Ion."
+  ],
+  "bear_case": [
+    "Geringe Themenübereinstimmung: Der Kurs hängt an Krankenhausbudgets, Eingriffsvolumina und Erstattung, nicht an Fabrik-, Logistik- oder Humanoid-Robotik; als Robotik-Exposure daher nur begrenzt diversifizierend.",
+    "Bewertung anspruchsvoll (KGV rund 45, EV/Umsatz rund 12): Eine Abschwächung des Eingriffswachstums oder der Systemplatzierungen würde sich stark auf den Kurs auswirken.",
+    "Wettbewerb und Preisdruck: Medtronic Hugo, J&J Ottava und chinesische Systeme sind auf dem Markt oder in Zulassung; öffentliche Beschaffer und Krankenhausketten können Rabatte fordern.",
+    "Politische und regulatorische Risiken: Zölle auf Vorprodukte und Exporte, Erstattungsänderungen sowie Krankenhausbudgets können Marge und Nachfrage belasten."
+  ],
+  "was_uns_widerlegen_wuerde": "Das weltweite da-Vinci-Eingriffswachstum fällt in zwei aufeinanderfolgenden Quartalen unter 10 % (2025: 18 %), oder ein Wettbewerber (z. B. Hugo, Ottava) gewinnt in den USA erkennbar Marktanteile bei Neuplatzierungen, sodass die Instrumentenerlöse je Eingriff sinken."
+}

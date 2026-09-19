@@ -1,0 +1,33 @@
+{
+  "name": "Symbotic Inc.",
+  "ticker": "SYM",
+  "segment_id": "service-logistik-humanoid",
+  "geschaeftsmodell": "Symbotic verkauft und installiert vollautomatische, roboterbasierte Lagersysteme (mobile Roboter, Shuttle-Regale, Software) für Distributionszentren und Handelsketten; Erlöse aus Systemprojekten, zunehmend auch Software/Wartung und Betrieb. Wichtigster Kunde ist Walmart (85 % des Umsatzes im Geschäftsjahr 2025 laut 10-K); ein Gemeinschaftsunternehmen mit SoftBank (GreenBox) bietet Lagerautomatisierung als Dienstleistung an.",
+  "themen_exposure": {
+    "wert": 100,
+    "einheit": "% Umsatz",
+    "typ": "schaetzung",
+    "begruendung": "Symbotic berichtet im Wesentlichen ein einziges Geschäftsfeld (Lagerautomatisierungssysteme auf Roboterbasis); praktisch der gesamte Umsatz stammt aus Robotik-Lagersystemen. Kleine Nebenerlöse (Software, Wartung) hängen am selben Systembestand. Kein separater Segmentausweis, daher als Schätzung markiert.",
+    "abgerufen": "2026-09-18"
+  },
+  "kennzahlen_datei": "data/kennzahlen/SYM.json",
+  "wettbewerbsposition": "Führender Anbieter integrierter, vollautomatischer Lagersysteme im US-Handel mit einem Auftragsbestand von rund 22,5 Mrd USD (Stand 27.09.2025, laut 10-K; überwiegend Walmart und GreenBox). Wettbewerber sind u. a. AutoStore, Ocado, Dematic (KION), Honeywell Intelligrated, Knapp und Amazon-Eigenentwicklungen. Die Wettbewerbsposition beruht stark auf der Walmart-Beziehung; außerhalb davon ist die Kundenbasis schmal. Die Bruttomarge liegt laut Kennzahlen bei rund 21 %, die operative Marge im niedrigen einstelligen Bereich – Skaleneffekte sind noch nicht bewiesen.",
+  "rolle_im_thema": "Kernprofiteur",
+  "ueberzeugung": {
+    "stufe": "mittel",
+    "begruendung": "Reiner Themenwert mit hohem, vertraglich gesichertem Auftragsbestand und gut 20 % Umsatzwachstum. Dagegen stehen extreme Kundenkonzentration, niedrige Margen und eine Bewertung (EV/Umsatz ca. 1,7 laut Kennzahlen bei Marktkapitalisierung ~25 Mrd USD) die Ausführung ohne Rückschläge voraussetzt."
+  },
+  "bull_case": [
+    "Auftragsbestand von ca. 22,5 Mrd USD entspricht dem Mehrfachen des Jahresumsatzes (TTM ca. 2,6 Mrd USD) und gibt mehrjährige Sichtbarkeit.",
+    "GreenBox-Vereinbarung mit SoftBank sieht mindestens 7,5 Mrd USD Systemkäufe über sechs Jahre vor und könnte den Kundenkreis über Walmart hinaus erweitern.",
+    "Steigende Softwareanteile und Skaleneffekte bei Serienfertigung der Systeme könnten die Marge von derzeit ca. 21 % Brutto- und ca. 5 % operativer Marge deutlich anheben.",
+    "Arbeitskräftemangel und E-Commerce-Volumen treiben die Automatisierung von Distributionszentren strukturell."
+  ],
+  "bear_case": [
+    "Walmart macht 85 % des Umsatzes und den Großteil des Auftragsbestands aus; Verzögerungen oder Kürzungen bei Walmart träfen Umsatz und Bewertung unmittelbar.",
+    "Projektgeschäft mit Installationsrisiken: Bereits in der Vergangenheit gab es Bilanzkorrekturen und Restatements; Kostenüberschreitungen bei Rollouts drücken die Marge.",
+    "Der Auftragsbestand ist kein garantierter Umsatz; GreenBox ist ein Gemeinschaftsunternehmen, dessen Finanzierung und Abrufe von SoftBank abhängen.",
+    "Starker Wettbewerb (AutoStore, Ocado, Dematic, Amazon-Eigenentwicklung) und Preisdruck, sobald weitere Großkunden ausgeschrieben werden."
+  ],
+  "was_uns_widerlegen_wuerde": "Walmart kündigt Reduzierung oder Verschiebung der Rollouts an bzw. der Walmart-Umsatzanteil bleibt über zwei weitere Geschäftsjahre über 80 %, ohne dass GreenBox oder ein anderer Großkunde nennenswerte Umsätze beiträgt; ebenso eine Bruttomarge, die trotz wachsendem Umsatz dauerhaft unter 20 % bleibt."
+}

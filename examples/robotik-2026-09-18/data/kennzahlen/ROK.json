@@ -1,0 +1,98 @@
+{
+  "ticker": "ROK",
+  "name": "Rockwell Automation, Inc.",
+  "waehrung": "USD",
+  "berichtswaehrung": "USD",
+  "branche": "Specialty Industrial Machinery",
+  "land": "United States",
+  "abgerufen": "2026-09-18",
+  "kennzahlen": {
+    "marktkapitalisierung": {
+      "wert": 45.692,
+      "einheit": "Mrd USD",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/ROK",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "umsatz_ttm": {
+      "wert": 8.973,
+      "einheit": "Mrd USD",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/ROK",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "umsatzwachstum_yoy": {
+      "wert": 7.9,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/ROK",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "bruttomarge": {
+      "wert": 49.1,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/ROK",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "operative_marge": {
+      "wert": 21.0,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/ROK",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "ev_umsatz": {
+      "wert": 5.42,
+      "einheit": "x",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/ROK",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "kgv": {
+      "wert": 38.52,
+      "einheit": "x",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/ROK",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    }
+  },
+  "umsatz_ttm_usd": {
+    "wert": 8.973,
+    "einheit": "Mrd USD",
+    "typ": "berichtet",
+    "quelle": "https://finance.yahoo.com/quote/ROK",
+    "abgerufen": "2026-09-18",
+    "herausgeber": "Yahoo Finance (via yfinance)",
+    "hinweis": "bereits in USD"
+  },
+  "marktkapitalisierung_usd": {
+    "wert": 45.692,
+    "einheit": "Mrd USD",
+    "typ": "berichtet",
+    "quelle": "https://finance.yahoo.com/quote/ROK",
+    "abgerufen": "2026-09-18",
+    "herausgeber": "Yahoo Finance (via yfinance)",
+    "hinweis": "bereits in USD"
+  },
+  "wechselkurse": {
+    "USD": {
+      "wert": 1.0,
+      "einheit": "USD je USD",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/USDUSD=X",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Yahoo Finance (via yfinance)",
+      "jahr": 2026,
+      "hinweis": "Schlusskurs vom 2026-09-18"
+    }
+  },
+  "hinweise": []
+}

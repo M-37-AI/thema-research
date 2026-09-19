@@ -1,0 +1,98 @@
+{
+  "ticker": "6954.T",
+  "name": "Fanuc Corporation",
+  "waehrung": "JPY",
+  "berichtswaehrung": "JPY",
+  "branche": "Specialty Industrial Machinery",
+  "land": "Japan",
+  "abgerufen": "2026-09-18",
+  "kennzahlen": {
+    "marktkapitalisierung": {
+      "wert": 5437.683,
+      "einheit": "Mrd JPY",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/6954.T",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "umsatz_ttm": {
+      "wert": 892.503,
+      "einheit": "Mrd JPY",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/6954.T",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "umsatzwachstum_yoy": {
+      "wert": 17.7,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/6954.T",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "bruttomarge": {
+      "wert": 38.4,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/6954.T",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "operative_marge": {
+      "wert": 23.2,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/6954.T",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "ev_umsatz": {
+      "wert": 5.28,
+      "einheit": "x",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/6954.T",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "kgv": {
+      "wert": 32.79,
+      "einheit": "x",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/6954.T",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    }
+  },
+  "umsatz_ttm_usd": {
+    "wert": 5.695,
+    "einheit": "Mrd USD",
+    "typ": "berichtet",
+    "quelle": "https://finance.yahoo.com/quote/6954.T",
+    "abgerufen": "2026-09-18",
+    "herausgeber": "Yahoo Finance (via yfinance)",
+    "hinweis": "umgerechnet mit 0.00638077 USD je Einheit (Kurs vom 2026-09-18)"
+  },
+  "marktkapitalisierung_usd": {
+    "wert": 34.697,
+    "einheit": "Mrd USD",
+    "typ": "berichtet",
+    "quelle": "https://finance.yahoo.com/quote/6954.T",
+    "abgerufen": "2026-09-18",
+    "herausgeber": "Yahoo Finance (via yfinance)",
+    "hinweis": "umgerechnet mit 0.00638077 USD je Einheit (Kurs vom 2026-09-18)"
+  },
+  "wechselkurse": {
+    "JPY": {
+      "wert": 0.006381,
+      "einheit": "USD je JPY",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/JPYUSD=X",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Yahoo Finance (via yfinance)",
+      "jahr": 2026,
+      "hinweis": "Schlusskurs vom 2026-09-18"
+    }
+  },
+  "hinweise": []
+}

@@ -1,0 +1,605 @@
+{
+  "thema": "Robotik",
+  "datum": "2026-09-18",
+  "schaetzungen": [
+    {
+      "herausgeber": "ABI Research",
+      "jahr_prognose": 2030,
+      "marktgroesse": {
+        "wert": 110.7,
+        "einheit": "Mrd USD",
+        "typ": "berichtet",
+        "quelle": "https://www.abiresearch.com/blog/global-robotics-market-outlook",
+        "abgerufen": "2026-09-18",
+        "jahr": 2030,
+        "herausgeber": "ABI Research",
+        "hinweis": "Analystenblog (Juli 2025), Methodik nicht einsehbar"
+      },
+      "cagr": {
+        "wert": 13.8,
+        "einheit": "% p.a.",
+        "typ": "berichtet",
+        "quelle": "https://www.abiresearch.com/blog/global-robotics-market-outlook",
+        "abgerufen": "2026-09-18",
+        "jahr": 2030,
+        "herausgeber": "ABI Research",
+        "hinweis": "Ausgangswert 2024: 45 Mrd USD"
+      },
+      "abgrenzung": "Fünf Robotikkategorien: Industrieroboter, Cobots, mobile Roboter, humanoide Roboter und Exoskelette. Basisjahr 2024 mit 45 Mrd USD."
+    },
+    {
+      "herausgeber": "Market Research Future (MRFR)",
+      "jahr_prognose": 2030,
+      "marktgroesse": {
+        "wert": 214.6,
+        "einheit": "Mrd USD",
+        "typ": "berichtet",
+        "quelle": "https://www.globenewswire.com/en/news-release/2023/05/30/2678481/0/en/Robotics-Market-to-Reach-USD-214-60-Billion-at-a-22-80-CAGR-By-2030-Market-Research-Future-MRFR.html",
+        "abgerufen": "2026-09-18",
+        "jahr": 2030,
+        "herausgeber": "Market Research Future (MRFR)",
+        "hinweis": "Pressemitteilung, Methodik nicht einsehbar; Stand Mai 2023, Basisjahr 2021"
+      },
+      "cagr": {
+        "wert": 22.8,
+        "einheit": "% p.a.",
+        "typ": "berichtet",
+        "quelle": "https://www.globenewswire.com/en/news-release/2023/05/30/2678481/0/en/Robotics-Market-to-Reach-USD-214-60-Billion-at-a-22-80-CAGR-By-2030-Market-Research-Future-MRFR.html",
+        "abgerufen": "2026-09-18",
+        "jahr": 2030,
+        "herausgeber": "Market Research Future (MRFR)",
+        "hinweis": "Pressemitteilung, Methodik nicht einsehbar; Zeitraum 2022–2030"
+      },
+      "abgrenzung": "Gesamter Robotikmarkt, segmentiert nach Typ (u. a. Knickarmroboter), Mobilität (u. a. mobile Roboter) und Endanwender (u. a. Fertigung). Detaillierte Definition in der Pressemitteilung nicht offengelegt; älteste der Schätzungen (2023)."
+    },
+    {
+      "herausgeber": "MarketsandMarkets",
+      "jahr_prognose": 2030,
+      "marktgroesse": {
+        "wert": 50.33,
+        "einheit": "Mrd USD",
+        "typ": "berichtet",
+        "quelle": "https://www.marketsandmarkets.com/Market-Reports/intelligent-robotics-market-99226522.html",
+        "abgerufen": "2026-09-18",
+        "jahr": 2030,
+        "herausgeber": "MarketsandMarkets",
+        "hinweis": "Pressemitteilung, Methodik nicht einsehbar"
+      },
+      "cagr": {
+        "wert": 29.2,
+        "einheit": "% p.a.",
+        "typ": "berichtet",
+        "quelle": "https://www.marketsandmarkets.com/Market-Reports/intelligent-robotics-market-99226522.html",
+        "abgerufen": "2026-09-18",
+        "jahr": 2030,
+        "herausgeber": "MarketsandMarkets",
+        "hinweis": "Pressemitteilung, Methodik nicht einsehbar; Zeitraum 2025–2030, Ausgangswert 2025: 13,99 Mrd USD"
+      },
+      "abgrenzung": "Nur „intelligente Robotik“: Roboter, die ihre Umgebung mit KI/maschinellem Lernen autonom wahrnehmen und darauf reagieren (Industrie-, Service- und Cobots). Klassische, nicht KI-gestützte Roboter sind ausgeschlossen – Teilmarkt, daher deutlich kleiner."
+    },
+    {
+      "herausgeber": "Persistence Market Research",
+      "jahr_prognose": 2030,
+      "marktgroesse": {
+        "wert": 84.7,
+        "einheit": "Mrd USD",
+        "typ": "berichtet",
+        "quelle": "https://www.globenewswire.com/news-release/2023/11/29/2787552/0/en/Global-Industrial-Robotics-Market-Size-Worth-84-7-Billion-by-2030-at-a-CAGR-of-12-7-Latest-Industry-Insights-by-Persistence-Market-Research.html",
+        "abgerufen": "2026-09-18",
+        "jahr": 2030,
+        "herausgeber": "Persistence Market Research",
+        "hinweis": "Pressemitteilung, Methodik nicht einsehbar; Stand November 2023"
+      },
+      "cagr": {
+        "wert": 12.7,
+        "einheit": "% p.a.",
+        "typ": "berichtet",
+        "quelle": "https://www.globenewswire.com/news-release/2023/11/29/2787552/0/en/Global-Industrial-Robotics-Market-Size-Worth-84-7-Billion-by-2030-at-a-CAGR-of-12-7-Latest-Industry-Insights-by-Persistence-Market-Research.html",
+        "abgerufen": "2026-09-18",
+        "jahr": 2030,
+        "herausgeber": "Persistence Market Research",
+        "hinweis": "Pressemitteilung, Methodik nicht einsehbar; Ausgangswert 2023: 36,7 Mrd USD"
+      },
+      "abgrenzung": "Nur Industrierobotik (automatisierte Systeme für Fertigungs- und Industrieanwendungen in u. a. Automobil, Elektronik, Gesundheit). Service-, mobile und humanoide Roboter nicht ausdrücklich enthalten."
+    }
+  ],
+  "treiber": [
+    {
+      "titel": "Alternde Belegschaft in China",
+      "beschreibung": "Chinas Bevölkerung im erwerbsfähigen Alter schrumpft strukturell, Löhne und Arbeitskräfteknappheit erhöhen den Anreiz zur Automatisierung. Da China 54 % der weltweiten Neuinstallationen stellt, wirkt dieser Hebel direkt auf die globale Nachfrage. Der Effekt ist über Jahrzehnte angelegt.",
+      "belege": [
+        {
+          "wert": 6.62,
+          "einheit": "Mio Personen Rückgang der Bevölkerung 16–59 J. ggü. Vorjahr",
+          "typ": "berichtet",
+          "quelle": "https://asiatimes.com/2026/01/chinas-population-falls-for-fourth-year-amid-economic-woes/",
+          "abgerufen": "2026-09-18",
+          "jahr": 2025,
+          "herausgeber": "Nationales Statistikamt China (NBS), zitiert via Asia Times",
+          "hinweis": "Sekundärzitat der NBS-Daten"
+        },
+        {
+          "wert": 54,
+          "einheit": "% der globalen Roboter-Neuinstallationen (China)",
+          "typ": "berichtet",
+          "quelle": "https://ifr.org/ifr-press-releases/news/global-robot-demand-in-factories-doubles-over-10-years",
+          "abgerufen": "2026-09-18",
+          "jahr": 2024,
+          "herausgeber": "International Federation of Robotics (IFR)"
+        }
+      ]
+    },
+    {
+      "titel": "Verdopplung der Installationen in zehn Jahren",
+      "beschreibung": "Die jährlichen Neuinstallationen industrieller Roboter haben sich in zehn Jahren mehr als verdoppelt und liegen das vierte Jahr in Folge über 500.000 Einheiten. Der IFR erwartet weiteres Wachstum auf über 700.000 Einheiten bis 2028. Der Bestand wächst damit kontinuierlich und schafft auch Folgegeschäft (Service, Ersatz).",
+      "belege": [
+        {
+          "wert": 542000,
+          "einheit": "Einheiten Neuinstallationen weltweit",
+          "typ": "berichtet",
+          "quelle": "https://ifr.org/ifr-press-releases/news/global-robot-demand-in-factories-doubles-over-10-years",
+          "abgerufen": "2026-09-18",
+          "jahr": 2024,
+          "herausgeber": "International Federation of Robotics (IFR)"
+        },
+        {
+          "wert": 700000,
+          "einheit": "Einheiten Neuinstallationen p. a. (IFR-Prognose)",
+          "typ": "berichtet",
+          "quelle": "https://ifr.org/ifr-press-releases/news/global-robot-demand-in-factories-doubles-over-10-years",
+          "abgerufen": "2026-09-18",
+          "jahr": 2028,
+          "herausgeber": "International Federation of Robotics (IFR)",
+          "hinweis": "Prognose: 'exceed 700,000'; Wert ist Untergrenze"
+        },
+        {
+          "wert": 4664000,
+          "einheit": "Einheiten Betriebsbestand weltweit",
+          "typ": "berichtet",
+          "quelle": "https://ifr.org/ifr-press-releases/news/global-robot-demand-in-factories-doubles-over-10-years",
+          "abgerufen": "2026-09-18",
+          "jahr": 2024,
+          "herausgeber": "International Federation of Robotics (IFR)"
+        }
+      ]
+    },
+    {
+      "titel": "Aufholpotenzial bei Roboterdichte",
+      "beschreibung": "Die Roboterdichte streut enorm: Korea erreicht ein Vielfaches des chinesischen oder US-Niveaus. Konvergieren große Industrieländer nur teilweise zu den Spitzenwerten, entsteht struktureller Zusatzbedarf, ohne dass neue Anwendungen nötig wären. Horizont: 5–10 Jahre.",
+      "belege": [
+        {
+          "wert": 1220,
+          "einheit": "Roboter je 10.000 Beschäftigte im Verarbeitenden Gewerbe (Südkorea)",
+          "typ": "berichtet",
+          "quelle": "https://ifr.org/ifr-press-releases/news/robot-density-surges-in-europe-asia-and-americas",
+          "abgerufen": "2026-09-18",
+          "jahr": 2024,
+          "herausgeber": "International Federation of Robotics (IFR)"
+        },
+        {
+          "wert": 166,
+          "einheit": "Roboter je 10.000 Beschäftigte im Verarbeitenden Gewerbe (China)",
+          "typ": "berichtet",
+          "quelle": "https://ifr.org/ifr-press-releases/news/robot-density-surges-in-europe-asia-and-americas",
+          "abgerufen": "2026-09-18",
+          "jahr": 2024,
+          "herausgeber": "International Federation of Robotics (IFR)",
+          "hinweis": "Suchergebnis-Zusammenfassung des IFR-Berichts; Einzelwert nicht am Originaltext geprüft"
+        },
+        {
+          "wert": 307,
+          "einheit": "Roboter je 10.000 Beschäftigte im Verarbeitenden Gewerbe (USA)",
+          "typ": "berichtet",
+          "quelle": "https://ifr.org/ifr-press-releases/news/robot-density-surges-in-europe-asia-and-americas",
+          "abgerufen": "2026-09-18",
+          "jahr": 2024,
+          "herausgeber": "International Federation of Robotics (IFR)",
+          "hinweis": "Suchergebnis-Zusammenfassung des IFR-Berichts; Einzelwert nicht am Originaltext geprüft"
+        }
+      ]
+    },
+    {
+      "titel": "KI und sinkende Hardwarekosten bei Humanoiden",
+      "beschreibung": "Fortschritte bei KI-Modellen für physische Aufgaben und fallende Komponentenkosten öffnen Anwendungen jenseits klassischer Fabrikautomation. Goldman Sachs hat seine Humanoiden-Prognose für 2035 binnen kurzer Zeit mehrfach angehoben. Der Markt ist heute noch sehr klein, der Beitrag zum Thema eher ab Ende des Jahrzehnts relevant.",
+      "belege": [
+        {
+          "wert": 40,
+          "einheit": "% Kostensenkung Materialkosten (Bill of Materials) humanoider Roboter",
+          "typ": "berichtet",
+          "quelle": "https://www.goldmansachs.com/insights/articles/the-global-market-for-robots-could-reach-38-billion-by-2035",
+          "abgerufen": "2026-09-18",
+          "herausgeber": "Goldman Sachs Research",
+          "hinweis": "Bankanalyse, Methodik nur teilweise einsehbar"
+        },
+        {
+          "wert": 6500000,
+          "einheit": "Einheiten Humanoiden-Absatz (Goldman-Prognose)",
+          "typ": "berichtet",
+          "quelle": "https://humanoid.guide/goldman-raises-2035-humanoid-robot-forecast-to-6-5-million/",
+          "abgerufen": "2026-09-18",
+          "jahr": 2035,
+          "herausgeber": "Goldman Sachs Research (via humanoid.guide)",
+          "hinweis": "Sekundärbericht; zuvor 1,4 Mio Einheiten"
+        }
+      ]
+    },
+    {
+      "titel": "Erholung der US-Nachfrage 2025",
+      "beschreibung": "Nach zwei Rückgangsjahren zogen die US-Installationen 2025 wieder an, getragen von Reshoring-Bemühungen und Automatisierungsdruck. Das mildert die Abhängigkeit vom chinesischen Markt.",
+      "belege": [
+        {
+          "wert": 11,
+          "einheit": "% Wachstum US-Installationen ggü. Vorjahr (auf 38.000 Einheiten)",
+          "typ": "berichtet",
+          "quelle": "https://www.manufacturingdive.com/news/us-robotics-rebounded-2025-on-track-more-growth-ifr-automate-2026/823874/",
+          "abgerufen": "2026-09-18",
+          "jahr": 2025,
+          "herausgeber": "IFR, zitiert via Manufacturing Dive"
+        }
+      ]
+    }
+  ],
+  "huerden": [
+    {
+      "titel": "Zyklische Schwäche in Kundenbranchen",
+      "beschreibung": "Roboterabsatz hängt stark an Automobil und Elektronik; 2024 schrumpfte die Autonachfrage und Europa sowie die USA verzeichneten Rückgänge. Investitionszurückhaltung dieser Branchen kann das Wachstum über mehrere Quartale bis Jahre dämpfen, unabhängig vom langfristigen Trend.",
+      "belege": [
+        {
+          "wert": -7,
+          "einheit": "% Roboternachfrage Automobilindustrie ggü. Vorjahr",
+          "typ": "berichtet",
+          "quelle": "https://www.therobotreport.com/ifr-industrial-robot-deployments-have-doubled-in-10-years/",
+          "abgerufen": "2026-09-18",
+          "jahr": 2024,
+          "herausgeber": "IFR, zitiert via The Robot Report"
+        },
+        {
+          "wert": -8,
+          "einheit": "% Installationen Europa ggü. Vorjahr",
+          "typ": "berichtet",
+          "quelle": "https://ifr.org/ifr-press-releases/news/global-robot-demand-in-factories-doubles-over-10-years",
+          "abgerufen": "2026-09-18",
+          "jahr": 2024,
+          "herausgeber": "International Federation of Robotics (IFR)"
+        },
+        {
+          "wert": -9,
+          "einheit": "% Installationen USA ggü. Vorjahr (34.200 Einheiten)",
+          "typ": "berichtet",
+          "quelle": "https://www.manufacturingdive.com/news/us-robotics-rebounded-2025-on-track-more-growth-ifr-automate-2026/823874/",
+          "abgerufen": "2026-09-18",
+          "jahr": 2024,
+          "herausgeber": "IFR, zitiert via Manufacturing Dive"
+        }
+      ]
+    },
+    {
+      "titel": "Zölle und Handelsschranken",
+      "beschreibung": "Die US-Regierung untersucht Importe von Robotik und Industriemaschinen nach Section 232, ein mögliches Zollinstrument. Zölle würden Anlagenkosten in den USA erhöhen und Investitionsentscheidungen verschieben. Das Ergebnis der Untersuchung und mögliche Maßnahmen sind für die nächsten Monate offen.",
+      "belege": [
+        {
+          "aussage": "Das US-Handelsministerium hat am 2. September 2025 eine Section-232-Untersuchung zu Robotik und Industriemaschinen eingeleitet; sie umfasst laut Anwaltsanalyse rund eine halbe Billion USD an Ausrüstungen und Vorprodukten und kann zu Zöllen oder Quoten führen.",
+          "quelle": "https://www.strtrade.com/trade-news-resources/tariff-actions-resources/section-232-investigation-robotics-industrial-machinery"
+        },
+        {
+          "aussage": "Der Verband NAM warnt, Zölle auf Fertigungsvorleistungen könnten Investitionen in neue Werke und Ausrüstung in den USA ausbremsen.",
+          "quelle": "https://nam.org/new-section-232-investigation-could-stall-investments-in-u-s-34829/"
+        }
+      ]
+    },
+    {
+      "titel": "Abhängigkeit von chinesischen Seltenen Erden",
+      "beschreibung": "Antriebe und Aktuatoren benötigen NdFeB-Magnete, deren Produktion China zu rund 90 % kontrolliert. Exportkontrollen seit April und Oktober 2025 können Produktion verzögern, wie Tesla für Optimus bestätigte. Besonders exponiert sind Humanoide mit hohem Magnetbedarf je Einheit.",
+      "belege": [
+        {
+          "wert": 90,
+          "einheit": "% Raffination und Permanentmagnet-Produktion bei China",
+          "typ": "berichtet",
+          "quelle": "https://discoveryalert.com/humanoid-robotics-rare-earth-elements-2026/",
+          "abgerufen": "2026-09-18",
+          "herausgeber": "Discovery Alert",
+          "hinweis": "Sekundärquelle, Methodik nicht einsehbar"
+        },
+        {
+          "aussage": "Tesla-CEO Musk sagte im April 2025, die Optimus-Produktion sei durch Chinas Exportbeschränkungen für Seltene-Erden-Magnete verzögert worden.",
+          "quelle": "https://www.malaymail.com/amp/news/money/2025/04/23/musk-says-teslas-optimus-humanoid-robots-affected-by-chinas-export-curbs-on-rare-earths/174192"
+        },
+        {
+          "aussage": "Die zweite Exportkontrollwelle vom 9. Oktober 2025 erweiterte die Kontrollen um fünf weitere Seltene Erden sowie Technologie und Know-how.",
+          "quelle": "https://www.europarl.europa.eu/RegData/etudes/ATAG/2025/779220/EPRS_ATA(2025)779220_EN.pdf"
+        }
+      ]
+    },
+    {
+      "titel": "Preisdruck durch chinesische Anbieter",
+      "beschreibung": "Chinesische Hersteller haben 2024 erstmals mehr als die Hälfte ihres Heimatmarktes gewonnen. Das erhöht den Preisdruck für etablierte Anbieter und begrenzt die Margen im größten Markt. Der Effekt wirkt bereits, ein Rückgewinn ausländischer Anteile ist strukturell schwierig.",
+      "belege": [
+        {
+          "wert": 57,
+          "einheit": "% Marktanteil chinesischer Anbieter im Heimatmarkt",
+          "typ": "berichtet",
+          "quelle": "https://english.news.cn/20250926/0e0d8b4348b64c36951cc1c000498d38/c.html",
+          "abgerufen": "2026-09-18",
+          "jahr": 2024,
+          "herausgeber": "IFR, zitiert via Xinhua",
+          "hinweis": "Vorjahr 47 %"
+        }
+      ]
+    },
+    {
+      "titel": "Hohe Integrationskosten, Humanoide noch klein",
+      "beschreibung": "Der Roboter selbst macht nur einen Teil der Projektkosten aus; Integration, Software und Wartung belasten vor allem kleine Betriebe. Humanoide Roboter sind zudem noch im Kleinserienstadium, sodass Prognosen für 2035 weit von heutigen Stückzahlen entfernt sind. Beides verzögert die Ausweitung auf neue Kundengruppen.",
+      "belege": [
+        {
+          "wert": 40,
+          "einheit": "% Untergrenze Anteil Integration, Software, Wartung an Projektkosten (Spanne 40–60 %)",
+          "typ": "berichtet",
+          "quelle": "https://standardbots.com/blog/robots-for-manufacturers-a-guide",
+          "abgerufen": "2026-09-18",
+          "jahr": 2026,
+          "herausgeber": "Standard Bots",
+          "hinweis": "Anbieter-Blog, keine offengelegte Methodik"
+        },
+        {
+          "wert": 13000,
+          "einheit": "Einheiten weltweit ausgelieferte Humanoide",
+          "typ": "berichtet",
+          "quelle": "https://discoveryalert.com/humanoid-robotics-rare-earth-elements-2026/",
+          "abgerufen": "2026-09-18",
+          "jahr": 2025,
+          "herausgeber": "Discovery Alert",
+          "hinweis": "Sekundärquelle, Methodik nicht einsehbar; Vergleich: Goldman-Prognose 6,5 Mio bis 2035"
+        }
+      ]
+    }
+  ],
+  "segmente": [
+    {
+      "id": "getriebe-bewegung",
+      "name": "Präzisionsgetriebe & Bewegungskomponenten",
+      "beschreibung": "Spannungswellen- und Zykloidgetriebe, Linearführungen, Kugelgewindetriebe und Lager – die mechanischen Gelenke jedes Roboters.",
+      "margenprofil": {
+        "stufe": "hoch",
+        "begruendung": "Enge Oligopole mit jahrzehntelanger Fertigungs-IP (Harmonic Drive, Nabtesco), hohe Qualifizierungs- und Wechselkosten bei OEMs; chinesische Nachahmer drücken aber im Volumensegment die Preise."
+      },
+      "kandidaten": [
+        {
+          "name": "Harmonic Drive Systems",
+          "ticker": "6324.T",
+          "begruendung": "Weltmarktführer bei Spannungswellengetrieben (Strain Wave Gears) für Roboter-Gelenke und Humanoide."
+        },
+        {
+          "name": "Nabtesco",
+          "ticker": "6268.T",
+          "begruendung": "Dominanter Anbieter von RV-Zykloidgetrieben für Industrieroboter-Hauptachsen."
+        },
+        {
+          "name": "THK",
+          "ticker": "6481.T",
+          "begruendung": "Linearführungen und Kugelgewindetriebe (LM Guide), Bewegungskomponenten für Roboter und Automation."
+        },
+        {
+          "name": "Zhejiang Leaderdrive",
+          "ticker": "688017.SS",
+          "begruendung": "Chinas größter Hersteller von Harmonic-Getrieben; Herausforderer im Preissegment und für Humanoide."
+        },
+        {
+          "name": "Schaeffler",
+          "ticker": "SHA.DE",
+          "begruendung": "Präzisionslager und Aktuatorik-Module; Entwicklung von Humanoiden-Aktuatoren."
+        }
+      ]
+    },
+    {
+      "id": "motoren-antriebe",
+      "name": "Motoren, Servoantriebe & Aktuatorik",
+      "beschreibung": "Servomotoren, Frameless-Motoren, Servoverstärker und Motion-Control-Lösungen, die Bewegung elektrisch erzeugen und regeln.",
+      "margenprofil": {
+        "stufe": "mittel",
+        "begruendung": "Technisch differenzierte Servo- und Hochleistungsmotoren erlauben Preisaufschläge, aber viele Wettbewerber und zunehmende Standardisierung begrenzen die Preissetzungsmacht."
+      },
+      "kandidaten": [
+        {
+          "name": "Nidec",
+          "ticker": "6594.T",
+          "begruendung": "Weltgrößter Motorenhersteller, liefert Präzisions- und Servomotoren für Robotik und Automation."
+        },
+        {
+          "name": "Shenzhen Inovance Technology",
+          "ticker": "300124.SZ",
+          "begruendung": "Chinas führender Servo- und Frequenzumrichter-Anbieter, Aktuator-Lieferant für Roboter-OEMs."
+        },
+        {
+          "name": "Sanyo Denki",
+          "ticker": "6516.T",
+          "begruendung": "Spezialist für Servosysteme und Schrittmotoren in Präzisionsautomation und Halbleiter-Robotik."
+        },
+        {
+          "name": "Regal Rexnord",
+          "ticker": "RRX",
+          "begruendung": "Kollmorgen-Frameless-Motoren und Motion Control für Robotergelenke, Cobots und Medizinrobotik."
+        }
+      ]
+    },
+    {
+      "id": "sensorik-wahrnehmung",
+      "name": "Sensorik & Wahrnehmung",
+      "beschreibung": "Machine Vision, LiDAR, Encoder und Messtechnik, mit denen Roboter ihre Umgebung und ihre eigene Lage erfassen.",
+      "margenprofil": {
+        "stufe": "hoch",
+        "begruendung": "Differenzierte Optik-, Algorithmus- und Sensor-IP mit hohen Wechselkosten in der Integration (Keyence, Cognex); LiDAR bleibt dagegen preisgetrieben und unprofitabler."
+      },
+      "kandidaten": [
+        {
+          "name": "Keyence",
+          "ticker": "6861.T",
+          "begruendung": "Bildverarbeitungs- und Sensorsysteme für Automation mit sehr hoher Marge."
+        },
+        {
+          "name": "Cognex",
+          "ticker": "CGNX",
+          "begruendung": "Industrielle Machine-Vision-Systeme und Vision-Software, u. a. für vision-geführte Robotik."
+        },
+        {
+          "name": "Basler",
+          "ticker": "BSL.DE",
+          "begruendung": "Industriekameras und Embedded-Vision-Module für Robotik und Automation."
+        },
+        {
+          "name": "Hesai Group",
+          "ticker": "HSAI",
+          "begruendung": "LiDAR-Sensoren, zunehmend auch für Mähroboter und Servicerobotik."
+        },
+        {
+          "name": "Renishaw",
+          "ticker": "RSW.L",
+          "begruendung": "Präzisionsencoder und Messtechnik für Positionsrückmeldung in Robotern."
+        }
+      ]
+    },
+    {
+      "id": "compute-halbleiter",
+      "name": "Compute, Halbleiter & Robotik-KI-Plattformen",
+      "beschreibung": "KI-Chips, Edge-Prozessoren, Leistungshalbleiter und Analog-ICs sowie Plattform-Software für Steuerung und physische KI.",
+      "margenprofil": {
+        "stufe": "hoch",
+        "begruendung": "Preissetzungsmacht bei KI-Plattformen durch CUDA-Ökosystem und Softwarebindung (NVIDIA); Analog- und Leistungshalbleiter mit stabilen Margen, Edge-SoCs aus China dagegen preisaggressiver."
+      },
+      "kandidaten": [
+        {
+          "name": "NVIDIA",
+          "ticker": "NVDA",
+          "begruendung": "Jetson-Module, Isaac-Plattform und Omniverse für Roboter-KI und Simulation."
+        },
+        {
+          "name": "Infineon",
+          "ticker": "IFX.DE",
+          "begruendung": "Leistungshalbleiter, Mikrocontroller und Sensor-ICs für Motorsteuerung und Roboterelektronik."
+        },
+        {
+          "name": "Analog Devices",
+          "ticker": "ADI",
+          "begruendung": "Präzisions-Analog-, Motorsteuerungs- und Industrial-Ethernet-Chips für Robotik."
+        },
+        {
+          "name": "Horizon Robotics",
+          "ticker": "9660.HK",
+          "begruendung": "Edge-KI-Prozessoren für autonome Systeme mit Ausbau in Robotik."
+        },
+        {
+          "name": "Rockchip Electronics",
+          "ticker": "603893.SS",
+          "begruendung": "Kostengünstige Edge-KI-SoCs, verbreitet in Service- und Consumer-Robotern."
+        }
+      ]
+    },
+    {
+      "id": "industrieroboter-cobots",
+      "name": "Industrieroboter & Cobots",
+      "beschreibung": "Hersteller von Roboterarmen, Steuerungen und kollaborativen Robotern für die Fertigung.",
+      "margenprofil": {
+        "stufe": "mittel",
+        "begruendung": "Etablierte Marken mit Servicegeschäft und Steuerungs-Lock-in, doch zyklische Nachfrage (Auto, Elektronik) und aggressiver Preisdruck durch chinesische Hersteller."
+      },
+      "kandidaten": [
+        {
+          "name": "Fanuc",
+          "ticker": "6954.T",
+          "begruendung": "Weltgrößter Industrieroboter-Hersteller mit eigener CNC-Steuerung."
+        },
+        {
+          "name": "Yaskawa Electric",
+          "ticker": "6506.T",
+          "begruendung": "Motoman-Industrieroboter kombiniert mit eigenen Servoantrieben."
+        },
+        {
+          "name": "ABB",
+          "ticker": "ABBN.SW",
+          "begruendung": "Industrieroboter und Steuerungen; Robotics-Sparte ist zum Verkauf an SoftBank vorgesehen."
+        },
+        {
+          "name": "Teradyne",
+          "ticker": "TER",
+          "begruendung": "Universal Robots und MiR: Marktführer bei Cobots und mobilen Robotern."
+        },
+        {
+          "name": "Estun Automation",
+          "ticker": "002747.SZ",
+          "begruendung": "Chinas größter einheimischer Industrieroboter-Anbieter."
+        },
+        {
+          "name": "Doosan Robotics",
+          "ticker": "454910.KS",
+          "begruendung": "Südkoreanischer Cobot-Hersteller mit Ausbau in KI-Robotik."
+        }
+      ]
+    },
+    {
+      "id": "service-logistik-humanoid",
+      "name": "Service-, Medizin-, Logistikroboter & Humanoide",
+      "beschreibung": "Spezialisierte Robotersysteme außerhalb der klassischen Fertigung: OP-Roboter, Lagerautomation, Serviceroboter und humanoide Plattformen.",
+      "margenprofil": {
+        "stufe": "mittel",
+        "begruendung": "Medizinrobotik erzielt hohe Margen durch Verbrauchsmaterial und Installed Base; Logistik- und Humanoidenanbieter stehen noch in Skalierung, teils mit Verlusten."
+      },
+      "kandidaten": [
+        {
+          "name": "Intuitive Surgical",
+          "ticker": "ISRG",
+          "begruendung": "da-Vinci-OP-Roboter mit großem Installed-Base- und Verbrauchsmaterialgeschäft."
+        },
+        {
+          "name": "Symbotic",
+          "ticker": "SYM",
+          "begruendung": "Robotergestützte Lager-Automation für Großhandel und Handel, u. a. für Walmart."
+        },
+        {
+          "name": "Ocado Group",
+          "ticker": "OCDO.L",
+          "begruendung": "Robotisierte Kommissionierzentren und Technologie für Online-Lebensmittelhandel."
+        },
+        {
+          "name": "Daifuku",
+          "ticker": "6383.T",
+          "begruendung": "Weltmarktführer bei Materialflusssystemen und Lagerautomation."
+        },
+        {
+          "name": "UBTech Robotics",
+          "ticker": "9880.HK",
+          "begruendung": "Humanoide Roboter (Walker-Serie) und Servicerobotik, gelistet in Hongkong."
+        }
+      ]
+    },
+    {
+      "id": "integration-software",
+      "name": "Systemintegration & Automatisierungssoftware",
+      "beschreibung": "Steuerungs- und Engineering-Software, Simulation sowie Integratoren, die Roboter in Fabriken und Anlagen einbinden.",
+      "margenprofil": {
+        "stufe": "mittel",
+        "begruendung": "Software und Steuerungsplattformen mit Lock-in tragen hohe Margen; das Projektgeschäft der Integratoren ist dagegen personalintensiv und margenschwächer."
+      },
+      "kandidaten": [
+        {
+          "name": "Siemens",
+          "ticker": "SIE.DE",
+          "begruendung": "Automatisierungssoftware (TIA Portal, Digital Twin) und Steuerungen für Robotikzellen."
+        },
+        {
+          "name": "Rockwell Automation",
+          "ticker": "ROK",
+          "begruendung": "Steuerungen und Software; Anbieter mobiler Roboter (Clearpath/OTTO)."
+        },
+        {
+          "name": "Omron",
+          "ticker": "6645.T",
+          "begruendung": "Steuerungen, Sicherheits- und mobile Roboter für die Fabrikautomation."
+        },
+        {
+          "name": "Dürr",
+          "ticker": "DUE.DE",
+          "begruendung": "Integrator und Anlagenbauer mit Robotik-Lackier- und Applikationssystemen."
+        }
+      ]
+    }
+  ]
+}

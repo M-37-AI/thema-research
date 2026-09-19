@@ -1,0 +1,101 @@
+{
+  "ticker": "SYM",
+  "name": "Symbotic Inc.",
+  "waehrung": "USD",
+  "berichtswaehrung": "USD",
+  "branche": "Specialty Industrial Machinery",
+  "land": "United States",
+  "abgerufen": "2026-09-18",
+  "kennzahlen": {
+    "marktkapitalisierung": {
+      "wert": 25.365,
+      "einheit": "Mrd USD",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/SYM",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "umsatz_ttm": {
+      "wert": 2.646,
+      "einheit": "Mrd USD",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/SYM",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "umsatzwachstum_yoy": {
+      "wert": 21.7,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/SYM",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "bruttomarge": {
+      "wert": 21.3,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/SYM",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "operative_marge": {
+      "wert": 4.6,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/SYM",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "ev_umsatz": {
+      "wert": null,
+      "einheit": "x",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/SYM",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Yahoo Finance (via yfinance)",
+      "hinweis": "unplausibel: Yahoo meldet 1.70, Marktkapitalisierung/Umsatz ergibt 9.6 (Abweichung über Faktor 3) – Wert verworfen"
+    },
+    "kgv": {
+      "wert": 1047.5,
+      "einheit": "x",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/SYM",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    }
+  },
+  "umsatz_ttm_usd": {
+    "wert": 2.646,
+    "einheit": "Mrd USD",
+    "typ": "berichtet",
+    "quelle": "https://finance.yahoo.com/quote/SYM",
+    "abgerufen": "2026-09-18",
+    "herausgeber": "Yahoo Finance (via yfinance)",
+    "hinweis": "bereits in USD"
+  },
+  "marktkapitalisierung_usd": {
+    "wert": 25.365,
+    "einheit": "Mrd USD",
+    "typ": "berichtet",
+    "quelle": "https://finance.yahoo.com/quote/SYM",
+    "abgerufen": "2026-09-18",
+    "herausgeber": "Yahoo Finance (via yfinance)",
+    "hinweis": "bereits in USD"
+  },
+  "wechselkurse": {
+    "USD": {
+      "wert": 1.0,
+      "einheit": "USD je USD",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/USDUSD=X",
+      "abgerufen": "2026-09-19",
+      "herausgeber": "Yahoo Finance (via yfinance)",
+      "jahr": 2026,
+      "hinweis": "Schlusskurs vom 2026-09-19"
+    }
+  },
+  "hinweise": [
+    "ev_umsatz: unplausibel: Yahoo meldet 1.70, Marktkapitalisierung/Umsatz ergibt 9.6 (Abweichung über Faktor 3) – Wert verworfen"
+  ]
+}

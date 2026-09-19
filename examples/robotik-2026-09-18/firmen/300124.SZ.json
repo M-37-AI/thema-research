@@ -1,0 +1,31 @@
+{
+  "name": "Shenzhen Inovance Technology",
+  "ticker": "300124.SZ",
+  "segment_id": "motoren-antriebe",
+  "geschaeftsmodell": "Chinesischer Hersteller von Servosystemen, Frequenzumrichtern, SPS-Steuerungen und Antrieben für die Industrieautomatisierung sowie von Antriebssträngen für Elektrofahrzeuge. Neue Geschäfte umfassen Industrie- und Servicerobotik (u. a. SCARA, Sechsachser, Cobots) und digitale Energie. Erlöse aus Komponenten- und Systemverkauf an OEMs und Endkunden.",
+  "themen_exposure": {
+    "wert": 12,
+    "einheit": "% Umsatz",
+    "typ": "schaetzung",
+    "begruendung": "Laut Sekundärzusammenfassung des Berichts 2025 (Quartr) entfielen auf Industrial Automation 22,25 Mrd CNY, NEV-Antriebe 20,32 Mrd CNY und Neue Geschäfte (Roboter und digitale Energie) 1,80 Mrd CNY bei 45,10 Mrd CNY Gesamtumsatz. Direktes Robotikgeschäft liegt unter den knapp 4 % der Neuen Geschäfte; Servos und Steuerungen, die in Roboter und Automation gehen, sind Teil der Sparte Industrial Automation (ca. 49 %). Angesetzt: rund ein Viertel davon plus Robotik in den Neuen Geschäften, also ca. 12 %. Robotikanteil im Servogeschäft nicht offengelegt, hohe Unsicherheit.",
+    "abgerufen": "2026-09-18"
+  },
+  "kennzahlen_datei": "data/kennzahlen/300124.SZ.json",
+  "wettbewerbsposition": "Nr. 1 in China bei Allzweck-Servosystemen (laut Sekundärquelle 31 % Marktanteil) und bei Niederspannungs-Umrichtern (20 %), damit Marktführer im Heimatmarkt gegenüber japanischen und europäischen Anbietern (Yaskawa, Panasonic, Siemens). Vorteil: Kostenposition und Nähe zu chinesischen Roboter-OEMs, die 2024 über die Hälfte ihres Heimatmarktes stellten. Schwäche: Robotik selbst noch klein, Wachstum und Ergebnis hängen stark an NEV-Antrieben und dem chinesischen Investitionszyklus.",
+  "rolle_im_thema": "Zulieferer",
+  "ueberzeugung": {
+    "stufe": "mittel",
+    "begruendung": "Solide Marktführerschaft bei Servoantrieben und profitabler Wachstumskurs, aber Robotik ist nur ein Teilaspekt des Konzerns; der größte Wachstumshebel (NEV-Antriebe) hat mit dem Thema nichts zu tun."
+  },
+  "bull_case": [
+    "Chinesische Roboterhersteller gewinnen Heimatmarktanteile (57 % im Jahr 2024, laut Marktdatei); Inovance liefert Servos und Steuerungen an genau diese Anbieter und profitiert vom Trend zu lokalen Lieferketten.",
+    "Umsatz 2025 laut Sekundärquelle +21,8 % bei Nettogewinn +17,8 %; R&D-Ausgaben +36 % mit Schwerpunkt Robotik und Software deuten auf konsequenten Ausbau der Robotiksparte hin.",
+    "Breite Aufstellung (Servo, Umrichter, SPS, Roboter) erlaubt Komplettpakete für Automationszellen und hohe Wechselkosten beim Kunden."
+  ],
+  "bear_case": [
+    "Themen-Exposure ist klein: Robotik und digitale Energie zusammen nur ca. 4 % des Umsatzes; die Kursentwicklung wird eher von NEV-Antrieben (ca. 45 % des Umsatzes) und dem chinesischen Konjunkturzyklus bestimmt.",
+    "Harter Preiswettbewerb im chinesischen Servomarkt (u. a. Estun, Leadshine, Delta) drückt Margen; Zölle und geopolitische Spannungen können Auslandsexpansion und Chipbeschaffung belasten.",
+    "Die Quartalsergebnisse mischen Robotik-Effekte mit dem Zyklus im NEV-Antriebsgeschäft; eine Schwäche der Elektroauto-Nachfrage in China würde das Konzernergebnis belasten, ohne dass das Robotikthema betroffen wäre."
+  ],
+  "was_uns_widerlegen_wuerde": "Das Segment Industrial Automation wächst in zwei aufeinanderfolgenden Quartalen deutlich langsamer als der chinesische Roboter-Output bzw. Inovance verliert im Servo-Marktranking (heute 31 %) den ersten Platz, oder die Neuen Geschäfte (Roboter) bleiben unter 5 % des Konzernumsatzes."
+}

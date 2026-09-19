@@ -1,0 +1,193 @@
+{
+  "einwaende": [
+    {
+      "id": "E1",
+      "ziel": {
+        "datei": "markt.json",
+        "pfad": "/schaetzungen"
+      },
+      "einwand": "Die Top-down-Spanne (50,3 bis 214,6 Mrd USD für 2030, Faktor 4,3) ist kein Marktkorridor. Sie mischt vier unvergleichbare Abgrenzungen: nur KI-Robotik (MarketsandMarkets), nur Industrierobotik (Persistence), fünf Kategorien ohne Medizinrobotik (ABI) und eine nicht offengelegte Definition (MRFR). Alle vier Herausgeber verkaufen ihre Studien und haben damit einen Anreiz zu großen Zahlen. Keine Methodik ist einsehbar, zwei Quellen stammen aus 2023 (MRFR mit Basisjahr 2021). Der einzige Anker aus Quellenstufe 2 fehlt: Laut IFR lag der Marktwert der Industrieroboter-Installationen bei 16,7 Mrd USD. Persistence setzt für 2023 schon 36,7 Mrd USD an, also mehr als das Doppelte. Ohne IFR-Anker und einheitliche Abgrenzung ist keine Aussage zur Marktgröße belastbar.",
+      "schwere": "hoch",
+      "beleg": {
+        "wert": 16.7,
+        "einheit": "Mrd USD Marktwert Industrieroboter-Installationen weltweit (Allzeithoch)",
+        "typ": "berichtet",
+        "quelle": "https://ifr.org/ifr-press-releases/top-5-global-robotics-trends-2026",
+        "abgerufen": "2026-09-18",
+        "herausgeber": "International Federation of Robotics (IFR)",
+        "hinweis": "Pressemitteilung vom 8. Januar 2026; Bezugsjahr im Text nicht genannt, vermutlich 2024; nur Roboter ohne Software, Peripherie und Integration"
+      }
+    },
+    {
+      "id": "E2",
+      "ziel": {
+        "datei": "markt.json",
+        "pfad": "/schaetzungen/1/cagr"
+      },
+      "einwand": "Die CAGR von 22,8 % (MRFR) und 29,2 % (MarketsandMarkets) passen nicht zur Historie und zur einzigen Primärprognose. Laut IFR haben sich die Stückzahlen in zehn Jahren verdoppelt, das sind rund 7 % p. a. Die IFR erwartet 575.000 Einheiten 2025 und über 700.000 bis 2028, also etwa 6,6 % p. a. (542.000 → 700.000 in vier Jahren). Zweistellige Umsatz-CAGRs bräuchten deshalb kräftig steigende Preise pro Einheit. Die Marktdatei belegt aber das Gegenteil: Chinesische Anbieter haben 57 % ihres Heimatmarktes und setzen die Preise unter Druck. Der Rest müsste aus Humanoiden kommen, die 2025 bei rund 13.000 Einheiten lagen. Die Wachstumsthese im zweistelligen Bereich ist damit nicht belegt, sondern von der Humanoiden-Option abhängig.",
+      "schwere": "hoch",
+      "beleg": {
+        "aussage": "IFR: Installationen sollen 2025 um 6 % auf 575.000 Einheiten wachsen; bis 2028 wird die Marke von 700.000 Einheiten überschritten.",
+        "quelle": "https://ifr.org/ifr-press-releases/news/global-robot-demand-in-factories-doubles-over-10-years"
+      }
+    },
+    {
+      "id": "E3",
+      "ziel": {
+        "datei": "markt.json",
+        "pfad": "/schaetzungen/0/cagr"
+      },
+      "einwand": "Die ABI-Zahlen sind in sich nicht konsistent. Von 45 Mrd USD (2024) auf 110,7 Mrd USD (2030) ergibt eine CAGR von rund 16,2 % p. a., nicht 13,8 %. Der Blog nennt außerdem 50 Mrd USD für 2025 und eine CAGR von 14 %. Aus 50 Mrd USD in fünf Jahren auf 111 Mrd USD folgt aber rund 17 % p. a. Die Quelle ist ein Analystenblog ohne Methodik. Wert und CAGR sollten nicht als 'berichtet' neben geprüften Zahlen stehen, ohne dass der Widerspruch benannt wird.",
+      "schwere": "mittel",
+      "beleg": {
+        "wert": 16.2,
+        "einheit": "% p.a. implizite CAGR 2024–2030 aus ABI-Start- und Zielwert",
+        "typ": "schaetzung",
+        "begruendung": "(110,7 / 45)^(1/6) − 1 ≈ 16,2 %; beide Werte aus markt.json bzw. dem ABI-Blog.",
+        "abgerufen": "2026-09-18"
+      }
+    },
+    {
+      "id": "E4",
+      "ziel": {
+        "datei": "markt.json",
+        "pfad": "/treiber/3"
+      },
+      "einwand": "Der Humanoiden-Treiber stützt sich auf schwache Quellen: eine Bankprognose über einen Sekundärbericht (humanoid.guide) und Stückzahlen von Discovery Alert ohne Methodik. Von rund 13.000 Einheiten (2025) auf 6,5 Mio (2035) wäre ein Faktor von 500. Dazu kommt ein direkter Gegenbeleg aus der Lieferkette: Harmonic Drive berichtete, die Aufträge für 'autonome Roboter' seien nach einem hohen Q3 stark zurückgegangen. Die Kundenzahl sei klein und die Nachfrage von einzelnen Kunden abhängig, ein erwarteter Großkunde habe seine Planung überprüft. Das sind Pilotvolumina, kein Serienmarkt.",
+      "schwere": "mittel",
+      "beleg": {
+        "aussage": "Harmonic Drive (IR-Präsentation Mai 2025): 'orders for autonomous robots, which had been high in Q3, adjusted sharply … the number of customers is still small, and the market is greatly affected by the trends of specific customers.'",
+        "quelle": "https://www.hds.co.jp/Portals/0/files/english/ir/data/investor_event/pdf/E-script%2020250520%20v3.pdf"
+      }
+    },
+    {
+      "id": "E5",
+      "ziel": {
+        "datei": "markt.json",
+        "pfad": "/huerden"
+      },
+      "einwand": "Es fehlen Gegenbelege aus dem Kern des Themas. (1) Cobots: Die Robotiksparte von Teradyne (Universal Robots, MiR), Marktführer bei Cobots, sank im Q2 2025 um 17 % gegenüber dem Vorjahr. Die Wachstumsstory 'Cobots für den Mittelstand' ist nicht belegt. (2) Substitution durch Verlagerung: Produktion wandert nach Indien und Südostasien, wo Löhne niedrig und Roboterdichten gering sind. Das dämpft den Automatisierungsdruck. (3) Überkapazität und Preisdeflation in China werden nur als Margenrisiko genannt, nicht als Bremse für das Marktvolumen in USD. (4) Die Roboterdichte Chinas (166) folgt aus einer Revision der Beschäftigtenzahlen durch das NBS, nicht aus weniger Robotern. Das 'Aufholpotenzial' ist also teils ein statistischer Effekt.",
+      "schwere": "mittel",
+      "beleg": {
+        "aussage": "Teradyne Robotics (Universal Robots und MiR) erzielte im Q2 2025 75 Mio USD Umsatz, 17 % weniger als im Vorjahr; Gesamtjahr 2024: 365 Mio USD.",
+        "quelle": "https://www.therobotreport.com/teradyne-robotics-generates-75m-in-q2/"
+      }
+    },
+    {
+      "id": "E6",
+      "ziel": {
+        "datei": "shortlist.json",
+        "pfad": "/abweichungen_vom_vorschlag"
+      },
+      "einwand": "Die Shortlist misst Etikettenschwindel nicht einheitlich. Teradyne wurde gestrichen, weil die Robotiksparte nur ein kleiner Teil ist. Ihr Robotikumsatz ist aber berichtet: 365 Mio USD 2024, rund 13 % des Konzernumsatzes. Aufgenommen wurden dagegen vier Firmen mit gleich kleinem oder kleinerem, dazu nur geschätztem Anteil: Rockwell 8 %, Inovance 12 %, Cognex 15 %, NVIDIA 1 %. Damit hat die Hälfte der Shortlist ein Themen-Exposure von höchstens 15 %, und nur Fanuc hat ein berichtetes Exposure.",
+      "schwere": "mittel",
+      "beleg": {
+        "aussage": "The total revenue for Teradyne's robotics group in 2024 was $365 million, with UR contributing $293 million and MiR $72 million.",
+        "quelle": "https://www.therobotreport.com/teradyne-robotics-generates-75m-in-q2/"
+      }
+    },
+    {
+      "id": "E7",
+      "ziel": {
+        "datei": "firmen/ISRG.json",
+        "pfad": "/rolle_im_thema"
+      },
+      "einwand": "Intuitive Surgical ist als 'Kernprofiteur' mit 100 % Exposure eingestuft, liegt aber außerhalb fast aller Top-down-Abgrenzungen. ABI schließt Chirurgieroboter ausdrücklich aus, Persistence zählt nur Industrierobotik, MarketsandMarkets nur KI-Robotik. Trotzdem liefert ISRG 11,0 von 21,2 Mrd USD im Bottom-up (52 %). Der Deep Dive sagt selbst, dass kaum ein Zusammenhang zu den Treibern besteht (Demografie in China, Roboterdichte, Humanoide). Innerhalb dieses Themas ist ISRG ein Medtech-Wert mit eigenem Zyklus (Krankenhausbudgets, Erstattung). Die Einordnung als Kernprofiteur und die Rolle im Bottom-up kippen, sobald man die Marktdefinition ernst nimmt.",
+      "schwere": "hoch",
+      "beleg": {
+        "aussage": "ABI Research deckt fünf Kategorien ab (Industrieroboter, Cobots, mobile Roboter, Humanoide, Exoskelette); Chirurgieroboter sind nicht enthalten.",
+        "quelle": "https://www.abiresearch.com/blog/global-robotics-market-outlook"
+      }
+    },
+    {
+      "id": "E8",
+      "ziel": {
+        "datei": "firmen/NVDA.json",
+        "pfad": "/themen_exposure"
+      },
+      "einwand": "Das Exposure von 1 % bezieht sich im Bottom-up auf den TTM-Umsatz von 303 Mrd USD und ergibt 3,0 Mrd USD Robotikumsatz. Das ist mehr als das gesamte Segment Automotive (inkl. Robotik) im Geschäftsjahr 2026 mit 2,3 Mrd USD, und dieses Segment besteht überwiegend aus Plattformen für autonomes Fahren. Die Begründung rechnet noch mit dem Jahresumsatz von 216 Mrd USD, das Tool mit TTM. Realistisch liegt der Robotikumsatz deutlich unter 1 Mrd USD, also unter 0,3 %. Die Einordnung als Mitläufer bleibt richtig. Der Bottom-up-Beitrag ist aber etwa um den Faktor 3 bis 10 überhöht.",
+      "schwere": "mittel",
+      "beleg": {
+        "wert": 2.3,
+        "einheit": "Mrd USD Umsatz Segment Automotive (inkl. Robotik) Geschäftsjahr 2026",
+        "typ": "berichtet",
+        "quelle": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026",
+        "abgerufen": "2026-09-18",
+        "jahr": 2026,
+        "herausgeber": "NVIDIA",
+        "hinweis": "Gesamtumsatz Geschäftsjahr 2026: 215,9 Mrd USD"
+      }
+    },
+    {
+      "id": "E9",
+      "ziel": {
+        "datei": "firmen/SYM.json",
+        "pfad": "/ueberzeugung"
+      },
+      "einwand": "Die Überzeugung 'mittel' stützt sich unter anderem auf ein EV/Umsatz von ca. 1,7 laut Kennzahlen. Dieser Wert ist offensichtlich falsch: Bei 25,4 Mrd USD Marktkapitalisierung und 2,65 Mrd USD TTM-Umsatz ergibt sich rund das 9,6-Fache (KGV laut Kennzahlen über 1.000). Die Bewertung ist also nicht moderat, sondern hoch. Und das bei 85 % Umsatz mit Walmart, einstelliger operativer Marge (4,6 %) und früheren Restatements. Das Klumpenrisiko macht Symbotic eher zu einer Wette auf einen Kunden als auf Lagerrobotik.",
+      "schwere": "mittel",
+      "beleg": {
+        "wert": 9.6,
+        "einheit": "x Marktkapitalisierung/Umsatz TTM",
+        "typ": "schaetzung",
+        "begruendung": "25,365 Mrd USD Marktkapitalisierung / 2,646 Mrd USD Umsatz TTM aus data/kennzahlen/SYM.json; der dort gemeldete EV/Umsatz von 1,7 ist damit nicht vereinbar, selbst bei hoher Nettoliquidität.",
+        "abgerufen": "2026-09-18"
+      }
+    },
+    {
+      "id": "E10",
+      "ziel": {
+        "datei": "firmen/6324.T.json",
+        "pfad": "/themen_exposure"
+      },
+      "einwand": "Das Exposure von 45 % ist nur geschätzt, obwohl Harmonic Drive in seinen IR-Unterlagen Aufträge nach Anwendung (Roboter, Halbleiter, Auto) kommentiert. Schwerer wiegt: Die Humanoiden-Option, das zentrale Argument im Bull Case, war schon 2025 volatil und hing an wenigen Kunden. Die Auslastung lag bei rund 50 % der Kapazität. Leaderdrive hält laut J.P. Morgan 30 bis 40 % des chinesischen Marktes für Spannungswellengetriebe, der Umsatz stieg 2025 um 47 %. Bei einem EV/Umsatz von ca. 9 und einem KGV von über 300 (Kennzahlen) ist die Erholung eingepreist, während der Anteil in China strukturell sinkt.",
+      "schwere": "mittel",
+      "beleg": {
+        "aussage": "Harmonic Drive (IR-Präsentation Mai 2025): Die Kapazitätsauslastung liege 'in the neighborhood of 50% of the maximum production capacity'; Aufträge für autonome Roboter seien volatil und von wenigen Kunden abhängig.",
+        "quelle": "https://www.hds.co.jp/Portals/0/files/english/ir/data/investor_event/pdf/E-script%2020250520%20v3.pdf"
+      }
+    },
+    {
+      "id": "E11",
+      "ziel": {
+        "datei": "firmen/300124.SZ.json",
+        "pfad": "/themen_exposure"
+      },
+      "einwand": "Hier droht Etikettenschwindel. Berichtet ist nur 'Neue Geschäfte' mit 1,8 von 45,1 Mrd CNY (knapp 4 %), und darin steckt auch digitale Energie. Die 12 % entstehen erst durch die frei gesetzte Annahme, ein Viertel der Sparte Industrial Automation gehe in Roboter. Dafür gibt es keinen Beleg, der Deep Dive nennt die Unsicherheit selbst hoch. Die Zahlen stammen aus einer Sekundärzusammenfassung (Quartr), nicht aus dem Geschäftsbericht. Mit NEV-Antrieben (ca. 45 %) als größtem Wachstumshebel ist Inovance ein Wert auf chinesische Elektromobilität und Industrieinvestitionen, Robotik ist Nebensache. Bei einem Exposure von 4 statt 12 % sinkt der Bottom-up-Beitrag von 0,88 auf etwa 0,3 Mrd USD.",
+      "schwere": "mittel"
+    },
+    {
+      "id": "E12",
+      "ziel": {
+        "datei": "firmen/CGNX.json",
+        "pfad": "/themen_exposure"
+      },
+      "einwand": "Die 15 % Robotik-Exposure haben keinen Ankerwert. Cognex berichtet nach Endmärkten, Robotik lässt sich daraus nicht ableiten, und Codelesen in der Logistik ist überwiegend kein Roboterumsatz. Das Widerlegungskriterium ('weist erstmals einen Robotik-Anteil unter 10 % aus') kann praktisch nie eintreten, weil Cognex so einen Anteil nicht berichtet. Damit ist es nicht überprüfbar. Außerdem fehlt die Substitutionsgefahr durch Vision-Stacks der Roboterhersteller auf NVIDIA-Basis als Beleg: Sie wird nur behauptet.",
+      "schwere": "niedrig"
+    },
+    {
+      "id": "E13",
+      "ziel": {
+        "datei": "firmen/ROK.json",
+        "pfad": "/themen_exposure"
+      },
+      "einwand": "8 % Exposure (ca. 0,7 Mrd USD) sind für Rockwell eher zu hoch. Das robotikspezifische Geschäft (Clearpath/OTTO, mobile Roboter) ist sehr klein. Der Rest sind Steuerungen und Motion-Komponenten, die auch ohne Roboter verkauft werden. Wer sie zählt, müsste dieselbe Logik auf Siemens, Omron und Mitsubishi anwenden, dann wäre die Abgrenzung beliebig. Die Einordnung als Mitläufer ist richtig. Der Wert trägt aber mehr zum Bottom-up bei als Harmonic Drive und Cognex zusammen, obwohl beide robotiknäher sind.",
+      "schwere": "niedrig"
+    },
+    {
+      "id": "E14",
+      "ziel": {
+        "datei": "firmen/6954.T.json",
+        "pfad": "/bull_case/1"
+      },
+      "einwand": "Das Exposure ist korrekt, ich habe es selbst im Original-PDF geprüft: Die Robot-Sparte hat 378.610 Mio JPY Umsatz, das sind 44,1 % von 857.831 Mio JPY. Den Hinweis 'Spartenseite des Originals nicht selbst geöffnet' kann firma-2 streichen. Der Einwand richtet sich gegen den zweiten Bull-Case-Punkt. Dort werden die 4,66 Mio Roboter als Fanucs 'große installierte Basis' dargestellt. Das ist aber der weltweite Bestand aller Hersteller laut IFR, nicht der von Fanuc. Auch das IFR-Stückzahlwachstum (542.000 → über 700.000 bis 2028, rund 6,6 % p. a.) kommt Fanuc nicht direkt zugute: Das Volumen entsteht zu 54 % in China, wo einheimische Anbieter bereits 57 % halten. Fanuc begründet das China-Wachstum der Robot-Sparte selbst mit 'EV-related and general industries', also mit zyklischem Elektroauto-Capex. Für das Geschäftsjahr bis März 2027 erwartet Fanuc nur +6 % Konzernumsatz. Die Einordnung als Kernprofiteur mit Überzeugung 'mittel' ist vertretbar. Der strukturelle Teil des Bull Case ist aber zu großzügig formuliert.",
+      "schwere": "niedrig",
+      "beleg": {
+        "aussage": "Fanuc, Geschäftsjahr bis März 2026: Robot-Sparte 378.610 Mio JPY (+14,9 %, 44,1 % vom Umsatz); 'In China, sales significantly increased due to strong demand from EV-related and general industries'; Prognose Geschäftsjahr bis März 2027: Umsatz 909.600 Mio JPY (+6,0 %).",
+        "quelle": "https://www.fanuc.co.jp/en/ir/announce/pdf/2026/financialresult202603_e.pdf"
+      }
+    }
+  ],
+  "bottom_up_kommentar": "Neu gerechnet auf dem finalen Stand aller acht Deep Dives (Fanuc final seit 20:09:30), ohne Änderung an den Ergebnissen. bottom_up.py ergibt für die acht Shortlist-Firmen 21,2 Mrd USD Themenumsatz (TTM). Das sind 9,9 % der oberen (MRFR, 214,6) und 42,1 % der unteren Top-down-Schätzung (MarketsandMarkets, 50,3), jeweils für 2030. Der Vergleich ist aus drei Gründen schief. (1) Zeitbasis: TTM-Umsätze gegen Prognosen für 2030. Fair wäre der Vergleich mit den Basisjahren (ABI 45 Mrd USD 2024, Persistence 36,7 Mrd USD 2023, MarketsandMarkets 14,0 Mrd USD 2025). Gegen MarketsandMarkets läge die Summe dann über dem ganzen Markt, ein Hinweis auf nicht passende Abgrenzungen. (2) Zusammensetzung: 52 % der Summe stammen von Intuitive Surgical (11,0 Mrd USD), also Medizinrobotik, die ABI, Persistence und MarketsandMarkets nicht erfassen. NVIDIA steuert 3,0 Mrd USD bei, mehr als das ganze Automotive-und-Robotik-Segment (2,3 Mrd USD im Geschäftsjahr 2026). Ohne ISRG und mit einem realistischen NVIDIA-Beitrag bleiben rund 8 bis 9 Mrd USD. (3) Qualität: Sieben von acht Exposures sind Schätzungen, nur Fanuc ist berichtet (und von mir am Geschäftsbericht bestätigt). Als Plausibilitätsanker taugt der IFR-Marktwert der Industrieroboter-Installationen von 16,7 Mrd USD. Fanuc allein erzielt 2,5 Mrd USD Roboterumsatz, grob 15 % davon, das passt zu Fanucs Rolle als einer der großen vier. Der Bottom-up spricht damit eher für die unteren Top-down-Werte. Die MRFR-Zahl von 214,6 Mrd USD lässt sich aus den Firmendaten nicht ableiten.",
+  "gesamturteil": "Die Kernthese 'Robotik ist ein zweistelliger Wachstumsmarkt' ist schlechter belegt, als die Dateien nahelegen. Alle Marktgrößen stammen aus Pressemitteilungen oder Blogs von Studienverkäufern mit unvergleichbaren Abgrenzungen (Spanne Faktor 4,3). Die einzige Primärquelle, die IFR, prognostiziert nur rund 6 bis 7 % Stückzahlwachstum p. a. bis 2028, bei Preisdruck aus China. Die zweistelligen CAGRs hängen damit an der Humanoiden-Option, und die ist 2025 noch Pilotvolumen, laut Harmonic Drive volatil und an wenige Kunden gebunden. Auf Firmenebene ist nur ein Exposure berichtet (Fanuc). Vier von acht Firmen haben 15 % oder weniger Themenanteil, damit wendet die Shortlist ihr eigenes Etikettenschwindel-Kriterium (Streichung von Teradyne) nicht konsequent an. Der größte Bottom-up-Block (Intuitive Surgical) liegt außerhalb der Marktdefinitionen. Echte Robotik-Reinwerte mit berichtetem Exposure sind im Wesentlichen Fanuc und Symbotic. Symbotic ist zu 85 % ein Walmart-Risiko und nicht so moderat bewertet wie angegeben. Das Thema bleibt real: steigender Bestand, Arbeitskräftemangel, 542.000 Installationen p. a. Der Report sollte es aber als zyklischen Ausrüstungsmarkt mit mittlerem einstelligem Volumenwachstum und einer spekulativen Humanoiden-Option darstellen, nicht als strukturellen 20-%-Wachstumsmarkt. Die drei hoch-Einwände (E1, E2, E7) muss der Lead beantworten."
+}

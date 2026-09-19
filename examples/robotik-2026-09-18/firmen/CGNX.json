@@ -1,0 +1,31 @@
+{
+  "name": "Cognex",
+  "ticker": "CGNX",
+  "segment_id": "sensorik-wahrnehmung",
+  "geschaeftsmodell": "Entwickelt industrielle Machine-Vision-Systeme, Barcode-Lesegeräte und Vision-Software (inkl. KI-basierter Bildauswertung). Kunden sind Fabriken und Logistikzentren, die Bauteile prüfen, Codes lesen und Roboter visuell führen. Erlöse entstehen aus Hardware und Software, verkauft an Endkunden und Maschinenbauer; Endmärkte sind Logistik, Verpackung, Consumer Electronics und Automobil.",
+  "themen_exposure": {
+    "wert": 15,
+    "einheit": "% Umsatz",
+    "typ": "schaetzung",
+    "begruendung": "Cognex berichtet Umsatz nach Endmärkten (laut Sekundärquellen 2025: Logistik 26 %, Verpackung 21 %, Consumer Electronics 19 %, Automobil rund 20 %), nicht nach Robotik. Robotik-Bezug besteht dort, wo Vision Roboter führt (Pick-and-Place, Montage, Logistik-Handling). Geschätzt ein Anteil von etwa 15 % am Umsatz; der größere Teil sind Codelesen und Prüfaufgaben ohne Roboter. Unsicherheit hoch.",
+    "abgerufen": "2026-09-18"
+  },
+  "kennzahlen_datei": "data/kennzahlen/CGNX.json",
+  "wettbewerbsposition": "Zusammen mit Keyence einer der beiden führenden Anbieter industrieller Machine Vision; starke Position bei Barcode-Lesern in der Logistik und bei Vision-Software mit hohen Wechselkosten. Wettbewerber: Keyence (breiter Vertrieb, hohe Marge), Zebra, Basler sowie zunehmend chinesische Anbieter und Kameras mit integrierter KI. Vision wird auch von Robotik-OEMs und NVIDIA-basierten Stacks selbst entwickelt, was Preis und Differenzierung angreifen kann.",
+  "rolle_im_thema": "Zulieferer",
+  "ueberzeugung": {
+    "stufe": "niedrig",
+    "begruendung": "Solides, hochprofitables Vision-Geschäft, aber der Robotikbezug ist nur ein Teil des Umsatzes und nicht ausgewiesen; die Aktie hängt stärker an Logistik, Elektronik- und Autozyklus als an Robotik."
+  },
+  "bull_case": [
+    "Logistik wächst laut Unternehmen seit neun Quartalen zweistellig; vision-geführte Roboter in Lagern und Fulfillment-Zentren sind ein direkter Nachfragetreiber für Cognex-Kameras und Software.",
+    "Hohe Profitabilität und erholte Nachfrage: Q1 2026 laut Sekundärquelle mit rund 24 % Umsatzwachstum und stark steigenden Margen, getragen von KI-basierten Produkten.",
+    "KI-Vision (Deep Learning) erweitert adressierbare Anwendungen in der Fertigung, z. B. Prüfaufgaben, die mit klassischen Regeln nicht lösbar waren."
+  ],
+  "bear_case": [
+    "Themenbezug nur teilweise: Der Großteil des Umsatzes hängt an Logistik, Verpackung, Consumer Electronics und Auto – nicht an Roboterinstallationen; Automobil schrumpfte zuletzt weiter.",
+    "Starke Konzentration auf Consumer-Electronics-Zyklen (rund 19 % des Umsatzes), die stark von einzelnen Großkunden und deren Investitionsplänen abhängen.",
+    "Wettbewerb durch Keyence, günstige chinesische Vision-Anbieter und Kameras mit integrierter KI; Robotik-OEMs könnten Wahrnehmung in ihre eigenen Plattformen (z. B. auf NVIDIA-Basis) verlagern."
+  ],
+  "was_uns_widerlegen_wuerde": "Cognex-Umsatz im Bereich Logistik wächst zwei Quartale in Folge nicht mehr zweistellig und der Konzernumsatz fällt wieder unter das Vorjahresniveau, oder das Unternehmen weist erstmals einen Robotik-Umsatzanteil von deutlich unter 10 % aus."
+}

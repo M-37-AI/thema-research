@@ -1,5 +1,7 @@
 # Bauauftrag: Thematic-Research-Team mit Claude Code
 
+> **Historisches Dokument.** So lautete der ursprüngliche Auftrag; die Nachträge am Ende halten fest, wo die Umsetzung bewusst abweicht (u. a. Python-venv, Referenz-Syntax, Lektor-Agent, Exhibits ohne Plotly). Den aktuellen Stand beschreibt die README.
+
 Du baust in diesem leeren Repository ein Projekt, mit dem ein Team aus Claude-Code-Agenten einen Investment-Trend (z. B. „Robotik") recherchiert und daraus einen Thematic-Research-Report im Stil eines institutionellen Asset Managers erzeugt. Ein Lauf wird später mit `/thema robotik` gestartet.
 
 Das Projekt wird in einem YouTube-Tutorial gezeigt. Baue es deshalb in sechs Stufen und halte nach jeder Stufe an (siehe „Arbeitsweise").

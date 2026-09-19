@@ -1,0 +1,98 @@
+{
+  "ticker": "300124.SZ",
+  "name": "Shenzhen Inovance Technology Co.,Ltd",
+  "waehrung": "CNY",
+  "berichtswaehrung": "CNY",
+  "branche": "Electrical Equipment & Parts",
+  "land": "China",
+  "abgerufen": "2026-09-18",
+  "kennzahlen": {
+    "marktkapitalisierung": {
+      "wert": 142.115,
+      "einheit": "Mrd CNY",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/300124.SZ",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "umsatz_ttm": {
+      "wert": 49.271,
+      "einheit": "Mrd CNY",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/300124.SZ",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "umsatzwachstum_yoy": {
+      "wert": 26.0,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/300124.SZ",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "bruttomarge": {
+      "wert": 27.7,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/300124.SZ",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "operative_marge": {
+      "wert": 11.7,
+      "einheit": "%",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/300124.SZ",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "ev_umsatz": {
+      "wert": 3.38,
+      "einheit": "x",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/300124.SZ",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    },
+    "kgv": {
+      "wert": 29.47,
+      "einheit": "x",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/300124.SZ",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Yahoo Finance (via yfinance)"
+    }
+  },
+  "umsatz_ttm_usd": {
+    "wert": 7.368,
+    "einheit": "Mrd USD",
+    "typ": "berichtet",
+    "quelle": "https://finance.yahoo.com/quote/300124.SZ",
+    "abgerufen": "2026-09-18",
+    "herausgeber": "Yahoo Finance (via yfinance)",
+    "hinweis": "umgerechnet mit 0.149537 USD je Einheit (Kurs vom 2026-09-18)"
+  },
+  "marktkapitalisierung_usd": {
+    "wert": 21.252,
+    "einheit": "Mrd USD",
+    "typ": "berichtet",
+    "quelle": "https://finance.yahoo.com/quote/300124.SZ",
+    "abgerufen": "2026-09-18",
+    "herausgeber": "Yahoo Finance (via yfinance)",
+    "hinweis": "umgerechnet mit 0.149537 USD je Einheit (Kurs vom 2026-09-18)"
+  },
+  "wechselkurse": {
+    "CNY": {
+      "wert": 0.149537,
+      "einheit": "USD je CNY",
+      "typ": "berichtet",
+      "quelle": "https://finance.yahoo.com/quote/CNYUSD=X",
+      "abgerufen": "2026-09-18",
+      "herausgeber": "Yahoo Finance (via yfinance)",
+      "jahr": 2026,
+      "hinweis": "Schlusskurs vom 2026-09-18"
+    }
+  },
+  "hinweise": []
+}

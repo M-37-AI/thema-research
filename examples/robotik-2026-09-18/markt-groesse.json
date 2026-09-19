@@ -1,0 +1,73 @@
+{
+  "thema": "Robotik",
+  "schaetzungen": [
+    {
+      "herausgeber": "ABI Research",
+      "jahr_prognose": 2030,
+      "marktgroesse": {
+        "wert": 110.7, "einheit": "Mrd USD", "typ": "berichtet",
+        "quelle": "https://www.abiresearch.com/blog/global-robotics-market-outlook",
+        "abgerufen": "2026-09-18", "jahr": 2030, "herausgeber": "ABI Research",
+        "hinweis": "Analystenblog (Juli 2025), Methodik nicht einsehbar"
+      },
+      "cagr": {
+        "wert": 13.8, "einheit": "% p.a.", "typ": "berichtet",
+        "quelle": "https://www.abiresearch.com/blog/global-robotics-market-outlook",
+        "abgerufen": "2026-09-18", "jahr": 2030, "herausgeber": "ABI Research",
+        "hinweis": "Ausgangswert 2024: 45 Mrd USD"
+      },
+      "abgrenzung": "Fünf Robotikkategorien: Industrieroboter, Cobots, mobile Roboter, humanoide Roboter und Exoskelette. Basisjahr 2024 mit 45 Mrd USD."
+    },
+    {
+      "herausgeber": "Market Research Future (MRFR)",
+      "jahr_prognose": 2030,
+      "marktgroesse": {
+        "wert": 214.6, "einheit": "Mrd USD", "typ": "berichtet",
+        "quelle": "https://www.globenewswire.com/en/news-release/2023/05/30/2678481/0/en/Robotics-Market-to-Reach-USD-214-60-Billion-at-a-22-80-CAGR-By-2030-Market-Research-Future-MRFR.html",
+        "abgerufen": "2026-09-18", "jahr": 2030, "herausgeber": "Market Research Future (MRFR)",
+        "hinweis": "Pressemitteilung, Methodik nicht einsehbar; Stand Mai 2023, Basisjahr 2021"
+      },
+      "cagr": {
+        "wert": 22.8, "einheit": "% p.a.", "typ": "berichtet",
+        "quelle": "https://www.globenewswire.com/en/news-release/2023/05/30/2678481/0/en/Robotics-Market-to-Reach-USD-214-60-Billion-at-a-22-80-CAGR-By-2030-Market-Research-Future-MRFR.html",
+        "abgerufen": "2026-09-18", "jahr": 2030, "herausgeber": "Market Research Future (MRFR)",
+        "hinweis": "Pressemitteilung, Methodik nicht einsehbar; Zeitraum 2022–2030"
+      },
+      "abgrenzung": "Gesamter Robotikmarkt, segmentiert nach Typ (u. a. Knickarmroboter), Mobilität (u. a. mobile Roboter) und Endanwender (u. a. Fertigung). Detaillierte Definition in der Pressemitteilung nicht offengelegt; älteste der Schätzungen (2023)."
+    },
+    {
+      "herausgeber": "MarketsandMarkets",
+      "jahr_prognose": 2030,
+      "marktgroesse": {
+        "wert": 50.33, "einheit": "Mrd USD", "typ": "berichtet",
+        "quelle": "https://www.marketsandmarkets.com/Market-Reports/intelligent-robotics-market-99226522.html",
+        "abgerufen": "2026-09-18", "jahr": 2030, "herausgeber": "MarketsandMarkets",
+        "hinweis": "Pressemitteilung, Methodik nicht einsehbar"
+      },
+      "cagr": {
+        "wert": 29.2, "einheit": "% p.a.", "typ": "berichtet",
+        "quelle": "https://www.marketsandmarkets.com/Market-Reports/intelligent-robotics-market-99226522.html",
+        "abgerufen": "2026-09-18", "jahr": 2030, "herausgeber": "MarketsandMarkets",
+        "hinweis": "Pressemitteilung, Methodik nicht einsehbar; Zeitraum 2025–2030, Ausgangswert 2025: 13,99 Mrd USD"
+      },
+      "abgrenzung": "Nur „intelligente Robotik“: Roboter, die ihre Umgebung mit KI/maschinellem Lernen autonom wahrnehmen und darauf reagieren (Industrie-, Service- und Cobots). Klassische, nicht KI-gestützte Roboter sind ausgeschlossen – Teilmarkt, daher deutlich kleiner."
+    },
+    {
+      "herausgeber": "Persistence Market Research",
+      "jahr_prognose": 2030,
+      "marktgroesse": {
+        "wert": 84.7, "einheit": "Mrd USD", "typ": "berichtet",
+        "quelle": "https://www.globenewswire.com/news-release/2023/11/29/2787552/0/en/Global-Industrial-Robotics-Market-Size-Worth-84-7-Billion-by-2030-at-a-CAGR-of-12-7-Latest-Industry-Insights-by-Persistence-Market-Research.html",
+        "abgerufen": "2026-09-18", "jahr": 2030, "herausgeber": "Persistence Market Research",
+        "hinweis": "Pressemitteilung, Methodik nicht einsehbar; Stand November 2023"
+      },
+      "cagr": {
+        "wert": 12.7, "einheit": "% p.a.", "typ": "berichtet",
+        "quelle": "https://www.globenewswire.com/news-release/2023/11/29/2787552/0/en/Global-Industrial-Robotics-Market-Size-Worth-84-7-Billion-by-2030-at-a-CAGR-of-12-7-Latest-Industry-Insights-by-Persistence-Market-Research.html",
+        "abgerufen": "2026-09-18", "jahr": 2030, "herausgeber": "Persistence Market Research",
+        "hinweis": "Pressemitteilung, Methodik nicht einsehbar; Ausgangswert 2023: 36,7 Mrd USD"
+      },
+      "abgrenzung": "Nur Industrierobotik (automatisierte Systeme für Fertigungs- und Industrieanwendungen in u. a. Automobil, Elektronik, Gesundheit). Service-, mobile und humanoide Roboter nicht ausdrücklich enthalten."
+    }
+  ]
+}

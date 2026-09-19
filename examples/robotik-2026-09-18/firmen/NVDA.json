@@ -1,0 +1,31 @@
+{
+  "name": "NVIDIA",
+  "ticker": "NVDA",
+  "segment_id": "compute-halbleiter",
+  "geschaeftsmodell": "Entwickelt GPUs, Netzwerktechnik und Software-Plattformen (CUDA, Omniverse, Isaac) für KI-Rechenzentren, Gaming, Visualisierung und Automotive. Für Robotik: Jetson-Edge-Module, Isaac-Robotik-Software und Simulation sowie Foundation-Modelle für physische KI. Umsatz kommt zum weit überwiegenden Teil aus Rechenzentren.",
+  "themen_exposure": {
+    "wert": 1,
+    "einheit": "% Umsatz",
+    "typ": "schaetzung",
+    "begruendung": "NVIDIA weist Robotik nicht separat aus; sie ist im Marktsegment Automotive (dort mit Robotik zusammengefasst) enthalten, das im Geschäftsjahr 2026 laut Sekundärquellen um 39 % wuchs, aber nur ein kleiner Bruchteil des Gesamtumsatzes (ca. 216 Mrd USD, davon Data Center 193,7 Mrd USD) ist. Robotik-Umsatz unter 1 bis 2 % geschätzt; Robotik-Trainings-Compute in Rechenzentren ist hier nicht enthalten und nicht trennbar.",
+    "abgerufen": "2026-09-18"
+  },
+  "kennzahlen_datei": "data/kennzahlen/NVDA.json",
+  "wettbewerbsposition": "Dominant bei KI-Beschleunigern und im CUDA-Ökosystem; im Robotiksegment mit Jetson, Isaac und Omniverse der de-facto-Standard für Simulation und Edge-KI in Humanoiden- und Roboterentwicklung. Konkurrenten: Qualcomm, Intel, AMD sowie chinesische Edge-SoC-Anbieter (Horizon Robotics, Rockchip), die kostengünstiger sind. Kundenbindung entsteht über Software und Entwicklerbasis statt über Hardware allein.",
+  "rolle_im_thema": "Mitlaeufer",
+  "ueberzeugung": {
+    "stufe": "niedrig",
+    "begruendung": "Für das Robotikthema ist NVIDIA strategisch wichtig, aber finanziell nicht: Der Konzern hängt an KI-Rechenzentren, Robotik ist ein Bruchteil des Umsatzes. Wer NVIDIA als Robotik-Investment kauft, kauft in Wahrheit das KI-Infrastrukturthema."
+  },
+  "bull_case": [
+    "Plattformvorteil: Isaac, Omniverse und Jetson bilden den durchgängigen Entwicklungs-Stack für physische KI; Roboterhersteller und Humanoiden-Start-ups bauen darauf auf, was langfristig Chip- und Softwareumsätze nach sich zieht.",
+    "Sehr hohe Profitabilität und Bilanzstärke erlauben, die Robotik-Plattform über Jahre ohne Renditedruck auszubauen; Automotive/Robotik wuchs im Geschäftsjahr 2026 laut Sekundärquelle um 39 %.",
+    "Sollten Humanoide skalieren (Goldman: 6,5 Mio Einheiten 2035), steigt der Compute-Bedarf je Roboter und für Training in Rechenzentren zusätzlich."
+  ],
+  "bear_case": [
+    "Robotik ist finanziell unerheblich (geschätzt ca. 1 % des Umsatzes); die Aktie wird vom KI-Rechenzentrumszyklus getrieben, sodass ein Robotik-Erfolg oder -Misserfolg den Kurs kaum bewegt.",
+    "Konzentrationsrisiko: Laut Sekundärquelle entfällt ein großer Teil des Umsatzes auf wenige Kunden (36 % Kundenrisiko genannt); die Bewertung (EV/Umsatz ca. 17) unterstellt anhaltend extremes Wachstum und Margen von über 60 %.",
+    "Im Edge-Bereich drücken günstigere Chips aus China (Horizon Robotics, Rockchip) und Eigenentwicklungen großer Roboter-OEMs den Preis; Exportkontrollen für China begrenzen den größten Roboter-Fertigungsmarkt."
+  ],
+  "was_uns_widerlegen_wuerde": "Robotik-Kernkunden (z. B. Tesla, Figure, große Industrieroboter-Hersteller) wechseln öffentlich auf eigene oder konkurrierende Chips als Standard-Plattform, oder NVIDIA weist erstmals einen Robotik-Umsatz aus, der deutlich unter 1 % des Konzernumsatzes liegt bzw. nach zwei Jahren nicht über die heutige Größenordnung hinauswächst."
+}

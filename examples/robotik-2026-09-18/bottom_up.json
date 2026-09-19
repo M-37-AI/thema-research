@@ -1,0 +1,149 @@
+{
+  "art": "Näherung – nur Shortlist, TTM-Umsätze gegen Prognosen für 2030",
+  "summe_themenumsatz": {
+    "wert": 21.166,
+    "einheit": "Mrd USD",
+    "typ": "schaetzung",
+    "begruendung": "Summe aus 8 Firmen der Shortlist (Umsatz TTM × Themen-Exposure); 7 der Exposures sind Schätzungen.",
+    "abgerufen": "2026-09-18",
+    "herausgeber": "eigene Berechnung (bottom_up.py)"
+  },
+  "top_down_unten": {
+    "wert": 50.33,
+    "einheit": "Mrd USD",
+    "typ": "schaetzung",
+    "begruendung": "Niedrigste Top-down-Schätzung (MarketsandMarkets, Prognosejahr 2030).",
+    "abgerufen": "2026-09-18",
+    "herausgeber": "eigene Berechnung (bottom_up.py)"
+  },
+  "top_down_oben": {
+    "wert": 214.6,
+    "einheit": "Mrd USD",
+    "typ": "schaetzung",
+    "begruendung": "Höchste Top-down-Schätzung (Market Research Future (MRFR), Prognosejahr 2030).",
+    "abgerufen": "2026-09-18",
+    "herausgeber": "eigene Berechnung (bottom_up.py)"
+  },
+  "abdeckung_bei_unterer_schaetzung": {
+    "wert": 42.054,
+    "einheit": "%",
+    "typ": "schaetzung",
+    "begruendung": "Anteil des Bottom-up-Themenumsatzes an der niedrigsten Marktschätzung. Summe aus 8 Firmen der Shortlist (Umsatz TTM × Themen-Exposure); 7 der Exposures sind Schätzungen.",
+    "abgerufen": "2026-09-18",
+    "herausgeber": "eigene Berechnung (bottom_up.py)"
+  },
+  "abdeckung_bei_oberer_schaetzung": {
+    "wert": 9.863,
+    "einheit": "%",
+    "typ": "schaetzung",
+    "begruendung": "Anteil des Bottom-up-Themenumsatzes an der höchsten Marktschätzung. Summe aus 8 Firmen der Shortlist (Umsatz TTM × Themen-Exposure); 7 der Exposures sind Schätzungen.",
+    "abgerufen": "2026-09-18",
+    "herausgeber": "eigene Berechnung (bottom_up.py)"
+  },
+  "firmen": [
+    {
+      "ticker": "300124.SZ",
+      "name": "Shenzhen Inovance Technology",
+      "segment_id": "motoren-antriebe",
+      "umsatz_ttm_usd_mrd": 7.368,
+      "exposure_pct": 12,
+      "exposure_typ": "schaetzung",
+      "themen_umsatz_usd_mrd": 0.884
+    },
+    {
+      "ticker": "6324.T",
+      "name": "Harmonic Drive Systems",
+      "segment_id": "getriebe-bewegung",
+      "umsatz_ttm_usd_mrd": 0.4,
+      "exposure_pct": 45,
+      "exposure_typ": "schaetzung",
+      "themen_umsatz_usd_mrd": 0.18
+    },
+    {
+      "ticker": "6954.T",
+      "name": "Fanuc",
+      "segment_id": "industrieroboter-cobots",
+      "umsatz_ttm_usd_mrd": 5.695,
+      "exposure_pct": 44.1,
+      "exposure_typ": "berichtet",
+      "themen_umsatz_usd_mrd": 2.511
+    },
+    {
+      "ticker": "CGNX",
+      "name": "Cognex",
+      "segment_id": "sensorik-wahrnehmung",
+      "umsatz_ttm_usd_mrd": 1.089,
+      "exposure_pct": 15,
+      "exposure_typ": "schaetzung",
+      "themen_umsatz_usd_mrd": 0.163
+    },
+    {
+      "ticker": "ISRG",
+      "name": "Intuitive Surgical",
+      "segment_id": "service-logistik-humanoid",
+      "umsatz_ttm_usd_mrd": 11.034,
+      "exposure_pct": 100,
+      "exposure_typ": "schaetzung",
+      "themen_umsatz_usd_mrd": 11.034
+    },
+    {
+      "ticker": "NVDA",
+      "name": "NVIDIA",
+      "segment_id": "compute-halbleiter",
+      "umsatz_ttm_usd_mrd": 302.97,
+      "exposure_pct": 1,
+      "exposure_typ": "schaetzung",
+      "themen_umsatz_usd_mrd": 3.03
+    },
+    {
+      "ticker": "ROK",
+      "name": "Rockwell Automation, Inc.",
+      "segment_id": "integration-software",
+      "umsatz_ttm_usd_mrd": 8.973,
+      "exposure_pct": 8,
+      "exposure_typ": "schaetzung",
+      "themen_umsatz_usd_mrd": 0.718
+    },
+    {
+      "ticker": "SYM",
+      "name": "Symbotic Inc.",
+      "segment_id": "service-logistik-humanoid",
+      "umsatz_ttm_usd_mrd": 2.646,
+      "exposure_pct": 100,
+      "exposure_typ": "schaetzung",
+      "themen_umsatz_usd_mrd": 2.646
+    }
+  ],
+  "exposure_geschaetzt": [
+    "300124.SZ",
+    "6324.T",
+    "CGNX",
+    "ISRG",
+    "NVDA",
+    "ROK",
+    "SYM"
+  ],
+  "top_down": [
+    {
+      "herausgeber": "ABI Research",
+      "jahr_prognose": 2030,
+      "mrd_usd": 110.7
+    },
+    {
+      "herausgeber": "Market Research Future (MRFR)",
+      "jahr_prognose": 2030,
+      "mrd_usd": 214.6
+    },
+    {
+      "herausgeber": "MarketsandMarkets",
+      "jahr_prognose": 2030,
+      "mrd_usd": 50.33
+    },
+    {
+      "herausgeber": "Persistence Market Research",
+      "jahr_prognose": 2030,
+      "mrd_usd": 84.7
+    }
+  ],
+  "hinweise": []
+}

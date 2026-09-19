@@ -1,0 +1,31 @@
+{
+  "name": "Harmonic Drive Systems",
+  "ticker": "6324.T",
+  "segment_id": "getriebe-bewegung",
+  "geschaeftsmodell": "Entwickelt und fertigt Präzisionsgetriebe (Spannungswellengetriebe, Strain Wave Gears), Aktuatoren und Servokomponenten. Abnehmer sind Roboterhersteller, Halbleiter- und Flachbildschirm-Ausrüster, Medizintechnik sowie Luft- und Raumfahrt. Erlöse entstehen im Komponentenverkauf an OEMs; Berichtssegmente sind Japan, China, Nordamerika und Europa (Produktionsstandorte), nicht Endmärkte.",
+  "themen_exposure": {
+    "wert": 45,
+    "einheit": "% Umsatz",
+    "typ": "schaetzung",
+    "begruendung": "Das Unternehmen berichtet Segmente nach Region, nicht nach Endmarkt; ein Robotik-Anteil ist in den gefundenen Quellen nicht ausgewiesen. Geschätzt: Industrieroboter (inkl. Cobots, Humanoid-Prototypen) als größter Einzel-Endmarkt mit rund 40–50 % des Umsatzes; Halbleiter-/FPD-Ausrüster, Medizin (laut Sekundärquelle ca. 9 %) und Sonstiges bilden den Rest. Unsicherheit hoch, Herleitung nicht am Geschäftsbericht belegt.",
+    "abgerufen": "2026-09-18"
+  },
+  "kennzahlen_datei": "data/kennzahlen/6324.T.json",
+  "wettbewerbsposition": "Weltmarktführer bei Spannungswellengetrieben mit jahrzehntelanger Fertigungs-IP und hohen Qualifizierungshürden bei OEMs. Wettbewerb: Nabtesco (RV-Getriebe, anderes Bauprinzip), chinesische Anbieter wie Leaderdrive im Preissegment. Umsatz für das Geschäftsjahr bis März 2026 laut Sekundärberichten 59,6 Mrd JPY (+7 %), aber Operating Profit nur rund 2,6 Mrd JPY: die Marge ist zyklisch stark eingebrochen, das Chinageschäft schrumpfte um 28 %.",
+  "rolle_im_thema": "Zulieferer",
+  "ueberzeugung": {
+    "stufe": "mittel",
+    "begruendung": "Starke Position in einer für Roboter-Gelenke wesentlichen Komponente, und Humanoide brauchen je Einheit deutlich mehr Getriebe. Dagegen ist der Robotik-Anteil nur geschätzt, die Ertragslage zuletzt schwach und die Bewertung (EV/Umsatz ca. 9) preist viel Erholung ein."
+  },
+  "bull_case": [
+    "Humanoide Roboter benötigen je Einheit deutlich mehr Präzisionsgetriebe als klassische Industrieroboter; gelingt der Serienanlauf, wäre der Marktführer bei Strain-Wave-Getrieben ein direkter Nutznießer.",
+    "Zyklische Erholung: Auftragseingang im ersten Quartal des laufenden Geschäftsjahres laut Sekundärquelle +55,7 %, Prognose für Geschäftsjahr bis März 2027 mit Umsatz 68 Mrd JPY und Operating Profit 6,2 Mrd JPY (nach 2,6 Mrd JPY) bei zunehmender Werksauslastung.",
+    "Zusätzlich Nachfrage aus Halbleiterausrüstung und Medizin diversifiziert die Kundenbasis über die Robotik hinaus."
+  ],
+  "bear_case": [
+    "Chinesische Wettbewerber (z. B. Leaderdrive) gewinnen Marktanteile im Volumensegment; das China-Segment fiel im Geschäftsjahr bis März 2026 um 28 %, und Preisdruck kann die Marge dauerhaft drücken.",
+    "Humanoide sind noch Kleinserie (laut Marktdatei rund 13.000 Einheiten 2025); der Thesis-Beitrag liegt weit in der Zukunft, während die Bewertung ihn bereits teilweise vorwegnimmt.",
+    "Hohe Zyklik und Kundenkonzentration in Roboter- und Halbleiterausrüster-Investitionen; Operating Profit lag zuletzt bei rund 4 % vom Umsatz, kleiner Umsatzeinbruch schlägt stark aufs Ergebnis durch."
+  ],
+  "was_uns_widerlegen_wuerde": "Die Operating-Marge erholt sich in den nächsten beiden Quartalsberichten nicht in Richtung der Prognose (Operating Profit 6,2 Mrd JPY für das Geschäftsjahr bis März 2027), oder ein großer Humanoiden- bzw. Roboter-OEM qualifiziert öffentlich ein chinesisches Getriebe als Hauptlieferanten anstelle von Harmonic Drive."
+}
