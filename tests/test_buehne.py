@@ -345,3 +345,112 @@ def test_phase_im_team_aus_gate_log(preise, tmp_path):
         team.verarbeite({"zeit": "2026-09-20T10:00:00+02:00", "agent": "markt", "art": "tuersteher",
                          "entscheidung": "akzeptiert", "datei": f"runs/x/{name}", "grund": "gültig", "fehler": []})
     assert team.snapshot()["phase"] == "Screening"
+
+
+# ---------------------------------------------------------------- Task 4/5: Server-Seite (tools/buehne.py)
+import os  # noqa: E402
+import threading  # noqa: E402
+import urllib.request  # noqa: E402
+
+import buehne  # noqa: E402
+
+
+def test_projekt_slug():
+    assert buehne.projekt_slug(Path("/Users/x/KI Praxis/thema-research")) == "-Users-x-KI-Praxis-thema-research"
+
+
+def projekt_mit_transkripten(tmp_path, monkeypatch) -> tuple[Path, Path]:
+    """Ein leeres Projekt plus Transkript-Ordner unter CLAUDE_CONFIG_DIR mit den drei Fixtures."""
+    projekt = tmp_path / "projekt"
+    (projekt / "runs" / "testthema-2026-09-20").mkdir(parents=True)
+    konfig = tmp_path / "claude"
+    monkeypatch.setenv("CLAUDE_CONFIG_DIR", str(konfig))
+    ordner = konfig / "projects" / buehne.projekt_slug(projekt)
+    ordner.mkdir(parents=True)
+    for name, sid in (("lead", "lead0000-0000-0000-0000-000000000001"), ("markt", "aaaa0000-0000-0000-0000-000000000002"),
+                      ("firma-1", "bbbb0000-0000-0000-0000-000000000003")):
+        text = (FIX / f"{name}.jsonl").read_text(encoding="utf-8").replace("/tmp/projekt", str(projekt))
+        (ordner / f"{sid}.jsonl").write_text(text, encoding="utf-8")
+    return projekt, ordner
+
+
+def test_transkript_ordner_ehrt_config_dir(tmp_path, monkeypatch):
+    projekt, ordner = projekt_mit_transkripten(tmp_path, monkeypatch)
+    assert buehne.transkript_ordner(projekt) == ordner
+
+
+def test_finde_lead_und_teammates(tmp_path, monkeypatch):
+    projekt, ordner = projekt_mit_transkripten(tmp_path, monkeypatch)
+    lead = buehne.finde_lead(ordner, projekt, lead_id=None, nach=None)
+    assert lead is not None and lead.name.startswith("lead0000")
+    assert buehne.session_id(lead) == "lead0000-0000-0000-0000-000000000001"
+    mates = buehne.finde_teammates(ordner, "lead0000-0000-0000-0000-000000000001")
+    assert sorted(p.name[:4] for p in mates) == ["aaaa", "bbbb"]
+    assert buehne.finde_lead(ordner, projekt, lead_id="lead0000-0000-0000-0000-000000000001", nach=None) == lead
+    assert buehne.finde_lead(ordner, projekt, lead_id="gibtsnicht", nach=None) is None
+    # 'nach' filtert nach Zeitstempel der ersten Zeile
+    assert buehne.finde_lead(ordner, projekt, lead_id=None, nach="2026-09-20T09:00:00Z") is None
+    assert buehne.finde_lead(ordner, projekt, lead_id=None, nach="2026-09-20T07:00:00Z") == lead
+
+
+def test_finde_lead_ignoriert_fremdes_cwd(tmp_path, monkeypatch):
+    projekt, ordner = projekt_mit_transkripten(tmp_path, monkeypatch)
+    fremd = ordner / "cccc0000-0000-0000-0000-000000000009.jsonl"
+    fremd.write_text(json.dumps({"type": "user", "sessionId": "cccc", "cwd": "/anderswo",
+                                 "timestamp": "2026-09-20T09:00:00.000Z", "message": {"role": "user", "content": "x"}}) + "\n")
+    lead = buehne.finde_lead(ordner, projekt, lead_id=None, nach=None)
+    assert lead.name.startswith("lead0000")
+
+
+def test_tailer_liest_nur_ganze_zeilen(tmp_path):
+    pfad = tmp_path / "t.jsonl"
+    pfad.write_text('{"a": 1}\n{"a": 2')
+    t = buehne.Tailer(pfad)
+    assert [z["a"] for z in t.lies()] == [1]
+    with pfad.open("a") as f:
+        f.write('}\n{"a": 3}\nkaputt\n')
+    assert [z["a"] for z in t.lies()] == [2, 3]
+    assert t.lies() == []
+    pfad.write_text('{"a": 9}\n')          # Datei wurde gekürzt → von vorn
+    assert [z["a"] for z in t.lies()] == [9]
+
+
+def test_replay_ereignisse_sortiert(tmp_path, monkeypatch, preise):
+    projekt, ordner = projekt_mit_transkripten(tmp_path, monkeypatch)
+    gate = projekt / "runs" / "testthema-2026-09-20" / "gate-log.jsonl"
+    gate.write_text((FIX / "gate-log.jsonl").read_text(encoding="utf-8"))
+    evs = buehne.replay_ereignisse(sorted(ordner.glob("*.jsonl")), gate, projekt, preise)
+    zeiten = [bm.zeit_epoch(e["zeit"]) for e in evs]
+    assert zeiten == sorted(zeiten)
+    assert sum(e["art"] == "tuersteher" for e in evs) == 3
+    assert {e["agent"] for e in evs} >= {"lead", "markt", "firma-1"}
+
+
+def test_server_smoke(tmp_path, monkeypatch, preise):
+    projekt, ordner = projekt_mit_transkripten(tmp_path, monkeypatch)
+    lauf = projekt / "runs" / "testthema-2026-09-20"
+    (lauf / "gate-log.jsonl").write_text((FIX / "gate-log.jsonl").read_text(encoding="utf-8"))
+    (lauf / "lauf.json").write_text(json.dumps({"thema": "Testthema", "slug": "testthema", "datum": "2026-09-20",
+                                                "gestartet": "2026-09-20T10:00:00+02:00"}))
+    server = buehne.starte_server(lauf, projekt, port=0, replay=True, speed=1000.0, lead_id=None)
+    try:
+        port = server.server_address[1]
+        for _ in range(50):
+            with urllib.request.urlopen(f"http://127.0.0.1:{port}/api/state", timeout=2) as r:
+                snap = json.loads(r.read())
+            if snap["modus"] == "replay-ende":
+                break
+            import time as _t
+            _t.sleep(0.05)
+        assert snap["modus"] == "replay-ende"
+        assert set(snap["agenten"]) == {"lead", "markt", "firma-1"}
+        assert snap["tuersteher"] == {"akzeptiert": 2, "abgelehnt": 1}
+        assert snap["lauf"]["thema"] == "Testthema"
+        with urllib.request.urlopen(f"http://127.0.0.1:{port}/", timeout=2) as r:
+            assert r.status == 200 and b"<title>" in r.read()
+        with urllib.request.urlopen(f"http://127.0.0.1:{port}/gibtsnicht", timeout=2) as r:
+            pass
+    except urllib.error.HTTPError as e:
+        assert e.code == 404
+    finally:
+        server.shutdown()
