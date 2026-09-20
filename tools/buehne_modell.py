@@ -37,6 +37,7 @@ PHASE_1_DATEIEN = {"markt-groesse.json", "treiber.json", "kette.json"}
 
 TEAMMATE_NACHRICHT = re.compile(r'<teammate-message\s+teammate_id="([^"]+)"[^>]*>(.*?)</teammate-message>', re.S)
 AUFGABE_MUSTER = re.compile(r"(\[runs/[^\]]+\.json\][^\n.]*)")
+AUFGABE_ZUSATZ = re.compile(r"\s*\(Aufgabe[^)]*\)\s*$")   # „… (Aufgabe #1, dir zugewiesen)“ aus Spawn-Prompts
 RUECKMELDUNG_PRAEFIX = "TaskCompleted hook feedback:"
 DATUMSSUFFIX = re.compile(r"-\d{8}$")
 
@@ -185,7 +186,7 @@ def _nachricht(text: str, zeit: str, agent: str) -> dict | None:
             return ev
     m = AUFGABE_MUSTER.search(inhalt)
     if m:
-        ev["aufgabe"] = m.group(1).strip()
+        ev["aufgabe"] = AUFGABE_ZUSATZ.sub("", m.group(1)).strip()
     if von == "team-lead" and re.search(r"beende dich|bitte beenden|beende dich jetzt", inhalt, re.I):
         ev["beenden"] = True
     return ev
@@ -278,19 +279,30 @@ def _relativ_zum_lauf(datei: str) -> str:
     return "/".join(teile[2:]) if len(teile) > 2 and teile[0] == "runs" else datei
 
 
-def phase_bestimmen(lauf_ordner: Path, gate_akzeptiert: set[str]) -> str:
-    """Höchste zutreffende Phase aus akzeptierten Dateien (relativ zum Lauf) und vorhandenen Dateien."""
+def phase_bestimmen(lauf_ordner: Path, gate_akzeptiert: set[str], jetzt: float | None = None) -> str:
+    """Höchste zutreffende Phase aus akzeptierten Dateien (relativ zum Lauf) und vorhandenen Dateien.
+
+    Mit `jetzt` (Epoch) zählt eine Datei nur, wenn sie zu diesem Zeitpunkt schon geschrieben war (mtime) –
+    im Replay liegen die Dateien des fertigen Laufs sonst von Anfang an vor.
+    """
     lauf = Path(lauf_ordner)
-    if (lauf / "report.html").is_file():
+
+    def da(name: str) -> bool:
+        pfad = lauf / name
+        if not pfad.is_file():
+            return False
+        return jetzt is None or pfad.stat().st_mtime <= jetzt
+
+    if da("report.html"):
         return "Fertig"
     if "report.json" in gate_akzeptiert:
         return "Lektorat"
     if "redteam.json" in gate_akzeptiert:
         return "Report"
     shortlist = lauf / "shortlist.json"
-    if (lauf / "redteam.json").is_file():
+    if da("redteam.json"):
         return "Red Team"
-    if shortlist.is_file():
+    if da("shortlist.json"):
         try:
             ticker = [a.get("ticker") for a in json.loads(shortlist.read_text(encoding="utf-8")).get("auswahl", [])]
         except (json.JSONDecodeError, AttributeError):
@@ -328,7 +340,7 @@ class Team:
         self.tuersteher = {"akzeptiert": 0, "abgelehnt": 0}
         self.lauf = self._lies_lauf()
         self.gestartet_epoch = zeit_epoch(self.lauf.get("gestartet") or "") or None
-        self.phase = phase_bestimmen(self.lauf_ordner, self.gate_akzeptiert)
+        self.phase = phase_bestimmen(self.lauf_ordner, self.gate_akzeptiert, self.uhr())
 
     # ---- Hilfen
     def _lies_lauf(self) -> dict:
@@ -447,7 +459,7 @@ class Team:
             self._fertig_tool.pop(name, None)
             if ok and ev.get("datei"):
                 self.gate_akzeptiert.add(_relativ_zum_lauf(ev["datei"]))
-            self.phase = phase_bestimmen(self.lauf_ordner, self.gate_akzeptiert)
+            self.phase = phase_bestimmen(self.lauf_ordner, self.gate_akzeptiert, self.uhr())
             lauf_geaendert = True
             ev = dict(ev, agent=name)
         else:
@@ -476,7 +488,7 @@ class Team:
             elif still > UNTAETIG_S and k["zustand"] != "untaetig":
                 self._setze(k, "untaetig", zeit)
                 aus.append(("karte", self._kopf(k)))
-        neue_phase = phase_bestimmen(self.lauf_ordner, self.gate_akzeptiert)
+        neue_phase = phase_bestimmen(self.lauf_ordner, self.gate_akzeptiert, jetzt)
         if neue_phase != self.phase:
             self.phase = neue_phase
         if not self.lauf.get("gestartet"):

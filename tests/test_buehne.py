@@ -131,6 +131,10 @@ def test_nachricht_mit_aufgabe(preise):
     assert zuweisung["text"].startswith("Aufgabe #4")
     ende = bm.ereignisse_aus_zeile(zeilen("firma-1")[10], "firma-1", FIX_PROJEKT, preise)[0]
     assert ende["beenden"] is True
+    zeile = {"type": "user", "timestamp": "2026-09-20T08:00:00Z", "message": {"role": "user", "content":
+             '<teammate-message teammate_id="team-lead"> Deine Aufgabe: [runs/x/kette.json] Wertschöpfungskette (Aufgabe #3, dir zugewiesen). Los. </teammate-message>'}}
+    ev = bm.ereignisse_aus_zeile(zeile, "kette", FIX_PROJEKT, preise)[0]
+    assert ev["aufgabe"] == "[runs/x/kette.json] Wertschöpfungskette"
 
 
 def test_tuersteher_rueckmeldung(preise):
@@ -355,6 +359,15 @@ def test_phase_bestimmen(tmp_path):
     assert bm.phase_bestimmen(tmp_path, p1) == "Lektorat"
     (tmp_path / "report.html").write_text("<html>")
     assert bm.phase_bestimmen(tmp_path, p1) == "Fertig"
+
+
+def test_phase_mit_uhr_zaehlt_nur_schon_geschriebene_dateien(tmp_path):
+    import os
+    (tmp_path / "report.html").write_text("<html>")
+    os.utime(tmp_path / "report.html", (1_000_000, 1_000_000))
+    assert bm.phase_bestimmen(tmp_path, set(), jetzt=999_999) == "Phase 1"
+    assert bm.phase_bestimmen(tmp_path, set(), jetzt=1_000_001) == "Fertig"
+    assert bm.phase_bestimmen(tmp_path, set()) == "Fertig"
 
 
 def test_phase_beispiel_lauf():

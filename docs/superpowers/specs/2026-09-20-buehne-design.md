@@ -84,7 +84,7 @@ Modell-IDs mit Datumssuffix werden auf den Präfix ohne Suffix abgebildet.
  "agenten": {name: Karte}, "reihenfolge": [Namen], "modus": "live"|"replay", "replay_faktor"}
 ```
 
-**Phase** (deterministisch aus Gate-Log und Dateien im Lauf-Ordner, die höchste zutreffende gilt):
+**Phase** (deterministisch aus Gate-Log und Dateien im Lauf-Ordner, die höchste zutreffende gilt; eine Datei zählt nur, wenn ihre Änderungszeit vor der aktuellen Uhr liegt – im Replay liegen sonst alle Dateien von Anfang an vor):
 
 1. `Phase 1` – Lauf-Ordner existiert
 2. `Screening` – `markt-groesse.json`, `treiber.json`, `kette.json` alle akzeptiert
@@ -107,7 +107,7 @@ python3 tools/buehne.py runs/<lauf> --replay [--speed 10] [--open]
 
 - `GET /` → `templates/buehne.html`
 - `GET /api/state` → Gesamtzustand als JSON (Snapshot für den Start)
-- `GET /api/events` → Server-Sent Events: `init` (Snapshot), dann je Änderung `agent` (eine Karte komplett), `lauf` (Kopfzeile: Phase, Kosten, Laufzeit, Türsteher-Zähler), `ereignis` (ein Stromereignis mit Agentname, damit die Seite nur anhängt). Alle 15 s ein Ping-Kommentar.
+- `GET /api/events` → Server-Sent Events: `init` (Snapshot), dann je Änderung `karte` (eine Karte ohne Strom), `lauf` (Kopfzeile: Phase, Kosten, Laufzeit, Türsteher-Zähler), `ereignis` (ein Stromereignis mit Agentname, damit die Seite nur anhängt). Alle 15 s ein Ping-Kommentar.
 - Threads: ein Tailer je Transkript (Muster aus AgentView: Position merken, nur vollständige Zeilen), ein Tailer fürs Gate-Log, ein Sucher für neue Transkripte (2 s), ein Zähler für Laufzeit/Untätig-Schwellen (1 s). Ein Lock um den Zustand.
 - **Replay**: liest alle Transkripte des Teams und das Gate-Log vollständig, mischt die Ereignisse nach `zeit`, spielt sie mit Faktor `--speed` ab (Pausen über 3 s werden auf 3 s gekappt, wie in AgentView). Danach `modus: "replay-ende"`. Das Team wird im Replay über `--lead` oder, ohne Angabe, über das Transkript mit dem passenden `cwd` und einem Zeitstempel nach `lauf.json.gestartet` bestimmt.
 - `--open` öffnet den Standardbrowser mit `http://127.0.0.1:<port>/`.
@@ -124,7 +124,7 @@ Aufbau:
 - **Karte**: Kopf mit Farbpunkt (Rolle), Name, Modell-Kürzel (`Sonnet 5`), Zustandsring (Animation bei `denkt`/`werkzeug`, still bei `untaetig`/`fertig`), Zustandstext („sucht im Web“, „wartet auf Türsteher“). Zeile 2: Aufgabe (eine Zeile, gekürzt). Zeile 3: `aktuell` in Monospace. Mitte: der Strom, neueste unten, automatisch nachlaufend; Zeilen mit Symbol je Art (Text ohne Symbol, Werkzeug ›, Ergebnis ✓/✗, Nachricht ✉, Türsteher-Rückmeldung ⛔). Fuß: Tokens (`out 12,3k · cache 1,2M`), Kosten, Schritte, Türsteher-Zähler der Karte.
 - **Türsteher-Blitz**: bei `tuersteher`-Ereignis bekommt die Karte 1,5 s einen roten oder grünen Rahmen und oben eine Zeile mit Datei und Grund; abgelehnt zeigt bis zu 3 Fehler.
 - **Platzhalter**: graue Karte mit Rollenname und „wartet auf Start“.
-- Klick auf eine Karte vergrößert sie auf 2 Spalten (Toggle), um im Video einen Agenten hervorzuheben. Taste `F` Vollbild.
+- Klick auf eine Karte vergrößert sie auf 2 Spalten (Toggle), um im Video einen Agenten hervorzuheben. Taste `F` Vollbild. `?standbild=1` lädt nur den Snapshot ohne Ereignisstrom (für Screenshots).
 - Verbindung: `EventSource('/api/events')`; bei Abbruch automatisches Wiederverbinden mit Snapshot aus `/api/state`.
 
 ## Fehlerfälle
