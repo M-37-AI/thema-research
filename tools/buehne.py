@@ -38,6 +38,7 @@ LESE_TAKT_S = 0.15       # Transkripte fortlesen
 SUCH_TAKT_S = 2.0        # nach neuen Teammates suchen
 TICK_TAKT_S = 1.0        # Laufzeit, Untätig-Schwellen
 REPLAY_MAX_PAUSE_S = 3.0
+REPLAY_NACHLAUF_S = 600.0   # nach der letzten Türsteher-Entscheidung: Render, Abschied der Teammates
 KOPFZEILEN = 40          # so viele Zeilen eines Transkripts reichen für cwd/agentName/teamName
 
 
@@ -86,30 +87,58 @@ def rollen_aus_projekt(projekt: Path) -> set[str]:
     return rollen or {"markt", "treiber", "kette", "firma", "red-team", "lektor"}
 
 
+LEAD_SPIELRAUM_S = 60    # der Lead startet kurz vor lauf.json.gestartet
+
+
 def finde_lead(ordner: Path, projekt: Path, lead_id: str | None, nach: str | None) -> Path | None:
-    """Das Lead-Transkript: ohne agentName, cwd im Projekt, optional nach einem Zeitpunkt; sonst das neueste."""
+    """Das Lead-Transkript: ohne agentName, cwd im Projekt.
+
+    Ohne `nach`: das zuletzt geänderte. Mit `nach` (Zeitpunkt, z. B. lauf.json.gestartet): die Session, die
+    zu diesem Zeitpunkt lief – die zuletzt gestartete mit Beginn vor `nach` (+ Spielraum); gibt es keine,
+    die erste danach. Eine Lead-Session kann mehrere Läufe enthalten, deshalb zählt der Beginn, nicht das Ende.
+    """
     if lead_id:
         pfad = ordner / f"{lead_id}.jsonl"
         return pfad if pfad.is_file() and not _kopf_infos(pfad)["agentName"] else None
     projekt_str = str(projekt)
-    grenze = bm.zeit_epoch(nach) if nach else 0.0
     kandidaten = []
     for pfad in ordner.glob("*.jsonl"):
         info = _kopf_infos(pfad)
         if info["agentName"] or not info["cwd"].startswith(projekt_str):
             continue
-        if grenze and bm.zeit_epoch(info["zeit"]) < grenze:
-            continue
         try:
-            kandidaten.append((pfad.stat().st_mtime, pfad))
+            kandidaten.append((bm.zeit_epoch(info["zeit"]), pfad.stat().st_mtime, pfad))
         except OSError:
             continue
-    return max(kandidaten)[1] if kandidaten else None
+    if not kandidaten:
+        return None
+    if not nach:
+        return max(kandidaten, key=lambda k: k[1])[2]
+    grenze = bm.zeit_epoch(nach) + LEAD_SPIELRAUM_S
+    davor = [k for k in kandidaten if k[0] <= grenze]
+    if davor:
+        return max(davor, key=lambda k: k[0])[2]
+    return min(kandidaten, key=lambda k: k[0])[2]
 
 
-def finde_teammates(ordner: Path, lead_id: str) -> list[Path]:
-    team = f"session-{lead_id}"
-    return sorted(p for p in ordner.glob("*.jsonl") if _kopf_infos(p)["teamName"] == team)
+def team_name(lead_id: str) -> set[str]:
+    """Claude Code nennt das Team nach den ersten 8 Zeichen der Lead-Session-ID (session-9b756dd5)."""
+    return {f"session-{lead_id}", f"session-{lead_id[:8]}"}
+
+
+def finde_teammates(ordner: Path, lead_id: str, von: float = 0.0, bis: float = 0.0) -> list[Path]:
+    """Transkripte mit passendem teamName; optional nur solche, die im Zeitfenster [von, bis] begonnen haben."""
+    namen = team_name(lead_id)
+    aus = []
+    for p in ordner.glob("*.jsonl"):
+        info = _kopf_infos(p)
+        if info["teamName"] not in namen:
+            continue
+        start = bm.zeit_epoch(info["zeit"])
+        if (von and start < von) or (bis and start > bis):
+            continue
+        aus.append(p)
+    return sorted(aus)
 
 
 # ---------------------------------------------------------------- Dateien fortlesen
@@ -146,15 +175,31 @@ class Tailer:
         return aus
 
 
-def replay_ereignisse(pfade: list[Path], gate_log: Path | None, projekt: Path, preise: dict) -> list[dict]:
-    """Alle Ereignisse eines Teams plus Türsteher, nach Zeit sortiert (stabil)."""
+def replay_ereignisse(pfade: list[Path], gate_log: Path | None, projekt: Path, preise: dict,
+                      von: float = 0.0, bis: float = 0.0) -> list[dict]:
+    """Alle Ereignisse eines Teams plus Türsteher, nach Zeit sortiert (stabil); optional auf [von, bis] begrenzt."""
     evs: list[dict] = []
     for pfad in pfade:
         for z in Tailer(pfad).lies():
             evs += bm.ereignisse_aus_zeile(z, bm.agent_aus_zeile(z), projekt, preise)
     if gate_log and gate_log.is_file():
         evs += [bm.ereignis_aus_gate(z) for z in Tailer(gate_log).lies()]
+    if von or bis:
+        evs = [e for e in evs if (not von or bm.zeit_epoch(e.get("zeit") or "") >= von)
+               and (not bis or bm.zeit_epoch(e.get("zeit") or "") <= bis)]
     return sorted(evs, key=lambda e: bm.zeit_epoch(e.get("zeit") or ""))
+
+
+def replay_fenster(lauf: Path, gestartet: str | None) -> tuple[float, float]:
+    """Zeitfenster eines Laufs: ab kurz vor lauf.json.gestartet bis zur letzten Türsteher-Entscheidung + Nachlauf."""
+    von = bm.zeit_epoch(gestartet) - LEAD_SPIELRAUM_S if gestartet else 0.0
+    bis = 0.0
+    gate = lauf / "gate-log.jsonl"
+    if gate.is_file():
+        zeiten = [bm.zeit_epoch(z.get("zeit") or "") for z in Tailer(gate).lies()]
+        if zeiten:
+            bis = max(zeiten) + REPLAY_NACHLAUF_S
+    return max(von, 0.0), bis
 
 
 # ---------------------------------------------------------------- Zustand + Verteilung
@@ -196,6 +241,8 @@ class Zustand:
     def setze_modus(self, modus: str) -> None:
         with self.lock:
             self.team.modus = modus
+            if modus == "replay-ende":
+                self._verteile(self.team.alle_fertig())
             self._verteile([("lauf", self.team._lauf_kopf())])
 
     def snapshot(self) -> dict:
@@ -340,8 +387,6 @@ def starte_server(lauf: Path, projekt: Path, port: int, replay: bool, speed: flo
     except (OSError, json.JSONDecodeError):
         pass
     lead = finde_lead(ordner, projekt, lead_id, nach=gestartet if replay else None) if ordner.is_dir() else None
-    if lead is None and gestartet and replay:
-        lead = finde_lead(ordner, projekt, lead_id, nach=None)
     if lead is None:
         raise ToolFehler("Kein Lead-Transkript gefunden. Starte im Projektordner `claude --teammate-mode tmux` und "
                          f"dann /thema – oder gib das Transkript mit --lead <session-id> an (gesucht in {ordner}).")
@@ -350,8 +395,9 @@ def starte_server(lauf: Path, projekt: Path, port: int, replay: bool, speed: flo
                    modus="replay" if replay else "live", replay_faktor=speed if replay else 1.0)
     zustand = Zustand(team)
     if replay:
-        pfade = [lead] + finde_teammates(ordner, session_id(lead))
-        evs = replay_ereignisse(pfade, gate_log, projekt, preise)
+        von, bis = replay_fenster(lauf, gestartet)
+        pfade = [lead] + finde_teammates(ordner, session_id(lead), von, bis)
+        evs = replay_ereignisse(pfade, gate_log, projekt, preise, von, bis)
         print(f"  ▶ Replay: {len(pfade)} Transkripte, {len(evs)} Ereignisse, Faktor {speed}", flush=True)
         arbeiter: threading.Thread = Replayer(zustand, evs, speed)
     else:

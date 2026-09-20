@@ -291,6 +291,29 @@ def test_kosten_summieren_sich(preise, tmp_path):
     assert snap["tokens"]["output"] == 440
 
 
+def test_verbrauch_je_nachricht_nur_einmal(preise, tmp_path):
+    team = neues_team(preise, tmp_path)
+    ev = {"zeit": "2026-09-20T08:00:00Z", "agent": "kette", "art": "verbrauch", "modell": "claude-sonnet-5",
+          "nachricht_id": "msg_1", "input": 1, "output": 100, "cache_lesen": 0, "cache_schreiben_5m": 0,
+          "cache_schreiben_1h": 0, "kosten_usd": 0.001}
+    team.verarbeite(ev)
+    assert team.verarbeite(dict(ev)) == []                      # gleiche message.id → ignoriert
+    team.verarbeite(dict(ev, nachricht_id="msg_2"))
+    assert team.karte("kette")["tokens"]["output"] == 200
+    assert team.karte("kette")["kosten_usd"] == pytest.approx(0.002)
+
+
+def test_fertig_bleibt_bei_text_und_alle_fertig(preise, tmp_path):
+    team = neues_team(preise, tmp_path)
+    for ev in alle_ereignisse(preise, "firma-1"):
+        team.verarbeite(ev)
+    team.verarbeite({"zeit": "2026-09-20T08:21:00Z", "agent": "firma-1", "art": "text", "text": "Ich beende mich."})
+    assert team.karte("firma-1")["zustand"] == "fertig"
+    team.verarbeite({"zeit": "2026-09-20T08:21:00Z", "agent": "markt", "art": "text", "text": "x"})
+    aus = team.alle_fertig()
+    assert [p["name"] for a, p in aus] == ["markt"] and team.karte("markt")["zustand"] == "fertig"
+
+
 def test_reihenfolge_und_snapshot(preise, tmp_path):
     team = neues_team(preise, tmp_path)
     for ev in alle_ereignisse(preise, "firma-1", "markt", "lead"):
@@ -388,9 +411,26 @@ def test_finde_lead_und_teammates(tmp_path, monkeypatch):
     assert sorted(p.name[:4] for p in mates) == ["aaaa", "bbbb"]
     assert buehne.finde_lead(ordner, projekt, lead_id="lead0000-0000-0000-0000-000000000001", nach=None) == lead
     assert buehne.finde_lead(ordner, projekt, lead_id="gibtsnicht", nach=None) is None
-    # 'nach' filtert nach Zeitstempel der ersten Zeile
-    assert buehne.finde_lead(ordner, projekt, lead_id=None, nach="2026-09-20T09:00:00Z") is None
-    assert buehne.finde_lead(ordner, projekt, lead_id=None, nach="2026-09-20T07:00:00Z") == lead
+    # Kurzform des Team-Namens (erste 8 Zeichen der Lead-ID), wie Claude Code sie schreibt
+    kurz = ordner / "dddd0000-0000-0000-0000-000000000004.jsonl"
+    kurz.write_text(json.dumps({"type": "user", "agentName": "kette", "teamName": "session-lead0000", "cwd": str(projekt),
+                                "timestamp": "2026-09-20T08:00:30.000Z", "message": {"role": "user", "content": "x"}}) + "\n")
+    assert len(buehne.finde_teammates(ordner, "lead0000-0000-0000-0000-000000000001")) == 3
+    # Zeitfenster: nur Teammates, die darin begonnen haben
+    von, bis = bm.zeit_epoch("2026-09-20T08:00:20Z"), bm.zeit_epoch("2026-09-20T08:01:00Z")
+    assert [p.name[:4] for p in buehne.finde_teammates(ordner, "lead0000-0000-0000-0000-000000000001", von, bis)] == ["dddd"]
+
+
+def test_finde_lead_nach_zeitpunkt(tmp_path, monkeypatch):
+    projekt, ordner = projekt_mit_transkripten(tmp_path, monkeypatch)
+    spaeter = ordner / "eeee0000-0000-0000-0000-000000000005.jsonl"
+    spaeter.write_text(json.dumps({"type": "user", "sessionId": "eeee", "cwd": str(projekt),
+                                   "timestamp": "2026-09-20T09:30:00.000Z", "message": {"role": "user", "content": "x"}}) + "\n")
+    lead = ordner / "lead0000-0000-0000-0000-000000000001.jsonl"
+    assert buehne.finde_lead(ordner, projekt, None, nach="2026-09-20T09:00:00Z") == lead      # lief um 9 Uhr
+    assert buehne.finde_lead(ordner, projekt, None, nach="2026-09-20T09:30:30Z") == spaeter   # 30 s Spielraum
+    assert buehne.finde_lead(ordner, projekt, None, nach="2026-09-20T07:00:00Z") == lead      # keine davor → erste danach
+    assert buehne.finde_lead(ordner, projekt, None, nach=None) == spaeter                     # ohne Zeitpunkt: neueste
 
 
 def test_finde_lead_ignoriert_fremdes_cwd(tmp_path, monkeypatch):
@@ -424,6 +464,10 @@ def test_replay_ereignisse_sortiert(tmp_path, monkeypatch, preise):
     assert zeiten == sorted(zeiten)
     assert sum(e["art"] == "tuersteher" for e in evs) == 3
     assert {e["agent"] for e in evs} >= {"lead", "markt", "firma-1"}
+    von, bis = buehne.replay_fenster(gate.parent, "2026-09-20T10:00:00+02:00")
+    assert von == bm.zeit_epoch("2026-09-20T07:59:00Z") and bis == bm.zeit_epoch("2026-09-20T08:06:21Z") + buehne.REPLAY_NACHLAUF_S
+    begrenzt = buehne.replay_ereignisse(sorted(ordner.glob("*.jsonl")), gate, projekt, preise, von, bm.zeit_epoch("2026-09-20T08:01:00Z"))
+    assert begrenzt and all(bm.zeit_epoch(e["zeit"]) <= bm.zeit_epoch("2026-09-20T08:01:00Z") for e in begrenzt)
 
 
 def test_server_smoke(tmp_path, monkeypatch, preise):

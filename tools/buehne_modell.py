@@ -238,7 +238,10 @@ def ereignisse_aus_zeile(zeile: dict, agent: str, projekt: Path, preise: dict) -
             s1h, s5m = cc.get("ephemeral_1h_input_tokens"), cc.get("ephemeral_5m_input_tokens")
             if s1h is None and s5m is None:
                 s5m, s1h = gesamt, 0
+            # Claude Code schreibt je Inhaltsblock eine Zeile mit derselben message.id und demselben usage –
+            # das Team zählt jede nachricht_id nur einmal.
             aus.append({"zeit": zeit, "agent": agent, "art": "verbrauch", "modell": modell,
+                        "nachricht_id": nachricht.get("id") or "",
                         "input": usage.get("input_tokens") or 0, "output": usage.get("output_tokens") or 0,
                         "cache_lesen": usage.get("cache_read_input_tokens") or 0,
                         "cache_schreiben_5m": s5m or 0, "cache_schreiben_1h": s1h or 0,
@@ -320,6 +323,7 @@ class Team:
         self.karten: dict[str, dict] = {}
         self._epoch: dict[str, float] = {}
         self._fertig_tool: dict[str, str] = {}
+        self._verbrauch_gesehen: set[str] = set()
         self.gate_akzeptiert: set[str] = set()
         self.tuersteher = {"akzeptiert": 0, "abgelehnt": 0}
         self.lauf = self._lies_lauf()
@@ -389,6 +393,11 @@ class Team:
         lauf_geaendert = False
 
         if art == "verbrauch":
+            nid = ev.get("nachricht_id") or ""
+            if nid:
+                if nid in self._verbrauch_gesehen:
+                    return aus
+                self._verbrauch_gesehen.add(nid)
             t = k["tokens"]
             t["input"] += ev.get("input", 0)
             t["output"] += ev.get("output", 0)
@@ -400,10 +409,10 @@ class Team:
             k["preis_unbekannt"] = k["preis_unbekannt"] or bool(ev.get("preis_unbekannt"))
             lauf_geaendert = True
         elif art == "text":
-            if k["zustand"] != "wartet_tuersteher":
+            if k["zustand"] not in ("wartet_tuersteher", "fertig"):
                 self._setze(k, "schreibt", zeit)
         elif art == "denkt":
-            if k["zustand"] != "wartet_tuersteher":
+            if k["zustand"] not in ("wartet_tuersteher", "fertig"):
                 self._setze(k, "denkt", zeit)
         elif art == "werkzeug":
             k["schritte"] += 1
@@ -417,7 +426,7 @@ class Team:
             if ev.get("tool_use_id") and ev.get("tool_use_id") == self._fertig_tool.get(name):
                 self._setze(k, "korrigiert" if ev.get("fehler") else "bereit", zeit)
                 self._fertig_tool.pop(name, None)
-            elif k["zustand"] in ("untaetig", "fertig"):
+            elif k["zustand"] == "untaetig":
                 self._setze(k, "werkzeug", zeit)
         elif art == "nachricht":
             if ev.get("aufgabe"):
@@ -474,6 +483,15 @@ class Team:
             self.lauf = self._lies_lauf()
             self.gestartet_epoch = zeit_epoch(self.lauf.get("gestartet") or "") or None
         aus.append(("lauf", self._lauf_kopf()))
+        return aus
+
+    def alle_fertig(self, zeit: str = "") -> list[tuple[str, dict]]:
+        """Am Ende eines Replays: jede Karte gilt als fertig."""
+        aus = []
+        for k in self.karten.values():
+            if k["zustand"] != "fertig":
+                self._setze(k, "fertig", zeit or k["zuletzt"])
+                aus.append(("karte", self._kopf(k)))
         return aus
 
     def snapshot(self) -> dict:
