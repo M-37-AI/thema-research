@@ -178,6 +178,13 @@ def test_werkzeug_titel(name, eingabe, titel):
     assert bm.werkzeug_titel(name, eingabe, FIX_PROJEKT)[0] == titel
 
 
+def test_sendmessage_mit_strukturiertem_inhalt():
+    eingabe = {"to": "firma-2", "message": {"type": "task_assignment", "taskId": "4", "subject": "x"}, "summary": "Zuweisung"}
+    titel, detail = bm.werkzeug_titel("SendMessage", eingabe, FIX_PROJEKT)
+    assert titel == "Schreibt an firma-2" and detail.startswith('{"type": "task_assignment"')
+    assert bm.werkzeug_titel("Bash", {"command": None, "description": None}, FIX_PROJEKT)[0] == "Führt aus: "
+
+
 def test_ereignis_aus_gate():
     g = zeilen("gate-log")[1]
     ev = bm.ereignis_aus_gate(g)

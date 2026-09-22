@@ -107,8 +107,16 @@ def zeit_epoch(zeit: str) -> float:
 
 
 # ---------------------------------------------------------------- Zeile → Ereignisse
-def _kurz(text: str, n: int) -> str:
-    text = (text or "").strip()
+def _kurz(text, n: int) -> str:
+    """Kürzt auf n Zeichen; Nicht-Strings (z. B. strukturierte SendMessage-Inhalte) werden als JSON gezeigt."""
+    if text is None:
+        text = ""
+    elif not isinstance(text, str):
+        try:
+            text = json.dumps(text, ensure_ascii=False)
+        except (TypeError, ValueError):
+            text = str(text)
+    text = text.strip()
     return text if len(text) <= n else text[:n] + "…"
 
 

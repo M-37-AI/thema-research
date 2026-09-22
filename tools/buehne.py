@@ -181,7 +181,10 @@ def replay_ereignisse(pfade: list[Path], gate_log: Path | None, projekt: Path, p
     evs: list[dict] = []
     for pfad in pfade:
         for z in Tailer(pfad).lies():
-            evs += bm.ereignisse_aus_zeile(z, bm.agent_aus_zeile(z), projekt, preise)
+            try:
+                evs += bm.ereignisse_aus_zeile(z, bm.agent_aus_zeile(z), projekt, preise)
+            except Exception as e:
+                print(f"  ! Zeile übersprungen ({pfad.name[:8]}): {type(e).__name__}: {e}", file=sys.stderr, flush=True)
     if gate_log and gate_log.is_file():
         evs += [bm.ereignis_aus_gate(z) for z in Tailer(gate_log).lies()]
     if von or bis:
@@ -271,13 +274,30 @@ class LiveLeser(threading.Thread):
         evs: list[dict] = []
         for t in list(self.tailer.values()):
             for z in t.lies():
-                evs += bm.ereignisse_aus_zeile(z, bm.agent_aus_zeile(z), self.projekt, self.preise)
-        evs += [bm.ereignis_aus_gate(z) for z in self.gate.lies()]
+                try:
+                    evs += bm.ereignisse_aus_zeile(z, bm.agent_aus_zeile(z), self.projekt, self.preise)
+                except Exception as e:  # eine kaputte Zeile darf den Leser nicht stoppen
+                    print(f"  ! Zeile übersprungen ({t.pfad.name[:8]}): {type(e).__name__}: {e}", file=sys.stderr, flush=True)
+        for z in self.gate.lies():
+            try:
+                evs.append(bm.ereignis_aus_gate(z))
+            except Exception as e:
+                print(f"  ! Gate-Zeile übersprungen: {type(e).__name__}: {e}", file=sys.stderr, flush=True)
         if evs:
             evs.sort(key=lambda e: bm.zeit_epoch(e.get("zeit") or ""))
-            self.zustand.verarbeite(evs)
+            for ev in evs:
+                try:
+                    self.zustand.verarbeite([ev])
+                except Exception as e:
+                    print(f"  ! Ereignis übersprungen ({ev.get('agent')}/{ev.get('art')}): {type(e).__name__}: {e}", file=sys.stderr, flush=True)
 
     def run(self) -> None:
+        try:
+            self._lauf()
+        except Exception as e:
+            print(f"  ✗ Leser abgebrochen: {type(e).__name__}: {e}", file=sys.stderr, flush=True)
+
+    def _lauf(self) -> None:
         self._suche()
         letzte_suche = letzter_tick = time.time()
         while not self.stop.is_set():
