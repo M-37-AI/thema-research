@@ -1,7 +1,0 @@
-{
-  "_hinweis": "Listenpreise der Claude API in USD je Million Tokens, Stand 2026-09-19 (wie in docs/testlauf-2-2026-09-19.md). Modell-IDs ohne Datumssuffix; buehne_modell.preis_fuer schneidet Suffixe ab.",
-  "claude-fable-5-1": {"input": 10, "output": 50, "cache_lesen": 0.25, "cache_schreiben_5m": 12.5, "cache_schreiben_1h": 20},
-  "claude-opus-5":    {"input": 5,  "output": 25, "cache_lesen": 0.5,  "cache_schreiben_5m": 6.25, "cache_schreiben_1h": 10},
-  "claude-sonnet-5":  {"input": 2,  "output": 10, "cache_lesen": 0.2,  "cache_schreiben_5m": 2.5,  "cache_schreiben_1h": 4},
-  "claude-haiku-4-5": {"input": 1,  "output": 5,  "cache_lesen": 0.1,  "cache_schreiben_5m": 1.25, "cache_schreiben_1h": 2}
-}

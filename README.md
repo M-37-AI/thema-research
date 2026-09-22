@@ -82,19 +82,6 @@ Der Lead legt den Lauf-Ordner an, startet die Teammates und meldet sich mit der 
 
 **Zuschauen:** In tmux bekommt jeder Teammate ein eigenes Pane. Ohne tmux: Pfeiltasten im Agenten-Panel, Enter öffnet das Transkript eines Teammates.
 
-## Zuschauen: die Bühne
-
-tmux zeigt die Teammates als rohe Terminals. Die **Bühne** zeigt denselben Lauf als Raster von Karten im Browser: je Agent Rolle, Modell, Zustand (denkt, arbeitet, wartet auf Türsteher, korrigiert, fertig), aktuelle Aufgabe, der laufende Strom aus Textausgaben, Werkzeugaufrufen und Nachrichten, dazu Tokens und Kosten – live mitgerechnet aus den Transkripten. Türsteher-Entscheidungen blitzen grün oder rot auf der betroffenen Karte auf. Die Kopfzeile zeigt Phase, Laufzeit, Gesamtkosten und Türsteher-Zähler.
-
-![Bühne](docs/buehne.png)
-
-```bash
-python3 tools/buehne.py runs/<lauf> --open                 # zweites Terminal, während /thema läuft
-python3 tools/buehne.py runs/<lauf> --replay --speed 10    # einen fertigen Lauf im Zeitraffer abspielen
-```
-
-Die Bühne liest nur: die Transkripte unter `~/.claude/projects/…` (Lead und alle Teammates mit derselben Team-ID), `runs/<lauf>/gate-log.jsonl` und den Lauf-Ordner. Sie ändert nichts, braucht keine Hooks und lauscht nur auf `127.0.0.1:8767` (`--port`). Kosten sind Listenpreise aus `tools/preise.json`, je Antwort einmal gezählt; ein unbekanntes Modell wird mit 0 $ und Hinweis gezeigt. Tasten: `F` Vollbild, Klick auf eine Karte vergrößert sie. `--replay` eignet sich für B-Roll: ein 23-Minuten-Lauf läuft mit `--speed 10` in gut zwei Minuten durch. Findet die Bühne kein Lead-Transkript, hilft `--lead <session-id>` (Dateiname unter `~/.claude/projects/<projekt>/`).
-
 ## Ohne Agenten ausprobieren
 
 ```bash
@@ -122,7 +109,6 @@ Jedes Tool hat `--help`, deutsche Fehlermeldungen und sinnvolle Exit-Codes.
 | `tools/lektorat_vorlage.py <lauf>` | alle im Report sichtbaren Texte als Vorlage für den Lektor |
 | `tools/render.py <lauf> [--open] [--ohne-lektorat]` | validiert alle Dateien des Laufs und rendert den Report (reines SVG/HTML, ~0,1 MB) |
 | `tools/gate.py`, `tools/gate_create.py` | Türsteher-Hooks (lesen Hook-JSON von stdin) |
-| `tools/buehne.py <lauf> [--open] [--replay --speed N]` | Bühne: Live-Fenster mit Agenten-Karten im Browser, nur lesend; `tools/preise.json` liefert die Listenpreise |
 
 ## Aufbau
 
@@ -135,7 +121,6 @@ Jedes Tool hat `--help`, deutsche Fehlermeldungen und sinnvolle Exit-Codes.
 schemas/                   JSON-Schemas; zahl.schema.json ist das Herzstück
 tools/                     deterministischer Code (siehe oben)
 templates/report.html.j2   Report-Layout
-templates/buehne.html      die Bühne (Live-Fenster)
 examples/                  ein echter Lauf zum Anschauen
 tests/                     pytest, Hook-Test, Fixtures, fiktiver Beispiel-Lauf
 docs/bauauftrag.md         der ursprüngliche Bauauftrag inkl. Nachträgen
