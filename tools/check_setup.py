@@ -42,7 +42,7 @@ def pruefe_python() -> None:
     print("Python")
     v = sys.version_info
     zeile(v[:2] >= MIN_PYTHON, f"Python {v.major}.{v.minor}.{v.micro}",
-          "" if v[:2] >= MIN_PYTHON else f"mindestens {'.'.join(map(str, MIN_PYTHON))} nötig – z. B. uv venv --python 3.12 .venv")
+          "" if v[:2] >= MIN_PYTHON else f"mindestens {'.'.join(map(str, MIN_PYTHON))} nötig – das macOS-eigene python3 ist zu alt: brew install uv && uv venv --python 3.12 .venv")
     im_venv = sys.prefix != sys.base_prefix
     venv_pfad = PROJEKT / ".venv" / ("Scripts" if platform.system() == "Windows" else "bin") / "python3"
     zeile(im_venv, "venv aktiv" if im_venv else "kein venv aktiv", "" if im_venv else "source .venv/bin/activate")
@@ -52,7 +52,7 @@ def pruefe_python() -> None:
         try:
             zeile(True, f"{paket} {importlib.metadata.version(paket)}")
         except importlib.metadata.PackageNotFoundError:
-            zeile(False, f"{paket} fehlt", "pip install -r requirements.txt")
+            zeile(False, f"{paket} fehlt", "uv pip install -r requirements.txt  (uv-venv)  bzw.  pip install -r requirements.txt")
     if platform.system() == "Windows":
         zeile(None, "Windows: Hooks in .claude/settings.json zeigen auf .venv/bin/python3 – Pfad auf .venv\\Scripts\\python.exe anpassen")
 

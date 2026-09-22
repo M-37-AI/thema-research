@@ -41,23 +41,37 @@ Jede Aufgabe trägt ihre Ergebnisdatei im Titel (`[runs/<lauf>/kette.json] Werts
 
 ## Voraussetzungen
 
-- **macOS oder Linux.** (Unter Windows müssen die Hook-Pfade in `.claude/settings.json` auf `.venv\Scripts\python.exe` geändert werden – ungetestet.)
-- **Python 3.11+**
-- **[Claude Code](https://code.claude.com) ≥ 2.1.178** mit einem Abo oder API-Zugang, das Opus und Sonnet erlaubt.
+- **macOS 13+ oder Linux.** (Windows ungetestet: Die Hook-Pfade in `.claude/settings.json` müssten auf `.venv\Scripts\python.exe` geändert werden.)
+- **Python 3.11 oder neuer.** Das macOS-eigene `python3` ist 3.9 und reicht **nicht**. Am einfachsten über [uv](https://docs.astral.sh/uv/), das Python 3.12 bei Bedarf selbst lädt.
 - **tmux** für die Split-Pane-Ansicht (empfohlen; ohne tmux erscheinen die Teammates im Agenten-Panel unter der Eingabezeile).
+- **[Claude Code](https://code.claude.com/docs/en/setup) ≥ 2.1.178** mit einem Pro-, Max- oder Team-Abo oder API-Zugang; das Projekt nutzt Opus und Sonnet.
 - Internet für Websuche und Yahoo Finance. Keine API-Keys nötig.
 
-**Kosten und Dauer:** Ein Lauf startet bis zu **neun Agenten** mit je eigenem Kontext (7 × Sonnet, 2 × Opus plus Lead) und dauert etwa 15–25 Minuten. Das verbraucht deutlich mehr Tokens als eine normale Session. Referenz: Der Batterierecycling-Lauf kostete **≈ 15 $ zu API-Listenpreisen** (Lead auf Fable 5.1 5,83 $, Red Team und Lektor auf Opus je ~3,40 $, alle sieben Sonnet-Agenten zusammen 2,50 $). Auf einem Max-Abo zählt stattdessen Kontingent. **`/cost` im Lead zeigt nur den Lead** – Teammates in tmux-Panes sind eigene Prozesse; ihre Kosten stehen in den Transkripten unter `~/.claude/projects/`.
+**Kosten und Dauer:** Ein Lauf startet bis zu **neun Agenten** mit je eigenem Kontext (7 × Sonnet, 2 × Opus plus Lead) und dauert etwa 20–40 Minuten. Das verbraucht deutlich mehr Tokens als eine normale Session. Referenz: Der Batterierecycling-Lauf kostete **≈ 15 $ zu API-Listenpreisen** (Lead auf Fable 5.1 5,83 $, Red Team und Lektor auf Opus je ~3,40 $, alle sieben Sonnet-Agenten zusammen 2,50 $), der Quantencomputing-Lauf ≈ 19 $. Auf einem Max-Abo zählt stattdessen Kontingent. **`/cost` im Lead zeigt nur den Lead** – Teammates in tmux-Panes sind eigene Prozesse; ihre Kosten stehen in den Transkripten unter `~/.claude/projects/`.
 
-## Setup
+## Installation
+
+macOS mit [Homebrew](https://brew.sh):
 
 ```bash
+# 1. Werkzeuge (einmalig)
+brew install uv tmux
+curl -fsSL https://claude.ai/install.sh | bash     # Claude Code; danach einmal `claude` starten und anmelden
+claude --version                                    # ≥ 2.1.178
+
+# 2. Projekt
 git clone <repo-url> thema-research && cd thema-research
-python3 -m venv .venv                 # oder: uv venv --python 3.12 .venv
+uv venv --python 3.12 .venv                         # lädt Python 3.12, falls nicht vorhanden
 source .venv/bin/activate
-pip install -r requirements.txt       # für Tests: requirements-dev.txt
-python3 tools/check_setup.py --online # prüft Python, Pakete, Claude Code, Hooks, tmux, Yahoo
+uv pip install -r requirements.txt                  # für Tests: requirements-dev.txt
+
+# 3. Prüfen
+python3 tools/check_setup.py --online               # Python, Pakete, Claude Code, Hooks, tmux, Yahoo
 ```
+
+Linux: uv per `curl -LsSf https://astral.sh/uv/install.sh | sh`, tmux über den Paketmanager (`sudo apt install tmux`), Rest wie oben.
+
+Ohne uv geht es mit einem eigenen Python ≥ 3.11 (z. B. `brew install python@3.12`): `python3.12 -m venv .venv`, `source .venv/bin/activate`, `pip install -r requirements.txt`. In einem mit uv angelegten venv gibt es kein `pip`; dort immer `uv pip install` verwenden.
 
 Das venv **muss** `.venv` heißen und im Projektordner liegen: Die Hooks rufen `.venv/bin/python3` direkt auf.
 
