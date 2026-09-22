@@ -34,6 +34,7 @@ ROLLEN_REIHENFOLGE = ["lead", "markt", "treiber", "kette", "firma", "red-team", 
 ERWARTET = ["markt", "treiber", "kette", "firma", "firma", "firma", "firma", "red-team", "lektor"]
 PHASEN = ["Phase 1", "Screening", "Deep Dives", "Red Team", "Report", "Lektorat", "Fertig"]
 PHASE_1_DATEIEN = {"markt-groesse.json", "treiber.json", "kette.json"}
+PHASE_BEI_START = {"firma": "Deep Dives", "red-team": "Red Team", "lektor": "Lektorat"}   # Lead startet Rolle → Phase erreicht
 
 TEAMMATE_NACHRICHT = re.compile(r'<teammate-message\s+teammate_id="([^"]+)"[^>]*>(.*?)</teammate-message>', re.S)
 AUFGABE_MUSTER = re.compile(r"(\[runs/[^\]]+\.json\][^\n.]*)")
@@ -236,9 +237,12 @@ def ereignisse_aus_zeile(zeile: dict, agent: str, projekt: Path, preise: dict) -
                     eingabe = {}
                 name = block.get("name") or "?"
                 titel, detail = werkzeug_titel(name, eingabe, projekt)
-                aus.append({"zeit": zeit, "agent": agent, "art": "werkzeug", "werkzeug": name, "titel": titel,
-                            "detail": detail, "tool_use_id": tid,
-                            "fertig_gemeldet": name == "TaskUpdate" and eingabe.get("status") == "completed"})
+                ev = {"zeit": zeit, "agent": agent, "art": "werkzeug", "werkzeug": name, "titel": titel,
+                      "detail": detail, "tool_use_id": tid,
+                      "fertig_gemeldet": name == "TaskUpdate" and eingabe.get("status") == "completed"}
+                if name in ("Agent", "Task"):
+                    ev["startet"] = eingabe.get("subagent_type") or eingabe.get("name") or ""
+                aus.append(ev)
         usage = nachricht.get("usage")
         if isinstance(usage, dict):
             betrag, unbekannt = kosten_usd(usage, modell, preise)
@@ -345,10 +349,11 @@ class Team:
         self._fertig_tool: dict[str, str] = {}
         self._verbrauch_gesehen: set[str] = set()
         self.gate_akzeptiert: set[str] = set()
+        self.phase_min = 0          # Index in PHASEN, aus Agent-Starts des Leads
         self.tuersteher = {"akzeptiert": 0, "abgelehnt": 0}
         self.lauf = self._lies_lauf()
         self.gestartet_epoch = zeit_epoch(self.lauf.get("gestartet") or "") or None
-        self.phase = phase_bestimmen(self.lauf_ordner, self.gate_akzeptiert, self.uhr())
+        self.phase = self._phase(self.uhr())
 
     # ---- Hilfen
     def _lies_lauf(self) -> dict:
@@ -364,6 +369,10 @@ class Team:
 
     def _kopf(self, k: dict) -> dict:
         return {key: val for key, val in k.items() if key != "strom"}
+
+    def _phase(self, jetzt: float | None = None) -> str:
+        aus_dateien = phase_bestimmen(self.lauf_ordner, self.gate_akzeptiert, jetzt)
+        return PHASEN[max(PHASEN.index(aus_dateien), self.phase_min)]
 
     def _lauf_kopf(self) -> dict:
         jetzt = self.uhr()
@@ -437,6 +446,11 @@ class Team:
         elif art == "werkzeug":
             k["schritte"] += 1
             k["aktuell"] = ev.get("titel", "")
+            ziel = PHASE_BEI_START.get(rolle_aus_name(ev.get("startet") or "", self.rollen))
+            if ziel and PHASEN.index(ziel) > self.phase_min:
+                self.phase_min = PHASEN.index(ziel)
+                self.phase = self._phase(self.uhr())
+                lauf_geaendert = True
             if ev.get("fertig_gemeldet"):
                 self._fertig_tool[name] = ev.get("tool_use_id", "")
                 self._setze(k, "wartet_tuersteher", zeit)
@@ -467,7 +481,7 @@ class Team:
             self._fertig_tool.pop(name, None)
             if ok and ev.get("datei"):
                 self.gate_akzeptiert.add(_relativ_zum_lauf(ev["datei"]))
-            self.phase = phase_bestimmen(self.lauf_ordner, self.gate_akzeptiert, self.uhr())
+            self.phase = self._phase(self.uhr())
             lauf_geaendert = True
             ev = dict(ev, agent=name)
         else:
@@ -496,9 +510,7 @@ class Team:
             elif still > UNTAETIG_S and k["zustand"] != "untaetig":
                 self._setze(k, "untaetig", zeit)
                 aus.append(("karte", self._kopf(k)))
-        neue_phase = phase_bestimmen(self.lauf_ordner, self.gate_akzeptiert, jetzt)
-        if neue_phase != self.phase:
-            self.phase = neue_phase
+        self.phase = self._phase(jetzt)
         if not self.lauf.get("gestartet"):
             self.lauf = self._lies_lauf()
             self.gestartet_epoch = zeit_epoch(self.lauf.get("gestartet") or "") or None

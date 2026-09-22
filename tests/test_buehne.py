@@ -382,6 +382,20 @@ def test_phase_beispiel_lauf():
     assert bm.phase_bestimmen(lauf, set()) == "Fertig"
 
 
+def test_phase_aus_agent_starts_des_leads(preise, tmp_path):
+    team = neues_team(preise, tmp_path)
+    start = {"zeit": "2026-09-20T08:00:00Z", "agent": "lead", "art": "werkzeug", "werkzeug": "Agent",
+             "titel": "Startet firma-1 (firma)", "detail": "", "tool_use_id": "t1", "fertig_gemeldet": False, "startet": "firma"}
+    aus = team.verarbeite(start)
+    assert team.snapshot()["phase"] == "Deep Dives" and any(a == "lauf" for a, _ in aus)
+    team.verarbeite(dict(start, startet="lektor", tool_use_id="t2"))
+    assert team.snapshot()["phase"] == "Lektorat"
+    team.verarbeite(dict(start, startet="firma", tool_use_id="t3"))       # zurück geht es nicht
+    assert team.snapshot()["phase"] == "Lektorat"
+    ev = bm.ereignisse_aus_zeile(zeilen("lead")[4], "lead", FIX_PROJEKT, preise)[0]
+    assert ev["startet"] == "markt"
+
+
 def test_phase_im_team_aus_gate_log(preise, tmp_path):
     team = neues_team(preise, tmp_path)
     for name in ("markt-groesse.json", "treiber.json", "kette.json"):
