@@ -60,7 +60,7 @@ curl -fsSL https://claude.ai/install.sh | bash     # Claude Code; danach einmal 
 claude --version                                    # ≥ 2.1.178
 
 # 2. Projekt
-git clone <repo-url> thema-research && cd thema-research
+git clone https://github.com/M-37-AI/thema-research.git && cd thema-research
 uv venv --python 3.12 .venv                         # lädt Python 3.12, falls nicht vorhanden
 source .venv/bin/activate
 uv pip install -r requirements.txt                  # für Tests: requirements-dev.txt
